@@ -1,0 +1,18 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Downloaded Kaggle/Colab output archives
+*.zip
+
+# Local smoke-test runs (real experiments live in experiments/<FirstName>/)
+experiments/test/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

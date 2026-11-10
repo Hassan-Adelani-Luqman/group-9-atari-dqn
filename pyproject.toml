@@ -1,0 +1,25 @@
+[project]
+name = "group-9-atari-dqn"
+version = "0.1.0"
+description = "Deep Q-Network from scratch on Atari Pong (Group 9)"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "ale-py>=0.12.1",
+    "gymnasium>=1.4.0",
+    "matplotlib>=3.11.2",
+    "moviepy>=2.2.1",
+    "numpy>=2.5.4",
+    "opencv-python-headless>=5.0.0.93",
+    "torch>=2.14.1,<2.15",
+]
+
+# Install torch from PyTorch's CUDA 12.6 build. It runs on CPU locally and on
+# Kaggle/Colab GPUs (T4 and P100) with older NVIDIA drivers, which the newer
+# CUDA 13 default build does not support.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu126" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
