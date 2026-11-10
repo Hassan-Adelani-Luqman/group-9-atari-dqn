@@ -33,7 +33,7 @@ This section is the source for `Task allocation sheet.pdf` (filled in during Pha
 ### Roles at a glance
 | | **Member 1, Hassan Adelani: DQN core lead** | **Member 2, Homere Singizwa: Env, evaluation & tooling** | **Member 3, Kevin Kaneza Mbonimpaye: Docs, integration & final run** |
 |---|---|---|---|
-| Setup | GitHub repo, collaborators, `uv init`, deps, `.gitignore` | Kaggle notebook, speed benchmark | Books presentation slot, copies allocation sheet |
+| Setup | GitHub repo, collaborators, `uv init`, deps, `.gitignore`; Kaggle CLI runner (`kaggle/`) | Kaggle speed benchmark (first baseline run) | Books presentation slot, copies allocation sheet |
 | Code | `QNetwork`, `ReplayBuffer`, `get_epsilon`, `select_action`, `train_step`, main loop | `make_env`, `play.py` (+ `--record`), CSV logging, `save_training_plots`, `plot_experiments.py` | Reviews every code PR for readability; `run_experiments.sh` files; results `.md` templates |
 | Experiments | 10 × learning rate / batch size | 10 × gamma | 10 × epsilon + **final 1.5M-step run** |
 | Docs | Own results `.md`; README "Training process" + "How to run" | Own results `.md`; video + GIF; README "Gameplay demo" + "Hyperparameter summary" | Own results `.md`; README intro, Mermaid diagrams, contributions; `Task allocation sheet.pdf` |
@@ -45,7 +45,7 @@ This section is the source for `Task allocation sheet.pdf` (filled in during Pha
 |---|---|---|
 | 0 | Create the GitHub repo and add both teammates. Run `git init`, `uv init` (Python 3.12) and `uv add` for the deps. Add `.gitignore` and the folder skeleton. Protect `main` so merges need 1 approving review. Push the first commit. | Repo that installs with `uv sync` |
 | 1 | Write the `train.py` skeleton first (Monday) so Homere can build on it. Then add `parse_args`, `QNetwork`, `ReplayBuffer`, `get_epsilon`, `select_action`, `train_step`, the main loop, target-network sync, best-checkpoint saving and `config.json`, with comments on the key lines. | `train.py` core (PR) |
-| 2 | Check tensor shapes and run the local 20k-step smoke test. Fix any bug the Kaggle baseline exposes. Create and push the `v1-experiments` tag. | Frozen, tagged code |
+| 2 | Build the Kaggle CLI runner (`kaggle/job.py`, `launch.sh`, `fetch.sh`) and send it, with setup steps, to Homere and Kevin. Check tensor shapes and run the local 20k-step smoke test. Fix any bug the Kaggle baseline exposes. Create and push the `v1-experiments` tag. | Runner + frozen, tagged code |
 | 3 | Run exp01–exp10 (learning rate and batch size). Fill in `HassanHyperparameter_experiment_results.md` and produce `comparison.png`. Review Kevin's experiments PR. | 10 models + results `.md` |
 | 4 | Bring the best learning rate and batch size to the final-config decision. | Input to final config |
 | 5 | Write the README "Training process" and "How to run" sections. | README sections |
@@ -57,7 +57,7 @@ This section is the source for `Task allocation sheet.pdf` (filled in during Pha
 |---|---|---|
 | 0 | Set up and verify a Kaggle account. Run the Pong import check on your laptop. | Env works locally |
 | 1 | Add `make_env`, CSV logging and `save_training_plots` to `train.py` on top of Hassan's skeleton. Write `play.py` (`--model`, `--episodes`, `--record`) and `plot_experiments.py`. | Env, logging and play PRs |
-| 2 | Build `kaggle_runner.ipynb`. Run the 300k-step baseline on Kaggle and report steps/sec, which decides whether runs use 300k or 200k steps. Run the playback smoke test. | Notebook + step budget |
+| 2 | Set up the Kaggle CLI from Hassan's instructions. Run the 300k-step baseline on Kaggle with `kaggle/launch.sh` from your own account and report steps/sec, which decides whether runs use 300k or 200k steps. Run the playback smoke test. | Step budget |
 | 3 | Run exp01–exp10 (gamma). Fill in `HomereHyperparameter_experiment_results.md` and produce `comparison.png`. Review Hassan's experiments PR. | 10 models + results `.md` |
 | 4 | Test the final model locally with `play.py`: greedy scores over 3 episodes. | Confirmed demo quality |
 | 5 | Record `videos/gameplay.mp4` and make the GIF. Write the README "Gameplay demo" and "Hyperparameter summary" sections. | Video + README sections |
@@ -132,7 +132,11 @@ group-9-atari-dqn/
 ├── train.py                     # full DQN implementation + training loop
 ├── play.py                      # loads dqn_model.pth, greedy play, real-time render
 ├── plot_experiments.py          # overlays one member's 10 runs (for slides/README)
-├── kaggle_runner.ipynb          # installs uv, clones repo, runs a member's script
+├── kaggle/                      # run experiments on Kaggle GPUs from the terminal
+│   ├── job.py                   # runs on Kaggle: install uv, clone repo, run selected experiments
+│   ├── launch.sh                # send a job:   bash kaggle/launch.sh <Name> 1-9 v1-experiments
+│   ├── fetch.sh                 # get results:  bash kaggle/fetch.sh <job>
+│   └── logs/                    # full Kaggle log of every job
 ├── dqn_model.pth                # FINAL best model (copied from experiments/final/)
 ├── experiments/
 │   ├── Hassan/
@@ -148,7 +152,7 @@ group-9-atari-dqn/
 ├── README.md
 └── Task allocation sheet.pdf
 ```
-Install dependencies with `uv add` only, never pip: `torch gymnasium ale-py opencv-python-headless numpy matplotlib moviepy`. Python is pinned to 3.12. Torch comes from PyTorch's **CUDA 12.6** index (`[tool.uv.sources]` in `pyproject.toml`). The default PyPI build uses CUDA 13, which has no Kaggle P100 support and needs NVIDIA driver 580+. The cu126 build works on Kaggle T4/P100 and Colab T4, and runs on CPU locally. Headless OpenCV avoids `libGL` errors on cloud machines. Each saved model is about 6.5 MB because only the online network's `state_dict` is stored. All 31 models together come to about 200 MB, which needs no Git LFS.
+Install dependencies with `uv add` only, never pip: `torch gymnasium ale-py opencv-python-headless numpy matplotlib moviepy`. Python is pinned to 3.12. Torch comes from PyTorch's **CUDA 12.6** index (`[tool.uv.sources]` in `pyproject.toml`). The default PyPI build uses CUDA 13, which drops older GPUs and needs NVIDIA driver 580+. The cu126 build works on Kaggle's T4 and Colab's T4 with older drivers, and runs on CPU locally. Headless OpenCV avoids `libGL` errors on cloud machines. Each saved model is about 6.5 MB because only the online network's `state_dict` is stored. All 31 models together come to about 200 MB, which needs no Git LFS.
 
 ## Reference C: Code design (aim for train.py ≈ 200 lines, play.py ≈ 60 lines)
 
@@ -224,7 +228,7 @@ Use the same format for every **Observed behaviour** cell:
 3. Install uv (`curl -LsSf https://astral.sh/uv/install.sh | sh`). Run `uv init` with Python 3.12, then `uv add torch gymnasium ale-py opencv-python-headless numpy matplotlib moviepy`, with torch pinned to the CUDA 12.6 index (see Reference B).
 4. Add a `.gitignore` covering `.venv/`, `__pycache__/` and `*.zip`. Create the empty folders from Reference B.
 5. Kevin books the presentation slot (Week 6 calendar link), copies the allocation Google Sheet, and fills in the roles from the Task distribution section.
-6. Each member creates a Kaggle account and verifies a phone number, which is needed for GPU and internet access.
+6. Each member creates a Kaggle account and verifies a phone number, which is needed for GPU and internet access. Then each member creates a Kaggle API token (saved as `~/.kaggle/access_token`) and sets `KAGGLE_USERNAME` in their shell. No notebook upload is needed: jobs are sent from the terminal (Phase 2).
 
 **Done when:** `uv sync` works from a fresh clone, and `uv run python -c "import gymnasium as gym, ale_py; gym.register_envs(ale_py); print(gym.make('ALE/Pong-v5').action_space)"` prints `Discrete(6)`. The first commit is pushed.
 
@@ -236,14 +240,14 @@ Use the same format for every **Observed behaviour** cell:
 
 **Done when:** the state shape is `(4, 84, 84)` uint8, `QNetwork(6)` returns `(B, 6)`, and both scripts run without errors.
 
-## Phase 2: Verification, benchmark and code freeze (Tue 10) · Owners: Homere (Kaggle), all
+## Phase 2: Verification, benchmark and code freeze (Tue 10) · Owners: Hassan (Kaggle runner), Homere (benchmark), all
 1. Run a local smoke test: `uv run train.py --member test --exp 0 --total-steps 20000`. It should write `dqn_model.pth`, `config.json`, `training_log.csv` and `training_plots.png`, and the loss should stay finite.
 2. Smoke-test playback with `uv run play.py --model experiments/test/exp00/dqn_model.pth --episodes 1`. A game window should appear and the episode should finish.
-3. Build **kaggle_runner.ipynb** as a `%%bash` cell:
-   - install uv and run `export PATH=$HOME/.local/bin:$PATH`
-   - `git clone` the repo, then `git checkout v1-experiments`
-   - `uv sync`
-   - `bash experiments/<FirstName>/run_experiments.sh`
+3. **Kaggle CLI runner** (`kaggle/`, built by Hassan). Jobs are sent from the terminal, so nobody uploads a notebook:
+   - `bash kaggle/launch.sh <Name> <experiments> [git-ref]` sends a private script job to a **T4 GPU** (Kaggle has retired the P100). The job installs uv, clones the repo at the given branch or tag, runs `uv sync --frozen`, and stops if there is no GPU. It then runs the selected `--exp` lines of `experiments/<Name>/run_experiments.sh` one after another and keeps each finished experiment folder as output. `check` instead of experiment numbers only tests the setup.
+   - `uvx --with six kaggle kernels status <user>/<job>` shows progress. (`--with six` works around a missing dependency in the current Kaggle CLI.)
+   - `bash kaggle/fetch.sh <job>` downloads the results into `experiments/<Name>/expNN/` and saves the full log to `kaggle/logs/`.
+   - The repo must be pushed (it is public) before a job can clone it.
 4. Run the baseline on Kaggle for 300k steps to measure steps per second and check that learning happens. The 20-episode mean should rise above −21 by about 150–200k steps.
    - If it stays flat, check the `(1−done)` mask, the target sync, the /255 scaling, `gather`/`argmax` dims, and the ε decay.
    - If a run takes more than about 35 min, lower `--total-steps` to 200k **for everyone**.
@@ -253,8 +257,8 @@ Use the same format for every **Observed behaviour** cell:
 **Done when:** the baseline learns on Kaggle, the step budget is fixed, the tag is pushed, and all 3 `run_experiments.sh` files are committed.
 
 ## Phase 3: Hyperparameter experiments (Tue 10 – Thu 12) · Owners: each member, for their own grid
-1. Each member runs exp01–exp09 on Kaggle with **Save Version → Save & Run All**. This runs in the background for up to 12 h, and 9 runs take about 4 h.
-2. As each run finishes, download the output, copy `experiments/<Name>/expNN/` into the repo, and fill in that row of `<Name>Hyperparameter_experiment_results.md` using the observed-behaviour format.
+1. Each member sends exp01–exp09 to Kaggle as one job: `bash kaggle/launch.sh <Name> 1-9 v1-experiments`. It runs in the background for up to 12 h, and 9 runs take about 4 h.
+2. When the job finishes, run `bash kaggle/fetch.sh <job>` to put `experiments/<Name>/expNN/` into the repo. Then fill in each row of `<Name>Hyperparameter_experiment_results.md` using the observed-behaviour format.
 3. **Thursday group sync:** share the best and worst results. Each member then sets their exp10 using teammates' findings and runs it.
 4. Each member runs `uv run plot_experiments.py <Name>` to produce `comparison.png`.
 5. Each member writes the **Best / worst / final choice** paragraph under their table, which also becomes their 2-minute script.
