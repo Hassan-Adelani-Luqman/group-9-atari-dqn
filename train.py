@@ -13,6 +13,7 @@ Results are written to experiments/<member>/exp<NN>/:
 """
 
 import argparse
+import csv
 import json
 import random
 import time
@@ -21,9 +22,14 @@ from pathlib import Path
 
 import ale_py
 import gymnasium as gym
+import matplotlib
 import numpy as np
 import torch
 import torch.nn as nn
+from gymnasium.wrappers import AtariPreprocessing, FrameStackObservation
+
+matplotlib.use("Agg")  # plots are only saved to files, so no display is needed (e.g. on Kaggle)
+import matplotlib.pyplot as plt  # noqa: E402  (must come after matplotlib.use)
 
 gym.register_envs(ale_py)
 
@@ -53,30 +59,55 @@ def parse_args():
 
 
 def make_env(render_mode=None):
-    """Create Pong with the standard Atari preprocessing (Plan.md, Reference A).
+    """Create Pong with the standard Atari preprocessing from the DQN paper.
 
-    TODO (Homere, Phase 1):
-        gym.make(ENV_ID, frameskip=1, repeat_action_probability=0.0, render_mode=render_mode)
-        -> AtariPreprocessing(noop_max=30, frame_skip=4, screen_size=84, grayscale_obs=True, scale_obs=False)
-        -> FrameStackObservation(stack_size=4)
-    Observations must have shape (4, 84, 84) and dtype uint8.
+    Each observation is the last 4 frames, in grayscale and resized to 84 x 84:
+    shape (4, 84, 84), dtype uint8. Stacking frames lets the network see which way
+    and how fast the ball is moving, which a single frame cannot show.
     """
-    raise NotImplementedError("make_env is Homere's Phase 1 task")
+    # frameskip=1 here because AtariPreprocessing does the frame skipping below.
+    # repeat_action_probability=0.0 turns off "sticky actions", as in the original DQN setup.
+    env = gym.make(ENV_ID, frameskip=1, repeat_action_probability=0.0, render_mode=render_mode)
+    env = AtariPreprocessing(
+        env,
+        noop_max=30,         # start each game with 0-30 random "do nothing" steps, so games start differently
+        frame_skip=4,        # repeat each chosen action for 4 frames: the agent decides every 4th frame
+        screen_size=84,      # resize the 210 x 160 screen to 84 x 84
+        grayscale_obs=True,  # colour is not needed to play Pong
+        scale_obs=False,     # keep pixels as uint8 (0-255) to save replay-buffer memory
+    )
+    return FrameStackObservation(env, stack_size=4)
 
 
 def save_training_log(episode_log, out_dir):
-    """Write episode_log (a list of dicts, one per episode) to out_dir/training_log.csv.
-
-    TODO (Homere, Phase 1): one CSV row per episode, columns in the order of the dict keys.
-    """
+    """Write episode_log (a list of dicts, one per episode) to out_dir/training_log.csv."""
+    with open(out_dir / "training_log.csv", "w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=episode_log[0].keys())
+        writer.writeheader()
+        writer.writerows(episode_log)
 
 
 def save_training_plots(episode_log, out_dir):
-    """Save out_dir/training_plots.png with 3 panels: episode reward (+ rolling mean),
-    episode length and cumulative steps, each against the episode number.
+    """Save out_dir/training_plots.png: reward, episode length and total steps for each episode."""
+    episodes = [row["episode"] for row in episode_log]
+    fig, (reward_ax, length_ax, steps_ax) = plt.subplots(3, 1, figsize=(10, 10), sharex=True)
 
-    TODO (Homere, Phase 1)
-    """
+    reward_ax.plot(episodes, [row["episode_reward"] for row in episode_log], alpha=0.4, label="Episode reward")
+    reward_ax.plot(episodes, [row["mean_reward_last20"] for row in episode_log], label=f"Mean of last {REWARD_WINDOW}")
+    reward_ax.set_ylabel("Reward")
+    reward_ax.legend()
+
+    length_ax.plot(episodes, [row["episode_length"] for row in episode_log])
+    length_ax.set_ylabel("Episode length (steps)")
+
+    steps_ax.plot(episodes, [row["total_steps"] for row in episode_log])
+    steps_ax.set_ylabel("Total steps")
+    steps_ax.set_xlabel("Episode")
+
+    fig.suptitle(f"Training performance: {out_dir}")
+    fig.tight_layout()
+    fig.savefig(out_dir / "training_plots.png", dpi=100)
+    plt.close(fig)
 
 
 class QNetwork(nn.Module):
@@ -264,8 +295,9 @@ def main():
             mean_reward = log_episode(episode_log, step, episode_reward, episode_length, epsilon, episode_losses)
             save_training_log(episode_log, out_dir)
 
-            # Keep the model with the best recent average, which guards against a late collapse.
-            if mean_reward > best_mean_reward:
+            # Keep the model with the best average over the last REWARD_WINDOW episodes, which guards
+            # against a late collapse. Waiting for a full window stops a few lucky random games counting as "best".
+            if len(episode_log) >= REWARD_WINDOW and mean_reward > best_mean_reward:
                 best_mean_reward = mean_reward
                 torch.save(online_net.state_dict(), model_path)
 
@@ -278,6 +310,8 @@ def main():
             state, _ = env.reset()
 
     env.close()
+    if best_mean_reward == -float("inf"):  # run too short to fill the reward window: keep the final model
+        torch.save(online_net.state_dict(), model_path)
     save_training_plots(episode_log, out_dir)
     print(f"Done. Best mean{REWARD_WINDOW} reward: {best_mean_reward:+.2f}. Model saved to {model_path}")
 
