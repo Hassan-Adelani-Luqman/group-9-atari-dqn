@@ -71,6 +71,10 @@ def main():
         return
 
     commands = selected_commands(numbers)
+    missing = numbers - {number for number, _ in commands}
+    if missing:  # e.g. exp10 launched from the tag, which was made before the exp10 lines were added
+        raise SystemExit(f"No line for experiment(s) {sorted(missing)} in "
+                         f"experiments/{MEMBER}/run_experiments.sh at {GIT_REF}")
     print(f"\nRunning {len(commands)} experiment(s) for {MEMBER}: {[n for n, _ in commands]}")
     failed = []
     for number, command in commands:

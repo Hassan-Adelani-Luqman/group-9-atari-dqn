@@ -4,7 +4,7 @@
 # Usage:  bash kaggle/launch.sh <Member> <experiments> [git-ref]
 #   bash kaggle/launch.sh Hassan check main            # only test setup + GPU (a few minutes)
 #   bash kaggle/launch.sh Hassan 1-9 v1-experiments    # run exp01-exp09 one after another
-#   bash kaggle/launch.sh Hassan 10 v1-experiments     # run exp10
+#   bash kaggle/launch.sh Hassan 10 main               # run exp10 (its line is added after the tag, so use main)
 #
 # Needs: KAGGLE_USERNAME set and a Kaggle API token in ~/.kaggle/access_token.
 set -euo pipefail

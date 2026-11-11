@@ -259,7 +259,7 @@ Use the same format for every **Observed behaviour** cell:
 ## Phase 3: Hyperparameter experiments (Tue 10 – Thu 12) · Owners: each member, for their own grid
 1. Each member sends exp01–exp09 to Kaggle as one job: `bash kaggle/launch.sh <Name> 1-9 v1-experiments`. It runs in the background for up to 12 h, and 9 runs take about 4 h.
 2. When the job finishes, run `bash kaggle/fetch.sh <job>` to put `experiments/<Name>/expNN/` into the repo. Then fill in each row of `<Name>Hyperparameter_experiment_results.md` using the observed-behaviour format.
-3. **Thursday group sync:** share the best and worst results. Each member then sets their exp10 using teammates' findings and runs it.
+3. **Thursday group sync:** share the best and worst results. Each member then fills in the commented exp10 line of their own `run_experiments.sh` using teammates' findings, pushes it, and runs `bash kaggle/launch.sh <Name> 10 main`. The tag was made before the exp10 lines existed, so exp10 runs from `main`; `git diff v1-experiments main -- train.py` must show nothing, so it still uses the frozen code.
 4. Each member runs `uv run plot_experiments.py <Name>` to produce `comparison.png`.
 5. Each member writes the **Best / worst / final choice** paragraph under their table, which also becomes their 2-minute script.
 6. Commit from your own account on your own branch, and merge through a PR reviewed by another member.
