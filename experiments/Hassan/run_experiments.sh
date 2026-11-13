@@ -20,6 +20,7 @@ uv run train.py --member Hassan --exp 7 --seed 1 --batch-size 16
 uv run train.py --member Hassan --exp 8 --seed 1 --batch-size 64
 uv run train.py --member Hassan --exp 9 --seed 1 --batch-size 128
 
-# exp10 = best learning rate + best batch size, chosen at the Thursday sync.
-# Fill in the values, remove the "# " in front, push, then: bash kaggle/launch.sh Hassan 10 main
-# uv run train.py --member Hassan --exp 10 --seed 1 --lr BEST_LR --batch-size BEST_BATCH
+# exp10 = best learning rate + best batch size from exp01-exp09:
+# lr 2.5e-4 (exp04, best mean-20 +19.7) and batch 64 (exp08, best mean-20 +19.5).
+# Run with: bash kaggle/launch.sh Hassan 10 hassan-experiments
+uv run train.py --member Hassan --exp 10 --seed 1 --lr 2.5e-4 --batch-size 64
