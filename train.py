@@ -39,6 +39,10 @@ REPLAY_CAPACITY = 50_000     # number of transitions kept in the replay buffer
 LEARNING_STARTS = 10_000     # steps collected before the first network update
 TARGET_UPDATE_EVERY = 1_000  # steps between copying the online network into the target network
 MAX_GRAD_NORM = 10.0         # gradient clipping keeps single updates from being too large
+# Adam's epsilon (default 1e-8). Pong frames are mostly the same background, so many gradients are tiny;
+# with 1e-8 Adam still moves those weights by a full learning-rate step and whole conv layers died ("dying ReLU").
+# 1.5e-4 (as in the Rainbow DQN paper) damps updates when the gradient is tiny.
+ADAM_EPS = 1.5e-4
 REWARD_WINDOW = 20           # number of recent episodes averaged for the "mean reward" metric
 
 
@@ -239,6 +243,7 @@ def save_config(args, out_dir):
         "replay_capacity": REPLAY_CAPACITY,
         "learning_starts": LEARNING_STARTS,
         "target_update_every": TARGET_UPDATE_EVERY,
+        "adam_eps": ADAM_EPS,
     }
     (out_dir / "config.json").write_text(json.dumps(config, indent=2))
 
@@ -261,7 +266,7 @@ def main():
     online_net = QNetwork(n_actions).to(device)
     target_net = QNetwork(n_actions).to(device)
     target_net.load_state_dict(online_net.state_dict())
-    optimizer = torch.optim.Adam(online_net.parameters(), lr=args.lr)
+    optimizer = torch.optim.Adam(online_net.parameters(), lr=args.lr, eps=ADAM_EPS)
     buffer = ReplayBuffer(REPLAY_CAPACITY)
 
     episode_log = []

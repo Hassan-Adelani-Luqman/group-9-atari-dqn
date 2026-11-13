@@ -1,0 +1,142 @@
+[{"stream_name":"stdout","time":0.706031809,"data":"\n"}
+,{"stream_name":"stdout","time":0.70607489,"data":"$ curl -LsSf https://astral.sh/uv/install.sh | sh\n"}
+,{"stream_name":"stderr","time":1.235615432,"data":"downloading uv 0.13.8 x86_64-unknown-linux-gnu\n"}
+,{"stream_name":"stdout","time":1.87728311,"data":"installing to /usr/local/bin\n"}
+,{"stream_name":"stdout","time":1.888574018,"data":"  uv\n"}
+,{"stream_name":"stdout","time":1.8911459050000001,"data":"  uvx\n"}
+,{"stream_name":"stdout","time":1.896840406,"data":"everything's installed!\n"}
+,{"stream_name":"stdout","time":1.904698755,"data":"\n"}
+,{"stream_name":"stdout","time":1.904716961,"data":"$ git clone --depth 1 --branch main https://github.com/Hassan-Adelani-Luqman/group-9-atari-dqn.git /tmp/repo\n"}
+,{"stream_name":"stderr","time":1.925838186,"data":"Cloning into '/tmp/repo'...\n"}
+,{"stream_name":"stdout","time":2.30585249,"data":"\n"}
+,{"stream_name":"stdout","time":2.305876561,"data":"$ uv sync --frozen\n"}
+,{"stream_name":"stderr","time":2.595805458,"data":"Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\n"}
+,{"stream_name":"stderr","time":2.595833485,"data":"Creating virtual environment at: .venv\n"}
+,{"stream_name":"stderr","time":2.69547024,"data":"Downloading nvidia-curand-cu12 (53.7MiB)\n"}
+,{"stream_name":"stderr","time":2.6985907559999998,"data":"Downloading torch (828.9MiB)\n"}
+,{"stream_name":"stderr","time":2.716926799,"data":"Downloading opencv-python-headless (58.4MiB)\n"}
+,{"stream_name":"stderr","time":2.717625911,"data":"Downloading matplotlib (9.4MiB)\n"}
+,{"stream_name":"stderr","time":2.718716802,"data":"Downloading nvidia-cufile-cu12 (1.1MiB)\n"}
+,{"stream_name":"stderr","time":2.720443963,"data":"Downloading pillow (6.3MiB)\n"}
+,{"stream_name":"stderr","time":2.720579329,"data":"Downloading nvidia-cuda-cupti-cu12 (8.5MiB)\n"}
+,{"stream_name":"stderr","time":2.721065392,"data":"Downloading numpy (16.0MiB)\n"}
+,{"stream_name":"stderr","time":2.721080599,"data":"Downloading sympy (6.0MiB)\n"}
+,{"stream_name":"stderr","time":2.721475197,"data":"Downloading networkx (2.0MiB)\n"}
+,{"stream_name":"stderr","time":2.721726736,"data":"Downloading nvidia-cusparselt-cu12 (273.9MiB)\n"}
+,{"stream_name":"stderr","time":2.7220417489999997,"data":"Downloading nvidia-cusparse-cu12 (206.5MiB)\n"}
+,{"stream_name":"stderr","time":2.722259164,"data":"Downloading fonttools (5.2MiB)\n"}
+,{"stream_name":"stderr","time":2.722464286,"data":"Downloading nvidia-cudnn-cu12 (674.0MiB)\n"}
+,{"stream_name":"stderr","time":2.723014461,"data":"Downloading nvidia-cublas-cu12 (374.9MiB)\n"}
+,{"stream_name":"stderr","time":2.7238845769999998,"data":"Downloading nvidia-cusolver-cu12 (150.9MiB)\n"}
+,{"stream_name":"stderr","time":2.724112177,"data":"Downloading imageio-ffmpeg (64.8MiB)\n"}
+,{"stream_name":"stderr","time":2.724293948,"data":"Downloading nvidia-cufft-cu12 (190.9MiB)\n"}
+,{"stream_name":"stderr","time":2.724550272,"data":"Downloading nvidia-nvjitlink-cu12 (37.9MiB)\n"}
+,{"stream_name":"stderr","time":2.725255136,"data":"Downloading kiwisolver (1.4MiB)\n"}
+,{"stream_name":"stderr","time":2.725696272,"data":"Downloading nvidia-nccl-cu12 (276.3MiB)\n"}
+,{"stream_name":"stderr","time":2.726413631,"data":"Downloading nvidia-cuda-nvrtc-cu12 (22.6MiB)\n"}
+,{"stream_name":"stderr","time":2.726737012,"data":"Downloading ale-py (3.0MiB)\n"}
+,{"stream_name":"stderr","time":2.727298003,"data":"Downloading triton (236.5MiB)\n"}
+,{"stream_name":"stderr","time":2.727575519,"data":"Downloading cuda-bindings (7.3MiB)\n"}
+,{"stream_name":"stderr","time":2.727914936,"data":"Downloading nvidia-nvshmem-cu12 (132.7MiB)\n"}
+,{"stream_name":"stderr","time":3.245962791,"data":" Downloaded nvidia-cufile-cu12\n"}
+,{"stream_name":"stderr","time":3.347897434,"data":" Downloaded kiwisolver\n"}
+,{"stream_name":"stderr","time":3.513087619,"data":" Downloaded networkx\n"}
+,{"stream_name":"stderr","time":3.756094311,"data":" Downloaded ale-py\n"}
+,{"stream_name":"stderr","time":4.34122906,"data":" Downloaded fonttools\n"}
+,{"stream_name":"stderr","time":4.488352957,"data":" Downloaded sympy\n"}
+,{"stream_name":"stderr","time":4.620830418,"data":" Downloaded pillow\n"}
+,{"stream_name":"stderr","time":4.810217714,"data":" Downloaded cuda-bindings\n"}
+,{"stream_name":"stderr","time":5.06196369,"data":" Downloaded nvidia-cuda-cupti-cu12\n"}
+,{"stream_name":"stderr","time":5.24200212,"data":" Downloaded matplotlib\n"}
+,{"stream_name":"stderr","time":6.486983894,"data":" Downloaded numpy\n"}
+,{"stream_name":"stderr","time":7.778405522,"data":" Downloaded nvidia-cuda-nvrtc-cu12\n"}
+,{"stream_name":"stderr","time":10.374072836,"data":" Downloaded nvidia-nvjitlink-cu12\n"}
+,{"stream_name":"stderr","time":12.800593399,"data":" Downloaded nvidia-curand-cu12\n"}
+,{"stream_name":"stderr","time":13.554801653,"data":" Downloaded opencv-python-headless\n"}
+,{"stream_name":"stderr","time":14.472458163,"data":" Downloaded imageio-ffmpeg\n"}
+,{"stream_name":"stderr","time":22.089254986,"data":" Downloaded nvidia-nvshmem-cu12\n"}
+,{"stream_name":"stderr","time":23.845270914,"data":" Downloaded nvidia-cusolver-cu12\n"}
+,{"stream_name":"stderr","time":26.873918113,"data":" Downloaded nvidia-cufft-cu12\n"}
+,{"stream_name":"stderr","time":27.973346339,"data":" Downloaded nvidia-cusparse-cu12\n"}
+,{"stream_name":"stderr","time":31.312871149,"data":" Downloaded triton\n"}
+,{"stream_name":"stderr","time":32.093775174,"data":" Downloaded nvidia-cusparselt-cu12\n"}
+,{"stream_name":"stderr","time":33.920750161,"data":" Downloaded nvidia-nccl-cu12\n"}
+,{"stream_name":"stderr","time":35.866350938,"data":" Downloaded nvidia-cublas-cu12\n"}
+,{"stream_name":"stderr","time":37.944045527,"data":" Downloaded torch\n"}
+,{"stream_name":"stderr","time":39.519205783,"data":" Downloaded nvidia-cudnn-cu12\n"}
+,{"stream_name":"stderr","time":39.520839138,"data":"Prepared 52 packages in 36.92s\n"}
+,{"stream_name":"stderr","time":39.952194336,"data":"Installed 52 packages in 431ms\n"}
+,{"stream_name":"stderr","time":39.952317424,"data":" + ale-py==0.12.1\n"}
+,{"stream_name":"stderr","time":39.952562477,"data":" + cloudpickle==3.1.2\n"}
+,{"stream_name":"stderr","time":39.952574055,"data":" + contourpy==1.4.0\n"}
+,{"stream_name":"stderr","time":39.952579605,"data":" + cuda-bindings==12.9.10\n"}
+,{"stream_name":"stderr","time":39.95258536,"data":" + cuda-pathfinder==1.8.6\n"}
+,{"stream_name":"stderr","time":39.95268526,"data":" + cuda-toolkit==12.6.3\n"}
+,{"stream_name":"stderr","time":39.952695598,"data":" + cycler==0.12.1\n"}
+,{"stream_name":"stderr","time":39.952762377,"data":" + decorator==5.3.1\n"}
+,{"stream_name":"stderr","time":39.952775946,"data":" + farama-notifications==0.0.6\n"}
+,{"stream_name":"stderr","time":39.952799031,"data":" + filelock==4.2.10\n"}
+,{"stream_name":"stderr","time":39.952905337,"data":" + fonttools==4.68.0\n"}
+,{"stream_name":"stderr","time":39.952935454,"data":" + fsspec==2026.9.0\n"}
+,{"stream_name":"stderr","time":39.953166125,"data":" + gymnasium==1.4.0\n"}
+,{"stream_name":"stderr","time":39.95317513,"data":" + imageio==2.38.1\n"}
+,{"stream_name":"stderr","time":39.953181178,"data":" + imageio-ffmpeg==0.8.1\n"}
+,{"stream_name":"stderr","time":39.953249538,"data":" + jinja2==3.1.6\n"}
+,{"stream_name":"stderr","time":39.953330977,"data":" + kiwisolver==1.5.1\n"}
+,{"stream_name":"stderr","time":39.953340597,"data":" + markupsafe==3.0.4\n"}
+,{"stream_name":"stderr","time":39.953396638,"data":" + matplotlib==3.11.2\n"}
+,{"stream_name":"stderr","time":39.953469498,"data":" + moviepy==2.2.1\n"}
+,{"stream_name":"stderr","time":39.953564124,"data":" + mpmath==1.3.0\n"}
+,{"stream_name":"stderr","time":39.953571698,"data":" + networkx==3.7\n"}
+,{"stream_name":"stderr","time":39.953645897,"data":" + numpy==2.5.4\n"}
+,{"stream_name":"stderr","time":39.953725611,"data":" + nvidia-cublas-cu12==12.6.4.1\n"}
+,{"stream_name":"stderr","time":39.953794249,"data":" + nvidia-cuda-cupti-cu12==12.6.80\n"}
+,{"stream_name":"stderr","time":39.953850016,"data":" + nvidia-cuda-nvrtc-cu12==12.6.85\n"}
+,{"stream_name":"stderr","time":39.953966301,"data":" + nvidia-cuda-runtime-cu12==12.6.77\n"}
+,{"stream_name":"stderr","time":39.954021394,"data":" + nvidia-cudnn-cu12==9.10.2.21\n"}
+,{"stream_name":"stderr","time":39.954086259,"data":" + nvidia-cufft-cu12==11.3.0.4\n"}
+,{"stream_name":"stderr","time":39.954179294,"data":" + nvidia-cufile-cu12==1.11.1.6\n"}
+,{"stream_name":"stderr","time":39.954269195,"data":" + nvidia-curand-cu12==10.3.7.77\n"}
+,{"stream_name":"stderr","time":39.954319289,"data":" + nvidia-cusolver-cu12==11.7.1.2\n"}
+,{"stream_name":"stderr","time":39.954414514,"data":" + nvidia-cusparse-cu12==12.5.4.2\n"}
+,{"stream_name":"stderr","time":39.954459309,"data":" + nvidia-cusparselt-cu12==0.7.1\n"}
+,{"stream_name":"stderr","time":39.954567162000004,"data":" + nvidia-nccl-cu12==2.29.3\n"}
+,{"stream_name":"stderr","time":39.954693945,"data":" + nvidia-nvjitlink-cu12==12.9.86\n"}
+,{"stream_name":"stderr","time":39.955109819,"data":" + nvidia-nvshmem-cu12==3.4.5\n"}
+,{"stream_name":"stderr","time":39.955191124,"data":" + nvidia-nvtx-cu12==12.6.77\n"}
+,{"stream_name":"stderr","time":39.955331994,"data":" + opencv-python-headless==5.0.0.93\n"}
+,{"stream_name":"stderr","time":39.955393389,"data":" + packaging==26.3\n"}
+,{"stream_name":"stderr","time":39.955499624,"data":" + pillow==11.3.0\n"}
+,{"stream_name":"stderr","time":39.955552224,"data":" + proglog==0.1.12\n"}
+,{"stream_name":"stderr","time":39.955608164,"data":" + pyparsing==3.3.3\n"}
+,{"stream_name":"stderr","time":39.955801817,"data":" + python-dateutil==4.0.0\n"}
+,{"stream_name":"stderr","time":39.955816588,"data":" + python-dotenv==1.2.4\n"}
+,{"stream_name":"stderr","time":39.955863699,"data":" + setuptools==84.2.1\n"}
+,{"stream_name":"stderr","time":39.955947861,"data":" + sympy==1.14.0\n"}
+,{"stream_name":"stderr","time":39.956012521,"data":" + torch==2.14.1+cu126\n"}
+,{"stream_name":"stderr","time":39.956048241,"data":" + tqdm==4.70.1\n"}
+,{"stream_name":"stderr","time":39.956116123,"data":" + triton==3.8.0\n"}
+,{"stream_name":"stderr","time":39.956202655,"data":" + typing-extensions==4.16.0\n"}
+,{"stream_name":"stderr","time":39.956257913,"data":" + tzdata==2026.6\n"}
+,{"stream_name":"stdout","time":39.963487774,"data":"\n"}
+,{"stream_name":"stdout","time":39.963506305,"data":"$ uv run python -c \"import torch; assert torch.cuda.is_available(), 'No GPU'; print('GPU:', torch.cuda.get_device_name(0))\"\n"}
+,{"stream_name":"stdout","time":50.287827555,"data":"GPU: Tesla T4\n"}
+,{"stream_name":"stdout","time":50.715869566,"data":"\n"}
+,{"stream_name":"stdout","time":50.715896711,"data":"$ sed 's/lr=args.lr)/lr=args.lr, eps=1.5e-4)/' train.py \u003e train_fix.py \u0026\u0026 grep -n 'optim.Adam' train_fix.py | grep 'eps=1.5e-4'\n"}
+,{"stream_name":"stdout","time":50.720327479,"data":"264:    optimizer = torch.optim.Adam(online_net.parameters(), lr=args.lr, eps=1.5e-4)\n"}
+,{"stream_name":"stdout","time":50.720868678,"data":"\n"}
+,{"stream_name":"stdout","time":50.720885616,"data":"$ uv run train_fix.py --member test --exp 21 --seed 1 --total-steps 300000  \u003e logs/exp21.log\n"}
+,{"stream_name":"stdout","time":50.72139199,"data":"\n"}
+,{"stream_name":"stdout","time":50.72140578,"data":"$ uv run train_fix.py --member test --exp 22 --seed 2 --total-steps 300000  \u003e logs/exp22.log\n"}
+,{"stream_name":"stdout","time":50.722144776,"data":"\n"}
+,{"stream_name":"stdout","time":50.722158204,"data":"$ uv run train_fix.py --member test --exp 23 --seed 3 --total-steps 300000  \u003e logs/exp23.log\n"}
+,{"stream_name":"stdout","time":3120.943493061,"data":"exp21 exited with 0\n"}
+,{"stream_name":"stdout","time":3132.013873928,"data":"exp22 exited with 0\n"}
+,{"stream_name":"stdout","time":3132.013918589,"data":"exp23 exited with 0\n"}
+,{"stream_name":"stderr","time":3134.186378661,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":3134.186416627,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":3134.480807207,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":3134.480836814,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":3135.833356487,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":3136.753562805,"data":"[NbConvertApp] Writing 281360 bytes to __results__.html\n"}
+]

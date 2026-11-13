@@ -192,8 +192,10 @@ Implementation notes:
 - Learning starts after 10,000 steps
 - Target update every 1,000 steps
 - 1 gradient step per env step
-- Adam optimizer, Huber loss
+- Adam optimizer with ε = 1.5e-4 (not the default 1e-8), Huber loss
 - **300,000 steps per experiment**. Phase 2 confirms this budget.
+
+**Phase 2 finding (Adam ε).** With Adam's default ε = 1e-8, every seed-1 run stayed at −21, even after 1M steps. All channels of the third conv layer died ("dying ReLU") within about 9k updates, so the Q-values became the same for every state. The same settings with seed 2 learned to +17 by 250k steps. Pong frames are mostly identical background, so many gradients are tiny, and with ε = 1e-8 Adam still moves those weights by a full learning-rate step. Setting ε = 1.5e-4, the value used in the Rainbow DQN paper, keeps the layer alive. Logs are in `kaggle/logs/`.
 
 **Group baseline:** lr 1e-4 · γ 0.99 · batch 32 · ε start 1.0 · ε end 0.01 · ε decay 100,000 steps (linear).
 

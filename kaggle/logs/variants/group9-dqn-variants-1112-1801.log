@@ -1,0 +1,174 @@
+[{"stream_name":"stdout","time":0.780183807,"data":"\n"}
+,{"stream_name":"stdout","time":0.780227102,"data":"$ nvidia-smi\n"}
+,{"stream_name":"stdout","time":0.817100642,"data":"Thu Nov 12 16:01:34 2026       \n"}
+,{"stream_name":"stdout","time":0.817127329,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":0.817132458,"data":"| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n"}
+,{"stream_name":"stdout","time":0.817136593,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":0.817140388,"data":"| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n"}
+,{"stream_name":"stdout","time":0.817143994,"data":"| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n"}
+,{"stream_name":"stdout","time":0.817148044,"data":"|                                         |                        |               MIG M. |\n"}
+,{"stream_name":"stdout","time":0.817152053,"data":"|=========================================+========================+======================|\n"}
+,{"stream_name":"stdout","time":0.875961688,"data":"|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":0.875983864,"data":"| N/A   62C    P8             11W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":0.875988732,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":0.875992275,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":0.875995886,"data":"|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":0.876001127,"data":"| N/A   52C    P8             10W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":0.876008808,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":0.876011195,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":0.876737678,"data":"\n"}
+,{"stream_name":"stdout","time":0.876750893,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":0.876755283,"data":"| Processes:                                                                              |\n"}
+,{"stream_name":"stdout","time":0.876759058,"data":"|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n"}
+,{"stream_name":"stdout","time":0.876762759,"data":"|        ID   ID                                                               Usage      |\n"}
+,{"stream_name":"stdout","time":0.87676629,"data":"|=========================================================================================|\n"}
+,{"stream_name":"stdout","time":0.878166391,"data":"|  No running processes found                                                             |\n"}
+,{"stream_name":"stdout","time":0.878177783,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":1.218424411,"data":"\n"}
+,{"stream_name":"stdout","time":1.218524024,"data":"$ nproc; free -g\n"}
+,{"stream_name":"stdout","time":1.225790844,"data":"4\n"}
+,{"stream_name":"stdout","time":1.3356833909999999,"data":"               total        used        free      shared  buff/cache   available\n"}
+,{"stream_name":"stdout","time":1.3357131789999999,"data":"Mem:              31           1          26           0           4          30\n"}
+,{"stream_name":"stdout","time":1.335720557,"data":"Swap:              0           0           0\n"}
+,{"stream_name":"stdout","time":1.337831246,"data":"\n"}
+,{"stream_name":"stdout","time":1.338340254,"data":"$ curl -LsSf https://astral.sh/uv/install.sh | sh\n"}
+,{"stream_name":"stderr","time":1.693652877,"data":"downloading uv 0.13.7 x86_64-unknown-linux-gnu\n"}
+,{"stream_name":"stdout","time":2.293876748,"data":"installing to /usr/local/bin\n"}
+,{"stream_name":"stdout","time":2.305788101,"data":"  uv\n"}
+,{"stream_name":"stdout","time":2.308023202,"data":"  uvx\n"}
+,{"stream_name":"stdout","time":2.314633018,"data":"everything's installed!\n"}
+,{"stream_name":"stdout","time":2.321502139,"data":"\n"}
+,{"stream_name":"stdout","time":2.321522631,"data":"$ git clone --depth 1 --branch main https://github.com/Hassan-Adelani-Luqman/group-9-atari-dqn.git /tmp/repo\n"}
+,{"stream_name":"stderr","time":2.345204396,"data":"Cloning into '/tmp/repo'...\n"}
+,{"stream_name":"stdout","time":2.8138919380000003,"data":"\n"}
+,{"stream_name":"stdout","time":2.81392081,"data":"$ uv sync --frozen\n"}
+,{"stream_name":"stderr","time":3.140763714,"data":"Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\n"}
+,{"stream_name":"stderr","time":3.140801015,"data":"Creating virtual environment at: .venv\n"}
+,{"stream_name":"stderr","time":3.264618633,"data":"Downloading networkx (2.0MiB)\n"}
+,{"stream_name":"stderr","time":3.265163788,"data":"Downloading kiwisolver (1.4MiB)\n"}
+,{"stream_name":"stderr","time":3.289840158,"data":"Downloading fonttools (5.2MiB)\n"}
+,{"stream_name":"stderr","time":3.290442289,"data":"Downloading sympy (6.0MiB)\n"}
+,{"stream_name":"stderr","time":3.291309503,"data":"Downloading matplotlib (9.4MiB)\n"}
+,{"stream_name":"stderr","time":3.2917684879999998,"data":"Downloading opencv-python-headless (58.4MiB)\n"}
+,{"stream_name":"stderr","time":3.29200793,"data":"Downloading numpy (16.0MiB)\n"}
+,{"stream_name":"stderr","time":3.292322882,"data":"Downloading imageio-ffmpeg (64.8MiB)\n"}
+,{"stream_name":"stderr","time":3.292610655,"data":"Downloading pillow (6.3MiB)\n"}
+,{"stream_name":"stderr","time":3.293055038,"data":"Downloading cuda-bindings (7.3MiB)\n"}
+,{"stream_name":"stderr","time":3.293412786,"data":"Downloading nvidia-cudnn-cu12 (674.0MiB)\n"}
+,{"stream_name":"stderr","time":3.29368314,"data":"Downloading nvidia-cuda-cupti-cu12 (8.5MiB)\n"}
+,{"stream_name":"stderr","time":3.2939871800000002,"data":"Downloading nvidia-cufft-cu12 (190.9MiB)\n"}
+,{"stream_name":"stderr","time":3.294229392,"data":"Downloading nvidia-cuda-nvrtc-cu12 (22.6MiB)\n"}
+,{"stream_name":"stderr","time":3.294605228,"data":"Downloading ale-py (3.0MiB)\n"}
+,{"stream_name":"stderr","time":3.295037455,"data":"Downloading nvidia-cufile-cu12 (1.1MiB)\n"}
+,{"stream_name":"stderr","time":3.295359396,"data":"Downloading nvidia-cusparse-cu12 (206.5MiB)\n"}
+,{"stream_name":"stderr","time":3.295786825,"data":"Downloading nvidia-cublas-cu12 (374.9MiB)\n"}
+,{"stream_name":"stderr","time":3.296118987,"data":"Downloading nvidia-nvjitlink-cu12 (37.9MiB)\n"}
+,{"stream_name":"stderr","time":3.296486995,"data":"Downloading nvidia-nvshmem-cu12 (132.7MiB)\n"}
+,{"stream_name":"stderr","time":3.2968019330000002,"data":"Downloading nvidia-nccl-cu12 (276.3MiB)\n"}
+,{"stream_name":"stderr","time":3.307448618,"data":"Downloading triton (236.5MiB)\n"}
+,{"stream_name":"stderr","time":3.3090695119999998,"data":"Downloading nvidia-curand-cu12 (53.7MiB)\n"}
+,{"stream_name":"stderr","time":3.309084374,"data":"Downloading nvidia-cusolver-cu12 (150.9MiB)\n"}
+,{"stream_name":"stderr","time":3.309677949,"data":"Downloading nvidia-cusparselt-cu12 (273.9MiB)\n"}
+,{"stream_name":"stderr","time":3.322584101,"data":"Downloading torch (828.9MiB)\n"}
+,{"stream_name":"stderr","time":3.797088257,"data":" Downloaded nvidia-cufile-cu12\n"}
+,{"stream_name":"stderr","time":3.901979393,"data":" Downloaded kiwisolver\n"}
+,{"stream_name":"stderr","time":4.079057675,"data":" Downloaded networkx\n"}
+,{"stream_name":"stderr","time":4.299998629,"data":" Downloaded ale-py\n"}
+,{"stream_name":"stderr","time":4.962295681,"data":" Downloaded fonttools\n"}
+,{"stream_name":"stderr","time":5.17106925,"data":" Downloaded sympy\n"}
+,{"stream_name":"stderr","time":5.229749538,"data":" Downloaded pillow\n"}
+,{"stream_name":"stderr","time":5.438500934,"data":" Downloaded cuda-bindings\n"}
+,{"stream_name":"stderr","time":5.67762986,"data":" Downloaded nvidia-cuda-cupti-cu12\n"}
+,{"stream_name":"stderr","time":5.84310176,"data":" Downloaded matplotlib\n"}
+,{"stream_name":"stderr","time":6.9971392340000005,"data":" Downloaded numpy\n"}
+,{"stream_name":"stderr","time":8.261248502,"data":" Downloaded nvidia-cuda-nvrtc-cu12\n"}
+,{"stream_name":"stderr","time":11.150200849,"data":" Downloaded nvidia-nvjitlink-cu12\n"}
+,{"stream_name":"stderr","time":13.841148995,"data":" Downloaded nvidia-curand-cu12\n"}
+,{"stream_name":"stderr","time":14.588299033,"data":" Downloaded opencv-python-headless\n"}
+,{"stream_name":"stderr","time":15.298902827,"data":" Downloaded imageio-ffmpeg\n"}
+,{"stream_name":"stderr","time":24.071832854,"data":" Downloaded nvidia-nvshmem-cu12\n"}
+,{"stream_name":"stderr","time":25.766425845,"data":" Downloaded nvidia-cusolver-cu12\n"}
+,{"stream_name":"stderr","time":29.584240368,"data":" Downloaded nvidia-cufft-cu12\n"}
+,{"stream_name":"stderr","time":30.98192623,"data":" Downloaded nvidia-cusparse-cu12\n"}
+,{"stream_name":"stderr","time":32.890827795,"data":" Downloaded triton\n"}
+,{"stream_name":"stderr","time":34.488734995,"data":" Downloaded nvidia-nccl-cu12\n"}
+,{"stream_name":"stderr","time":35.464301785,"data":" Downloaded nvidia-cusparselt-cu12\n"}
+,{"stream_name":"stderr","time":37.429526803,"data":" Downloaded nvidia-cublas-cu12\n"}
+,{"stream_name":"stderr","time":39.757085003,"data":" Downloaded torch\n"}
+,{"stream_name":"stderr","time":41.268522805,"data":" Downloaded nvidia-cudnn-cu12\n"}
+,{"stream_name":"stderr","time":43.941020128,"data":"Prepared 52 packages in 40.79s\n"}
+,{"stream_name":"stderr","time":44.724073702,"data":"Installed 52 packages in 782ms\n"}
+,{"stream_name":"stderr","time":44.724115783,"data":" + ale-py==0.12.1\n"}
+,{"stream_name":"stderr","time":44.724205941,"data":" + cloudpickle==3.1.2\n"}
+,{"stream_name":"stderr","time":44.724229706,"data":" + contourpy==1.4.0\n"}
+,{"stream_name":"stderr","time":44.724365788,"data":" + cuda-bindings==12.9.10\n"}
+,{"stream_name":"stderr","time":44.724418463,"data":" + cuda-pathfinder==1.8.6\n"}
+,{"stream_name":"stderr","time":44.724496377,"data":" + cuda-toolkit==12.6.3\n"}
+,{"stream_name":"stderr","time":44.724512757,"data":" + cycler==0.12.1\n"}
+,{"stream_name":"stderr","time":44.724646642,"data":" + decorator==5.3.1\n"}
+,{"stream_name":"stderr","time":44.72474683,"data":" + farama-notifications==0.0.6\n"}
+,{"stream_name":"stderr","time":44.724760648,"data":" + filelock==4.2.10\n"}
+,{"stream_name":"stderr","time":44.724792137,"data":" + fonttools==4.68.0\n"}
+,{"stream_name":"stderr","time":44.724848555,"data":" + fsspec==2026.9.0\n"}
+,{"stream_name":"stderr","time":44.724919415,"data":" + gymnasium==1.4.0\n"}
+,{"stream_name":"stderr","time":44.724975212,"data":" + imageio==2.38.1\n"}
+,{"stream_name":"stderr","time":44.725059683,"data":" + imageio-ffmpeg==0.8.1\n"}
+,{"stream_name":"stderr","time":44.72510459,"data":" + jinja2==3.1.6\n"}
+,{"stream_name":"stderr","time":44.725181083,"data":" + kiwisolver==1.5.1\n"}
+,{"stream_name":"stderr","time":44.72525873,"data":" + markupsafe==3.0.4\n"}
+,{"stream_name":"stderr","time":44.725294503,"data":" + matplotlib==3.11.2\n"}
+,{"stream_name":"stderr","time":44.725395382,"data":" + moviepy==2.2.1\n"}
+,{"stream_name":"stderr","time":44.725461999,"data":" + mpmath==1.3.0\n"}
+,{"stream_name":"stderr","time":44.725550621,"data":" + networkx==3.7\n"}
+,{"stream_name":"stderr","time":44.725616002,"data":" + numpy==2.5.4\n"}
+,{"stream_name":"stderr","time":44.725671807,"data":" + nvidia-cublas-cu12==12.6.4.1\n"}
+,{"stream_name":"stderr","time":44.725726628,"data":" + nvidia-cuda-cupti-cu12==12.6.80\n"}
+,{"stream_name":"stderr","time":44.725782898,"data":" + nvidia-cuda-nvrtc-cu12==12.6.85\n"}
+,{"stream_name":"stderr","time":44.725853604,"data":" + nvidia-cuda-runtime-cu12==12.6.77\n"}
+,{"stream_name":"stderr","time":44.725944204,"data":" + nvidia-cudnn-cu12==9.10.2.21\n"}
+,{"stream_name":"stderr","time":44.726016861,"data":" + nvidia-cufft-cu12==11.3.0.4\n"}
+,{"stream_name":"stderr","time":44.726101955,"data":" + nvidia-cufile-cu12==1.11.1.6\n"}
+,{"stream_name":"stderr","time":44.726167328,"data":" + nvidia-curand-cu12==10.3.7.77\n"}
+,{"stream_name":"stderr","time":44.726242598,"data":" + nvidia-cusolver-cu12==11.7.1.2\n"}
+,{"stream_name":"stderr","time":44.726365546,"data":" + nvidia-cusparse-cu12==12.5.4.2\n"}
+,{"stream_name":"stderr","time":44.726448424,"data":" + nvidia-cusparselt-cu12==0.7.1\n"}
+,{"stream_name":"stderr","time":44.726509181,"data":" + nvidia-nccl-cu12==2.29.3\n"}
+,{"stream_name":"stderr","time":44.726582362,"data":" + nvidia-nvjitlink-cu12==12.9.86\n"}
+,{"stream_name":"stderr","time":44.726726341,"data":" + nvidia-nvshmem-cu12==3.4.5\n"}
+,{"stream_name":"stderr","time":44.726735110999996,"data":" + nvidia-nvtx-cu12==12.6.77\n"}
+,{"stream_name":"stderr","time":44.726749334,"data":" + opencv-python-headless==5.0.0.93\n"}
+,{"stream_name":"stderr","time":44.726794471,"data":" + packaging==26.3\n"}
+,{"stream_name":"stderr","time":44.7268432,"data":" + pillow==11.3.0\n"}
+,{"stream_name":"stderr","time":44.726910552,"data":" + proglog==0.1.12\n"}
+,{"stream_name":"stderr","time":44.726955738,"data":" + pyparsing==3.3.3\n"}
+,{"stream_name":"stderr","time":44.727015203,"data":" + python-dateutil==4.0.0\n"}
+,{"stream_name":"stderr","time":44.727063758,"data":" + python-dotenv==1.2.4\n"}
+,{"stream_name":"stderr","time":44.727223633,"data":" + setuptools==84.2.1\n"}
+,{"stream_name":"stderr","time":44.727240107,"data":" + sympy==1.14.0\n"}
+,{"stream_name":"stderr","time":44.727279645,"data":" + torch==2.14.1+cu126\n"}
+,{"stream_name":"stderr","time":44.727332031,"data":" + tqdm==4.70.1\n"}
+,{"stream_name":"stderr","time":44.727405738,"data":" + triton==3.8.0\n"}
+,{"stream_name":"stderr","time":44.727458538,"data":" + typing-extensions==4.16.0\n"}
+,{"stream_name":"stderr","time":44.727522535,"data":" + tzdata==2026.6\n"}
+,{"stream_name":"stdout","time":44.734887222,"data":"\n"}
+,{"stream_name":"stdout","time":44.734915837,"data":"$ uv run python -c \"import torch; assert torch.cuda.is_available(), 'No GPU'; print('GPU:', torch.cuda.get_device_name(0))\"\n"}
+,{"stream_name":"stdout","time":53.111202547,"data":"GPU: Tesla T4\n"}
+,{"stream_name":"stdout","time":53.574966891,"data":"\n"}
+,{"stream_name":"stdout","time":53.574999578,"data":"$ sed 's/^REPLAY_CAPACITY = 50_000/REPLAY_CAPACITY = 10_000/' train.py \u003e train_r10k.py \u0026\u0026 grep -n '^REPLAY_CAPACITY' train_r10k.py\n"}
+,{"stream_name":"stdout","time":53.579100279,"data":"38:REPLAY_CAPACITY = 10_000     # number of transitions kept in the replay buffer\n"}
+,{"stream_name":"stdout","time":53.579626177,"data":"\n"}
+,{"stream_name":"stdout","time":53.579647132,"data":"$ uv run train_r10k.py --member test --exp 11 --seed 1 --eps-decay 150000 --total-steps 500000  \u003e logs/exp11.log\n"}
+,{"stream_name":"stdout","time":53.580414349,"data":"\n"}
+,{"stream_name":"stdout","time":53.580433884,"data":"$ uv run train.py --member test --exp 12 --seed 2 --total-steps 500000  \u003e logs/exp12.log\n"}
+,{"stream_name":"stdout","time":53.580947438,"data":"\n"}
+,{"stream_name":"stdout","time":53.580958692,"data":"$ uv run train_r10k.py --member test --exp 13 --seed 1 --total-steps 500000  \u003e logs/exp13.log\n"}
+,{"stream_name":"stdout","time":5113.770162915,"data":"exp11 exited with 0\n"}
+,{"stream_name":"stdout","time":5263.462932799,"data":"exp12 exited with 0\n"}
+,{"stream_name":"stdout","time":5263.462982871,"data":"exp13 exited with 0\n"}
+,{"stream_name":"stderr","time":5265.899743177,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":5265.89977347,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":5266.273511508,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":5266.273537964,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":5268.354950198,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":5269.409171158,"data":"[NbConvertApp] Writing 281932 bytes to __results__.html\n"}
+]
