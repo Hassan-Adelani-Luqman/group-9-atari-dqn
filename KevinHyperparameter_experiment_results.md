@@ -1,0 +1,40 @@
+# Hyperparameter experiment results
+
+**Member Name:** Kevin Mbonimpaye
+
+**Focus:** ε-greedy exploration — how long epsilon decays, where it stops, and where it starts. Each experiment changes only these from the group baseline; all other settings stay the same.
+
+| Experiment | Learning rate | Gamma | Batch size | Epsilon start | Epsilon end | Epsilon decay | Observed behaviour |
+|---|---|---|---|---|---|---|---|
+| 1 | 1e-4 | 0.99 | 32 | 1.0 | 0.01 | 100,000 steps (linear) | **Baseline.** Final mean-20 reward −11.3 (also its best, at 298k). Started improving at ~86k steps, but never passed 0: −15.9 at 150k, −14.8 at 250k, −11.3 at the end. Still rising slowly at 300k, so it was learning, just not fast enough to win a game. The loss fell steadily (0.0029 at 100k to 0.0014 at the end), which confirms the network was healthy — exploration, not optimisation, was the limit. |
+| 2 | 1e-4 | 0.99 | 32 | 1.0 | 0.01 | **25,000 steps** (linear) | Final mean-20 reward −14.3 (best −13.8 at 258k). **Worst run.** Started improving only at ~119k, the latest of all nine. Epsilon hits 0.01 at 25k, which is just 15k steps after learning even begins, so the agent commits to a policy built from almost no experience. It then keeps playing that weak policy, so the replay buffer fills with very similar frames and the agent has no way to find better moves. Barely improved after 250k. |
+| 3 | 1e-4 | 0.99 | 32 | 1.0 | 0.01 | **50,000 steps** (linear) | Final mean-20 reward −0.85 (also its best, at 299k). Started improving at ~81k and climbed steadily all the way: −16.7 at 150k, −12.0 at 200k, −6.1 at 250k, −0.85 at 300k. Still clearly rising at the end. Much better than both the 25k run and the baseline, which shows how noisy single runs are at this budget — 50k and 100k decay are close enough that the gap here is mostly luck. |
+| 4 | 1e-4 | 0.99 | 32 | 1.0 | 0.01 | **200,000 steps** (linear) | Final mean-20 reward **+13.0** (also its best, at 298k). Started improving at ~87k, passed 0 at 260k, then climbed very steeply: −5.5 at 250k to +13.0 at 300k. A long decay keeps feeding varied experience into the buffer, so when epsilon finally gets small the agent has something good to exploit. Episode length also dropped (from ~4,400 steps at worst to ~1,800 at the end): it was winning points quickly instead of drawing out rallies. |
+| 5 | 1e-4 | 0.99 | 32 | 1.0 | 0.01 | **250,000 steps** (linear) | Final mean-20 reward **+17.15** (also its best, at 300k) — **the highest score of my nine runs**. Started improving at ~89k, passed 0 at 264k and +15 at 291k, and was still rising when training stopped. It looks slow for most of the run (−16.6 at 200k, behind several others) and only takes off in the last 50k steps, once epsilon is finally small. The most episodes of any run (198), so the longest exploration gave the agent the most varied experience to learn from. |
+| 6 | 1e-4 | 0.99 | 32 | 1.0 | **0.1** | 100,000 steps (linear) | Final mean-20 reward −5.5 (also its best, at 298k). Started improving earliest of all runs (~73k), but then flattened out between 150k and 250k (−16.1 to −14.5) before a late climb. Keeping 10% random actions forever is the cost: in Pong one badly timed random move loses the point, so even a good policy keeps throwing points away. The loss stayed high (0.0025 at the end, against 0.0010 for the best runs) because the constant random actions keep feeding the network surprising transitions. |
+| 7 | 1e-4 | 0.99 | 32 | 1.0 | **0.05** | 100,000 steps (linear) | Final mean-20 reward **+16.45** (also its best, at 299k). **The fastest learner by far**, and ahead of every other run at every checkpoint: −14.1 at 150k (next best −15.5), −2.1 at 200k, +11.0 at 250k. Passed 0 at 208k, **52k steps earlier than any other run**, and +15 at 283k. 5% random actions is enough to keep discovering new states without throwing away many points — the sweet spot between exp 6 (too random) and exp 8 (too greedy). |
+| 8 | 1e-4 | 0.99 | 32 | 1.0 | **0.001** | 100,000 steps (linear) | Final mean-20 reward −5.3 (also its best, at 299k). Started improving at ~84k and climbed steadily but slowly, reaching only −8.7 by 250k. Almost no random actions after 100k, so the agent only ever sees states its current policy visits, and it stops finding new ways to return the ball. Loss ended at 0.0025, as high as exp 6 but for the opposite reason: it never got good enough for its predictions to settle. |
+| 9 | 1e-4 | 0.99 | 32 | **0.5** | 0.01 | 100,000 steps (linear) | Final mean-20 reward −2.5 (also its best, at 298k). Starting at 50% random rather than 100% means less early variety, and it shows: the worst scores of any run through 150k (−18.5, when others were at −15 to −16). It recovered later (−10.5 at 250k, −2.5 at 300k). Because epsilon still reaches 0.01 at 100k, the decay is effectively half as steep, which partly makes up for the weaker start. Not harmful overall, but no benefit either — the first 100k steps are mostly filling the buffer anyway. |
+
+## Best, worst and final choice
+
+- **Best overall score:** exp 5 (decay over 250k steps), final mean-20 of **+17.15**. Exp 7 (final epsilon 0.05) was second at +16.45.
+- **Best learner:** exp 7. It led at every checkpoint and passed 0 at 208k steps, against 260k–264k for exps 4 and 5. If training had stopped at 250k, exp 7 would have won by 18 points. Exp 5 only overtook it in the last 10k steps.
+- **Worst:** exp 2 (decay over 25k steps), −14.3. Going greedy after 25k steps locks the agent into a policy learned from almost nothing, and it never recovers within 300k steps.
+- **What epsilon decay length does:** this is the biggest effect I found. The two longest decays (200k and 250k) were the only runs to pass 0, and the shortest (25k) was the worst run. Longer exploration costs score early on and pays it back later, because the replay buffer ends up holding much more varied experience. The ordering is not perfectly clean — 50k beat 100k here — so only the large gaps are meaningful.
+- **What final epsilon does:** 0.05 was clearly best. 0.1 keeps enough randomness to lose points on purpose forever; 0.001 and 0.01 go too greedy and stop discovering. The range that matters is narrow, and the effect is as large as the decay length.
+- **What epsilon start does:** little effect. Starting at 0.5 instead of 1.0 hurt early and evened out later, because the first 100k steps are dominated by filling the replay buffer either way.
+- **Final choice:** decay over **250,000 steps** with a final epsilon of **0.05** (exp 10). This combines the highest-scoring setting with the fastest-learning one. Both of my top runs were still rising at 300k, so I expect this to pass +18 given the same budget, and more with a longer one.
+
+## How to read the table
+
+- **Fixed settings in every run:**
+  - environment `ALE/Pong-v5`, 300,000 steps, seed 3
+  - learning rate 1e-4, gamma 0.99, batch size 32
+  - replay buffer of 50,000 transitions, learning starts after 10,000 steps
+  - target network copied every 1,000 steps
+  - Adam optimiser (ε = 1.5e-4), Huber loss, gradient clipping at 10
+- **Mean-20 reward:** the average reward of the last 20 games. A game's reward runs from −21 (lost every point) to +21 (won every point). "Started improving" is the first step where the mean-20 rose above −19.
+- **Results for each run:** `experiments/Kevin/expNN/`. Each folder holds `training_plots.png` (reward, episode length and steps per episode), `training_log.csv` (one row per game), `config.json` and the saved model `dqn_model.pth`.
+- **Where they ran:** all nine on one Kaggle T4 job, 4h 26m in total. Full log: `kaggle/logs/group9-dqn-kevin-1113-1636.log`.
+- **Run-to-run variation:** GPU training is not exactly repeatable, and 300k steps is short for Pong. **No run of mine collapsed and every run was still improving at 300k**, so these numbers measure how *fast* each setting learns, not the best it could ever reach. Differences of a few points (exps 1, 6, 8, 9 all sit between −11 and −2.5) are not meaningful; the large gaps — exp 2 at −14.3 against exps 5 and 7 above +16 — are.
