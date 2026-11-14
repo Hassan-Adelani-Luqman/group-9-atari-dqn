@@ -1,0 +1,1706 @@
+
+$ nvidia-smi
+Fri Nov 13 16:36:57 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |
+| N/A   55C    P8             11W /   70W |       0MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |
+| N/A   56C    P8             10W /   70W |       0MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+$ curl -LsSf https://astral.sh/uv/install.sh | sh
+downloading uv 0.13.8 x86_64-unknown-linux-gnu
+installing to /usr/local/bin
+  uv
+  uvx
+everything's installed!
+
+$ rm -rf /tmp/repo && git clone --depth 1 --branch v1-experiments https://github.com/Hassan-Adelani-Luqman/group-9-atari-dqn.git /tmp/repo
+Cloning into '/tmp/repo'...
+
+$ uv sync --frozen
+Note: switching to '65544b1d53527747821b885c936d4f93d312d2ac'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Using CPython 3.12.3 interpreter at: /usr/bin/python3.12
+Creating virtual environment at: .venv
+Downloading torch (828.9MiB)
+Downloading networkx (2.0MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading imageio-ffmpeg (64.8MiB)
+Downloading opencv-python-headless (58.4MiB)
+Downloading nvidia-cuda-cupti-cu12 (8.5MiB)
+Downloading matplotlib (9.4MiB)
+Downloading numpy (16.0MiB)
+Downloading nvidia-cusparse-cu12 (206.5MiB)
+Downloading nvidia-cusparselt-cu12 (273.9MiB)
+Downloading nvidia-nccl-cu12 (276.3MiB)
+Downloading pillow (6.3MiB)
+Downloading triton (236.5MiB)
+Downloading nvidia-nvshmem-cu12 (132.7MiB)
+Downloading ale-py (3.0MiB)
+Downloading nvidia-cusolver-cu12 (150.9MiB)
+Downloading nvidia-cufft-cu12 (190.9MiB)
+Downloading fonttools (5.2MiB)
+Downloading nvidia-curand-cu12 (53.7MiB)
+Downloading nvidia-cufile-cu12 (1.1MiB)
+Downloading sympy (6.0MiB)
+Downloading nvidia-cuda-nvrtc-cu12 (22.6MiB)
+Downloading nvidia-nvjitlink-cu12 (37.9MiB)
+Downloading nvidia-cublas-cu12 (374.9MiB)
+Downloading nvidia-cudnn-cu12 (674.0MiB)
+Downloading cuda-bindings (7.3MiB)
+ Downloaded nvidia-cufile-cu12
+ Downloaded kiwisolver
+ Downloaded networkx
+ Downloaded ale-py
+ Downloaded fonttools
+ Downloaded sympy
+ Downloaded pillow
+ Downloaded cuda-bindings
+ Downloaded nvidia-cuda-cupti-cu12
+ Downloaded matplotlib
+ Downloaded numpy
+ Downloaded torch
+ Downloaded nvidia-cuda-nvrtc-cu12
+ Downloaded nvidia-nvjitlink-cu12
+ Downloaded nvidia-curand-cu12
+ Downloaded opencv-python-headless
+ Downloaded imageio-ffmpeg
+ Downloaded nvidia-nvshmem-cu12
+ Downloaded nvidia-cusolver-cu12
+ Downloaded nvidia-cufft-cu12
+ Downloaded nvidia-cusparse-cu12
+ Downloaded triton
+ Downloaded nvidia-cusparselt-cu12
+ Downloaded nvidia-nccl-cu12
+ Downloaded nvidia-cublas-cu12
+ Downloaded nvidia-cudnn-cu12
+Prepared 52 packages in 3m 05s
+
+$ uv run python -c "import torch; assert torch.cuda.is_available(), 'No GPU'; print('GPU:', torch.cuda.get_device_name(0))"
+Installed 52 packages in 346ms
+ + ale-py==0.12.1
+ + cloudpickle==3.1.2
+ + contourpy==1.4.0
+ + cuda-bindings==12.9.10
+ + cuda-pathfinder==1.8.6
+ + cuda-toolkit==12.6.3
+ + cycler==0.12.1
+ + decorator==5.3.1
+ + farama-notifications==0.0.6
+ + filelock==4.2.10
+ + fonttools==4.68.0
+ + fsspec==2026.9.0
+ + gymnasium==1.4.0
+ + imageio==2.38.1
+ + imageio-ffmpeg==0.8.1
+ + jinja2==3.1.6
+ + kiwisolver==1.5.1
+ + markupsafe==3.0.4
+ + matplotlib==3.11.2
+ + moviepy==2.2.1
+ + mpmath==1.3.0
+ + networkx==3.7
+ + numpy==2.5.4
+ + nvidia-cublas-cu12==12.6.4.1
+ + nvidia-cuda-cupti-cu12==12.6.80
+ + nvidia-cuda-nvrtc-cu12==12.6.85
+ + nvidia-cuda-runtime-cu12==12.6.77
+ + nvidia-cudnn-cu12==9.10.2.21
+ + nvidia-cufft-cu12==11.3.0.4
+ + nvidia-cufile-cu12==1.11.1.6
+ + nvidia-curand-cu12==10.3.7.77
+ + nvidia-cusolver-cu12==11.7.1.2
+ + nvidia-cusparse-cu12==12.5.4.2
+ + nvidia-cusparselt-cu12==0.7.1
+ + nvidia-nccl-cu12==2.29.3
+ + nvidia-nvjitlink-cu12==12.9.86
+ + nvidia-nvshmem-cu12==3.4.5
+ + nvidia-nvtx-cu12==12.6.77
+ + opencv-python-headless==5.0.0.93
+ + packaging==26.3
+ + pillow==11.3.0
+ + proglog==0.1.12
+ + pyparsing==3.3.3
+ + python-dateutil==4.0.0
+ + python-dotenv==1.2.4
+ + setuptools==84.2.1
+ + sympy==1.14.0
+ + torch==2.14.1+cu126
+ + tqdm==4.70.1
+ + triton==3.8.0
+ + typing-extensions==4.16.0
+ + tzdata==2026.6
+GPU: Tesla T4
+
+Running 9 experiment(s) for Kevin: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+$ uv run train.py --member Kevin --exp 1 --seed 3                     # baseline
+Training on cuda, saving to experiments/Kevin/exp01
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step     975 | reward   -20 | length   975 | mean20 -20.00 | eps 0.990 | 914 steps/s
+Episode    2 | step    1978 | reward   -20 | length  1003 | mean20 -20.00 | eps 0.980 | 1037 steps/s
+Episode    3 | step    2955 | reward   -19 | length   977 | mean20 -19.67 | eps 0.971 | 1071 steps/s
+Episode    4 | step    3808 | reward   -21 | length   853 | mean20 -20.00 | eps 0.962 | 1086 steps/s
+Episode    5 | step    4769 | reward   -19 | length   961 | mean20 -19.80 | eps 0.953 | 1100 steps/s
+Episode    6 | step    5529 | reward   -21 | length   760 | mean20 -20.00 | eps 0.945 | 1103 steps/s
+Episode    7 | step    6376 | reward   -21 | length   847 | mean20 -20.14 | eps 0.937 | 1106 steps/s
+Episode    8 | step    7137 | reward   -21 | length   761 | mean20 -20.25 | eps 0.929 | 1107 steps/s
+Episode    9 | step    7899 | reward   -21 | length   762 | mean20 -20.33 | eps 0.922 | 1108 steps/s
+Episode   10 | step    8753 | reward   -20 | length   854 | mean20 -20.30 | eps 0.913 | 1110 steps/s
+Episode   11 | step    9692 | reward   -21 | length   939 | mean20 -20.36 | eps 0.904 | 1104 steps/s
+Episode   12 | step   10986 | reward   -19 | length  1294 | mean20 -20.25 | eps 0.891 | 742 steps/s
+Episode   13 | step   11864 | reward   -21 | length   878 | mean20 -20.31 | eps 0.883 | 603 steps/s
+Episode   14 | step   12680 | reward   -21 | length   816 | mean20 -20.36 | eps 0.874 | 524 steps/s
+Episode   15 | step   13762 | reward   -19 | length  1082 | mean20 -20.27 | eps 0.864 | 456 steps/s
+Episode   16 | step   14748 | reward   -20 | length   986 | mean20 -20.25 | eps 0.854 | 414 steps/s
+Episode   17 | step   15512 | reward   -21 | length   764 | mean20 -20.29 | eps 0.846 | 389 steps/s
+Episode   18 | step   16501 | reward   -20 | length   989 | mean20 -20.28 | eps 0.837 | 364 steps/s
+Episode   19 | step   17351 | reward   -21 | length   850 | mean20 -20.32 | eps 0.828 | 347 steps/s
+Episode   20 | step   18202 | reward   -21 | length   851 | mean20 -20.35 | eps 0.820 | 332 steps/s
+Episode   21 | step   19058 | reward   -21 | length   856 | mean20 -20.40 | eps 0.811 | 320 steps/s
+Episode   22 | step   19995 | reward   -19 | length   937 | mean20 -20.35 | eps 0.802 | 308 steps/s
+Episode   23 | step   20988 | reward   -20 | length   993 | mean20 -20.40 | eps 0.792 | 298 steps/s
+Episode   24 | step   22012 | reward   -19 | length  1024 | mean20 -20.30 | eps 0.782 | 289 steps/s
+Episode   25 | step   23211 | reward   -19 | length  1199 | mean20 -20.30 | eps 0.770 | 280 steps/s
+Episode   26 | step   24088 | reward   -21 | length   877 | mean20 -20.30 | eps 0.762 | 274 steps/s
+Episode   27 | step   25050 | reward   -20 | length   962 | mean20 -20.25 | eps 0.752 | 268 steps/s
+Episode   28 | step   25811 | reward   -21 | length   761 | mean20 -20.25 | eps 0.744 | 264 steps/s
+Episode   29 | step   26810 | reward   -21 | length   999 | mean20 -20.25 | eps 0.735 | 260 steps/s
+Episode   30 | step   27632 | reward   -21 | length   822 | mean20 -20.30 | eps 0.726 | 256 steps/s
+Episode   31 | step   28733 | reward   -20 | length  1101 | mean20 -20.25 | eps 0.716 | 251 steps/s
+Episode   32 | step   29704 | reward   -21 | length   971 | mean20 -20.35 | eps 0.706 | 248 steps/s
+Episode   33 | step   30467 | reward   -21 | length   763 | mean20 -20.35 | eps 0.698 | 245 steps/s
+Episode   34 | step   31470 | reward   -20 | length  1003 | mean20 -20.30 | eps 0.688 | 242 steps/s
+Episode   35 | step   32937 | reward   -17 | length  1467 | mean20 -20.20 | eps 0.674 | 238 steps/s
+Episode   36 | step   33903 | reward   -21 | length   966 | mean20 -20.25 | eps 0.664 | 235 steps/s
+Episode   37 | step   34903 | reward   -21 | length  1000 | mean20 -20.25 | eps 0.654 | 233 steps/s
+Episode   38 | step   35886 | reward   -20 | length   983 | mean20 -20.25 | eps 0.645 | 231 steps/s
+Episode   39 | step   36692 | reward   -21 | length   806 | mean20 -20.25 | eps 0.637 | 229 steps/s
+Episode   40 | step   37775 | reward   -19 | length  1083 | mean20 -20.15 | eps 0.626 | 227 steps/s
+Episode   41 | step   38659 | reward   -21 | length   884 | mean20 -20.15 | eps 0.617 | 226 steps/s
+Episode   42 | step   39721 | reward   -20 | length  1062 | mean20 -20.20 | eps 0.607 | 224 steps/s
+Episode   43 | step   40544 | reward   -21 | length   823 | mean20 -20.25 | eps 0.599 | 223 steps/s
+Episode   44 | step   41581 | reward   -20 | length  1037 | mean20 -20.30 | eps 0.588 | 221 steps/s
+Episode   45 | step   42541 | reward   -21 | length   960 | mean20 -20.40 | eps 0.579 | 220 steps/s
+Episode   46 | step   43408 | reward   -20 | length   867 | mean20 -20.35 | eps 0.570 | 219 steps/s
+Episode   47 | step   44271 | reward   -20 | length   863 | mean20 -20.35 | eps 0.562 | 218 steps/s
+Episode   48 | step   45173 | reward   -20 | length   902 | mean20 -20.30 | eps 0.553 | 217 steps/s
+Episode   49 | step   46282 | reward   -20 | length  1109 | mean20 -20.25 | eps 0.542 | 216 steps/s
+Episode   50 | step   47105 | reward   -21 | length   823 | mean20 -20.25 | eps 0.534 | 215 steps/s
+Episode   51 | step   47936 | reward   -20 | length   831 | mean20 -20.25 | eps 0.525 | 214 steps/s
+Episode   52 | step   48759 | reward   -21 | length   823 | mean20 -20.25 | eps 0.517 | 213 steps/s
+Episode   53 | step   49658 | reward   -21 | length   899 | mean20 -20.25 | eps 0.508 | 213 steps/s
+Episode   54 | step   50636 | reward   -19 | length   978 | mean20 -20.20 | eps 0.499 | 212 steps/s
+Episode   55 | step   51654 | reward   -21 | length  1018 | mean20 -20.40 | eps 0.489 | 211 steps/s
+Episode   56 | step   52472 | reward   -21 | length   818 | mean20 -20.40 | eps 0.481 | 210 steps/s
+Episode   57 | step   53316 | reward   -21 | length   844 | mean20 -20.40 | eps 0.472 | 209 steps/s
+Episode   58 | step   54228 | reward   -21 | length   912 | mean20 -20.45 | eps 0.463 | 209 steps/s
+Episode   59 | step   55052 | reward   -21 | length   824 | mean20 -20.45 | eps 0.455 | 208 steps/s
+Episode   60 | step   55937 | reward   -21 | length   885 | mean20 -20.55 | eps 0.446 | 208 steps/s
+Episode   61 | step   56785 | reward   -21 | length   848 | mean20 -20.55 | eps 0.438 | 207 steps/s
+Episode   62 | step   57800 | reward   -19 | length  1015 | mean20 -20.50 | eps 0.428 | 206 steps/s
+Episode   63 | step   58891 | reward   -21 | length  1091 | mean20 -20.50 | eps 0.417 | 206 steps/s
+Episode   64 | step   59774 | reward   -21 | length   883 | mean20 -20.55 | eps 0.408 | 205 steps/s
+Episode   65 | step   60770 | reward   -20 | length   996 | mean20 -20.50 | eps 0.398 | 204 steps/s
+Episode   66 | step   61868 | reward   -20 | length  1098 | mean20 -20.50 | eps 0.388 | 204 steps/s
+Episode   67 | step   63184 | reward   -21 | length  1316 | mean20 -20.55 | eps 0.374 | 203 steps/s
+Episode   68 | step   64682 | reward   -19 | length  1498 | mean20 -20.50 | eps 0.360 | 202 steps/s
+Episode   69 | step   66118 | reward   -19 | length  1436 | mean20 -20.45 | eps 0.345 | 201 steps/s
+Episode   70 | step   67536 | reward   -18 | length  1418 | mean20 -20.30 | eps 0.331 | 201 steps/s
+Episode   71 | step   68784 | reward   -19 | length  1248 | mean20 -20.25 | eps 0.319 | 200 steps/s
+Episode   72 | step   70194 | reward   -18 | length  1410 | mean20 -20.10 | eps 0.305 | 199 steps/s
+Episode   73 | step   71854 | reward   -18 | length  1660 | mean20 -19.95 | eps 0.289 | 199 steps/s
+Episode   74 | step   73576 | reward   -17 | length  1722 | mean20 -19.85 | eps 0.272 | 198 steps/s
+Episode   75 | step   74973 | reward   -19 | length  1397 | mean20 -19.75 | eps 0.258 | 197 steps/s
+Episode   76 | step   76611 | reward   -18 | length  1638 | mean20 -19.60 | eps 0.242 | 197 steps/s
+Episode   77 | step   78131 | reward   -20 | length  1520 | mean20 -19.55 | eps 0.227 | 196 steps/s
+Episode   78 | step   79752 | reward   -16 | length  1621 | mean20 -19.30 | eps 0.210 | 195 steps/s
+Episode   79 | step   81318 | reward   -20 | length  1566 | mean20 -19.25 | eps 0.195 | 195 steps/s
+Episode   80 | step   82782 | reward   -19 | length  1464 | mean20 -19.15 | eps 0.180 | 194 steps/s
+Episode   81 | step   84371 | reward   -21 | length  1589 | mean20 -19.15 | eps 0.165 | 194 steps/s
+Episode   82 | step   86417 | reward   -15 | length  2046 | mean20 -18.95 | eps 0.144 | 193 steps/s
+Episode   83 | step   88346 | reward   -19 | length  1929 | mean20 -18.85 | eps 0.125 | 192 steps/s
+Episode   84 | step   90057 | reward   -21 | length  1711 | mean20 -18.85 | eps 0.108 | 192 steps/s
+Episode   85 | step   91985 | reward   -19 | length  1928 | mean20 -18.80 | eps 0.089 | 191 steps/s
+Episode   86 | step   93880 | reward   -20 | length  1895 | mean20 -18.80 | eps 0.071 | 191 steps/s
+Episode   87 | step   96065 | reward   -21 | length  2185 | mean20 -18.80 | eps 0.049 | 190 steps/s
+Episode   88 | step   98478 | reward   -15 | length  2413 | mean20 -18.60 | eps 0.025 | 189 steps/s
+Episode   89 | step  100441 | reward   -17 | length  1963 | mean20 -18.50 | eps 0.010 | 189 steps/s
+Episode   90 | step  102621 | reward   -19 | length  2180 | mean20 -18.55 | eps 0.010 | 188 steps/s
+Episode   91 | step  104964 | reward   -18 | length  2343 | mean20 -18.50 | eps 0.010 | 188 steps/s
+Episode   92 | step  107490 | reward   -15 | length  2526 | mean20 -18.35 | eps 0.010 | 187 steps/s
+Episode   93 | step  110541 | reward   -14 | length  3051 | mean20 -18.15 | eps 0.010 | 186 steps/s
+Episode   94 | step  112832 | reward   -18 | length  2291 | mean20 -18.20 | eps 0.010 | 186 steps/s
+Episode   95 | step  116043 | reward   -12 | length  3211 | mean20 -17.85 | eps 0.010 | 185 steps/s
+Episode   96 | step  117910 | reward   -17 | length  1867 | mean20 -17.80 | eps 0.010 | 185 steps/s
+Episode   97 | step  120591 | reward   -18 | length  2681 | mean20 -17.70 | eps 0.010 | 184 steps/s
+Episode   98 | step  122453 | reward   -19 | length  1862 | mean20 -17.85 | eps 0.010 | 184 steps/s
+Episode   99 | step  125278 | reward   -14 | length  2825 | mean20 -17.55 | eps 0.010 | 184 steps/s
+Episode  100 | step  128228 | reward   -16 | length  2950 | mean20 -17.40 | eps 0.010 | 183 steps/s
+Episode  101 | step  130864 | reward   -14 | length  2636 | mean20 -17.05 | eps 0.010 | 183 steps/s
+Episode  102 | step  135153 | reward    -9 | length  4289 | mean20 -16.75 | eps 0.010 | 182 steps/s
+Episode  103 | step  138060 | reward   -14 | length  2907 | mean20 -16.50 | eps 0.010 | 182 steps/s
+Episode  104 | step  140820 | reward   -16 | length  2760 | mean20 -16.25 | eps 0.010 | 181 steps/s
+Episode  105 | step  143481 | reward   -19 | length  2661 | mean20 -16.25 | eps 0.010 | 181 steps/s
+Episode  106 | step  146703 | reward   -15 | length  3222 | mean20 -16.00 | eps 0.010 | 181 steps/s
+Episode  107 | step  149192 | reward   -19 | length  2489 | mean20 -15.90 | eps 0.010 | 180 steps/s
+Episode  108 | step  151879 | reward   -19 | length  2687 | mean20 -16.10 | eps 0.010 | 180 steps/s
+Episode  109 | step  155968 | reward    -7 | length  4089 | mean20 -15.60 | eps 0.010 | 180 steps/s
+Episode  110 | step  159194 | reward   -16 | length  3226 | mean20 -15.45 | eps 0.010 | 180 steps/s
+Episode  111 | step  162657 | reward   -17 | length  3463 | mean20 -15.40 | eps 0.010 | 179 steps/s
+Episode  112 | step  165471 | reward   -17 | length  2814 | mean20 -15.50 | eps 0.010 | 179 steps/s
+Episode  113 | step  167814 | reward   -19 | length  2343 | mean20 -15.75 | eps 0.010 | 179 steps/s
+Episode  114 | step  170517 | reward   -15 | length  2703 | mean20 -15.60 | eps 0.010 | 179 steps/s
+Episode  115 | step  173806 | reward   -17 | length  3289 | mean20 -15.85 | eps 0.010 | 178 steps/s
+Episode  116 | step  177780 | reward   -16 | length  3974 | mean20 -15.80 | eps 0.010 | 178 steps/s
+Episode  117 | step  181116 | reward   -16 | length  3336 | mean20 -15.70 | eps 0.010 | 178 steps/s
+Episode  118 | step  183871 | reward   -21 | length  2755 | mean20 -15.80 | eps 0.010 | 178 steps/s
+Episode  119 | step  186441 | reward   -19 | length  2570 | mean20 -16.05 | eps 0.010 | 177 steps/s
+Episode  120 | step  189784 | reward   -14 | length  3343 | mean20 -15.95 | eps 0.010 | 177 steps/s
+Episode  121 | step  192874 | reward   -17 | length  3090 | mean20 -16.10 | eps 0.010 | 177 steps/s
+Episode  122 | step  196382 | reward   -15 | length  3508 | mean20 -16.40 | eps 0.010 | 177 steps/s
+Episode  123 | step  199403 | reward   -18 | length  3021 | mean20 -16.60 | eps 0.010 | 177 steps/s
+Episode  124 | step  202246 | reward   -17 | length  2843 | mean20 -16.65 | eps 0.010 | 177 steps/s
+Episode  125 | step  205992 | reward   -12 | length  3746 | mean20 -16.30 | eps 0.010 | 176 steps/s
+Episode  126 | step  209778 | reward   -12 | length  3786 | mean20 -16.15 | eps 0.010 | 176 steps/s
+Episode  127 | step  213811 | reward   -12 | length  4033 | mean20 -15.80 | eps 0.010 | 176 steps/s
+Episode  128 | step  216783 | reward   -15 | length  2972 | mean20 -15.60 | eps 0.010 | 175 steps/s
+Episode  129 | step  220528 | reward   -15 | length  3745 | mean20 -16.00 | eps 0.010 | 175 steps/s
+Episode  130 | step  225314 | reward    -7 | length  4786 | mean20 -15.55 | eps 0.010 | 175 steps/s
+Episode  131 | step  229207 | reward   -13 | length  3893 | mean20 -15.35 | eps 0.010 | 175 steps/s
+Episode  132 | step  233008 | reward   -16 | length  3801 | mean20 -15.30 | eps 0.010 | 175 steps/s
+Episode  133 | step  236574 | reward   -15 | length  3566 | mean20 -15.10 | eps 0.010 | 174 steps/s
+Episode  134 | step  240496 | reward   -13 | length  3922 | mean20 -15.00 | eps 0.010 | 174 steps/s
+Episode  135 | step  243495 | reward   -17 | length  2999 | mean20 -15.00 | eps 0.010 | 174 steps/s
+Episode  136 | step  247697 | reward   -11 | length  4202 | mean20 -14.75 | eps 0.010 | 174 steps/s
+Episode  137 | step  251421 | reward   -10 | length  3724 | mean20 -14.45 | eps 0.010 | 174 steps/s
+Episode  138 | step  255074 | reward   -14 | length  3653 | mean20 -14.10 | eps 0.010 | 174 steps/s
+Episode  139 | step  258884 | reward   -16 | length  3810 | mean20 -13.95 | eps 0.010 | 173 steps/s
+Episode  140 | step  262426 | reward   -18 | length  3542 | mean20 -14.15 | eps 0.010 | 173 steps/s
+Episode  141 | step  266113 | reward   -13 | length  3687 | mean20 -13.95 | eps 0.010 | 173 steps/s
+Episode  142 | step  270050 | reward   -12 | length  3937 | mean20 -13.80 | eps 0.010 | 173 steps/s
+Episode  143 | step  274345 | reward   -14 | length  4295 | mean20 -13.60 | eps 0.010 | 173 steps/s
+Episode  144 | step  279593 | reward    +2 | length  5248 | mean20 -12.65 | eps 0.010 | 173 steps/s
+Episode  145 | step  284449 | reward    -5 | length  4856 | mean20 -12.30 | eps 0.010 | 172 steps/s
+Episode  146 | step  289742 | reward    -3 | length  5293 | mean20 -11.85 | eps 0.010 | 172 steps/s
+Episode  147 | step  293882 | reward    -5 | length  4140 | mean20 -11.50 | eps 0.010 | 172 steps/s
+Episode  148 | step  297622 | reward   -11 | length  3740 | mean20 -11.30 | eps 0.010 | 172 steps/s
+Done. Best mean20 reward: -11.30. Model saved to experiments/Kevin/exp01/dqn_model.pth
+
+$ uv run train.py --member Kevin --exp 2 --seed 3 --eps-decay 25000   # stop exploring early
+Training on cuda, saving to experiments/Kevin/exp02
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step     846 | reward   -21 | length   846 | mean20 -21.00 | eps 0.966 | 872 steps/s
+Episode    2 | step    1764 | reward   -20 | length   918 | mean20 -20.50 | eps 0.930 | 1010 steps/s
+Episode    3 | step    2648 | reward   -21 | length   884 | mean20 -20.67 | eps 0.895 | 1046 steps/s
+Episode    4 | step    3531 | reward   -21 | length   883 | mean20 -20.75 | eps 0.860 | 1060 steps/s
+Episode    5 | step    4291 | reward   -21 | length   760 | mean20 -20.80 | eps 0.830 | 1065 steps/s
+Episode    6 | step    5129 | reward   -21 | length   838 | mean20 -20.83 | eps 0.797 | 1063 steps/s
+Episode    7 | step    5886 | reward   -21 | length   757 | mean20 -20.86 | eps 0.767 | 1060 steps/s
+Episode    8 | step    6647 | reward   -21 | length   761 | mean20 -20.88 | eps 0.737 | 1055 steps/s
+Episode    9 | step    7409 | reward   -21 | length   762 | mean20 -20.89 | eps 0.707 | 1046 steps/s
+Episode   10 | step    8167 | reward   -21 | length   758 | mean20 -20.90 | eps 0.677 | 1037 steps/s
+Episode   11 | step    8928 | reward   -21 | length   761 | mean20 -20.91 | eps 0.646 | 1024 steps/s
+Episode   12 | step    9687 | reward   -21 | length   759 | mean20 -20.92 | eps 0.616 | 1016 steps/s
+Episode   13 | step   10505 | reward   -21 | length   818 | mean20 -20.92 | eps 0.584 | 805 steps/s
+Episode   14 | step   11321 | reward   -21 | length   816 | mean20 -20.93 | eps 0.552 | 639 steps/s
+Episode   15 | step   12216 | reward   -20 | length   895 | mean20 -20.87 | eps 0.516 | 533 steps/s
+Episode   16 | step   13053 | reward   -20 | length   837 | mean20 -20.81 | eps 0.483 | 471 steps/s
+Episode   17 | step   13817 | reward   -21 | length   764 | mean20 -20.82 | eps 0.453 | 430 steps/s
+Episode   18 | step   14580 | reward   -21 | length   763 | mean20 -20.83 | eps 0.423 | 400 steps/s
+Episode   19 | step   15417 | reward   -20 | length   837 | mean20 -20.79 | eps 0.389 | 373 steps/s
+Episode   20 | step   16180 | reward   -21 | length   763 | mean20 -20.80 | eps 0.359 | 353 steps/s
+Episode   21 | step   16999 | reward   -21 | length   819 | mean20 -20.80 | eps 0.327 | 336 steps/s
+Episode   22 | step   17986 | reward   -20 | length   987 | mean20 -20.80 | eps 0.288 | 319 steps/s
+Episode   23 | step   18809 | reward   -21 | length   823 | mean20 -20.80 | eps 0.255 | 307 steps/s
+Episode   24 | step   19663 | reward   -20 | length   854 | mean20 -20.75 | eps 0.221 | 297 steps/s
+Episode   25 | step   20424 | reward   -21 | length   761 | mean20 -20.75 | eps 0.191 | 289 steps/s
+Episode   26 | step   21301 | reward   -21 | length   877 | mean20 -20.75 | eps 0.156 | 281 steps/s
+Episode   27 | step   22171 | reward   -20 | length   870 | mean20 -20.70 | eps 0.122 | 274 steps/s
+Episode   28 | step   23005 | reward   -20 | length   834 | mean20 -20.65 | eps 0.089 | 268 steps/s
+Episode   29 | step   23858 | reward   -20 | length   853 | mean20 -20.60 | eps 0.055 | 262 steps/s
+Episode   30 | step   24700 | reward   -21 | length   842 | mean20 -20.60 | eps 0.022 | 257 steps/s
+Episode   31 | step   25541 | reward   -20 | length   841 | mean20 -20.55 | eps 0.010 | 253 steps/s
+Episode   32 | step   26430 | reward   -20 | length   889 | mean20 -20.50 | eps 0.010 | 248 steps/s
+Episode   33 | step   27327 | reward   -21 | length   897 | mean20 -20.50 | eps 0.010 | 244 steps/s
+Episode   34 | step   28179 | reward   -21 | length   852 | mean20 -20.50 | eps 0.010 | 241 steps/s
+Episode   35 | step   28943 | reward   -21 | length   764 | mean20 -20.55 | eps 0.010 | 238 steps/s
+Episode   36 | step   29782 | reward   -21 | length   839 | mean20 -20.60 | eps 0.010 | 235 steps/s
+Episode   37 | step   30662 | reward   -21 | length   880 | mean20 -20.60 | eps 0.010 | 232 steps/s
+Episode   38 | step   31535 | reward   -21 | length   873 | mean20 -20.60 | eps 0.010 | 229 steps/s
+Episode   39 | step   32610 | reward   -21 | length  1075 | mean20 -20.65 | eps 0.010 | 226 steps/s
+Episode   40 | step   33430 | reward   -21 | length   820 | mean20 -20.65 | eps 0.010 | 224 steps/s
+Episode   41 | step   34343 | reward   -21 | length   913 | mean20 -20.65 | eps 0.010 | 222 steps/s
+Episode   42 | step   35327 | reward   -20 | length   984 | mean20 -20.65 | eps 0.010 | 220 steps/s
+Episode   43 | step   36170 | reward   -21 | length   843 | mean20 -20.65 | eps 0.010 | 219 steps/s
+Episode   44 | step   36984 | reward   -21 | length   814 | mean20 -20.70 | eps 0.010 | 217 steps/s
+Episode   45 | step   37912 | reward   -20 | length   928 | mean20 -20.65 | eps 0.010 | 215 steps/s
+Episode   46 | step   38903 | reward   -20 | length   991 | mean20 -20.60 | eps 0.010 | 213 steps/s
+Episode   47 | step   39963 | reward   -19 | length  1060 | mean20 -20.55 | eps 0.010 | 211 steps/s
+Episode   48 | step   40789 | reward   -21 | length   826 | mean20 -20.60 | eps 0.010 | 210 steps/s
+Episode   49 | step   41856 | reward   -21 | length  1067 | mean20 -20.65 | eps 0.010 | 209 steps/s
+Episode   50 | step   43138 | reward   -20 | length  1282 | mean20 -20.60 | eps 0.010 | 207 steps/s
+Episode   51 | step   44393 | reward   -20 | length  1255 | mean20 -20.60 | eps 0.010 | 205 steps/s
+Episode   52 | step   45723 | reward   -19 | length  1330 | mean20 -20.55 | eps 0.010 | 204 steps/s
+Episode   53 | step   46581 | reward   -21 | length   858 | mean20 -20.55 | eps 0.010 | 203 steps/s
+Episode   54 | step   47885 | reward   -21 | length  1304 | mean20 -20.55 | eps 0.010 | 202 steps/s
+Episode   55 | step   49246 | reward   -21 | length  1361 | mean20 -20.55 | eps 0.010 | 200 steps/s
+Episode   56 | step   50465 | reward   -21 | length  1219 | mean20 -20.55 | eps 0.010 | 199 steps/s
+Episode   57 | step   51288 | reward   -21 | length   823 | mean20 -20.55 | eps 0.010 | 199 steps/s
+Episode   58 | step   52348 | reward   -20 | length  1060 | mean20 -20.50 | eps 0.010 | 198 steps/s
+Episode   59 | step   53712 | reward   -21 | length  1364 | mean20 -20.50 | eps 0.010 | 197 steps/s
+Episode   60 | step   54626 | reward   -21 | length   914 | mean20 -20.50 | eps 0.010 | 196 steps/s
+Episode   61 | step   55594 | reward   -21 | length   968 | mean20 -20.50 | eps 0.010 | 196 steps/s
+Episode   62 | step   57400 | reward   -20 | length  1806 | mean20 -20.50 | eps 0.010 | 194 steps/s
+Episode   63 | step   58449 | reward   -21 | length  1049 | mean20 -20.50 | eps 0.010 | 194 steps/s
+Episode   64 | step   59542 | reward   -21 | length  1093 | mean20 -20.50 | eps 0.010 | 193 steps/s
+Episode   65 | step   61444 | reward   -21 | length  1902 | mean20 -20.55 | eps 0.010 | 192 steps/s
+Episode   66 | step   62474 | reward   -21 | length  1030 | mean20 -20.60 | eps 0.010 | 191 steps/s
+Episode   67 | step   63787 | reward   -20 | length  1313 | mean20 -20.65 | eps 0.010 | 191 steps/s
+Episode   68 | step   65091 | reward   -18 | length  1304 | mean20 -20.50 | eps 0.010 | 190 steps/s
+Episode   69 | step   66638 | reward   -20 | length  1547 | mean20 -20.45 | eps 0.010 | 189 steps/s
+Episode   70 | step   68169 | reward   -20 | length  1531 | mean20 -20.45 | eps 0.010 | 189 steps/s
+Episode   71 | step   69734 | reward   -20 | length  1565 | mean20 -20.45 | eps 0.010 | 188 steps/s
+Episode   72 | step   71057 | reward   -21 | length  1323 | mean20 -20.55 | eps 0.010 | 188 steps/s
+Episode   73 | step   73049 | reward   -19 | length  1992 | mean20 -20.45 | eps 0.010 | 187 steps/s
+Episode   74 | step   75057 | reward   -21 | length  2008 | mean20 -20.45 | eps 0.010 | 186 steps/s
+Episode   75 | step   76457 | reward   -20 | length  1400 | mean20 -20.40 | eps 0.010 | 186 steps/s
+Episode   76 | step   77828 | reward   -20 | length  1371 | mean20 -20.35 | eps 0.010 | 185 steps/s
+Episode   77 | step   79361 | reward   -20 | length  1533 | mean20 -20.30 | eps 0.010 | 184 steps/s
+Episode   78 | step   80736 | reward   -20 | length  1375 | mean20 -20.30 | eps 0.010 | 184 steps/s
+Episode   79 | step   82219 | reward   -18 | length  1483 | mean20 -20.15 | eps 0.010 | 183 steps/s
+Episode   80 | step   83318 | reward   -20 | length  1099 | mean20 -20.10 | eps 0.010 | 183 steps/s
+Episode   81 | step   84625 | reward   -20 | length  1307 | mean20 -20.05 | eps 0.010 | 183 steps/s
+Episode   82 | step   85859 | reward   -19 | length  1234 | mean20 -20.00 | eps 0.010 | 182 steps/s
+Episode   83 | step   87500 | reward   -20 | length  1641 | mean20 -19.95 | eps 0.010 | 182 steps/s
+Episode   84 | step   89023 | reward   -20 | length  1523 | mean20 -19.90 | eps 0.010 | 181 steps/s
+Episode   85 | step   90552 | reward   -18 | length  1529 | mean20 -19.75 | eps 0.010 | 181 steps/s
+Episode   86 | step   92922 | reward   -17 | length  2370 | mean20 -19.55 | eps 0.010 | 180 steps/s
+Episode   87 | step   94780 | reward   -21 | length  1858 | mean20 -19.60 | eps 0.010 | 180 steps/s
+Episode   88 | step   96579 | reward   -21 | length  1799 | mean20 -19.75 | eps 0.010 | 180 steps/s
+Episode   89 | step   98866 | reward   -18 | length  2287 | mean20 -19.65 | eps 0.010 | 179 steps/s
+Episode   90 | step  100774 | reward   -16 | length  1908 | mean20 -19.45 | eps 0.010 | 179 steps/s
+Episode   91 | step  103004 | reward   -18 | length  2230 | mean20 -19.35 | eps 0.010 | 179 steps/s
+Episode   92 | step  104836 | reward   -19 | length  1832 | mean20 -19.25 | eps 0.010 | 178 steps/s
+Episode   93 | step  106705 | reward   -21 | length  1869 | mean20 -19.35 | eps 0.010 | 178 steps/s
+Episode   94 | step  107833 | reward   -20 | length  1128 | mean20 -19.30 | eps 0.010 | 178 steps/s
+Episode   95 | step  109274 | reward   -19 | length  1441 | mean20 -19.25 | eps 0.010 | 178 steps/s
+Episode   96 | step  110985 | reward   -18 | length  1711 | mean20 -19.15 | eps 0.010 | 177 steps/s
+Episode   97 | step  112970 | reward   -20 | length  1985 | mean20 -19.15 | eps 0.010 | 177 steps/s
+Episode   98 | step  115010 | reward   -20 | length  2040 | mean20 -19.15 | eps 0.010 | 177 steps/s
+Episode   99 | step  116788 | reward   -17 | length  1778 | mean20 -19.10 | eps 0.010 | 177 steps/s
+Episode  100 | step  119141 | reward   -16 | length  2353 | mean20 -18.90 | eps 0.010 | 177 steps/s
+Episode  101 | step  121588 | reward   -13 | length  2447 | mean20 -18.55 | eps 0.010 | 176 steps/s
+Episode  102 | step  123446 | reward   -18 | length  1858 | mean20 -18.50 | eps 0.010 | 176 steps/s
+Episode  103 | step  125706 | reward   -19 | length  2260 | mean20 -18.45 | eps 0.010 | 176 steps/s
+Episode  104 | step  127528 | reward   -17 | length  1822 | mean20 -18.30 | eps 0.010 | 176 steps/s
+Episode  105 | step  129302 | reward   -20 | length  1774 | mean20 -18.40 | eps 0.010 | 176 steps/s
+Episode  106 | step  131306 | reward   -20 | length  2004 | mean20 -18.55 | eps 0.010 | 175 steps/s
+Episode  107 | step  133515 | reward   -19 | length  2209 | mean20 -18.45 | eps 0.010 | 175 steps/s
+Episode  108 | step  136225 | reward   -16 | length  2710 | mean20 -18.20 | eps 0.010 | 175 steps/s
+Episode  109 | step  139020 | reward   -17 | length  2795 | mean20 -18.15 | eps 0.010 | 175 steps/s
+Episode  110 | step  141377 | reward   -19 | length  2357 | mean20 -18.30 | eps 0.010 | 175 steps/s
+Episode  111 | step  144054 | reward   -14 | length  2677 | mean20 -18.10 | eps 0.010 | 175 steps/s
+Episode  112 | step  146911 | reward   -15 | length  2857 | mean20 -17.90 | eps 0.010 | 174 steps/s
+Episode  113 | step  149559 | reward   -19 | length  2648 | mean20 -17.80 | eps 0.010 | 174 steps/s
+Episode  114 | step  151914 | reward   -18 | length  2355 | mean20 -17.70 | eps 0.010 | 174 steps/s
+Episode  115 | step  154225 | reward   -17 | length  2311 | mean20 -17.60 | eps 0.010 | 174 steps/s
+Episode  116 | step  157137 | reward   -17 | length  2912 | mean20 -17.55 | eps 0.010 | 174 steps/s
+Episode  117 | step  159783 | reward   -16 | length  2646 | mean20 -17.35 | eps 0.010 | 174 steps/s
+Episode  118 | step  162947 | reward   -14 | length  3164 | mean20 -17.05 | eps 0.010 | 174 steps/s
+Episode  119 | step  166012 | reward   -16 | length  3065 | mean20 -17.00 | eps 0.010 | 173 steps/s
+Episode  120 | step  168114 | reward   -19 | length  2102 | mean20 -17.15 | eps 0.010 | 173 steps/s
+Episode  121 | step  170768 | reward   -14 | length  2654 | mean20 -17.20 | eps 0.010 | 173 steps/s
+Episode  122 | step  173314 | reward   -13 | length  2546 | mean20 -16.95 | eps 0.010 | 173 steps/s
+Episode  123 | step  175665 | reward   -15 | length  2351 | mean20 -16.75 | eps 0.010 | 173 steps/s
+Episode  124 | step  178041 | reward   -16 | length  2376 | mean20 -16.70 | eps 0.010 | 173 steps/s
+Episode  125 | step  180703 | reward   -15 | length  2662 | mean20 -16.45 | eps 0.010 | 173 steps/s
+Episode  126 | step  183021 | reward   -17 | length  2318 | mean20 -16.30 | eps 0.010 | 173 steps/s
+Episode  127 | step  185691 | reward   -14 | length  2670 | mean20 -16.05 | eps 0.010 | 173 steps/s
+Episode  128 | step  188146 | reward   -15 | length  2455 | mean20 -16.00 | eps 0.010 | 173 steps/s
+Episode  129 | step  191183 | reward   -15 | length  3037 | mean20 -15.90 | eps 0.010 | 172 steps/s
+Episode  130 | step  194171 | reward   -16 | length  2988 | mean20 -15.75 | eps 0.010 | 172 steps/s
+Episode  131 | step  197280 | reward   -15 | length  3109 | mean20 -15.80 | eps 0.010 | 172 steps/s
+Episode  132 | step  200565 | reward    -9 | length  3285 | mean20 -15.50 | eps 0.010 | 172 steps/s
+Episode  133 | step  203882 | reward   -14 | length  3317 | mean20 -15.25 | eps 0.010 | 172 steps/s
+Episode  134 | step  207116 | reward   -14 | length  3234 | mean20 -15.05 | eps 0.010 | 172 steps/s
+Episode  135 | step  209894 | reward   -14 | length  2778 | mean20 -14.90 | eps 0.010 | 172 steps/s
+Episode  136 | step  212806 | reward   -13 | length  2912 | mean20 -14.70 | eps 0.010 | 172 steps/s
+Episode  137 | step  215927 | reward   -12 | length  3121 | mean20 -14.50 | eps 0.010 | 172 steps/s
+Episode  138 | step  219510 | reward   -11 | length  3583 | mean20 -14.35 | eps 0.010 | 171 steps/s
+Episode  139 | step  222652 | reward   -15 | length  3142 | mean20 -14.30 | eps 0.010 | 171 steps/s
+Episode  140 | step  225569 | reward   -13 | length  2917 | mean20 -14.00 | eps 0.010 | 171 steps/s
+Episode  141 | step  228736 | reward   -13 | length  3167 | mean20 -13.95 | eps 0.010 | 171 steps/s
+Episode  142 | step  231858 | reward   -17 | length  3122 | mean20 -14.15 | eps 0.010 | 171 steps/s
+Episode  143 | step  235258 | reward   -14 | length  3400 | mean20 -14.10 | eps 0.010 | 171 steps/s
+Episode  144 | step  238698 | reward   -18 | length  3440 | mean20 -14.20 | eps 0.010 | 171 steps/s
+Episode  145 | step  241841 | reward   -18 | length  3143 | mean20 -14.35 | eps 0.010 | 171 steps/s
+Episode  146 | step  244741 | reward   -16 | length  2900 | mean20 -14.30 | eps 0.010 | 171 steps/s
+Episode  147 | step  247948 | reward    -9 | length  3207 | mean20 -14.05 | eps 0.010 | 171 steps/s
+Episode  148 | step  251007 | reward   -15 | length  3059 | mean20 -14.05 | eps 0.010 | 170 steps/s
+Episode  149 | step  254711 | reward   -13 | length  3704 | mean20 -13.95 | eps 0.010 | 170 steps/s
+Episode  150 | step  258335 | reward   -13 | length  3624 | mean20 -13.80 | eps 0.010 | 170 steps/s
+Episode  151 | step  261009 | reward   -16 | length  2674 | mean20 -13.85 | eps 0.010 | 170 steps/s
+Episode  152 | step  264385 | reward   -12 | length  3376 | mean20 -14.00 | eps 0.010 | 170 steps/s
+Episode  153 | step  267534 | reward   -15 | length  3149 | mean20 -14.05 | eps 0.010 | 170 steps/s
+Episode  154 | step  271194 | reward   -15 | length  3660 | mean20 -14.10 | eps 0.010 | 170 steps/s
+Episode  155 | step  275473 | reward   -12 | length  4279 | mean20 -14.00 | eps 0.010 | 170 steps/s
+Episode  156 | step  279287 | reward   -15 | length  3814 | mean20 -14.10 | eps 0.010 | 170 steps/s
+Episode  157 | step  281963 | reward   -15 | length  2676 | mean20 -14.25 | eps 0.010 | 170 steps/s
+Episode  158 | step  285186 | reward   -14 | length  3223 | mean20 -14.40 | eps 0.010 | 169 steps/s
+Episode  159 | step  288453 | reward   -13 | length  3267 | mean20 -14.30 | eps 0.010 | 169 steps/s
+Episode  160 | step  291706 | reward   -17 | length  3253 | mean20 -14.50 | eps 0.010 | 169 steps/s
+Episode  161 | step  294831 | reward   -11 | length  3125 | mean20 -14.40 | eps 0.010 | 169 steps/s
+Episode  162 | step  297313 | reward   -15 | length  2482 | mean20 -14.30 | eps 0.010 | 169 steps/s
+Done. Best mean20 reward: -13.80. Model saved to experiments/Kevin/exp02/dqn_model.pth
+
+$ uv run train.py --member Kevin --exp 3 --seed 3 --eps-decay 50000
+Training on cuda, saving to experiments/Kevin/exp03
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step     848 | reward   -21 | length   848 | mean20 -21.00 | eps 0.983 | 838 steps/s
+Episode    2 | step    1687 | reward   -21 | length   839 | mean20 -21.00 | eps 0.967 | 964 steps/s
+Episode    3 | step    2578 | reward   -20 | length   891 | mean20 -20.67 | eps 0.949 | 1023 steps/s
+Episode    4 | step    3552 | reward   -21 | length   974 | mean20 -20.75 | eps 0.930 | 1052 steps/s
+Episode    5 | step    4340 | reward   -21 | length   788 | mean20 -20.80 | eps 0.914 | 1065 steps/s
+Episode    6 | step    5100 | reward   -21 | length   760 | mean20 -20.83 | eps 0.899 | 1071 steps/s
+Episode    7 | step    5857 | reward   -21 | length   757 | mean20 -20.86 | eps 0.884 | 1073 steps/s
+Episode    8 | step    6691 | reward   -20 | length   834 | mean20 -20.75 | eps 0.868 | 1073 steps/s
+Episode    9 | step    7453 | reward   -21 | length   762 | mean20 -20.78 | eps 0.852 | 1072 steps/s
+Episode   10 | step    8211 | reward   -21 | length   758 | mean20 -20.80 | eps 0.837 | 1068 steps/s
+Episode   11 | step    8972 | reward   -21 | length   761 | mean20 -20.82 | eps 0.822 | 1065 steps/s
+Episode   12 | step    9731 | reward   -21 | length   759 | mean20 -20.83 | eps 0.807 | 1062 steps/s
+Episode   13 | step   10590 | reward   -20 | length   859 | mean20 -20.77 | eps 0.790 | 810 steps/s
+Episode   14 | step   11368 | reward   -21 | length   778 | mean20 -20.79 | eps 0.775 | 651 steps/s
+Episode   15 | step   12371 | reward   -20 | length  1003 | mean20 -20.73 | eps 0.755 | 535 steps/s
+Episode   16 | step   13420 | reward   -20 | length  1049 | mean20 -20.69 | eps 0.734 | 463 steps/s
+Episode   17 | step   14246 | reward   -21 | length   826 | mean20 -20.71 | eps 0.718 | 425 steps/s
+Episode   18 | step   15182 | reward   -19 | length   936 | mean20 -20.61 | eps 0.699 | 392 steps/s
+Episode   19 | step   16061 | reward   -21 | length   879 | mean20 -20.63 | eps 0.682 | 367 steps/s
+Episode   20 | step   16843 | reward   -21 | length   782 | mean20 -20.65 | eps 0.667 | 350 steps/s
+Episode   21 | step   17826 | reward   -20 | length   983 | mean20 -20.60 | eps 0.647 | 332 steps/s
+Episode   22 | step   18710 | reward   -21 | length   884 | mean20 -20.60 | eps 0.630 | 318 steps/s
+Episode   23 | step   19521 | reward   -21 | length   811 | mean20 -20.65 | eps 0.613 | 308 steps/s
+Episode   24 | step   20604 | reward   -20 | length  1083 | mean20 -20.60 | eps 0.592 | 297 steps/s
+Episode   25 | step   21446 | reward   -21 | length   842 | mean20 -20.60 | eps 0.575 | 289 steps/s
+Episode   26 | step   22378 | reward   -21 | length   932 | mean20 -20.60 | eps 0.557 | 282 steps/s
+Episode   27 | step   23360 | reward   -20 | length   982 | mean20 -20.55 | eps 0.537 | 275 steps/s
+Episode   28 | step   24421 | reward   -21 | length  1061 | mean20 -20.60 | eps 0.516 | 268 steps/s
+Episode   29 | step   25316 | reward   -20 | length   895 | mean20 -20.55 | eps 0.499 | 264 steps/s
+Episode   30 | step   26260 | reward   -21 | length   944 | mean20 -20.55 | eps 0.480 | 259 steps/s
+Episode   31 | step   27102 | reward   -21 | length   842 | mean20 -20.55 | eps 0.463 | 256 steps/s
+Episode   32 | step   27994 | reward   -20 | length   892 | mean20 -20.50 | eps 0.446 | 252 steps/s
+Episode   33 | step   29132 | reward   -18 | length  1138 | mean20 -20.40 | eps 0.423 | 248 steps/s
+Episode   34 | step   30013 | reward   -21 | length   881 | mean20 -20.40 | eps 0.406 | 245 steps/s
+Episode   35 | step   30944 | reward   -21 | length   931 | mean20 -20.45 | eps 0.387 | 242 steps/s
+Episode   36 | step   31997 | reward   -21 | length  1053 | mean20 -20.50 | eps 0.366 | 239 steps/s
+Episode   37 | step   32803 | reward   -21 | length   806 | mean20 -20.50 | eps 0.351 | 237 steps/s
+Episode   38 | step   33807 | reward   -20 | length  1004 | mean20 -20.55 | eps 0.331 | 235 steps/s
+Episode   39 | step   35082 | reward   -19 | length  1275 | mean20 -20.45 | eps 0.305 | 232 steps/s
+Episode   40 | step   36259 | reward   -19 | length  1177 | mean20 -20.35 | eps 0.282 | 229 steps/s
+Episode   41 | step   37095 | reward   -20 | length   836 | mean20 -20.35 | eps 0.266 | 228 steps/s
+Episode   42 | step   37913 | reward   -21 | length   818 | mean20 -20.35 | eps 0.249 | 226 steps/s
+Episode   43 | step   38755 | reward   -21 | length   842 | mean20 -20.35 | eps 0.233 | 225 steps/s
+Episode   44 | step   39741 | reward   -21 | length   986 | mean20 -20.40 | eps 0.213 | 223 steps/s
+Episode   45 | step   40841 | reward   -19 | length  1100 | mean20 -20.30 | eps 0.191 | 221 steps/s
+Episode   46 | step   41712 | reward   -21 | length   871 | mean20 -20.30 | eps 0.174 | 220 steps/s
+Episode   47 | step   42669 | reward   -21 | length   957 | mean20 -20.35 | eps 0.155 | 218 steps/s
+Episode   48 | step   43452 | reward   -21 | length   783 | mean20 -20.35 | eps 0.140 | 217 steps/s
+Episode   49 | step   44374 | reward   -21 | length   922 | mean20 -20.40 | eps 0.121 | 216 steps/s
+Episode   50 | step   45155 | reward   -21 | length   781 | mean20 -20.40 | eps 0.106 | 215 steps/s
+Episode   51 | step   46266 | reward   -19 | length  1111 | mean20 -20.30 | eps 0.084 | 214 steps/s
+Episode   52 | step   47158 | reward   -20 | length   892 | mean20 -20.30 | eps 0.066 | 213 steps/s
+Episode   53 | step   48277 | reward   -19 | length  1119 | mean20 -20.35 | eps 0.044 | 212 steps/s
+Episode   54 | step   49267 | reward   -20 | length   990 | mean20 -20.30 | eps 0.025 | 211 steps/s
+Episode   55 | step   50304 | reward   -19 | length  1037 | mean20 -20.20 | eps 0.010 | 210 steps/s
+Episode   56 | step   51169 | reward   -20 | length   865 | mean20 -20.15 | eps 0.010 | 209 steps/s
+Episode   57 | step   52126 | reward   -20 | length   957 | mean20 -20.10 | eps 0.010 | 208 steps/s
+Episode   58 | step   52947 | reward   -21 | length   821 | mean20 -20.15 | eps 0.010 | 207 steps/s
+Episode   59 | step   53984 | reward   -19 | length  1037 | mean20 -20.15 | eps 0.010 | 206 steps/s
+Episode   60 | step   55225 | reward   -16 | length  1241 | mean20 -20.00 | eps 0.010 | 205 steps/s
+Episode   61 | step   56166 | reward   -21 | length   941 | mean20 -20.05 | eps 0.010 | 204 steps/s
+Episode   62 | step   57157 | reward   -19 | length   991 | mean20 -19.95 | eps 0.010 | 203 steps/s
+Episode   63 | step   58152 | reward   -19 | length   995 | mean20 -19.85 | eps 0.010 | 202 steps/s
+Episode   64 | step   59197 | reward   -20 | length  1045 | mean20 -19.80 | eps 0.010 | 202 steps/s
+Episode   65 | step   60600 | reward   -18 | length  1403 | mean20 -19.75 | eps 0.010 | 201 steps/s
+Episode   66 | step   61957 | reward   -20 | length  1357 | mean20 -19.70 | eps 0.010 | 200 steps/s
+Episode   67 | step   63081 | reward   -20 | length  1124 | mean20 -19.65 | eps 0.010 | 199 steps/s
+Episode   68 | step   64171 | reward   -20 | length  1090 | mean20 -19.60 | eps 0.010 | 198 steps/s
+Episode   69 | step   65485 | reward   -20 | length  1314 | mean20 -19.55 | eps 0.010 | 198 steps/s
+Episode   70 | step   66614 | reward   -20 | length  1129 | mean20 -19.50 | eps 0.010 | 197 steps/s
+Episode   71 | step   68284 | reward   -17 | length  1670 | mean20 -19.40 | eps 0.010 | 196 steps/s
+Episode   72 | step   69844 | reward   -20 | length  1560 | mean20 -19.40 | eps 0.010 | 195 steps/s
+Episode   73 | step   71556 | reward   -17 | length  1712 | mean20 -19.30 | eps 0.010 | 195 steps/s
+Episode   74 | step   73279 | reward   -21 | length  1723 | mean20 -19.35 | eps 0.010 | 194 steps/s
+Episode   75 | step   74810 | reward   -19 | length  1531 | mean20 -19.35 | eps 0.010 | 193 steps/s
+Episode   76 | step   76275 | reward   -19 | length  1465 | mean20 -19.30 | eps 0.010 | 193 steps/s
+Episode   77 | step   78379 | reward   -15 | length  2104 | mean20 -19.05 | eps 0.010 | 192 steps/s
+Episode   78 | step   80650 | reward   -19 | length  2271 | mean20 -18.95 | eps 0.010 | 191 steps/s
+Episode   79 | step   82784 | reward   -15 | length  2134 | mean20 -18.75 | eps 0.010 | 191 steps/s
+Episode   80 | step   85003 | reward   -19 | length  2219 | mean20 -18.90 | eps 0.010 | 190 steps/s
+Episode   81 | step   87094 | reward   -19 | length  2091 | mean20 -18.80 | eps 0.010 | 189 steps/s
+Episode   82 | step   89377 | reward   -15 | length  2283 | mean20 -18.60 | eps 0.010 | 189 steps/s
+Episode   83 | step   91861 | reward   -16 | length  2484 | mean20 -18.45 | eps 0.010 | 188 steps/s
+Episode   84 | step   93855 | reward   -20 | length  1994 | mean20 -18.45 | eps 0.010 | 188 steps/s
+Episode   85 | step   96462 | reward   -16 | length  2607 | mean20 -18.35 | eps 0.010 | 187 steps/s
+Episode   86 | step   97651 | reward   -21 | length  1189 | mean20 -18.40 | eps 0.010 | 187 steps/s
+Episode   87 | step  100173 | reward   -19 | length  2522 | mean20 -18.35 | eps 0.010 | 186 steps/s
+Episode   88 | step  101571 | reward   -21 | length  1398 | mean20 -18.40 | eps 0.010 | 186 steps/s
+Episode   89 | step  103830 | reward   -19 | length  2259 | mean20 -18.35 | eps 0.010 | 185 steps/s
+Episode   90 | step  107458 | reward   -13 | length  3628 | mean20 -18.00 | eps 0.010 | 185 steps/s
+Episode   91 | step  110322 | reward   -10 | length  2864 | mean20 -17.65 | eps 0.010 | 184 steps/s
+Episode   92 | step  112662 | reward   -16 | length  2340 | mean20 -17.45 | eps 0.010 | 184 steps/s
+Episode   93 | step  115969 | reward   -15 | length  3307 | mean20 -17.35 | eps 0.010 | 183 steps/s
+Episode   94 | step  119121 | reward   -15 | length  3152 | mean20 -17.05 | eps 0.010 | 183 steps/s
+Episode   95 | step  123207 | reward   -10 | length  4086 | mean20 -16.60 | eps 0.010 | 182 steps/s
+Episode   96 | step  125634 | reward   -16 | length  2427 | mean20 -16.45 | eps 0.010 | 182 steps/s
+Episode   97 | step  128319 | reward   -17 | length  2685 | mean20 -16.55 | eps 0.010 | 181 steps/s
+Episode   98 | step  131020 | reward   -19 | length  2701 | mean20 -16.55 | eps 0.010 | 181 steps/s
+Episode   99 | step  134346 | reward   -17 | length  3326 | mean20 -16.65 | eps 0.010 | 181 steps/s
+Episode  100 | step  136595 | reward   -20 | length  2249 | mean20 -16.70 | eps 0.010 | 181 steps/s
+Episode  101 | step  138932 | reward   -18 | length  2337 | mean20 -16.65 | eps 0.010 | 180 steps/s
+Episode  102 | step  141468 | reward   -19 | length  2536 | mean20 -16.85 | eps 0.010 | 180 steps/s
+Episode  103 | step  143826 | reward   -17 | length  2358 | mean20 -16.90 | eps 0.010 | 180 steps/s
+Episode  104 | step  146743 | reward   -16 | length  2917 | mean20 -16.70 | eps 0.010 | 180 steps/s
+Episode  105 | step  149812 | reward   -15 | length  3069 | mean20 -16.65 | eps 0.010 | 179 steps/s
+Episode  106 | step  153090 | reward   -10 | length  3278 | mean20 -16.10 | eps 0.010 | 179 steps/s
+Episode  107 | step  156485 | reward   -13 | length  3395 | mean20 -15.80 | eps 0.010 | 179 steps/s
+Episode  108 | step  159583 | reward   -17 | length  3098 | mean20 -15.60 | eps 0.010 | 178 steps/s
+Episode  109 | step  163047 | reward    -8 | length  3464 | mean20 -15.05 | eps 0.010 | 178 steps/s
+Episode  110 | step  166555 | reward    -9 | length  3508 | mean20 -14.85 | eps 0.010 | 178 steps/s
+Episode  111 | step  170145 | reward    -8 | length  3590 | mean20 -14.75 | eps 0.010 | 178 steps/s
+Episode  112 | step  172562 | reward   -16 | length  2417 | mean20 -14.75 | eps 0.010 | 178 steps/s
+Episode  113 | step  176384 | reward    -7 | length  3822 | mean20 -14.35 | eps 0.010 | 177 steps/s
+Episode  114 | step  181227 | reward    -4 | length  4843 | mean20 -13.80 | eps 0.010 | 177 steps/s
+Episode  115 | step  185119 | reward    -6 | length  3892 | mean20 -13.60 | eps 0.010 | 177 steps/s
+Episode  116 | step  188919 | reward    -7 | length  3800 | mean20 -13.15 | eps 0.010 | 177 steps/s
+Episode  117 | step  192668 | reward   -10 | length  3749 | mean20 -12.80 | eps 0.010 | 177 steps/s
+Episode  118 | step  196437 | reward    -8 | length  3769 | mean20 -12.25 | eps 0.010 | 176 steps/s
+Episode  119 | step  199110 | reward   -12 | length  2673 | mean20 -12.00 | eps 0.010 | 176 steps/s
+Episode  120 | step  202741 | reward    -9 | length  3631 | mean20 -11.45 | eps 0.010 | 176 steps/s
+Episode  121 | step  206739 | reward    -5 | length  3998 | mean20 -10.80 | eps 0.010 | 176 steps/s
+Episode  122 | step  210848 | reward    -9 | length  4109 | mean20 -10.30 | eps 0.010 | 176 steps/s
+Episode  123 | step  215783 | reward    -2 | length  4935 | mean20  -9.55 | eps 0.010 | 176 steps/s
+Episode  124 | step  219713 | reward    -3 | length  3930 | mean20  -8.90 | eps 0.010 | 175 steps/s
+Episode  125 | step  224585 | reward    -1 | length  4872 | mean20  -8.20 | eps 0.010 | 175 steps/s
+Episode  126 | step  227962 | reward    -8 | length  3377 | mean20  -8.10 | eps 0.010 | 175 steps/s
+Episode  127 | step  233341 | reward    +1 | length  5379 | mean20  -7.40 | eps 0.010 | 175 steps/s
+Episode  128 | step  236724 | reward    -4 | length  3383 | mean20  -6.75 | eps 0.010 | 175 steps/s
+Episode  129 | step  239868 | reward   -10 | length  3144 | mean20  -6.85 | eps 0.010 | 175 steps/s
+Episode  130 | step  244504 | reward    +2 | length  4636 | mean20  -6.30 | eps 0.010 | 175 steps/s
+Episode  131 | step  249117 | reward    -3 | length  4613 | mean20  -6.05 | eps 0.010 | 175 steps/s
+Episode  132 | step  254185 | reward    -5 | length  5068 | mean20  -5.50 | eps 0.010 | 174 steps/s
+Episode  133 | step  257713 | reward    -7 | length  3528 | mean20  -5.50 | eps 0.010 | 174 steps/s
+Episode  134 | step  261010 | reward    -6 | length  3297 | mean20  -5.60 | eps 0.010 | 174 steps/s
+Episode  135 | step  264775 | reward    -6 | length  3765 | mean20  -5.60 | eps 0.010 | 174 steps/s
+Episode  136 | step  269352 | reward    +6 | length  4577 | mean20  -4.95 | eps 0.010 | 174 steps/s
+Episode  137 | step  273916 | reward    +1 | length  4564 | mean20  -4.40 | eps 0.010 | 174 steps/s
+Episode  138 | step  278013 | reward    +2 | length  4097 | mean20  -3.90 | eps 0.010 | 174 steps/s
+Episode  139 | step  282334 | reward    +6 | length  4321 | mean20  -3.00 | eps 0.010 | 174 steps/s
+Episode  140 | step  286244 | reward    +6 | length  3910 | mean20  -2.25 | eps 0.010 | 173 steps/s
+Episode  141 | step  290840 | reward    +6 | length  4596 | mean20  -1.70 | eps 0.010 | 173 steps/s
+Episode  142 | step  295183 | reward    +3 | length  4343 | mean20  -1.10 | eps 0.010 | 173 steps/s
+Episode  143 | step  299106 | reward    +3 | length  3923 | mean20  -0.85 | eps 0.010 | 173 steps/s
+Done. Best mean20 reward: -0.85. Model saved to experiments/Kevin/exp03/dqn_model.pth
+
+$ uv run train.py --member Kevin --exp 4 --seed 3 --eps-decay 200000
+Training on cuda, saving to experiments/Kevin/exp04
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step    1074 | reward   -20 | length  1074 | mean20 -20.00 | eps 0.995 | 942 steps/s
+Episode    2 | step    1959 | reward   -20 | length   885 | mean20 -20.00 | eps 0.990 | 1027 steps/s
+Episode    3 | step    2799 | reward   -20 | length   840 | mean20 -20.00 | eps 0.986 | 1082 steps/s
+Episode    4 | step    3904 | reward   -19 | length  1105 | mean20 -19.75 | eps 0.981 | 1113 steps/s
+Episode    5 | step    4694 | reward   -21 | length   790 | mean20 -20.00 | eps 0.977 | 1132 steps/s
+Episode    6 | step    5657 | reward   -20 | length   963 | mean20 -20.00 | eps 0.972 | 1144 steps/s
+Episode    7 | step    6551 | reward   -21 | length   894 | mean20 -20.14 | eps 0.968 | 1150 steps/s
+Episode    8 | step    7825 | reward   -16 | length  1274 | mean20 -19.62 | eps 0.961 | 1157 steps/s
+Episode    9 | step    8647 | reward   -21 | length   822 | mean20 -19.78 | eps 0.957 | 1161 steps/s
+Episode   10 | step    9698 | reward   -19 | length  1051 | mean20 -19.70 | eps 0.952 | 1166 steps/s
+Episode   11 | step   10639 | reward   -20 | length   941 | mean20 -19.73 | eps 0.947 | 861 steps/s
+Episode   12 | step   11445 | reward   -21 | length   806 | mean20 -19.83 | eps 0.943 | 683 steps/s
+Episode   13 | step   12370 | reward   -21 | length   925 | mean20 -19.92 | eps 0.939 | 570 steps/s
+Episode   14 | step   13247 | reward   -21 | length   877 | mean20 -20.00 | eps 0.934 | 501 steps/s
+Episode   15 | step   14125 | reward   -21 | length   878 | mean20 -20.07 | eps 0.930 | 453 steps/s
+Episode   16 | step   14917 | reward   -21 | length   792 | mean20 -20.12 | eps 0.926 | 421 steps/s
+Episode   17 | step   15681 | reward   -21 | length   764 | mean20 -20.18 | eps 0.922 | 396 steps/s
+Episode   18 | step   16502 | reward   -21 | length   821 | mean20 -20.22 | eps 0.918 | 373 steps/s
+Episode   19 | step   17689 | reward   -18 | length  1187 | mean20 -20.11 | eps 0.912 | 349 steps/s
+Episode   20 | step   18590 | reward   -20 | length   901 | mean20 -20.10 | eps 0.908 | 334 steps/s
+Episode   21 | step   19518 | reward   -21 | length   928 | mean20 -20.15 | eps 0.903 | 321 steps/s
+Episode   22 | step   20518 | reward   -21 | length  1000 | mean20 -20.20 | eps 0.898 | 310 steps/s
+Episode   23 | step   21281 | reward   -21 | length   763 | mean20 -20.25 | eps 0.895 | 303 steps/s
+Episode   24 | step   22396 | reward   -19 | length  1115 | mean20 -20.25 | eps 0.889 | 293 steps/s
+Episode   25 | step   23597 | reward   -21 | length  1201 | mean20 -20.25 | eps 0.883 | 284 steps/s
+Episode   26 | step   24544 | reward   -20 | length   947 | mean20 -20.25 | eps 0.879 | 278 steps/s
+Episode   27 | step   25308 | reward   -21 | length   764 | mean20 -20.25 | eps 0.875 | 274 steps/s
+Episode   28 | step   26255 | reward   -19 | length   947 | mean20 -20.40 | eps 0.870 | 270 steps/s
+Episode   29 | step   27071 | reward   -21 | length   816 | mean20 -20.40 | eps 0.866 | 266 steps/s
+Episode   30 | step   27966 | reward   -20 | length   895 | mean20 -20.45 | eps 0.862 | 262 steps/s
+Episode   31 | step   29005 | reward   -19 | length  1039 | mean20 -20.40 | eps 0.856 | 258 steps/s
+Episode   32 | step   29980 | reward   -20 | length   975 | mean20 -20.35 | eps 0.852 | 254 steps/s
+Episode   33 | step   30866 | reward   -21 | length   886 | mean20 -20.35 | eps 0.847 | 251 steps/s
+Episode   34 | step   31717 | reward   -21 | length   851 | mean20 -20.35 | eps 0.843 | 248 steps/s
+Episode   35 | step   32603 | reward   -21 | length   886 | mean20 -20.35 | eps 0.839 | 246 steps/s
+Episode   36 | step   33563 | reward   -20 | length   960 | mean20 -20.30 | eps 0.834 | 243 steps/s
+Episode   37 | step   34720 | reward   -20 | length  1157 | mean20 -20.25 | eps 0.828 | 240 steps/s
+Episode   38 | step   35767 | reward   -20 | length  1047 | mean20 -20.20 | eps 0.823 | 238 steps/s
+Episode   39 | step   36554 | reward   -21 | length   787 | mean20 -20.35 | eps 0.819 | 236 steps/s
+Episode   40 | step   37374 | reward   -21 | length   820 | mean20 -20.40 | eps 0.815 | 235 steps/s
+Episode   41 | step   38347 | reward   -21 | length   973 | mean20 -20.40 | eps 0.810 | 233 steps/s
+Episode   42 | step   39372 | reward   -21 | length  1025 | mean20 -20.40 | eps 0.805 | 231 steps/s
+Episode   43 | step   40243 | reward   -21 | length   871 | mean20 -20.40 | eps 0.801 | 229 steps/s
+Episode   44 | step   41125 | reward   -20 | length   882 | mean20 -20.45 | eps 0.796 | 228 steps/s
+Episode   45 | step   42279 | reward   -20 | length  1154 | mean20 -20.40 | eps 0.791 | 226 steps/s
+Episode   46 | step   43151 | reward   -21 | length   872 | mean20 -20.45 | eps 0.786 | 225 steps/s
+Episode   47 | step   44268 | reward   -20 | length  1117 | mean20 -20.40 | eps 0.781 | 224 steps/s
+Episode   48 | step   45180 | reward   -21 | length   912 | mean20 -20.50 | eps 0.776 | 223 steps/s
+Episode   49 | step   46055 | reward   -20 | length   875 | mean20 -20.45 | eps 0.772 | 222 steps/s
+Episode   50 | step   46968 | reward   -19 | length   913 | mean20 -20.40 | eps 0.768 | 221 steps/s
+Episode   51 | step   48049 | reward   -19 | length  1081 | mean20 -20.40 | eps 0.762 | 220 steps/s
+Episode   52 | step   48889 | reward   -20 | length   840 | mean20 -20.40 | eps 0.758 | 219 steps/s
+Episode   53 | step   50009 | reward   -19 | length  1120 | mean20 -20.30 | eps 0.752 | 218 steps/s
+Episode   54 | step   50945 | reward   -19 | length   936 | mean20 -20.20 | eps 0.748 | 217 steps/s
+Episode   55 | step   51990 | reward   -20 | length  1045 | mean20 -20.15 | eps 0.743 | 216 steps/s
+Episode   56 | step   52822 | reward   -20 | length   832 | mean20 -20.15 | eps 0.739 | 215 steps/s
+Episode   57 | step   53861 | reward   -19 | length  1039 | mean20 -20.10 | eps 0.733 | 214 steps/s
+Episode   58 | step   54887 | reward   -19 | length  1026 | mean20 -20.05 | eps 0.728 | 213 steps/s
+Episode   59 | step   55981 | reward   -19 | length  1094 | mean20 -19.95 | eps 0.723 | 213 steps/s
+Episode   60 | step   56806 | reward   -21 | length   825 | mean20 -19.95 | eps 0.719 | 212 steps/s
+Episode   61 | step   57640 | reward   -20 | length   834 | mean20 -19.90 | eps 0.715 | 211 steps/s
+Episode   62 | step   58536 | reward   -21 | length   896 | mean20 -19.90 | eps 0.710 | 211 steps/s
+Episode   63 | step   59694 | reward   -19 | length  1158 | mean20 -19.80 | eps 0.705 | 210 steps/s
+Episode   64 | step   60911 | reward   -18 | length  1217 | mean20 -19.70 | eps 0.698 | 209 steps/s
+Episode   65 | step   61833 | reward   -20 | length   922 | mean20 -19.70 | eps 0.694 | 208 steps/s
+Episode   66 | step   62937 | reward   -20 | length  1104 | mean20 -19.65 | eps 0.688 | 208 steps/s
+Episode   67 | step   64193 | reward   -18 | length  1256 | mean20 -19.55 | eps 0.682 | 207 steps/s
+Episode   68 | step   65073 | reward   -21 | length   880 | mean20 -19.55 | eps 0.678 | 207 steps/s
+Episode   69 | step   66156 | reward   -21 | length  1083 | mean20 -19.60 | eps 0.673 | 206 steps/s
+Episode   70 | step   67251 | reward   -20 | length  1095 | mean20 -19.65 | eps 0.667 | 205 steps/s
+Episode   71 | step   68578 | reward   -20 | length  1327 | mean20 -19.70 | eps 0.661 | 205 steps/s
+Episode   72 | step   69590 | reward   -20 | length  1012 | mean20 -19.70 | eps 0.656 | 204 steps/s
+Episode   73 | step   70675 | reward   -20 | length  1085 | mean20 -19.75 | eps 0.650 | 204 steps/s
+Episode   74 | step   71860 | reward   -18 | length  1185 | mean20 -19.70 | eps 0.644 | 203 steps/s
+Episode   75 | step   73384 | reward   -18 | length  1524 | mean20 -19.60 | eps 0.637 | 202 steps/s
+Episode   76 | step   74321 | reward   -20 | length   937 | mean20 -19.60 | eps 0.632 | 202 steps/s
+Episode   77 | step   75491 | reward   -19 | length  1170 | mean20 -19.60 | eps 0.626 | 202 steps/s
+Episode   78 | step   76720 | reward   -20 | length  1229 | mean20 -19.65 | eps 0.620 | 201 steps/s
+Episode   79 | step   78085 | reward   -18 | length  1365 | mean20 -19.60 | eps 0.613 | 201 steps/s
+Episode   80 | step   79104 | reward   -21 | length  1019 | mean20 -19.60 | eps 0.608 | 200 steps/s
+Episode   81 | step   80553 | reward   -18 | length  1449 | mean20 -19.50 | eps 0.601 | 200 steps/s
+Episode   82 | step   81829 | reward   -17 | length  1276 | mean20 -19.30 | eps 0.595 | 199 steps/s
+Episode   83 | step   83170 | reward   -17 | length  1341 | mean20 -19.20 | eps 0.588 | 199 steps/s
+Episode   84 | step   84411 | reward   -17 | length  1241 | mean20 -19.15 | eps 0.582 | 198 steps/s
+Episode   85 | step   86073 | reward   -17 | length  1662 | mean20 -19.00 | eps 0.574 | 198 steps/s
+Episode   86 | step   87432 | reward   -18 | length  1359 | mean20 -18.90 | eps 0.567 | 197 steps/s
+Episode   87 | step   89120 | reward   -14 | length  1688 | mean20 -18.70 | eps 0.559 | 197 steps/s
+Episode   88 | step   90448 | reward   -20 | length  1328 | mean20 -18.65 | eps 0.552 | 197 steps/s
+Episode   89 | step   92110 | reward   -15 | length  1662 | mean20 -18.35 | eps 0.544 | 196 steps/s
+Episode   90 | step   93503 | reward   -17 | length  1393 | mean20 -18.20 | eps 0.537 | 196 steps/s
+Episode   91 | step   95339 | reward   -12 | length  1836 | mean20 -17.80 | eps 0.528 | 195 steps/s
+Episode   92 | step   96878 | reward   -18 | length  1539 | mean20 -17.70 | eps 0.520 | 195 steps/s
+Episode   93 | step   98329 | reward   -18 | length  1451 | mean20 -17.60 | eps 0.513 | 195 steps/s
+Episode   94 | step   99948 | reward   -14 | length  1619 | mean20 -17.40 | eps 0.505 | 194 steps/s
+Episode   95 | step  101320 | reward   -18 | length  1372 | mean20 -17.40 | eps 0.498 | 194 steps/s
+Episode   96 | step  102699 | reward   -19 | length  1379 | mean20 -17.35 | eps 0.492 | 194 steps/s
+Episode   97 | step  104472 | reward   -14 | length  1773 | mean20 -17.10 | eps 0.483 | 193 steps/s
+Episode   98 | step  106150 | reward   -17 | length  1678 | mean20 -16.95 | eps 0.475 | 193 steps/s
+Episode   99 | step  108049 | reward   -15 | length  1899 | mean20 -16.80 | eps 0.465 | 192 steps/s
+Episode  100 | step  110081 | reward   -15 | length  2032 | mean20 -16.50 | eps 0.455 | 192 steps/s
+Episode  101 | step  111578 | reward   -16 | length  1497 | mean20 -16.40 | eps 0.448 | 192 steps/s
+Episode  102 | step  113102 | reward   -20 | length  1524 | mean20 -16.55 | eps 0.440 | 192 steps/s
+Episode  103 | step  114535 | reward   -18 | length  1433 | mean20 -16.60 | eps 0.433 | 191 steps/s
+Episode  104 | step  115881 | reward   -18 | length  1346 | mean20 -16.65 | eps 0.426 | 191 steps/s
+Episode  105 | step  117147 | reward   -20 | length  1266 | mean20 -16.80 | eps 0.420 | 191 steps/s
+Episode  106 | step  118727 | reward   -18 | length  1580 | mean20 -16.80 | eps 0.412 | 191 steps/s
+Episode  107 | step  120290 | reward   -14 | length  1563 | mean20 -16.80 | eps 0.405 | 191 steps/s
+Episode  108 | step  122488 | reward   -10 | length  2198 | mean20 -16.30 | eps 0.394 | 190 steps/s
+Episode  109 | step  123952 | reward   -17 | length  1464 | mean20 -16.40 | eps 0.386 | 190 steps/s
+Episode  110 | step  125950 | reward   -12 | length  1998 | mean20 -16.15 | eps 0.377 | 190 steps/s
+Episode  111 | step  127514 | reward   -18 | length  1564 | mean20 -16.45 | eps 0.369 | 189 steps/s
+Episode  112 | step  129209 | reward   -14 | length  1695 | mean20 -16.25 | eps 0.360 | 189 steps/s
+Episode  113 | step  130872 | reward   -18 | length  1663 | mean20 -16.25 | eps 0.352 | 189 steps/s
+Episode  114 | step  132739 | reward   -16 | length  1867 | mean20 -16.35 | eps 0.343 | 189 steps/s
+Episode  115 | step  134177 | reward   -19 | length  1438 | mean20 -16.40 | eps 0.336 | 188 steps/s
+Episode  116 | step  136303 | reward   -14 | length  2126 | mean20 -16.15 | eps 0.325 | 188 steps/s
+Episode  117 | step  138136 | reward   -16 | length  1833 | mean20 -16.25 | eps 0.316 | 188 steps/s
+Episode  118 | step  139931 | reward   -18 | length  1795 | mean20 -16.30 | eps 0.307 | 188 steps/s
+Episode  119 | step  141914 | reward   -14 | length  1983 | mean20 -16.25 | eps 0.298 | 188 steps/s
+Episode  120 | step  143643 | reward   -16 | length  1729 | mean20 -16.30 | eps 0.289 | 187 steps/s
+Episode  121 | step  145778 | reward   -13 | length  2135 | mean20 -16.15 | eps 0.278 | 187 steps/s
+Episode  122 | step  147909 | reward   -15 | length  2131 | mean20 -15.90 | eps 0.268 | 187 steps/s
+Episode  123 | step  149800 | reward   -17 | length  1891 | mean20 -15.85 | eps 0.258 | 186 steps/s
+Episode  124 | step  151605 | reward   -16 | length  1805 | mean20 -15.75 | eps 0.250 | 186 steps/s
+Episode  125 | step  153460 | reward   -15 | length  1855 | mean20 -15.50 | eps 0.240 | 186 steps/s
+Episode  126 | step  156089 | reward    -9 | length  2629 | mean20 -15.05 | eps 0.227 | 186 steps/s
+Episode  127 | step  158393 | reward   -12 | length  2304 | mean20 -14.95 | eps 0.216 | 185 steps/s
+Episode  128 | step  160082 | reward   -17 | length  1689 | mean20 -15.30 | eps 0.208 | 185 steps/s
+Episode  129 | step  161860 | reward   -19 | length  1778 | mean20 -15.40 | eps 0.199 | 185 steps/s
+Episode  130 | step  164188 | reward   -12 | length  2328 | mean20 -15.40 | eps 0.187 | 185 steps/s
+Episode  131 | step  166411 | reward   -14 | length  2223 | mean20 -15.20 | eps 0.176 | 184 steps/s
+Episode  132 | step  168999 | reward   -13 | length  2588 | mean20 -15.15 | eps 0.163 | 184 steps/s
+Episode  133 | step  171115 | reward   -17 | length  2116 | mean20 -15.10 | eps 0.153 | 184 steps/s
+Episode  134 | step  173360 | reward   -15 | length  2245 | mean20 -15.05 | eps 0.142 | 184 steps/s
+Episode  135 | step  175480 | reward   -17 | length  2120 | mean20 -14.95 | eps 0.131 | 183 steps/s
+Episode  136 | step  177233 | reward   -19 | length  1753 | mean20 -15.20 | eps 0.123 | 183 steps/s
+Episode  137 | step  179306 | reward   -18 | length  2073 | mean20 -15.30 | eps 0.112 | 183 steps/s
+Episode  138 | step  181520 | reward   -12 | length  2214 | mean20 -15.00 | eps 0.101 | 183 steps/s
+Episode  139 | step  183878 | reward   -16 | length  2358 | mean20 -15.10 | eps 0.090 | 182 steps/s
+Episode  140 | step  185763 | reward   -19 | length  1885 | mean20 -15.25 | eps 0.080 | 182 steps/s
+Episode  141 | step  189680 | reward    +1 | length  3917 | mean20 -14.55 | eps 0.061 | 182 steps/s
+Episode  142 | step  192728 | reward   -12 | length  3048 | mean20 -14.40 | eps 0.046 | 182 steps/s
+Episode  143 | step  195403 | reward   -14 | length  2675 | mean20 -14.25 | eps 0.033 | 181 steps/s
+Episode  144 | step  198346 | reward   -13 | length  2943 | mean20 -14.10 | eps 0.018 | 181 steps/s
+Episode  145 | step  200260 | reward   -17 | length  1914 | mean20 -14.20 | eps 0.010 | 181 steps/s
+Episode  146 | step  204449 | reward    -1 | length  4189 | mean20 -13.80 | eps 0.010 | 180 steps/s
+Episode  147 | step  207786 | reward    -4 | length  3337 | mean20 -13.40 | eps 0.010 | 180 steps/s
+Episode  148 | step  211999 | reward    -4 | length  4213 | mean20 -12.75 | eps 0.010 | 180 steps/s
+Episode  149 | step  214870 | reward   -18 | length  2871 | mean20 -12.70 | eps 0.010 | 179 steps/s
+Episode  150 | step  218159 | reward   -11 | length  3289 | mean20 -12.65 | eps 0.010 | 179 steps/s
+Episode  151 | step  221848 | reward    -5 | length  3689 | mean20 -12.20 | eps 0.010 | 179 steps/s
+Episode  152 | step  225616 | reward    +3 | length  3768 | mean20 -11.40 | eps 0.010 | 179 steps/s
+Episode  153 | step  229529 | reward    +2 | length  3913 | mean20 -10.45 | eps 0.010 | 178 steps/s
+Episode  154 | step  233927 | reward    -1 | length  4398 | mean20  -9.75 | eps 0.010 | 178 steps/s
+Episode  155 | step  236555 | reward   +11 | length  2628 | mean20  -8.35 | eps 0.010 | 178 steps/s
+Episode  156 | step  239888 | reward    +8 | length  3333 | mean20  -7.00 | eps 0.010 | 178 steps/s
+Episode  157 | step  243377 | reward    +6 | length  3489 | mean20  -5.80 | eps 0.010 | 177 steps/s
+Episode  158 | step  247392 | reward    -6 | length  4015 | mean20  -5.50 | eps 0.010 | 177 steps/s
+Episode  159 | step  250194 | reward   +15 | length  2802 | mean20  -3.95 | eps 0.010 | 177 steps/s
+Episode  160 | step  252118 | reward   +18 | length  1924 | mean20  -2.10 | eps 0.010 | 177 steps/s
+Episode  161 | step  254534 | reward   +14 | length  2416 | mean20  -1.45 | eps 0.010 | 177 steps/s
+Episode  162 | step  257399 | reward    -4 | length  2865 | mean20  -1.05 | eps 0.010 | 177 steps/s
+Episode  163 | step  259551 | reward   +18 | length  2152 | mean20  +0.55 | eps 0.010 | 176 steps/s
+Episode  164 | step  261488 | reward   +19 | length  1937 | mean20  +2.15 | eps 0.010 | 176 steps/s
+Episode  165 | step  263866 | reward   +17 | length  2378 | mean20  +3.85 | eps 0.010 | 176 steps/s
+Episode  166 | step  267207 | reward    -4 | length  3341 | mean20  +3.70 | eps 0.010 | 176 steps/s
+Episode  167 | step  269591 | reward   +12 | length  2384 | mean20  +4.50 | eps 0.010 | 176 steps/s
+Episode  168 | step  271960 | reward   +10 | length  2369 | mean20  +5.20 | eps 0.010 | 176 steps/s
+Episode  169 | step  274251 | reward   +12 | length  2291 | mean20  +6.70 | eps 0.010 | 176 steps/s
+Episode  170 | step  276258 | reward   +17 | length  2007 | mean20  +8.10 | eps 0.010 | 175 steps/s
+Episode  171 | step  278206 | reward   +17 | length  1948 | mean20  +9.20 | eps 0.010 | 175 steps/s
+Episode  172 | step  280450 | reward   +14 | length  2244 | mean20  +9.75 | eps 0.010 | 175 steps/s
+Episode  173 | step  282709 | reward   +16 | length  2259 | mean20 +10.45 | eps 0.010 | 175 steps/s
+Episode  174 | step  286350 | reward    -5 | length  3641 | mean20 +10.25 | eps 0.010 | 175 steps/s
+Episode  175 | step  288528 | reward   +16 | length  2178 | mean20 +10.50 | eps 0.010 | 175 steps/s
+Episode  176 | step  290622 | reward   +19 | length  2094 | mean20 +11.05 | eps 0.010 | 175 steps/s
+Episode  177 | step  292767 | reward   +15 | length  2145 | mean20 +11.50 | eps 0.010 | 175 steps/s
+Episode  178 | step  294862 | reward   +17 | length  2095 | mean20 +12.65 | eps 0.010 | 175 steps/s
+Episode  179 | step  296493 | reward   +21 | length  1631 | mean20 +12.95 | eps 0.010 | 174 steps/s
+Episode  180 | step  298300 | reward   +19 | length  1807 | mean20 +13.00 | eps 0.010 | 174 steps/s
+Done. Best mean20 reward: +13.00. Model saved to experiments/Kevin/exp04/dqn_model.pth
+
+$ uv run train.py --member Kevin --exp 5 --seed 3 --eps-decay 250000  # explore for most of the run
+Training on cuda, saving to experiments/Kevin/exp05
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step    1074 | reward   -20 | length  1074 | mean20 -20.00 | eps 0.996 | 964 steps/s
+Episode    2 | step    1959 | reward   -20 | length   885 | mean20 -20.00 | eps 0.992 | 1073 steps/s
+Episode    3 | step    2799 | reward   -20 | length   840 | mean20 -20.00 | eps 0.989 | 1117 steps/s
+Episode    4 | step    3869 | reward   -19 | length  1070 | mean20 -19.75 | eps 0.985 | 1136 steps/s
+Episode    5 | step    4951 | reward   -20 | length  1082 | mean20 -19.80 | eps 0.980 | 1153 steps/s
+Episode    6 | step    5867 | reward   -20 | length   916 | mean20 -19.83 | eps 0.977 | 1140 steps/s
+Episode    7 | step    6837 | reward   -20 | length   970 | mean20 -19.86 | eps 0.973 | 1149 steps/s
+Episode    8 | step    7732 | reward   -20 | length   895 | mean20 -19.88 | eps 0.969 | 1154 steps/s
+Episode    9 | step    8820 | reward   -20 | length  1088 | mean20 -19.89 | eps 0.965 | 1159 steps/s
+Episode   10 | step    9685 | reward   -21 | length   865 | mean20 -20.00 | eps 0.962 | 1162 steps/s
+Episode   11 | step   10753 | reward   -20 | length  1068 | mean20 -20.00 | eps 0.957 | 832 steps/s
+Episode   12 | step   11512 | reward   -21 | length   759 | mean20 -20.08 | eps 0.954 | 678 steps/s
+Episode   13 | step   12630 | reward   -18 | length  1118 | mean20 -19.92 | eps 0.950 | 551 steps/s
+Episode   14 | step   13717 | reward   -19 | length  1087 | mean20 -19.86 | eps 0.946 | 478 steps/s
+Episode   15 | step   14692 | reward   -19 | length   975 | mean20 -19.80 | eps 0.942 | 433 steps/s
+Episode   16 | step   15572 | reward   -21 | length   880 | mean20 -19.88 | eps 0.938 | 402 steps/s
+Episode   17 | step   16425 | reward   -21 | length   853 | mean20 -19.94 | eps 0.935 | 379 steps/s
+Episode   18 | step   17267 | reward   -21 | length   842 | mean20 -20.00 | eps 0.932 | 360 steps/s
+Episode   19 | step   18284 | reward   -20 | length  1017 | mean20 -20.00 | eps 0.928 | 342 steps/s
+Episode   20 | step   19166 | reward   -21 | length   882 | mean20 -20.05 | eps 0.924 | 330 steps/s
+Episode   21 | step   20160 | reward   -19 | length   994 | mean20 -20.00 | eps 0.920 | 317 steps/s
+Episode   22 | step   21091 | reward   -19 | length   931 | mean20 -19.95 | eps 0.916 | 307 steps/s
+Episode   23 | step   22022 | reward   -20 | length   931 | mean20 -19.95 | eps 0.913 | 299 steps/s
+Episode   24 | step   22854 | reward   -21 | length   832 | mean20 -20.05 | eps 0.909 | 292 steps/s
+Episode   25 | step   23672 | reward   -21 | length   818 | mean20 -20.10 | eps 0.906 | 286 steps/s
+Episode   26 | step   24730 | reward   -21 | length  1058 | mean20 -20.15 | eps 0.902 | 279 steps/s
+Episode   27 | step   25648 | reward   -21 | length   918 | mean20 -20.20 | eps 0.898 | 274 steps/s
+Episode   28 | step   26571 | reward   -20 | length   923 | mean20 -20.20 | eps 0.895 | 269 steps/s
+Episode   29 | step   27420 | reward   -20 | length   849 | mean20 -20.20 | eps 0.891 | 266 steps/s
+Episode   30 | step   28182 | reward   -21 | length   762 | mean20 -20.20 | eps 0.888 | 262 steps/s
+Episode   31 | step   28945 | reward   -21 | length   763 | mean20 -20.25 | eps 0.885 | 260 steps/s
+Episode   32 | step   29935 | reward   -20 | length   990 | mean20 -20.20 | eps 0.881 | 256 steps/s
+Episode   33 | step   30926 | reward   -19 | length   991 | mean20 -20.25 | eps 0.878 | 253 steps/s
+Episode   34 | step   31749 | reward   -21 | length   823 | mean20 -20.35 | eps 0.874 | 250 steps/s
+Episode   35 | step   32592 | reward   -20 | length   843 | mean20 -20.40 | eps 0.871 | 248 steps/s
+Episode   36 | step   33627 | reward   -19 | length  1035 | mean20 -20.30 | eps 0.867 | 245 steps/s
+Episode   37 | step   34581 | reward   -20 | length   954 | mean20 -20.25 | eps 0.863 | 243 steps/s
+Episode   38 | step   35338 | reward   -21 | length   757 | mean20 -20.25 | eps 0.860 | 241 steps/s
+Episode   39 | step   36435 | reward   -20 | length  1097 | mean20 -20.25 | eps 0.856 | 238 steps/s
+Episode   40 | step   37309 | reward   -20 | length   874 | mean20 -20.20 | eps 0.852 | 237 steps/s
+Episode   41 | step   38385 | reward   -19 | length  1076 | mean20 -20.20 | eps 0.848 | 235 steps/s
+Episode   42 | step   39508 | reward   -17 | length  1123 | mean20 -20.10 | eps 0.844 | 233 steps/s
+Episode   43 | step   40421 | reward   -21 | length   913 | mean20 -20.15 | eps 0.840 | 231 steps/s
+Episode   44 | step   41226 | reward   -21 | length   805 | mean20 -20.15 | eps 0.837 | 230 steps/s
+Episode   45 | step   42097 | reward   -20 | length   871 | mean20 -20.10 | eps 0.833 | 228 steps/s
+Episode   46 | step   42954 | reward   -21 | length   857 | mean20 -20.10 | eps 0.830 | 227 steps/s
+Episode   47 | step   44184 | reward   -18 | length  1230 | mean20 -19.95 | eps 0.825 | 225 steps/s
+Episode   48 | step   45775 | reward   -14 | length  1591 | mean20 -19.65 | eps 0.819 | 223 steps/s
+Episode   49 | step   46784 | reward   -20 | length  1009 | mean20 -19.65 | eps 0.815 | 222 steps/s
+Episode   50 | step   47857 | reward   -20 | length  1073 | mean20 -19.60 | eps 0.810 | 221 steps/s
+Episode   51 | step   48853 | reward   -19 | length   996 | mean20 -19.50 | eps 0.807 | 220 steps/s
+Episode   52 | step   50282 | reward   -16 | length  1429 | mean20 -19.30 | eps 0.801 | 218 steps/s
+Episode   53 | step   51465 | reward   -17 | length  1183 | mean20 -19.20 | eps 0.796 | 217 steps/s
+Episode   54 | step   52607 | reward   -19 | length  1142 | mean20 -19.10 | eps 0.792 | 216 steps/s
+Episode   55 | step   53636 | reward   -21 | length  1029 | mean20 -19.15 | eps 0.788 | 215 steps/s
+Episode   56 | step   54562 | reward   -21 | length   926 | mean20 -19.25 | eps 0.784 | 214 steps/s
+Episode   57 | step   55431 | reward   -21 | length   869 | mean20 -19.30 | eps 0.780 | 214 steps/s
+Episode   58 | step   56445 | reward   -20 | length  1014 | mean20 -19.25 | eps 0.776 | 213 steps/s
+Episode   59 | step   57376 | reward   -21 | length   931 | mean20 -19.30 | eps 0.773 | 212 steps/s
+Episode   60 | step   58729 | reward   -17 | length  1353 | mean20 -19.15 | eps 0.767 | 211 steps/s
+Episode   61 | step   59671 | reward   -21 | length   942 | mean20 -19.25 | eps 0.764 | 210 steps/s
+Episode   62 | step   60748 | reward   -20 | length  1077 | mean20 -19.40 | eps 0.759 | 210 steps/s
+Episode   63 | step   61696 | reward   -20 | length   948 | mean20 -19.35 | eps 0.756 | 209 steps/s
+Episode   64 | step   62652 | reward   -20 | length   956 | mean20 -19.30 | eps 0.752 | 208 steps/s
+Episode   65 | step   63597 | reward   -20 | length   945 | mean20 -19.30 | eps 0.748 | 208 steps/s
+Episode   66 | step   64552 | reward   -21 | length   955 | mean20 -19.30 | eps 0.744 | 207 steps/s
+Episode   67 | step   65571 | reward   -21 | length  1019 | mean20 -19.45 | eps 0.740 | 207 steps/s
+Episode   68 | step   66382 | reward   -21 | length   811 | mean20 -19.80 | eps 0.737 | 206 steps/s
+Episode   69 | step   67413 | reward   -19 | length  1031 | mean20 -19.75 | eps 0.733 | 206 steps/s
+Episode   70 | step   68573 | reward   -19 | length  1160 | mean20 -19.70 | eps 0.728 | 205 steps/s
+Episode   71 | step   69571 | reward   -21 | length   998 | mean20 -19.80 | eps 0.724 | 205 steps/s
+Episode   72 | step   70527 | reward   -21 | length   956 | mean20 -20.05 | eps 0.721 | 204 steps/s
+Episode   73 | step   71780 | reward   -20 | length  1253 | mean20 -20.20 | eps 0.716 | 204 steps/s
+Episode   74 | step   72863 | reward   -19 | length  1083 | mean20 -20.20 | eps 0.711 | 203 steps/s
+Episode   75 | step   74026 | reward   -18 | length  1163 | mean20 -20.05 | eps 0.707 | 203 steps/s
+Episode   76 | step   75101 | reward   -20 | length  1075 | mean20 -20.00 | eps 0.703 | 202 steps/s
+Episode   77 | step   76093 | reward   -19 | length   992 | mean20 -19.90 | eps 0.699 | 202 steps/s
+Episode   78 | step   77427 | reward   -17 | length  1334 | mean20 -19.75 | eps 0.693 | 201 steps/s
+Episode   79 | step   78614 | reward   -19 | length  1187 | mean20 -19.65 | eps 0.689 | 201 steps/s
+Episode   80 | step   80152 | reward   -15 | length  1538 | mean20 -19.55 | eps 0.683 | 200 steps/s
+Episode   81 | step   81439 | reward   -20 | length  1287 | mean20 -19.50 | eps 0.678 | 200 steps/s
+Episode   82 | step   82640 | reward   -18 | length  1201 | mean20 -19.40 | eps 0.673 | 200 steps/s
+Episode   83 | step   83662 | reward   -20 | length  1022 | mean20 -19.40 | eps 0.669 | 199 steps/s
+Episode   84 | step   84808 | reward   -18 | length  1146 | mean20 -19.30 | eps 0.664 | 199 steps/s
+Episode   85 | step   86195 | reward   -17 | length  1387 | mean20 -19.15 | eps 0.659 | 198 steps/s
+Episode   86 | step   87388 | reward   -18 | length  1193 | mean20 -19.00 | eps 0.654 | 198 steps/s
+Episode   87 | step   88637 | reward   -18 | length  1249 | mean20 -18.85 | eps 0.649 | 198 steps/s
+Episode   88 | step   89927 | reward   -18 | length  1290 | mean20 -18.70 | eps 0.644 | 197 steps/s
+Episode   89 | step   91345 | reward   -18 | length  1418 | mean20 -18.65 | eps 0.638 | 197 steps/s
+Episode   90 | step   92549 | reward   -21 | length  1204 | mean20 -18.75 | eps 0.634 | 197 steps/s
+Episode   91 | step   94037 | reward   -17 | length  1488 | mean20 -18.55 | eps 0.628 | 196 steps/s
+Episode   92 | step   95310 | reward   -19 | length  1273 | mean20 -18.45 | eps 0.623 | 196 steps/s
+Episode   93 | step   96444 | reward   -20 | length  1134 | mean20 -18.45 | eps 0.618 | 196 steps/s
+Episode   94 | step   97632 | reward   -19 | length  1188 | mean20 -18.45 | eps 0.613 | 196 steps/s
+Episode   95 | step   98914 | reward   -19 | length  1282 | mean20 -18.50 | eps 0.608 | 195 steps/s
+Episode   96 | step  100318 | reward   -18 | length  1404 | mean20 -18.40 | eps 0.603 | 195 steps/s
+Episode   97 | step  101838 | reward   -19 | length  1520 | mean20 -18.40 | eps 0.597 | 195 steps/s
+Episode   98 | step  103411 | reward   -17 | length  1573 | mean20 -18.40 | eps 0.590 | 194 steps/s
+Episode   99 | step  104736 | reward   -18 | length  1325 | mean20 -18.35 | eps 0.585 | 194 steps/s
+Episode  100 | step  106277 | reward   -16 | length  1541 | mean20 -18.40 | eps 0.579 | 194 steps/s
+Episode  101 | step  107605 | reward   -19 | length  1328 | mean20 -18.35 | eps 0.574 | 193 steps/s
+Episode  102 | step  109213 | reward   -19 | length  1608 | mean20 -18.40 | eps 0.568 | 193 steps/s
+Episode  103 | step  110799 | reward   -16 | length  1586 | mean20 -18.20 | eps 0.561 | 193 steps/s
+Episode  104 | step  112359 | reward   -20 | length  1560 | mean20 -18.30 | eps 0.555 | 193 steps/s
+Episode  105 | step  113789 | reward   -17 | length  1430 | mean20 -18.30 | eps 0.549 | 192 steps/s
+Episode  106 | step  115203 | reward   -19 | length  1414 | mean20 -18.35 | eps 0.544 | 192 steps/s
+Episode  107 | step  116865 | reward   -18 | length  1662 | mean20 -18.35 | eps 0.537 | 192 steps/s
+Episode  108 | step  118480 | reward   -17 | length  1615 | mean20 -18.30 | eps 0.531 | 192 steps/s
+Episode  109 | step  119973 | reward   -18 | length  1493 | mean20 -18.30 | eps 0.525 | 191 steps/s
+Episode  110 | step  121251 | reward   -18 | length  1278 | mean20 -18.15 | eps 0.520 | 191 steps/s
+Episode  111 | step  122719 | reward   -19 | length  1468 | mean20 -18.25 | eps 0.514 | 191 steps/s
+Episode  112 | step  124188 | reward   -18 | length  1469 | mean20 -18.20 | eps 0.508 | 191 steps/s
+Episode  113 | step  125906 | reward   -16 | length  1718 | mean20 -18.00 | eps 0.501 | 190 steps/s
+Episode  114 | step  127581 | reward   -17 | length  1675 | mean20 -17.90 | eps 0.495 | 190 steps/s
+Episode  115 | step  129791 | reward   -13 | length  2210 | mean20 -17.60 | eps 0.486 | 190 steps/s
+Episode  116 | step  131418 | reward   -17 | length  1627 | mean20 -17.55 | eps 0.480 | 190 steps/s
+Episode  117 | step  132838 | reward   -18 | length  1420 | mean20 -17.50 | eps 0.474 | 190 steps/s
+Episode  118 | step  134239 | reward   -20 | length  1401 | mean20 -17.65 | eps 0.468 | 189 steps/s
+Episode  119 | step  135435 | reward   -19 | length  1196 | mean20 -17.70 | eps 0.464 | 189 steps/s
+Episode  120 | step  136625 | reward   -18 | length  1190 | mean20 -17.80 | eps 0.459 | 189 steps/s
+Episode  121 | step  138256 | reward   -17 | length  1631 | mean20 -17.70 | eps 0.453 | 189 steps/s
+Episode  122 | step  139743 | reward   -17 | length  1487 | mean20 -17.60 | eps 0.447 | 189 steps/s
+Episode  123 | step  141218 | reward   -16 | length  1475 | mean20 -17.60 | eps 0.441 | 189 steps/s
+Episode  124 | step  143051 | reward   -15 | length  1833 | mean20 -17.35 | eps 0.434 | 188 steps/s
+Episode  125 | step  144769 | reward   -16 | length  1718 | mean20 -17.30 | eps 0.427 | 188 steps/s
+Episode  126 | step  146647 | reward   -16 | length  1878 | mean20 -17.15 | eps 0.419 | 188 steps/s
+Episode  127 | step  148549 | reward   -13 | length  1902 | mean20 -16.90 | eps 0.412 | 188 steps/s
+Episode  128 | step  150353 | reward   -19 | length  1804 | mean20 -17.00 | eps 0.405 | 187 steps/s
+Episode  129 | step  151538 | reward   -19 | length  1185 | mean20 -17.05 | eps 0.400 | 187 steps/s
+Episode  130 | step  153438 | reward   -18 | length  1900 | mean20 -17.05 | eps 0.392 | 187 steps/s
+Episode  131 | step  155198 | reward   -18 | length  1760 | mean20 -17.00 | eps 0.385 | 187 steps/s
+Episode  132 | step  156844 | reward   -17 | length  1646 | mean20 -16.95 | eps 0.379 | 187 steps/s
+Episode  133 | step  158158 | reward   -21 | length  1314 | mean20 -17.20 | eps 0.374 | 187 steps/s
+Episode  134 | step  160209 | reward   -15 | length  2051 | mean20 -17.10 | eps 0.366 | 186 steps/s
+Episode  135 | step  162076 | reward   -17 | length  1867 | mean20 -17.30 | eps 0.358 | 186 steps/s
+Episode  136 | step  163737 | reward   -15 | length  1661 | mean20 -17.20 | eps 0.352 | 186 steps/s
+Episode  137 | step  165219 | reward   -19 | length  1482 | mean20 -17.25 | eps 0.346 | 186 steps/s
+Episode  138 | step  167493 | reward   -12 | length  2274 | mean20 -16.85 | eps 0.337 | 186 steps/s
+Episode  139 | step  169423 | reward   -17 | length  1930 | mean20 -16.75 | eps 0.329 | 185 steps/s
+Episode  140 | step  171919 | reward   -15 | length  2496 | mean20 -16.60 | eps 0.319 | 185 steps/s
+Episode  141 | step  173659 | reward   -20 | length  1740 | mean20 -16.75 | eps 0.312 | 185 steps/s
+Episode  142 | step  175293 | reward   -17 | length  1634 | mean20 -16.75 | eps 0.306 | 185 steps/s
+Episode  143 | step  177233 | reward   -18 | length  1940 | mean20 -16.85 | eps 0.298 | 185 steps/s
+Episode  144 | step  178856 | reward   -20 | length  1623 | mean20 -17.10 | eps 0.292 | 185 steps/s
+Episode  145 | step  180661 | reward   -16 | length  1805 | mean20 -17.10 | eps 0.285 | 185 steps/s
+Episode  146 | step  182953 | reward   -13 | length  2292 | mean20 -16.95 | eps 0.276 | 185 steps/s
+Episode  147 | step  185039 | reward   -15 | length  2086 | mean20 -17.05 | eps 0.267 | 184 steps/s
+Episode  148 | step  187100 | reward   -18 | length  2061 | mean20 -17.00 | eps 0.259 | 184 steps/s
+Episode  149 | step  188642 | reward   -19 | length  1542 | mean20 -17.00 | eps 0.253 | 184 steps/s
+Episode  150 | step  190486 | reward   -17 | length  1844 | mean20 -16.95 | eps 0.246 | 184 steps/s
+Episode  151 | step  192212 | reward   -18 | length  1726 | mean20 -16.95 | eps 0.239 | 184 steps/s
+Episode  152 | step  194246 | reward   -14 | length  2034 | mean20 -16.80 | eps 0.231 | 184 steps/s
+Episode  153 | step  196331 | reward   -15 | length  2085 | mean20 -16.50 | eps 0.223 | 184 steps/s
+Episode  154 | step  198362 | reward   -17 | length  2031 | mean20 -16.60 | eps 0.214 | 184 steps/s
+Episode  155 | step  201496 | reward    -9 | length  3134 | mean20 -16.20 | eps 0.202 | 183 steps/s
+Episode  156 | step  203072 | reward   -17 | length  1576 | mean20 -16.30 | eps 0.196 | 183 steps/s
+Episode  157 | step  205534 | reward   -13 | length  2462 | mean20 -16.00 | eps 0.186 | 183 steps/s
+Episode  158 | step  207670 | reward   -18 | length  2136 | mean20 -16.30 | eps 0.178 | 183 steps/s
+Episode  159 | step  209659 | reward   -16 | length  1989 | mean20 -16.25 | eps 0.170 | 183 steps/s
+Episode  160 | step  212333 | reward   -12 | length  2674 | mean20 -16.10 | eps 0.159 | 183 steps/s
+Episode  161 | step  214549 | reward   -13 | length  2216 | mean20 -15.75 | eps 0.150 | 182 steps/s
+Episode  162 | step  216824 | reward   -16 | length  2275 | mean20 -15.70 | eps 0.141 | 182 steps/s
+Episode  163 | step  220664 | reward    +2 | length  3840 | mean20 -14.70 | eps 0.126 | 182 steps/s
+Episode  164 | step  222941 | reward   -15 | length  2277 | mean20 -14.45 | eps 0.117 | 182 steps/s
+Episode  165 | step  226230 | reward    -2 | length  3289 | mean20 -13.75 | eps 0.104 | 182 steps/s
+Episode  166 | step  228800 | reward   -14 | length  2570 | mean20 -13.80 | eps 0.094 | 182 steps/s
+Episode  167 | step  232089 | reward    -1 | length  3289 | mean20 -13.10 | eps 0.081 | 181 steps/s
+Episode  168 | step  235624 | reward    +1 | length  3535 | mean20 -12.15 | eps 0.067 | 181 steps/s
+Episode  169 | step  238452 | reward    -3 | length  2828 | mean20 -11.35 | eps 0.056 | 181 steps/s
+Episode  170 | step  240824 | reward   -12 | length  2372 | mean20 -11.10 | eps 0.046 | 181 steps/s
+Episode  171 | step  243831 | reward    +7 | length  3007 | mean20  -9.85 | eps 0.034 | 181 steps/s
+Episode  172 | step  246329 | reward    +9 | length  2498 | mean20  -8.70 | eps 0.025 | 180 steps/s
+Episode  173 | step  248768 | reward   +11 | length  2439 | mean20  -7.40 | eps 0.015 | 180 steps/s
+Episode  174 | step  252020 | reward    +5 | length  3252 | mean20  -6.30 | eps 0.010 | 180 steps/s
+Episode  175 | step  254374 | reward   +13 | length  2354 | mean20  -5.20 | eps 0.010 | 180 steps/s
+Episode  176 | step  257117 | reward    +9 | length  2743 | mean20  -3.90 | eps 0.010 | 180 steps/s
+Episode  177 | step  259610 | reward   +14 | length  2493 | mean20  -2.55 | eps 0.010 | 180 steps/s
+Episode  178 | step  261849 | reward   +16 | length  2239 | mean20  -0.85 | eps 0.010 | 180 steps/s
+Episode  179 | step  264187 | reward   +12 | length  2338 | mean20  +0.55 | eps 0.010 | 179 steps/s
+Episode  180 | step  266166 | reward   +16 | length  1979 | mean20  +1.95 | eps 0.010 | 179 steps/s
+Episode  181 | step  268286 | reward   +15 | length  2120 | mean20  +3.35 | eps 0.010 | 179 steps/s
+Episode  182 | step  270204 | reward   +18 | length  1918 | mean20  +5.05 | eps 0.010 | 179 steps/s
+Episode  183 | step  271942 | reward   +20 | length  1738 | mean20  +5.95 | eps 0.010 | 179 steps/s
+Episode  184 | step  273662 | reward   +20 | length  1720 | mean20  +7.70 | eps 0.010 | 179 steps/s
+Episode  185 | step  275382 | reward   +19 | length  1720 | mean20  +8.75 | eps 0.010 | 179 steps/s
+Episode  186 | step  278118 | reward    -1 | length  2736 | mean20  +9.40 | eps 0.010 | 179 steps/s
+Episode  187 | step  280121 | reward   +16 | length  2003 | mean20 +10.25 | eps 0.010 | 179 steps/s
+Episode  188 | step  281989 | reward   +18 | length  1868 | mean20 +11.10 | eps 0.010 | 179 steps/s
+Episode  189 | step  283707 | reward   +20 | length  1718 | mean20 +12.25 | eps 0.010 | 179 steps/s
+Episode  190 | step  285347 | reward   +21 | length  1640 | mean20 +13.90 | eps 0.010 | 178 steps/s
+Episode  191 | step  287103 | reward   +19 | length  1756 | mean20 +14.50 | eps 0.010 | 178 steps/s
+Episode  192 | step  288911 | reward   +19 | length  1808 | mean20 +15.00 | eps 0.010 | 178 steps/s
+Episode  193 | step  290794 | reward   +18 | length  1883 | mean20 +15.35 | eps 0.010 | 178 steps/s
+Episode  194 | step  292763 | reward   +15 | length  1969 | mean20 +15.85 | eps 0.010 | 178 steps/s
+Episode  195 | step  294491 | reward   +20 | length  1728 | mean20 +16.20 | eps 0.010 | 178 steps/s
+Episode  196 | step  296275 | reward   +19 | length  1784 | mean20 +16.70 | eps 0.010 | 178 steps/s
+Episode  197 | step  298225 | reward   +18 | length  1950 | mean20 +16.90 | eps 0.010 | 178 steps/s
+Episode  198 | step  299862 | reward   +21 | length  1637 | mean20 +17.15 | eps 0.010 | 178 steps/s
+Done. Best mean20 reward: +17.15. Model saved to experiments/Kevin/exp05/dqn_model.pth
+
+$ uv run train.py --member Kevin --exp 6 --seed 3 --eps-end 0.1       # keep 10% random actions
+Training on cuda, saving to experiments/Kevin/exp06
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step     975 | reward   -20 | length   975 | mean20 -20.00 | eps 0.991 | 897 steps/s
+Episode    2 | step    1978 | reward   -20 | length  1003 | mean20 -20.00 | eps 0.982 | 1023 steps/s
+Episode    3 | step    2830 | reward   -21 | length   852 | mean20 -20.33 | eps 0.975 | 1059 steps/s
+Episode    4 | step    3915 | reward   -19 | length  1085 | mean20 -20.00 | eps 0.965 | 1056 steps/s
+Episode    5 | step    4675 | reward   -21 | length   760 | mean20 -20.20 | eps 0.958 | 1067 steps/s
+Episode    6 | step    5482 | reward   -21 | length   807 | mean20 -20.33 | eps 0.951 | 1073 steps/s
+Episode    7 | step    6421 | reward   -21 | length   939 | mean20 -20.43 | eps 0.942 | 1078 steps/s
+Episode    8 | step    7228 | reward   -21 | length   807 | mean20 -20.50 | eps 0.935 | 1080 steps/s
+Episode    9 | step    7990 | reward   -21 | length   762 | mean20 -20.56 | eps 0.928 | 1079 steps/s
+Episode   10 | step    8977 | reward   -18 | length   987 | mean20 -20.30 | eps 0.919 | 1074 steps/s
+Episode   11 | step    9738 | reward   -21 | length   761 | mean20 -20.36 | eps 0.912 | 1069 steps/s
+Episode   12 | step   10585 | reward   -21 | length   847 | mean20 -20.42 | eps 0.905 | 826 steps/s
+Episode   13 | step   11489 | reward   -21 | length   904 | mean20 -20.46 | eps 0.897 | 646 steps/s
+Episode   14 | step   12579 | reward   -18 | length  1090 | mean20 -20.29 | eps 0.887 | 528 steps/s
+Episode   15 | step   13459 | reward   -20 | length   880 | mean20 -20.27 | eps 0.879 | 470 steps/s
+Episode   16 | step   14312 | reward   -21 | length   853 | mean20 -20.31 | eps 0.871 | 430 steps/s
+Episode   17 | step   15382 | reward   -19 | length  1070 | mean20 -20.24 | eps 0.862 | 394 steps/s
+Episode   18 | step   16405 | reward   -20 | length  1023 | mean20 -20.22 | eps 0.852 | 367 steps/s
+Episode   19 | step   17378 | reward   -19 | length   973 | mean20 -20.16 | eps 0.844 | 347 steps/s
+Episode   20 | step   18169 | reward   -21 | length   791 | mean20 -20.20 | eps 0.836 | 333 steps/s
+Episode   21 | step   19053 | reward   -20 | length   884 | mean20 -20.20 | eps 0.829 | 320 steps/s
+Episode   22 | step   19967 | reward   -20 | length   914 | mean20 -20.20 | eps 0.820 | 310 steps/s
+Episode   23 | step   20839 | reward   -21 | length   872 | mean20 -20.20 | eps 0.812 | 301 steps/s
+Episode   24 | step   21723 | reward   -20 | length   884 | mean20 -20.25 | eps 0.804 | 293 steps/s
+Episode   25 | step   22700 | reward   -19 | length   977 | mean20 -20.15 | eps 0.796 | 285 steps/s
+Episode   26 | step   23531 | reward   -20 | length   831 | mean20 -20.10 | eps 0.788 | 278 steps/s
+Episode   27 | step   24314 | reward   -21 | length   783 | mean20 -20.10 | eps 0.781 | 273 steps/s
+Episode   28 | step   25364 | reward   -19 | length  1050 | mean20 -20.00 | eps 0.772 | 267 steps/s
+Episode   29 | step   26209 | reward   -21 | length   845 | mean20 -20.00 | eps 0.764 | 263 steps/s
+Episode   30 | step   27541 | reward   -19 | length  1332 | mean20 -20.05 | eps 0.752 | 258 steps/s
+Episode   31 | step   28474 | reward   -20 | length   933 | mean20 -20.00 | eps 0.744 | 254 steps/s
+Episode   32 | step   29523 | reward   -20 | length  1049 | mean20 -19.95 | eps 0.734 | 250 steps/s
+Episode   33 | step   30489 | reward   -20 | length   966 | mean20 -19.90 | eps 0.726 | 247 steps/s
+Episode   34 | step   31541 | reward   -19 | length  1052 | mean20 -19.95 | eps 0.716 | 244 steps/s
+Episode   35 | step   32467 | reward   -20 | length   926 | mean20 -19.95 | eps 0.708 | 241 steps/s
+Episode   36 | step   33471 | reward   -20 | length  1004 | mean20 -19.90 | eps 0.699 | 239 steps/s
+Episode   37 | step   34259 | reward   -21 | length   788 | mean20 -20.00 | eps 0.692 | 236 steps/s
+Episode   38 | step   35168 | reward   -21 | length   909 | mean20 -20.05 | eps 0.683 | 234 steps/s
+Episode   39 | step   36084 | reward   -20 | length   916 | mean20 -20.10 | eps 0.675 | 233 steps/s
+Episode   40 | step   36933 | reward   -21 | length   849 | mean20 -20.10 | eps 0.668 | 231 steps/s
+Episode   41 | step   37724 | reward   -21 | length   791 | mean20 -20.15 | eps 0.660 | 230 steps/s
+Episode   42 | step   38756 | reward   -20 | length  1032 | mean20 -20.15 | eps 0.651 | 228 steps/s
+Episode   43 | step   39891 | reward   -19 | length  1135 | mean20 -20.05 | eps 0.641 | 226 steps/s
+Episode   44 | step   41005 | reward   -19 | length  1114 | mean20 -20.00 | eps 0.631 | 224 steps/s
+Episode   45 | step   41842 | reward   -21 | length   837 | mean20 -20.10 | eps 0.623 | 223 steps/s
+Episode   46 | step   42713 | reward   -21 | length   871 | mean20 -20.15 | eps 0.616 | 222 steps/s
+Episode   47 | step   43713 | reward   -19 | length  1000 | mean20 -20.05 | eps 0.607 | 220 steps/s
+Episode   48 | step   44629 | reward   -20 | length   916 | mean20 -20.10 | eps 0.598 | 219 steps/s
+Episode   49 | step   45621 | reward   -20 | length   992 | mean20 -20.05 | eps 0.589 | 218 steps/s
+Episode   50 | step   46654 | reward   -21 | length  1033 | mean20 -20.15 | eps 0.580 | 217 steps/s
+Episode   51 | step   47699 | reward   -19 | length  1045 | mean20 -20.10 | eps 0.571 | 216 steps/s
+Episode   52 | step   48903 | reward   -20 | length  1204 | mean20 -20.10 | eps 0.560 | 214 steps/s
+Episode   53 | step   49818 | reward   -21 | length   915 | mean20 -20.15 | eps 0.552 | 213 steps/s
+Episode   54 | step   50915 | reward   -20 | length  1097 | mean20 -20.20 | eps 0.542 | 212 steps/s
+Episode   55 | step   51955 | reward   -19 | length  1040 | mean20 -20.15 | eps 0.532 | 212 steps/s
+Episode   56 | step   52966 | reward   -19 | length  1011 | mean20 -20.10 | eps 0.523 | 211 steps/s
+Episode   57 | step   54128 | reward   -18 | length  1162 | mean20 -19.95 | eps 0.513 | 210 steps/s
+Episode   58 | step   55151 | reward   -19 | length  1023 | mean20 -19.85 | eps 0.504 | 209 steps/s
+Episode   59 | step   56304 | reward   -17 | length  1153 | mean20 -19.70 | eps 0.493 | 208 steps/s
+Episode   60 | step   57490 | reward   -19 | length  1186 | mean20 -19.60 | eps 0.483 | 207 steps/s
+Episode   61 | step   58707 | reward   -19 | length  1217 | mean20 -19.50 | eps 0.472 | 207 steps/s
+Episode   62 | step   59887 | reward   -21 | length  1180 | mean20 -19.55 | eps 0.461 | 206 steps/s
+Episode   63 | step   60769 | reward   -21 | length   882 | mean20 -19.65 | eps 0.453 | 205 steps/s
+Episode   64 | step   61713 | reward   -21 | length   944 | mean20 -19.75 | eps 0.445 | 205 steps/s
+Episode   65 | step   62834 | reward   -19 | length  1121 | mean20 -19.65 | eps 0.434 | 204 steps/s
+Episode   66 | step   64033 | reward   -18 | length  1199 | mean20 -19.50 | eps 0.424 | 204 steps/s
+Episode   67 | step   65241 | reward   -20 | length  1208 | mean20 -19.55 | eps 0.413 | 203 steps/s
+Episode   68 | step   66615 | reward   -19 | length  1374 | mean20 -19.50 | eps 0.400 | 202 steps/s
+Episode   69 | step   67764 | reward   -19 | length  1149 | mean20 -19.45 | eps 0.390 | 202 steps/s
+Episode   70 | step   69379 | reward   -15 | length  1615 | mean20 -19.15 | eps 0.376 | 201 steps/s
+Episode   71 | step   71015 | reward   -16 | length  1636 | mean20 -19.00 | eps 0.361 | 200 steps/s
+Episode   72 | step   72555 | reward   -19 | length  1540 | mean20 -18.95 | eps 0.347 | 200 steps/s
+Episode   73 | step   74236 | reward   -16 | length  1681 | mean20 -18.70 | eps 0.332 | 199 steps/s
+Episode   74 | step   75748 | reward   -17 | length  1512 | mean20 -18.55 | eps 0.318 | 198 steps/s
+Episode   75 | step   77242 | reward   -19 | length  1494 | mean20 -18.55 | eps 0.305 | 197 steps/s
+Episode   76 | step   78970 | reward   -16 | length  1728 | mean20 -18.40 | eps 0.289 | 197 steps/s
+Episode   77 | step   80756 | reward   -17 | length  1786 | mean20 -18.35 | eps 0.273 | 196 steps/s
+Episode   78 | step   82756 | reward   -18 | length  2000 | mean20 -18.30 | eps 0.255 | 195 steps/s
+Episode   79 | step   84423 | reward   -20 | length  1667 | mean20 -18.45 | eps 0.240 | 195 steps/s
+Episode   80 | step   86134 | reward   -18 | length  1711 | mean20 -18.40 | eps 0.225 | 194 steps/s
+Episode   81 | step   87617 | reward   -20 | length  1483 | mean20 -18.45 | eps 0.211 | 194 steps/s
+Episode   82 | step   89497 | reward   -18 | length  1880 | mean20 -18.30 | eps 0.195 | 193 steps/s
+Episode   83 | step   92399 | reward   -11 | length  2902 | mean20 -17.80 | eps 0.168 | 192 steps/s
+Episode   84 | step   94655 | reward   -15 | length  2256 | mean20 -17.50 | eps 0.148 | 192 steps/s
+Episode   85 | step   96759 | reward   -17 | length  2104 | mean20 -17.40 | eps 0.129 | 191 steps/s
+Episode   86 | step   98634 | reward   -19 | length  1875 | mean20 -17.45 | eps 0.112 | 191 steps/s
+Episode   87 | step  100687 | reward   -17 | length  2053 | mean20 -17.30 | eps 0.100 | 190 steps/s
+Episode   88 | step  103301 | reward   -15 | length  2614 | mean20 -17.10 | eps 0.100 | 189 steps/s
+Episode   89 | step  105691 | reward   -17 | length  2390 | mean20 -17.00 | eps 0.100 | 189 steps/s
+Episode   90 | step  107842 | reward   -18 | length  2151 | mean20 -17.15 | eps 0.100 | 188 steps/s
+Episode   91 | step  110387 | reward   -15 | length  2545 | mean20 -17.10 | eps 0.100 | 188 steps/s
+Episode   92 | step  112775 | reward   -18 | length  2388 | mean20 -17.05 | eps 0.100 | 187 steps/s
+Episode   93 | step  115218 | reward   -16 | length  2443 | mean20 -17.05 | eps 0.100 | 186 steps/s
+Episode   94 | step  118307 | reward   -12 | length  3089 | mean20 -16.80 | eps 0.100 | 186 steps/s
+Episode   95 | step  121293 | reward   -15 | length  2986 | mean20 -16.60 | eps 0.100 | 185 steps/s
+Episode   96 | step  123274 | reward   -18 | length  1981 | mean20 -16.70 | eps 0.100 | 185 steps/s
+Episode   97 | step  125275 | reward   -19 | length  2001 | mean20 -16.80 | eps 0.100 | 184 steps/s
+Episode   98 | step  127980 | reward   -14 | length  2705 | mean20 -16.60 | eps 0.100 | 184 steps/s
+Episode   99 | step  130611 | reward   -13 | length  2631 | mean20 -16.25 | eps 0.100 | 184 steps/s
+Episode  100 | step  133435 | reward   -13 | length  2824 | mean20 -16.00 | eps 0.100 | 183 steps/s
+Episode  101 | step  136026 | reward   -14 | length  2591 | mean20 -15.70 | eps 0.100 | 183 steps/s
+Episode  102 | step  138483 | reward   -19 | length  2457 | mean20 -15.75 | eps 0.100 | 182 steps/s
+Episode  103 | step  140882 | reward   -17 | length  2399 | mean20 -16.05 | eps 0.100 | 182 steps/s
+Episode  104 | step  143782 | reward   -17 | length  2900 | mean20 -16.15 | eps 0.100 | 181 steps/s
+Episode  105 | step  146073 | reward   -18 | length  2291 | mean20 -16.20 | eps 0.100 | 181 steps/s
+Episode  106 | step  148706 | reward   -16 | length  2633 | mean20 -16.05 | eps 0.100 | 181 steps/s
+Episode  107 | step  151279 | reward   -14 | length  2573 | mean20 -15.90 | eps 0.100 | 181 steps/s
+Episode  108 | step  154469 | reward   -12 | length  3190 | mean20 -15.75 | eps 0.100 | 180 steps/s
+Episode  109 | step  157200 | reward   -14 | length  2731 | mean20 -15.60 | eps 0.100 | 180 steps/s
+Episode  110 | step  159996 | reward   -17 | length  2796 | mean20 -15.55 | eps 0.100 | 180 steps/s
+Episode  111 | step  162962 | reward   -17 | length  2966 | mean20 -15.65 | eps 0.100 | 179 steps/s
+Episode  112 | step  165565 | reward   -17 | length  2603 | mean20 -15.60 | eps 0.100 | 179 steps/s
+Episode  113 | step  168516 | reward   -15 | length  2951 | mean20 -15.55 | eps 0.100 | 179 steps/s
+Episode  114 | step  171012 | reward   -14 | length  2496 | mean20 -15.65 | eps 0.100 | 179 steps/s
+Episode  115 | step  173557 | reward   -13 | length  2545 | mean20 -15.55 | eps 0.100 | 178 steps/s
+Episode  116 | step  176531 | reward   -15 | length  2974 | mean20 -15.40 | eps 0.100 | 178 steps/s
+Episode  117 | step  179922 | reward   -12 | length  3391 | mean20 -15.05 | eps 0.100 | 178 steps/s
+Episode  118 | step  183119 | reward   -11 | length  3197 | mean20 -14.90 | eps 0.100 | 178 steps/s
+Episode  119 | step  186078 | reward   -15 | length  2959 | mean20 -15.00 | eps 0.100 | 177 steps/s
+Episode  120 | step  188518 | reward   -16 | length  2440 | mean20 -15.15 | eps 0.100 | 177 steps/s
+Episode  121 | step  191004 | reward   -14 | length  2486 | mean20 -15.15 | eps 0.100 | 177 steps/s
+Episode  122 | step  194051 | reward   -12 | length  3047 | mean20 -14.80 | eps 0.100 | 177 steps/s
+Episode  123 | step  196495 | reward   -15 | length  2444 | mean20 -14.70 | eps 0.100 | 177 steps/s
+Episode  124 | step  198872 | reward   -15 | length  2377 | mean20 -14.60 | eps 0.100 | 177 steps/s
+Episode  125 | step  200949 | reward   -17 | length  2077 | mean20 -14.55 | eps 0.100 | 176 steps/s
+Episode  126 | step  203278 | reward   -18 | length  2329 | mean20 -14.65 | eps 0.100 | 176 steps/s
+Episode  127 | step  205527 | reward   -15 | length  2249 | mean20 -14.70 | eps 0.100 | 176 steps/s
+Episode  128 | step  208034 | reward   -17 | length  2507 | mean20 -14.95 | eps 0.100 | 176 steps/s
+Episode  129 | step  210940 | reward   -15 | length  2906 | mean20 -15.00 | eps 0.100 | 176 steps/s
+Episode  130 | step  213379 | reward   -15 | length  2439 | mean20 -14.90 | eps 0.100 | 176 steps/s
+Episode  131 | step  215636 | reward   -18 | length  2257 | mean20 -14.95 | eps 0.100 | 176 steps/s
+Episode  132 | step  217980 | reward   -17 | length  2344 | mean20 -14.95 | eps 0.100 | 176 steps/s
+Episode  133 | step  220210 | reward   -19 | length  2230 | mean20 -15.15 | eps 0.100 | 175 steps/s
+Episode  134 | step  222805 | reward   -16 | length  2595 | mean20 -15.25 | eps 0.100 | 175 steps/s
+Episode  135 | step  226049 | reward   -10 | length  3244 | mean20 -15.10 | eps 0.100 | 175 steps/s
+Episode  136 | step  229090 | reward   -13 | length  3041 | mean20 -15.00 | eps 0.100 | 175 steps/s
+Episode  137 | step  231381 | reward   -14 | length  2291 | mean20 -15.10 | eps 0.100 | 175 steps/s
+Episode  138 | step  233901 | reward   -12 | length  2520 | mean20 -15.15 | eps 0.100 | 175 steps/s
+Episode  139 | step  236006 | reward   -16 | length  2105 | mean20 -15.20 | eps 0.100 | 175 steps/s
+Episode  140 | step  238214 | reward   -16 | length  2208 | mean20 -15.20 | eps 0.100 | 175 steps/s
+Episode  141 | step  240543 | reward   -15 | length  2329 | mean20 -15.25 | eps 0.100 | 174 steps/s
+Episode  142 | step  243810 | reward    -3 | length  3267 | mean20 -14.80 | eps 0.100 | 174 steps/s
+Episode  143 | step  246426 | reward   -10 | length  2616 | mean20 -14.55 | eps 0.100 | 174 steps/s
+Episode  144 | step  248778 | reward   -14 | length  2352 | mean20 -14.50 | eps 0.100 | 174 steps/s
+Episode  145 | step  251191 | reward   -16 | length  2413 | mean20 -14.45 | eps 0.100 | 174 steps/s
+Episode  146 | step  254318 | reward    -4 | length  3127 | mean20 -13.75 | eps 0.100 | 174 steps/s
+Episode  147 | step  257920 | reward    -3 | length  3602 | mean20 -13.15 | eps 0.100 | 174 steps/s
+Episode  148 | step  261499 | reward    -5 | length  3579 | mean20 -12.55 | eps 0.100 | 174 steps/s
+Episode  149 | step  263585 | reward   -14 | length  2086 | mean20 -12.50 | eps 0.100 | 174 steps/s
+Episode  150 | step  266063 | reward    -9 | length  2478 | mean20 -12.20 | eps 0.100 | 174 steps/s
+Episode  151 | step  269918 | reward    +2 | length  3855 | mean20 -11.20 | eps 0.100 | 174 steps/s
+Episode  152 | step  273015 | reward    -1 | length  3097 | mean20 -10.40 | eps 0.100 | 173 steps/s
+Episode  153 | step  276563 | reward    +1 | length  3548 | mean20  -9.40 | eps 0.100 | 173 steps/s
+Episode  154 | step  279341 | reward   -12 | length  2778 | mean20  -9.20 | eps 0.100 | 173 steps/s
+Episode  155 | step  282196 | reward    +3 | length  2855 | mean20  -8.55 | eps 0.100 | 173 steps/s
+Episode  156 | step  285344 | reward    -2 | length  3148 | mean20  -8.00 | eps 0.100 | 173 steps/s
+Episode  157 | step  288049 | reward    +7 | length  2705 | mean20  -6.95 | eps 0.100 | 173 steps/s
+Episode  158 | step  290577 | reward   -13 | length  2528 | mean20  -7.00 | eps 0.100 | 173 steps/s
+Episode  159 | step  294464 | reward    -5 | length  3887 | mean20  -6.45 | eps 0.100 | 173 steps/s
+Episode  160 | step  297657 | reward    +3 | length  3193 | mean20  -5.50 | eps 0.100 | 173 steps/s
+Done. Best mean20 reward: -5.50. Model saved to experiments/Kevin/exp06/dqn_model.pth
+
+$ uv run train.py --member Kevin --exp 7 --seed 3 --eps-end 0.05
+Training on cuda, saving to experiments/Kevin/exp07
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step     975 | reward   -20 | length   975 | mean20 -20.00 | eps 0.991 | 904 steps/s
+Episode    2 | step    1978 | reward   -20 | length  1003 | mean20 -20.00 | eps 0.981 | 1001 steps/s
+Episode    3 | step    2955 | reward   -19 | length   977 | mean20 -19.67 | eps 0.972 | 1060 steps/s
+Episode    4 | step    3809 | reward   -21 | length   854 | mean20 -20.00 | eps 0.964 | 1086 steps/s
+Episode    5 | step    4710 | reward   -20 | length   901 | mean20 -20.00 | eps 0.955 | 1101 steps/s
+Episode    6 | step    5719 | reward   -20 | length  1009 | mean20 -20.00 | eps 0.946 | 1112 steps/s
+Episode    7 | step    6902 | reward   -19 | length  1183 | mean20 -19.86 | eps 0.934 | 1123 steps/s
+Episode    8 | step    7663 | reward   -21 | length   761 | mean20 -20.00 | eps 0.927 | 1129 steps/s
+Episode    9 | step    8485 | reward   -21 | length   822 | mean20 -20.11 | eps 0.919 | 1130 steps/s
+Episode   10 | step    9531 | reward   -19 | length  1046 | mean20 -20.00 | eps 0.909 | 1133 steps/s
+Episode   11 | step   10473 | reward   -21 | length   942 | mean20 -20.09 | eps 0.901 | 895 steps/s
+Episode   12 | step   11406 | reward   -19 | length   933 | mean20 -20.00 | eps 0.892 | 681 steps/s
+Episode   13 | step   12549 | reward   -20 | length  1143 | mean20 -20.00 | eps 0.881 | 545 steps/s
+Episode   14 | step   13370 | reward   -21 | length   821 | mean20 -20.07 | eps 0.873 | 487 steps/s
+Episode   15 | step   14408 | reward   -19 | length  1038 | mean20 -20.00 | eps 0.863 | 435 steps/s
+Episode   16 | step   15519 | reward   -20 | length  1111 | mean20 -20.00 | eps 0.853 | 395 steps/s
+Episode   17 | step   16431 | reward   -21 | length   912 | mean20 -20.06 | eps 0.844 | 371 steps/s
+Episode   18 | step   17599 | reward   -19 | length  1168 | mean20 -20.00 | eps 0.833 | 346 steps/s
+Episode   19 | step   18418 | reward   -21 | length   819 | mean20 -20.05 | eps 0.825 | 333 steps/s
+Episode   20 | step   19209 | reward   -21 | length   791 | mean20 -20.10 | eps 0.818 | 321 steps/s
+Episode   21 | step   20161 | reward   -20 | length   952 | mean20 -20.10 | eps 0.808 | 310 steps/s
+Episode   22 | step   21074 | reward   -20 | length   913 | mean20 -20.10 | eps 0.800 | 300 steps/s
+Episode   23 | step   21866 | reward   -21 | length   792 | mean20 -20.20 | eps 0.792 | 293 steps/s
+Episode   24 | step   22734 | reward   -20 | length   868 | mean20 -20.15 | eps 0.784 | 286 steps/s
+Episode   25 | step   23514 | reward   -21 | length   780 | mean20 -20.20 | eps 0.777 | 281 steps/s
+Episode   26 | step   24475 | reward   -20 | length   961 | mean20 -20.20 | eps 0.767 | 275 steps/s
+Episode   27 | step   25406 | reward   -21 | length   931 | mean20 -20.30 | eps 0.759 | 270 steps/s
+Episode   28 | step   26378 | reward   -20 | length   972 | mean20 -20.25 | eps 0.749 | 265 steps/s
+Episode   29 | step   27381 | reward   -20 | length  1003 | mean20 -20.20 | eps 0.740 | 260 steps/s
+Episode   30 | step   28221 | reward   -21 | length   840 | mean20 -20.30 | eps 0.732 | 257 steps/s
+Episode   31 | step   29168 | reward   -20 | length   947 | mean20 -20.25 | eps 0.723 | 253 steps/s
+Episode   32 | step   29992 | reward   -21 | length   824 | mean20 -20.35 | eps 0.715 | 250 steps/s
+Episode   33 | step   30773 | reward   -21 | length   781 | mean20 -20.40 | eps 0.708 | 248 steps/s
+Episode   34 | step   31596 | reward   -21 | length   823 | mean20 -20.40 | eps 0.700 | 245 steps/s
+Episode   35 | step   32485 | reward   -20 | length   889 | mean20 -20.45 | eps 0.691 | 243 steps/s
+Episode   36 | step   33416 | reward   -21 | length   931 | mean20 -20.50 | eps 0.683 | 240 steps/s
+Episode   37 | step   34451 | reward   -20 | length  1035 | mean20 -20.45 | eps 0.673 | 238 steps/s
+Episode   38 | step   35450 | reward   -21 | length   999 | mean20 -20.55 | eps 0.663 | 235 steps/s
+Episode   39 | step   36594 | reward   -17 | length  1144 | mean20 -20.35 | eps 0.652 | 233 steps/s
+Episode   40 | step   37648 | reward   -21 | length  1054 | mean20 -20.35 | eps 0.642 | 231 steps/s
+Episode   41 | step   38467 | reward   -21 | length   819 | mean20 -20.40 | eps 0.635 | 230 steps/s
+Episode   42 | step   39454 | reward   -21 | length   987 | mean20 -20.45 | eps 0.625 | 228 steps/s
+Episode   43 | step   40400 | reward   -20 | length   946 | mean20 -20.40 | eps 0.616 | 226 steps/s
+Episode   44 | step   41446 | reward   -19 | length  1046 | mean20 -20.35 | eps 0.606 | 225 steps/s
+Episode   45 | step   42340 | reward   -20 | length   894 | mean20 -20.30 | eps 0.598 | 223 steps/s
+Episode   46 | step   43463 | reward   -19 | length  1123 | mean20 -20.25 | eps 0.587 | 222 steps/s
+Episode   47 | step   44463 | reward   -20 | length  1000 | mean20 -20.20 | eps 0.578 | 221 steps/s
+Episode   48 | step   45472 | reward   -19 | length  1009 | mean20 -20.15 | eps 0.568 | 219 steps/s
+Episode   49 | step   46459 | reward   -20 | length   987 | mean20 -20.15 | eps 0.559 | 218 steps/s
+Episode   50 | step   47736 | reward   -20 | length  1277 | mean20 -20.10 | eps 0.547 | 217 steps/s
+Episode   51 | step   48794 | reward   -20 | length  1058 | mean20 -20.10 | eps 0.536 | 216 steps/s
+Episode   52 | step   49766 | reward   -21 | length   972 | mean20 -20.10 | eps 0.527 | 215 steps/s
+Episode   53 | step   50600 | reward   -21 | length   834 | mean20 -20.10 | eps 0.519 | 214 steps/s
+Episode   54 | step   51640 | reward   -20 | length  1040 | mean20 -20.05 | eps 0.509 | 213 steps/s
+Episode   55 | step   52668 | reward   -19 | length  1028 | mean20 -20.00 | eps 0.500 | 212 steps/s
+Episode   56 | step   53877 | reward   -20 | length  1209 | mean20 -19.95 | eps 0.488 | 211 steps/s
+Episode   57 | step   55132 | reward   -18 | length  1255 | mean20 -19.85 | eps 0.476 | 210 steps/s
+Episode   58 | step   56228 | reward   -19 | length  1096 | mean20 -19.75 | eps 0.466 | 209 steps/s
+Episode   59 | step   57346 | reward   -20 | length  1118 | mean20 -19.90 | eps 0.455 | 209 steps/s
+Episode   60 | step   58433 | reward   -21 | length  1087 | mean20 -19.90 | eps 0.445 | 208 steps/s
+Episode   61 | step   59640 | reward   -19 | length  1207 | mean20 -19.80 | eps 0.433 | 207 steps/s
+Episode   62 | step   60779 | reward   -20 | length  1139 | mean20 -19.75 | eps 0.423 | 206 steps/s
+Episode   63 | step   62056 | reward   -20 | length  1277 | mean20 -19.75 | eps 0.410 | 205 steps/s
+Episode   64 | step   63400 | reward   -20 | length  1344 | mean20 -19.80 | eps 0.398 | 205 steps/s
+Episode   65 | step   64554 | reward   -20 | length  1154 | mean20 -19.80 | eps 0.387 | 204 steps/s
+Episode   66 | step   66014 | reward   -19 | length  1460 | mean20 -19.80 | eps 0.373 | 203 steps/s
+Episode   67 | step   67421 | reward   -20 | length  1407 | mean20 -19.80 | eps 0.360 | 203 steps/s
+Episode   68 | step   68753 | reward   -19 | length  1332 | mean20 -19.80 | eps 0.347 | 202 steps/s
+Episode   69 | step   70135 | reward   -19 | length  1382 | mean20 -19.75 | eps 0.334 | 201 steps/s
+Episode   70 | step   71365 | reward   -18 | length  1230 | mean20 -19.65 | eps 0.322 | 201 steps/s
+Episode   71 | step   72628 | reward   -20 | length  1263 | mean20 -19.65 | eps 0.310 | 200 steps/s
+Episode   72 | step   74450 | reward   -14 | length  1822 | mean20 -19.30 | eps 0.293 | 199 steps/s
+Episode   73 | step   75848 | reward   -17 | length  1398 | mean20 -19.10 | eps 0.279 | 199 steps/s
+Episode   74 | step   77600 | reward   -17 | length  1752 | mean20 -18.95 | eps 0.263 | 198 steps/s
+Episode   75 | step   79390 | reward   -14 | length  1790 | mean20 -18.70 | eps 0.246 | 197 steps/s
+Episode   76 | step   80701 | reward   -19 | length  1311 | mean20 -18.65 | eps 0.233 | 197 steps/s
+Episode   77 | step   82261 | reward   -20 | length  1560 | mean20 -18.75 | eps 0.219 | 196 steps/s
+Episode   78 | step   83415 | reward   -20 | length  1154 | mean20 -18.80 | eps 0.208 | 196 steps/s
+Episode   79 | step   85033 | reward   -17 | length  1618 | mean20 -18.65 | eps 0.192 | 195 steps/s
+Episode   80 | step   86752 | reward   -19 | length  1719 | mean20 -18.55 | eps 0.176 | 195 steps/s
+Episode   81 | step   88207 | reward   -17 | length  1455 | mean20 -18.45 | eps 0.162 | 194 steps/s
+Episode   82 | step   89867 | reward   -21 | length  1660 | mean20 -18.50 | eps 0.146 | 194 steps/s
+Episode   83 | step   91127 | reward   -21 | length  1260 | mean20 -18.55 | eps 0.134 | 193 steps/s
+Episode   84 | step   93168 | reward   -16 | length  2041 | mean20 -18.35 | eps 0.115 | 193 steps/s
+Episode   85 | step   94999 | reward   -13 | length  1831 | mean20 -18.00 | eps 0.098 | 192 steps/s
+Episode   86 | step   96796 | reward   -16 | length  1797 | mean20 -17.85 | eps 0.080 | 192 steps/s
+Episode   87 | step   98494 | reward   -16 | length  1698 | mean20 -17.65 | eps 0.064 | 192 steps/s
+Episode   88 | step   99989 | reward   -18 | length  1495 | mean20 -17.60 | eps 0.050 | 191 steps/s
+Episode   89 | step  101654 | reward   -19 | length  1665 | mean20 -17.60 | eps 0.050 | 191 steps/s
+Episode   90 | step  104198 | reward    -7 | length  2544 | mean20 -17.05 | eps 0.050 | 190 steps/s
+Episode   91 | step  107214 | reward    -4 | length  3016 | mean20 -16.25 | eps 0.050 | 189 steps/s
+Episode   92 | step  108507 | reward   -21 | length  1293 | mean20 -16.60 | eps 0.050 | 189 steps/s
+Episode   93 | step  109856 | reward   -21 | length  1349 | mean20 -16.80 | eps 0.050 | 189 steps/s
+Episode   94 | step  111796 | reward   -16 | length  1940 | mean20 -16.75 | eps 0.050 | 189 steps/s
+Episode   95 | step  114593 | reward    -6 | length  2797 | mean20 -16.35 | eps 0.050 | 188 steps/s
+Episode   96 | step  116560 | reward   -14 | length  1967 | mean20 -16.10 | eps 0.050 | 188 steps/s
+Episode   97 | step  118938 | reward   -14 | length  2378 | mean20 -15.80 | eps 0.050 | 187 steps/s
+Episode   98 | step  121246 | reward   -14 | length  2308 | mean20 -15.50 | eps 0.050 | 187 steps/s
+Episode   99 | step  123610 | reward   -11 | length  2364 | mean20 -15.20 | eps 0.050 | 187 steps/s
+Episode  100 | step  125094 | reward   -20 | length  1484 | mean20 -15.25 | eps 0.050 | 187 steps/s
+Episode  101 | step  126908 | reward   -15 | length  1814 | mean20 -15.15 | eps 0.050 | 186 steps/s
+Episode  102 | step  129538 | reward   -14 | length  2630 | mean20 -14.80 | eps 0.050 | 186 steps/s
+Episode  103 | step  132098 | reward    -7 | length  2560 | mean20 -14.10 | eps 0.050 | 186 steps/s
+Episode  104 | step  134084 | reward   -12 | length  1986 | mean20 -13.90 | eps 0.050 | 185 steps/s
+Episode  105 | step  136167 | reward   -14 | length  2083 | mean20 -13.95 | eps 0.050 | 185 steps/s
+Episode  106 | step  138390 | reward   -16 | length  2223 | mean20 -13.95 | eps 0.050 | 185 steps/s
+Episode  107 | step  140337 | reward   -14 | length  1947 | mean20 -13.85 | eps 0.050 | 185 steps/s
+Episode  108 | step  142016 | reward   -18 | length  1679 | mean20 -13.85 | eps 0.050 | 184 steps/s
+Episode  109 | step  144193 | reward    -7 | length  2177 | mean20 -13.25 | eps 0.050 | 184 steps/s
+Episode  110 | step  146061 | reward   -16 | length  1868 | mean20 -13.70 | eps 0.050 | 184 steps/s
+Episode  111 | step  148237 | reward   -12 | length  2176 | mean20 -14.10 | eps 0.050 | 184 steps/s
+Episode  112 | step  150562 | reward   -12 | length  2325 | mean20 -13.65 | eps 0.050 | 184 steps/s
+Episode  113 | step  152669 | reward   -14 | length  2107 | mean20 -13.30 | eps 0.050 | 183 steps/s
+Episode  114 | step  155128 | reward   -14 | length  2459 | mean20 -13.20 | eps 0.050 | 183 steps/s
+Episode  115 | step  158242 | reward    -6 | length  3114 | mean20 -13.20 | eps 0.050 | 183 steps/s
+Episode  116 | step  161021 | reward    -7 | length  2779 | mean20 -12.85 | eps 0.050 | 182 steps/s
+Episode  117 | step  164027 | reward    -5 | length  3006 | mean20 -12.40 | eps 0.050 | 182 steps/s
+Episode  118 | step  166073 | reward   -14 | length  2046 | mean20 -12.40 | eps 0.050 | 182 steps/s
+Episode  119 | step  168609 | reward   -11 | length  2536 | mean20 -12.40 | eps 0.050 | 182 steps/s
+Episode  120 | step  171565 | reward   -11 | length  2956 | mean20 -11.95 | eps 0.050 | 182 steps/s
+Episode  121 | step  174385 | reward    +6 | length  2820 | mean20 -10.90 | eps 0.050 | 181 steps/s
+Episode  122 | step  177722 | reward    -3 | length  3337 | mean20 -10.35 | eps 0.050 | 181 steps/s
+Episode  123 | step  180610 | reward    +3 | length  2888 | mean20  -9.85 | eps 0.050 | 181 steps/s
+Episode  124 | step  183424 | reward    +5 | length  2814 | mean20  -9.00 | eps 0.050 | 181 steps/s
+Episode  125 | step  185773 | reward   +14 | length  2349 | mean20  -7.60 | eps 0.050 | 181 steps/s
+Episode  126 | step  188028 | reward   +15 | length  2255 | mean20  -6.05 | eps 0.050 | 181 steps/s
+Episode  127 | step  190516 | reward   +12 | length  2488 | mean20  -4.75 | eps 0.050 | 180 steps/s
+Episode  128 | step  194165 | reward    -6 | length  3649 | mean20  -4.15 | eps 0.050 | 180 steps/s
+Episode  129 | step  197140 | reward    +6 | length  2975 | mean20  -3.50 | eps 0.050 | 180 steps/s
+Episode  130 | step  199507 | reward   +13 | length  2367 | mean20  -2.05 | eps 0.050 | 180 steps/s
+Episode  131 | step  202276 | reward   +11 | length  2769 | mean20  -0.90 | eps 0.050 | 180 steps/s
+Episode  132 | step  205357 | reward    +5 | length  3081 | mean20  -0.05 | eps 0.050 | 180 steps/s
+Episode  133 | step  207812 | reward   +10 | length  2455 | mean20  +1.15 | eps 0.050 | 180 steps/s
+Episode  134 | step  210690 | reward    +2 | length  2878 | mean20  +1.95 | eps 0.050 | 179 steps/s
+Episode  135 | step  213449 | reward   +11 | length  2759 | mean20  +2.80 | eps 0.050 | 179 steps/s
+Episode  136 | step  215692 | reward   +10 | length  2243 | mean20  +3.65 | eps 0.050 | 179 steps/s
+Episode  137 | step  218381 | reward    +7 | length  2689 | mean20  +4.25 | eps 0.050 | 179 steps/s
+Episode  138 | step  220158 | reward   +20 | length  1777 | mean20  +5.95 | eps 0.050 | 179 steps/s
+Episode  139 | step  222522 | reward   +11 | length  2364 | mean20  +7.05 | eps 0.050 | 179 steps/s
+Episode  140 | step  225059 | reward   +13 | length  2537 | mean20  +8.25 | eps 0.050 | 179 steps/s
+Episode  141 | step  227676 | reward   +13 | length  2617 | mean20  +8.60 | eps 0.050 | 179 steps/s
+Episode  142 | step  229727 | reward   -13 | length  2051 | mean20  +8.10 | eps 0.050 | 179 steps/s
+Episode  143 | step  231797 | reward   +15 | length  2070 | mean20  +8.70 | eps 0.050 | 178 steps/s
+Episode  144 | step  234391 | reward   +10 | length  2594 | mean20  +8.95 | eps 0.050 | 178 steps/s
+Episode  145 | step  236270 | reward   +18 | length  1879 | mean20  +9.15 | eps 0.050 | 178 steps/s
+Episode  146 | step  238717 | reward   +11 | length  2447 | mean20  +8.95 | eps 0.050 | 178 steps/s
+Episode  147 | step  240998 | reward   +11 | length  2281 | mean20  +8.90 | eps 0.050 | 178 steps/s
+Episode  148 | step  243019 | reward   +20 | length  2021 | mean20 +10.20 | eps 0.050 | 178 steps/s
+Episode  149 | step  245624 | reward   +11 | length  2605 | mean20 +10.45 | eps 0.050 | 178 steps/s
+Episode  150 | step  247896 | reward   +17 | length  2272 | mean20 +10.65 | eps 0.050 | 178 steps/s
+Episode  151 | step  249968 | reward   +18 | length  2072 | mean20 +11.00 | eps 0.050 | 178 steps/s
+Episode  152 | step  252603 | reward   +11 | length  2635 | mean20 +11.30 | eps 0.050 | 178 steps/s
+Episode  153 | step  254987 | reward   +13 | length  2384 | mean20 +11.45 | eps 0.050 | 177 steps/s
+Episode  154 | step  257837 | reward   +10 | length  2850 | mean20 +11.85 | eps 0.050 | 177 steps/s
+Episode  155 | step  259846 | reward   +16 | length  2009 | mean20 +12.10 | eps 0.050 | 177 steps/s
+Episode  156 | step  262424 | reward   +10 | length  2578 | mean20 +12.10 | eps 0.050 | 177 steps/s
+Episode  157 | step  264601 | reward   +14 | length  2177 | mean20 +12.45 | eps 0.050 | 177 steps/s
+Episode  158 | step  266575 | reward   +17 | length  1974 | mean20 +12.30 | eps 0.050 | 177 steps/s
+Episode  159 | step  268704 | reward   +17 | length  2129 | mean20 +12.60 | eps 0.050 | 177 steps/s
+Episode  160 | step  270662 | reward   +19 | length  1958 | mean20 +12.90 | eps 0.050 | 177 steps/s
+Episode  161 | step  272821 | reward   +13 | length  2159 | mean20 +12.90 | eps 0.050 | 177 steps/s
+Episode  162 | step  274808 | reward   +17 | length  1987 | mean20 +14.40 | eps 0.050 | 177 steps/s
+Episode  163 | step  277247 | reward   +13 | length  2439 | mean20 +14.30 | eps 0.050 | 177 steps/s
+Episode  164 | step  279456 | reward   +18 | length  2209 | mean20 +14.70 | eps 0.050 | 177 steps/s
+Episode  165 | step  281411 | reward   +18 | length  1955 | mean20 +14.70 | eps 0.050 | 177 steps/s
+Episode  166 | step  283225 | reward   +21 | length  1814 | mean20 +15.20 | eps 0.050 | 177 steps/s
+Episode  167 | step  285084 | reward   +19 | length  1859 | mean20 +15.60 | eps 0.050 | 177 steps/s
+Episode  168 | step  287143 | reward   +17 | length  2059 | mean20 +15.45 | eps 0.050 | 177 steps/s
+Episode  169 | step  289040 | reward   +18 | length  1897 | mean20 +15.80 | eps 0.050 | 177 steps/s
+Episode  170 | step  291308 | reward   +15 | length  2268 | mean20 +15.70 | eps 0.050 | 177 steps/s
+Episode  171 | step  293370 | reward   +16 | length  2062 | mean20 +15.60 | eps 0.050 | 176 steps/s
+Episode  172 | step  295385 | reward   +17 | length  2015 | mean20 +15.90 | eps 0.050 | 176 steps/s
+Episode  173 | step  297152 | reward   +19 | length  1767 | mean20 +16.20 | eps 0.050 | 176 steps/s
+Episode  174 | step  299211 | reward   +15 | length  2059 | mean20 +16.45 | eps 0.050 | 176 steps/s
+Done. Best mean20 reward: +16.45. Model saved to experiments/Kevin/exp07/dqn_model.pth
+
+$ uv run train.py --member Kevin --exp 8 --seed 3 --eps-end 0.001     # almost no random actions
+Training on cuda, saving to experiments/Kevin/exp08
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step     975 | reward   -20 | length   975 | mean20 -20.00 | eps 0.990 | 922 steps/s
+Episode    2 | step    1978 | reward   -20 | length  1003 | mean20 -20.00 | eps 0.980 | 1057 steps/s
+Episode    3 | step    2955 | reward   -19 | length   977 | mean20 -19.67 | eps 0.970 | 1105 steps/s
+Episode    4 | step    3808 | reward   -21 | length   853 | mean20 -20.00 | eps 0.962 | 1119 steps/s
+Episode    5 | step    4769 | reward   -19 | length   961 | mean20 -19.80 | eps 0.952 | 1126 steps/s
+Episode    6 | step    5529 | reward   -21 | length   760 | mean20 -20.00 | eps 0.945 | 1134 steps/s
+Episode    7 | step    6376 | reward   -21 | length   847 | mean20 -20.14 | eps 0.936 | 1143 steps/s
+Episode    8 | step    7137 | reward   -21 | length   761 | mean20 -20.25 | eps 0.929 | 1145 steps/s
+Episode    9 | step    7899 | reward   -21 | length   762 | mean20 -20.33 | eps 0.921 | 1149 steps/s
+Episode   10 | step    8753 | reward   -20 | length   854 | mean20 -20.30 | eps 0.913 | 1147 steps/s
+Episode   11 | step    9692 | reward   -21 | length   939 | mean20 -20.36 | eps 0.903 | 1149 steps/s
+Episode   12 | step   10986 | reward   -19 | length  1294 | mean20 -20.25 | eps 0.890 | 765 steps/s
+Episode   13 | step   11804 | reward   -21 | length   818 | mean20 -20.31 | eps 0.882 | 630 steps/s
+Episode   14 | step   12740 | reward   -21 | length   936 | mean20 -20.36 | eps 0.873 | 536 steps/s
+Episode   15 | step   13664 | reward   -20 | length   924 | mean20 -20.33 | eps 0.863 | 475 steps/s
+Episode   16 | step   14446 | reward   -21 | length   782 | mean20 -20.38 | eps 0.856 | 438 steps/s
+Episode   17 | step   15238 | reward   -21 | length   792 | mean20 -20.41 | eps 0.848 | 408 steps/s
+Episode   18 | step   16063 | reward   -21 | length   825 | mean20 -20.44 | eps 0.840 | 384 steps/s
+Episode   19 | step   17067 | reward   -20 | length  1004 | mean20 -20.42 | eps 0.830 | 361 steps/s
+Episode   20 | step   18185 | reward   -19 | length  1118 | mean20 -20.35 | eps 0.818 | 341 steps/s
+Episode   21 | step   19022 | reward   -20 | length   837 | mean20 -20.35 | eps 0.810 | 329 steps/s
+Episode   22 | step   19951 | reward   -21 | length   929 | mean20 -20.40 | eps 0.801 | 318 steps/s
+Episode   23 | step   21010 | reward   -19 | length  1059 | mean20 -20.40 | eps 0.790 | 307 steps/s
+Episode   24 | step   21979 | reward   -21 | length   969 | mean20 -20.40 | eps 0.780 | 298 steps/s
+Episode   25 | step   22860 | reward   -21 | length   881 | mean20 -20.50 | eps 0.772 | 291 steps/s
+Episode   26 | step   23766 | reward   -21 | length   906 | mean20 -20.50 | eps 0.763 | 285 steps/s
+Episode   27 | step   24590 | reward   -21 | length   824 | mean20 -20.50 | eps 0.754 | 280 steps/s
+Episode   28 | step   25351 | reward   -21 | length   761 | mean20 -20.50 | eps 0.747 | 275 steps/s
+Episode   29 | step   26243 | reward   -21 | length   892 | mean20 -20.50 | eps 0.738 | 271 steps/s
+Episode   30 | step   27239 | reward   -20 | length   996 | mean20 -20.50 | eps 0.728 | 266 steps/s
+Episode   31 | step   28240 | reward   -21 | length  1001 | mean20 -20.50 | eps 0.718 | 261 steps/s
+Episode   32 | step   29091 | reward   -21 | length   851 | mean20 -20.60 | eps 0.709 | 258 steps/s
+Episode   33 | step   30082 | reward   -21 | length   991 | mean20 -20.60 | eps 0.699 | 255 steps/s
+Episode   34 | step   30950 | reward   -21 | length   868 | mean20 -20.60 | eps 0.691 | 252 steps/s
+Episode   35 | step   31888 | reward   -19 | length   938 | mean20 -20.55 | eps 0.681 | 249 steps/s
+Episode   36 | step   32680 | reward   -21 | length   792 | mean20 -20.55 | eps 0.674 | 247 steps/s
+Episode   37 | step   33549 | reward   -21 | length   869 | mean20 -20.55 | eps 0.665 | 245 steps/s
+Episode   38 | step   34554 | reward   -19 | length  1005 | mean20 -20.45 | eps 0.655 | 242 steps/s
+Episode   39 | step   35616 | reward   -20 | length  1062 | mean20 -20.45 | eps 0.644 | 240 steps/s
+Episode   40 | step   36454 | reward   -20 | length   838 | mean20 -20.50 | eps 0.636 | 238 steps/s
+Episode   41 | step   37372 | reward   -20 | length   918 | mean20 -20.50 | eps 0.627 | 236 steps/s
+Episode   42 | step   38370 | reward   -19 | length   998 | mean20 -20.40 | eps 0.617 | 234 steps/s
+Episode   43 | step   39580 | reward   -19 | length  1210 | mean20 -20.40 | eps 0.605 | 232 steps/s
+Episode   44 | step   40462 | reward   -20 | length   882 | mean20 -20.35 | eps 0.596 | 230 steps/s
+Episode   45 | step   41464 | reward   -20 | length  1002 | mean20 -20.30 | eps 0.586 | 229 steps/s
+Episode   46 | step   42519 | reward   -19 | length  1055 | mean20 -20.20 | eps 0.575 | 227 steps/s
+Episode   47 | step   43396 | reward   -21 | length   877 | mean20 -20.20 | eps 0.566 | 226 steps/s
+Episode   48 | step   44266 | reward   -21 | length   870 | mean20 -20.20 | eps 0.558 | 225 steps/s
+Episode   49 | step   45266 | reward   -19 | length  1000 | mean20 -20.10 | eps 0.548 | 223 steps/s
+Episode   50 | step   46494 | reward   -20 | length  1228 | mean20 -20.10 | eps 0.536 | 222 steps/s
+Episode   51 | step   47466 | reward   -20 | length   972 | mean20 -20.05 | eps 0.526 | 221 steps/s
+Episode   52 | step   48364 | reward   -20 | length   898 | mean20 -20.00 | eps 0.517 | 220 steps/s
+Episode   53 | step   49166 | reward   -21 | length   802 | mean20 -20.00 | eps 0.509 | 219 steps/s
+Episode   54 | step   50119 | reward   -20 | length   953 | mean20 -19.95 | eps 0.499 | 218 steps/s
+Episode   55 | step   50908 | reward   -21 | length   789 | mean20 -20.05 | eps 0.491 | 217 steps/s
+Episode   56 | step   51728 | reward   -21 | length   820 | mean20 -20.05 | eps 0.483 | 216 steps/s
+Episode   57 | step   52658 | reward   -20 | length   930 | mean20 -20.00 | eps 0.474 | 215 steps/s
+Episode   58 | step   53523 | reward   -20 | length   865 | mean20 -20.05 | eps 0.465 | 215 steps/s
+Episode   59 | step   54521 | reward   -19 | length   998 | mean20 -20.00 | eps 0.455 | 214 steps/s
+Episode   60 | step   55893 | reward   -19 | length  1372 | mean20 -19.95 | eps 0.442 | 213 steps/s
+Episode   61 | step   57157 | reward   -19 | length  1264 | mean20 -19.90 | eps 0.429 | 212 steps/s
+Episode   62 | step   58444 | reward   -20 | length  1287 | mean20 -19.95 | eps 0.416 | 211 steps/s
+Episode   63 | step   59492 | reward   -21 | length  1048 | mean20 -20.05 | eps 0.406 | 210 steps/s
+Episode   64 | step   60656 | reward   -21 | length  1164 | mean20 -20.10 | eps 0.394 | 209 steps/s
+Episode   65 | step   61811 | reward   -20 | length  1155 | mean20 -20.10 | eps 0.383 | 208 steps/s
+Episode   66 | step   63329 | reward   -18 | length  1518 | mean20 -20.05 | eps 0.367 | 207 steps/s
+Episode   67 | step   64474 | reward   -19 | length  1145 | mean20 -19.95 | eps 0.356 | 207 steps/s
+Episode   68 | step   65816 | reward   -17 | length  1342 | mean20 -19.75 | eps 0.342 | 206 steps/s
+Episode   69 | step   67045 | reward   -20 | length  1229 | mean20 -19.80 | eps 0.330 | 205 steps/s
+Episode   70 | step   68296 | reward   -19 | length  1251 | mean20 -19.75 | eps 0.318 | 205 steps/s
+Episode   71 | step   69436 | reward   -20 | length  1140 | mean20 -19.75 | eps 0.306 | 204 steps/s
+Episode   72 | step   70764 | reward   -20 | length  1328 | mean20 -19.75 | eps 0.293 | 203 steps/s
+Episode   73 | step   72364 | reward   -17 | length  1600 | mean20 -19.55 | eps 0.277 | 202 steps/s
+Episode   74 | step   73939 | reward   -17 | length  1575 | mean20 -19.40 | eps 0.261 | 202 steps/s
+Episode   75 | step   75485 | reward   -17 | length  1546 | mean20 -19.20 | eps 0.246 | 201 steps/s
+Episode   76 | step   76789 | reward   -20 | length  1304 | mean20 -19.15 | eps 0.233 | 200 steps/s
+Episode   77 | step   78139 | reward   -20 | length  1350 | mean20 -19.15 | eps 0.219 | 200 steps/s
+Episode   78 | step   79620 | reward   -20 | length  1481 | mean20 -19.15 | eps 0.205 | 199 steps/s
+Episode   79 | step   80996 | reward   -21 | length  1376 | mean20 -19.25 | eps 0.191 | 199 steps/s
+Episode   80 | step   82751 | reward   -14 | length  1755 | mean20 -19.00 | eps 0.173 | 198 steps/s
+Episode   81 | step   84477 | reward   -16 | length  1726 | mean20 -18.85 | eps 0.156 | 197 steps/s
+Episode   82 | step   86065 | reward   -19 | length  1588 | mean20 -18.80 | eps 0.140 | 196 steps/s
+Episode   83 | step   87728 | reward   -17 | length  1663 | mean20 -18.60 | eps 0.124 | 196 steps/s
+Episode   84 | step   89201 | reward   -19 | length  1473 | mean20 -18.50 | eps 0.109 | 195 steps/s
+Episode   85 | step   90614 | reward   -18 | length  1413 | mean20 -18.40 | eps 0.095 | 195 steps/s
+Episode   86 | step   92586 | reward   -14 | length  1972 | mean20 -18.20 | eps 0.075 | 194 steps/s
+Episode   87 | step   94399 | reward   -15 | length  1813 | mean20 -18.00 | eps 0.057 | 194 steps/s
+Episode   88 | step   95973 | reward   -20 | length  1574 | mean20 -18.15 | eps 0.041 | 193 steps/s
+Episode   89 | step   98070 | reward   -14 | length  2097 | mean20 -17.85 | eps 0.020 | 192 steps/s
+Episode   90 | step  100121 | reward   -16 | length  2051 | mean20 -17.70 | eps 0.001 | 192 steps/s
+Episode   91 | step  102603 | reward   -12 | length  2482 | mean20 -17.30 | eps 0.001 | 191 steps/s
+Episode   92 | step  104041 | reward   -18 | length  1438 | mean20 -17.20 | eps 0.001 | 191 steps/s
+Episode   93 | step  105988 | reward   -15 | length  1947 | mean20 -17.10 | eps 0.001 | 190 steps/s
+Episode   94 | step  107316 | reward   -18 | length  1328 | mean20 -17.15 | eps 0.001 | 190 steps/s
+Episode   95 | step  109314 | reward   -15 | length  1998 | mean20 -17.05 | eps 0.001 | 190 steps/s
+Episode   96 | step  111326 | reward   -18 | length  2012 | mean20 -16.95 | eps 0.001 | 189 steps/s
+Episode   97 | step  113069 | reward   -17 | length  1743 | mean20 -16.80 | eps 0.001 | 189 steps/s
+Episode   98 | step  115041 | reward   -18 | length  1972 | mean20 -16.70 | eps 0.001 | 188 steps/s
+Episode   99 | step  116466 | reward   -17 | length  1425 | mean20 -16.50 | eps 0.001 | 188 steps/s
+Episode  100 | step  119140 | reward   -14 | length  2674 | mean20 -16.50 | eps 0.001 | 188 steps/s
+Episode  101 | step  121690 | reward   -15 | length  2550 | mean20 -16.45 | eps 0.001 | 187 steps/s
+Episode  102 | step  124153 | reward   -12 | length  2463 | mean20 -16.10 | eps 0.001 | 187 steps/s
+Episode  103 | step  125966 | reward   -18 | length  1813 | mean20 -16.15 | eps 0.001 | 186 steps/s
+Episode  104 | step  128498 | reward   -18 | length  2532 | mean20 -16.10 | eps 0.001 | 186 steps/s
+Episode  105 | step  131137 | reward   -14 | length  2639 | mean20 -15.90 | eps 0.001 | 186 steps/s
+Episode  106 | step  133835 | reward   -12 | length  2698 | mean20 -15.80 | eps 0.001 | 185 steps/s
+Episode  107 | step  135883 | reward   -19 | length  2048 | mean20 -16.00 | eps 0.001 | 185 steps/s
+Episode  108 | step  138707 | reward    -9 | length  2824 | mean20 -15.45 | eps 0.001 | 185 steps/s
+Episode  109 | step  141131 | reward   -20 | length  2424 | mean20 -15.75 | eps 0.001 | 184 steps/s
+Episode  110 | step  143741 | reward   -16 | length  2610 | mean20 -15.75 | eps 0.001 | 184 steps/s
+Episode  111 | step  146150 | reward   -14 | length  2409 | mean20 -15.85 | eps 0.001 | 184 steps/s
+Episode  112 | step  149221 | reward   -10 | length  3071 | mean20 -15.45 | eps 0.001 | 184 steps/s
+Episode  113 | step  152028 | reward   -10 | length  2807 | mean20 -15.20 | eps 0.001 | 183 steps/s
+Episode  114 | step  155226 | reward   -13 | length  3198 | mean20 -14.95 | eps 0.001 | 183 steps/s
+Episode  115 | step  157502 | reward   -18 | length  2276 | mean20 -15.10 | eps 0.001 | 183 steps/s
+Episode  116 | step  160784 | reward    -7 | length  3282 | mean20 -14.55 | eps 0.001 | 182 steps/s
+Episode  117 | step  163033 | reward   -18 | length  2249 | mean20 -14.60 | eps 0.001 | 182 steps/s
+Episode  118 | step  166078 | reward   -14 | length  3045 | mean20 -14.40 | eps 0.001 | 182 steps/s
+Episode  119 | step  169570 | reward    -9 | length  3492 | mean20 -14.00 | eps 0.001 | 181 steps/s
+Episode  120 | step  172624 | reward   -10 | length  3054 | mean20 -13.80 | eps 0.001 | 181 steps/s
+Episode  121 | step  175622 | reward   -12 | length  2998 | mean20 -13.65 | eps 0.001 | 181 steps/s
+Episode  122 | step  178425 | reward   -13 | length  2803 | mean20 -13.70 | eps 0.001 | 181 steps/s
+Episode  123 | step  181723 | reward   -10 | length  3298 | mean20 -13.30 | eps 0.001 | 180 steps/s
+Episode  124 | step  184965 | reward   -14 | length  3242 | mean20 -13.10 | eps 0.001 | 180 steps/s
+Episode  125 | step  188439 | reward   -10 | length  3474 | mean20 -12.90 | eps 0.001 | 180 steps/s
+Episode  126 | step  191002 | reward   -14 | length  2563 | mean20 -13.00 | eps 0.001 | 180 steps/s
+Episode  127 | step  194389 | reward   -10 | length  3387 | mean20 -12.55 | eps 0.001 | 179 steps/s
+Episode  128 | step  197540 | reward   -11 | length  3151 | mean20 -12.65 | eps 0.001 | 179 steps/s
+Episode  129 | step  201052 | reward    -6 | length  3512 | mean20 -11.95 | eps 0.001 | 179 steps/s
+Episode  130 | step  204837 | reward    -5 | length  3785 | mean20 -11.40 | eps 0.001 | 179 steps/s
+Episode  131 | step  208000 | reward   -14 | length  3163 | mean20 -11.40 | eps 0.001 | 178 steps/s
+Episode  132 | step  210648 | reward   -13 | length  2648 | mean20 -11.55 | eps 0.001 | 178 steps/s
+Episode  133 | step  213944 | reward    -8 | length  3296 | mean20 -11.45 | eps 0.001 | 178 steps/s
+Episode  134 | step  216865 | reward   -10 | length  2921 | mean20 -11.30 | eps 0.001 | 178 steps/s
+Episode  135 | step  219740 | reward    -9 | length  2875 | mean20 -10.85 | eps 0.001 | 178 steps/s
+Episode  136 | step  222790 | reward    -7 | length  3050 | mean20 -10.85 | eps 0.001 | 177 steps/s
+Episode  137 | step  225165 | reward   -12 | length  2375 | mean20 -10.55 | eps 0.001 | 177 steps/s
+Episode  138 | step  227998 | reward   -14 | length  2833 | mean20 -10.55 | eps 0.001 | 177 steps/s
+Episode  139 | step  231805 | reward    -3 | length  3807 | mean20 -10.25 | eps 0.001 | 177 steps/s
+Episode  140 | step  234889 | reward   -10 | length  3084 | mean20 -10.25 | eps 0.001 | 177 steps/s
+Episode  141 | step  237969 | reward   -12 | length  3080 | mean20 -10.25 | eps 0.001 | 177 steps/s
+Episode  142 | step  242018 | reward    -1 | length  4049 | mean20  -9.65 | eps 0.001 | 177 steps/s
+Episode  143 | step  245690 | reward    -1 | length  3672 | mean20  -9.20 | eps 0.001 | 176 steps/s
+Episode  144 | step  249847 | reward    -4 | length  4157 | mean20  -8.70 | eps 0.001 | 176 steps/s
+Episode  145 | step  253946 | reward    -2 | length  4099 | mean20  -8.30 | eps 0.001 | 176 steps/s
+Episode  146 | step  256996 | reward   -18 | length  3050 | mean20  -8.50 | eps 0.001 | 176 steps/s
+Episode  147 | step  260136 | reward   -16 | length  3140 | mean20  -8.80 | eps 0.001 | 176 steps/s
+Episode  148 | step  263751 | reward    -8 | length  3615 | mean20  -8.65 | eps 0.001 | 176 steps/s
+Episode  149 | step  267156 | reward    +2 | length  3405 | mean20  -8.25 | eps 0.001 | 176 steps/s
+Episode  150 | step  270862 | reward    +5 | length  3706 | mean20  -7.75 | eps 0.001 | 176 steps/s
+Episode  151 | step  274272 | reward   -10 | length  3410 | mean20  -7.55 | eps 0.001 | 175 steps/s
+Episode  152 | step  278008 | reward    -8 | length  3736 | mean20  -7.30 | eps 0.001 | 175 steps/s
+Episode  153 | step  282499 | reward    -3 | length  4491 | mean20  -7.05 | eps 0.001 | 175 steps/s
+Episode  154 | step  285534 | reward    +9 | length  3035 | mean20  -6.10 | eps 0.001 | 175 steps/s
+Episode  155 | step  289043 | reward    -8 | length  3509 | mean20  -6.05 | eps 0.001 | 175 steps/s
+Episode  156 | step  291627 | reward   -14 | length  2584 | mean20  -6.40 | eps 0.001 | 175 steps/s
+Episode  157 | step  295414 | reward    -7 | length  3787 | mean20  -6.15 | eps 0.001 | 175 steps/s
+Episode  158 | step  299191 | reward    +3 | length  3777 | mean20  -5.30 | eps 0.001 | 174 steps/s
+Done. Best mean20 reward: -5.30. Model saved to experiments/Kevin/exp08/dqn_model.pth
+
+$ uv run train.py --member Kevin --exp 9 --seed 3 --eps-start 0.5     # start half random
+Training on cuda, saving to experiments/Kevin/exp09
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+Episode    1 | step     758 | reward   -21 | length   758 | mean20 -21.00 | eps 0.496 | 681 steps/s
+Episode    2 | step    1519 | reward   -21 | length   761 | mean20 -21.00 | eps 0.493 | 776 steps/s
+Episode    3 | step    2281 | reward   -21 | length   762 | mean20 -21.00 | eps 0.489 | 805 steps/s
+Episode    4 | step    3044 | reward   -21 | length   763 | mean20 -21.00 | eps 0.485 | 821 steps/s
+Episode    5 | step    3804 | reward   -21 | length   760 | mean20 -21.00 | eps 0.481 | 837 steps/s
+Episode    6 | step    4564 | reward   -21 | length   760 | mean20 -21.00 | eps 0.478 | 843 steps/s
+Episode    7 | step    5321 | reward   -21 | length   757 | mean20 -21.00 | eps 0.474 | 849 steps/s
+Episode    8 | step    6082 | reward   -21 | length   761 | mean20 -21.00 | eps 0.470 | 846 steps/s
+Episode    9 | step    6844 | reward   -21 | length   762 | mean20 -21.00 | eps 0.466 | 848 steps/s
+Episode   10 | step    7602 | reward   -21 | length   758 | mean20 -21.00 | eps 0.463 | 850 steps/s
+Episode   11 | step    8363 | reward   -21 | length   761 | mean20 -21.00 | eps 0.459 | 850 steps/s
+Episode   12 | step    9122 | reward   -21 | length   759 | mean20 -21.00 | eps 0.455 | 850 steps/s
+Episode   13 | step    9880 | reward   -21 | length   758 | mean20 -21.00 | eps 0.452 | 850 steps/s
+Episode   14 | step   10761 | reward   -21 | length   881 | mean20 -21.00 | eps 0.447 | 658 steps/s
+Episode   15 | step   11624 | reward   -21 | length   863 | mean20 -21.00 | eps 0.443 | 545 steps/s
+Episode   16 | step   12537 | reward   -21 | length   913 | mean20 -21.00 | eps 0.439 | 474 steps/s
+Episode   17 | step   13468 | reward   -20 | length   931 | mean20 -20.94 | eps 0.434 | 424 steps/s
+Episode   18 | step   14338 | reward   -21 | length   870 | mean20 -20.94 | eps 0.430 | 391 steps/s
+Episode   19 | step   15097 | reward   -21 | length   759 | mean20 -20.95 | eps 0.426 | 368 steps/s
+Episode   20 | step   15998 | reward   -20 | length   901 | mean20 -20.90 | eps 0.422 | 347 steps/s
+Episode   21 | step   17127 | reward   -19 | length  1129 | mean20 -20.80 | eps 0.416 | 326 steps/s
+Episode   22 | step   17977 | reward   -21 | length   850 | mean20 -20.80 | eps 0.412 | 313 steps/s
+Episode   23 | step   18909 | reward   -20 | length   932 | mean20 -20.75 | eps 0.407 | 302 steps/s
+Episode   24 | step   19717 | reward   -21 | length   808 | mean20 -20.75 | eps 0.403 | 293 steps/s
+Episode   25 | step   20837 | reward   -19 | length  1120 | mean20 -20.65 | eps 0.398 | 283 steps/s
+Episode   26 | step   21622 | reward   -21 | length   785 | mean20 -20.65 | eps 0.394 | 277 steps/s
+Episode   27 | step   22526 | reward   -20 | length   904 | mean20 -20.60 | eps 0.390 | 271 steps/s
+Episode   28 | step   23610 | reward   -20 | length  1084 | mean20 -20.55 | eps 0.384 | 264 steps/s
+Episode   29 | step   24612 | reward   -19 | length  1002 | mean20 -20.45 | eps 0.379 | 259 steps/s
+Episode   30 | step   25462 | reward   -21 | length   850 | mean20 -20.45 | eps 0.375 | 255 steps/s
+Episode   31 | step   26363 | reward   -20 | length   901 | mean20 -20.40 | eps 0.371 | 251 steps/s
+Episode   32 | step   27205 | reward   -20 | length   842 | mean20 -20.35 | eps 0.367 | 247 steps/s
+Episode   33 | step   28015 | reward   -21 | length   810 | mean20 -20.35 | eps 0.363 | 244 steps/s
+Episode   34 | step   29012 | reward   -19 | length   997 | mean20 -20.25 | eps 0.358 | 241 steps/s
+Episode   35 | step   29943 | reward   -19 | length   931 | mean20 -20.15 | eps 0.353 | 238 steps/s
+Episode   36 | step   30795 | reward   -21 | length   852 | mean20 -20.15 | eps 0.349 | 236 steps/s
+Episode   37 | step   31837 | reward   -20 | length  1042 | mean20 -20.15 | eps 0.344 | 233 steps/s
+Episode   38 | step   32622 | reward   -21 | length   785 | mean20 -20.15 | eps 0.340 | 231 steps/s
+Episode   39 | step   33530 | reward   -21 | length   908 | mean20 -20.15 | eps 0.336 | 229 steps/s
+Episode   40 | step   34364 | reward   -20 | length   834 | mean20 -20.15 | eps 0.332 | 227 steps/s
+Episode   41 | step   35261 | reward   -20 | length   897 | mean20 -20.20 | eps 0.327 | 225 steps/s
+Episode   42 | step   36172 | reward   -21 | length   911 | mean20 -20.20 | eps 0.323 | 224 steps/s
+Episode   43 | step   37083 | reward   -21 | length   911 | mean20 -20.25 | eps 0.318 | 222 steps/s
+Episode   44 | step   38068 | reward   -20 | length   985 | mean20 -20.20 | eps 0.313 | 220 steps/s
+Episode   45 | step   39186 | reward   -19 | length  1118 | mean20 -20.20 | eps 0.308 | 219 steps/s
+Episode   46 | step   40313 | reward   -21 | length  1127 | mean20 -20.20 | eps 0.302 | 217 steps/s
+Episode   47 | step   41192 | reward   -21 | length   879 | mean20 -20.25 | eps 0.298 | 216 steps/s
+Episode   48 | step   42155 | reward   -20 | length   963 | mean20 -20.25 | eps 0.293 | 215 steps/s
+Episode   49 | step   43068 | reward   -21 | length   913 | mean20 -20.35 | eps 0.289 | 213 steps/s
+Episode   50 | step   44213 | reward   -21 | length  1145 | mean20 -20.35 | eps 0.283 | 212 steps/s
+Episode   51 | step   45622 | reward   -18 | length  1409 | mean20 -20.25 | eps 0.276 | 210 steps/s
+Episode   52 | step   46585 | reward   -21 | length   963 | mean20 -20.30 | eps 0.272 | 209 steps/s
+Episode   53 | step   47671 | reward   -19 | length  1086 | mean20 -20.20 | eps 0.266 | 208 steps/s
+Episode   54 | step   48694 | reward   -20 | length  1023 | mean20 -20.25 | eps 0.261 | 207 steps/s
+Episode   55 | step   49637 | reward   -20 | length   943 | mean20 -20.30 | eps 0.257 | 206 steps/s
+Episode   56 | step   50622 | reward   -20 | length   985 | mean20 -20.25 | eps 0.252 | 205 steps/s
+Episode   57 | step   51536 | reward   -21 | length   914 | mean20 -20.30 | eps 0.247 | 205 steps/s
+Episode   58 | step   52634 | reward   -20 | length  1098 | mean20 -20.25 | eps 0.242 | 204 steps/s
+Episode   59 | step   53729 | reward   -21 | length  1095 | mean20 -20.25 | eps 0.237 | 203 steps/s
+Episode   60 | step   54614 | reward   -21 | length   885 | mean20 -20.30 | eps 0.232 | 202 steps/s
+Episode   61 | step   55434 | reward   -21 | length   820 | mean20 -20.35 | eps 0.228 | 202 steps/s
+Episode   62 | step   56806 | reward   -18 | length  1372 | mean20 -20.20 | eps 0.222 | 201 steps/s
+Episode   63 | step   57879 | reward   -19 | length  1073 | mean20 -20.10 | eps 0.216 | 200 steps/s
+Episode   64 | step   59137 | reward   -18 | length  1258 | mean20 -20.00 | eps 0.210 | 199 steps/s
+Episode   65 | step   60515 | reward   -20 | length  1378 | mean20 -20.05 | eps 0.203 | 199 steps/s
+Episode   66 | step   61752 | reward   -21 | length  1237 | mean20 -20.05 | eps 0.197 | 198 steps/s
+Episode   67 | step   62912 | reward   -18 | length  1160 | mean20 -19.90 | eps 0.192 | 197 steps/s
+Episode   68 | step   64214 | reward   -19 | length  1302 | mean20 -19.85 | eps 0.185 | 197 steps/s
+Episode   69 | step   65201 | reward   -20 | length   987 | mean20 -19.80 | eps 0.181 | 196 steps/s
+Episode   70 | step   66413 | reward   -19 | length  1212 | mean20 -19.70 | eps 0.175 | 196 steps/s
+Episode   71 | step   68009 | reward   -18 | length  1596 | mean20 -19.70 | eps 0.167 | 195 steps/s
+Episode   72 | step   69481 | reward   -19 | length  1472 | mean20 -19.60 | eps 0.160 | 194 steps/s
+Episode   73 | step   71247 | reward   -20 | length  1766 | mean20 -19.65 | eps 0.151 | 194 steps/s
+Episode   74 | step   72922 | reward   -17 | length  1675 | mean20 -19.50 | eps 0.143 | 193 steps/s
+Episode   75 | step   74360 | reward   -18 | length  1438 | mean20 -19.40 | eps 0.136 | 192 steps/s
+Episode   76 | step   76097 | reward   -20 | length  1737 | mean20 -19.40 | eps 0.127 | 192 steps/s
+Episode   77 | step   77482 | reward   -21 | length  1385 | mean20 -19.40 | eps 0.120 | 191 steps/s
+Episode   78 | step   78623 | reward   -21 | length  1141 | mean20 -19.45 | eps 0.115 | 191 steps/s
+Episode   79 | step   80111 | reward   -20 | length  1488 | mean20 -19.40 | eps 0.107 | 190 steps/s
+Episode   80 | step   81597 | reward   -18 | length  1486 | mean20 -19.25 | eps 0.100 | 190 steps/s
+Episode   81 | step   83435 | reward   -13 | length  1838 | mean20 -18.85 | eps 0.091 | 189 steps/s
+Episode   82 | step   85054 | reward   -21 | length  1619 | mean20 -19.00 | eps 0.083 | 188 steps/s
+Episode   83 | step   86778 | reward   -20 | length  1724 | mean20 -19.05 | eps 0.075 | 188 steps/s
+Episode   84 | step   88578 | reward   -20 | length  1800 | mean20 -19.15 | eps 0.066 | 186 steps/s
+Episode   85 | step   90486 | reward   -17 | length  1908 | mean20 -19.00 | eps 0.057 | 186 steps/s
+Episode   86 | step   91950 | reward   -20 | length  1464 | mean20 -18.95 | eps 0.049 | 185 steps/s
+Episode   87 | step   93583 | reward   -21 | length  1633 | mean20 -19.10 | eps 0.041 | 184 steps/s
+Episode   88 | step   95597 | reward   -21 | length  2014 | mean20 -19.20 | eps 0.032 | 183 steps/s
+Episode   89 | step   97304 | reward   -21 | length  1707 | mean20 -19.25 | eps 0.023 | 183 steps/s
+Episode   90 | step   99055 | reward   -17 | length  1751 | mean20 -19.15 | eps 0.015 | 182 steps/s
+Episode   91 | step  100447 | reward   -17 | length  1392 | mean20 -19.10 | eps 0.010 | 181 steps/s
+Episode   92 | step  101368 | reward   -21 | length   921 | mean20 -19.20 | eps 0.010 | 181 steps/s
+Episode   93 | step  102349 | reward   -21 | length   981 | mean20 -19.25 | eps 0.010 | 180 steps/s
+Episode   94 | step  103402 | reward   -19 | length  1053 | mean20 -19.35 | eps 0.010 | 180 steps/s
+Episode   95 | step  104545 | reward   -19 | length  1143 | mean20 -19.40 | eps 0.010 | 179 steps/s
+Episode   96 | step  105407 | reward   -21 | length   862 | mean20 -19.45 | eps 0.010 | 179 steps/s
+Episode   97 | step  106811 | reward   -21 | length  1404 | mean20 -19.45 | eps 0.010 | 178 steps/s
+Episode   98 | step  107768 | reward   -20 | length   957 | mean20 -19.40 | eps 0.010 | 178 steps/s
+Episode   99 | step  109170 | reward   -19 | length  1402 | mean20 -19.35 | eps 0.010 | 178 steps/s
+Episode  100 | step  110199 | reward   -21 | length  1029 | mean20 -19.50 | eps 0.010 | 177 steps/s
+Episode  101 | step  111101 | reward   -21 | length   902 | mean20 -19.90 | eps 0.010 | 177 steps/s
+Episode  102 | step  112290 | reward   -20 | length  1189 | mean20 -19.85 | eps 0.010 | 177 steps/s
+Episode  103 | step  114231 | reward   -20 | length  1941 | mean20 -19.85 | eps 0.010 | 176 steps/s
+Episode  104 | step  116312 | reward   -18 | length  2081 | mean20 -19.75 | eps 0.010 | 175 steps/s
+Episode  105 | step  118234 | reward   -20 | length  1922 | mean20 -19.90 | eps 0.010 | 175 steps/s
+Episode  106 | step  120189 | reward   -16 | length  1955 | mean20 -19.70 | eps 0.010 | 174 steps/s
+Episode  107 | step  121911 | reward   -21 | length  1722 | mean20 -19.70 | eps 0.010 | 174 steps/s
+Episode  108 | step  124002 | reward   -17 | length  2091 | mean20 -19.50 | eps 0.010 | 174 steps/s
+Episode  109 | step  125930 | reward   -18 | length  1928 | mean20 -19.35 | eps 0.010 | 173 steps/s
+Episode  110 | step  128086 | reward   -15 | length  2156 | mean20 -19.25 | eps 0.010 | 173 steps/s
+Episode  111 | step  129577 | reward   -19 | length  1491 | mean20 -19.35 | eps 0.010 | 173 steps/s
+Episode  112 | step  131399 | reward   -17 | length  1822 | mean20 -19.15 | eps 0.010 | 172 steps/s
+Episode  113 | step  133519 | reward   -20 | length  2120 | mean20 -19.10 | eps 0.010 | 172 steps/s
+Episode  114 | step  135811 | reward   -20 | length  2292 | mean20 -19.15 | eps 0.010 | 171 steps/s
+Episode  115 | step  137754 | reward   -20 | length  1943 | mean20 -19.20 | eps 0.010 | 171 steps/s
+Episode  116 | step  140389 | reward   -17 | length  2635 | mean20 -19.00 | eps 0.010 | 171 steps/s
+Episode  117 | step  142141 | reward   -18 | length  1752 | mean20 -18.85 | eps 0.010 | 170 steps/s
+Episode  118 | step  144215 | reward   -21 | length  2074 | mean20 -18.90 | eps 0.010 | 170 steps/s
+Episode  119 | step  146446 | reward   -19 | length  2231 | mean20 -18.90 | eps 0.010 | 170 steps/s
+Episode  120 | step  149403 | reward   -13 | length  2957 | mean20 -18.50 | eps 0.010 | 169 steps/s
+Episode  121 | step  152094 | reward   -20 | length  2691 | mean20 -18.45 | eps 0.010 | 169 steps/s
+Episode  122 | step  153921 | reward   -19 | length  1827 | mean20 -18.40 | eps 0.010 | 168 steps/s
+Episode  123 | step  156741 | reward   -14 | length  2820 | mean20 -18.10 | eps 0.010 | 168 steps/s
+Episode  124 | step  160127 | reward   -16 | length  3386 | mean20 -18.00 | eps 0.010 | 167 steps/s
+Episode  125 | step  162364 | reward   -20 | length  2237 | mean20 -18.00 | eps 0.010 | 167 steps/s
+Episode  126 | step  165269 | reward   -17 | length  2905 | mean20 -18.05 | eps 0.010 | 166 steps/s
+Episode  127 | step  168289 | reward   -20 | length  3020 | mean20 -18.00 | eps 0.010 | 166 steps/s
+Episode  128 | step  171229 | reward   -16 | length  2940 | mean20 -17.95 | eps 0.010 | 165 steps/s
+Episode  129 | step  174592 | reward   -13 | length  3363 | mean20 -17.70 | eps 0.010 | 164 steps/s
+Episode  130 | step  178537 | reward   -10 | length  3945 | mean20 -17.45 | eps 0.010 | 164 steps/s
+Episode  131 | step  182226 | reward   -15 | length  3689 | mean20 -17.25 | eps 0.010 | 163 steps/s
+Episode  132 | step  185271 | reward   -13 | length  3045 | mean20 -17.05 | eps 0.010 | 163 steps/s
+Episode  133 | step  189374 | reward   -10 | length  4103 | mean20 -16.55 | eps 0.010 | 162 steps/s
+Episode  134 | step  192466 | reward   -17 | length  3092 | mean20 -16.40 | eps 0.010 | 162 steps/s
+Episode  135 | step  195984 | reward   -16 | length  3518 | mean20 -16.20 | eps 0.010 | 162 steps/s
+Episode  136 | step  198800 | reward   -16 | length  2816 | mean20 -16.15 | eps 0.010 | 161 steps/s
+Episode  137 | step  202178 | reward   -11 | length  3378 | mean20 -15.80 | eps 0.010 | 161 steps/s
+Episode  138 | step  205921 | reward   -14 | length  3743 | mean20 -15.45 | eps 0.010 | 160 steps/s
+Episode  139 | step  209110 | reward   -12 | length  3189 | mean20 -15.10 | eps 0.010 | 160 steps/s
+Episode  140 | step  213248 | reward   -11 | length  4138 | mean20 -15.00 | eps 0.010 | 160 steps/s
+Episode  141 | step  217999 | reward    -9 | length  4751 | mean20 -14.45 | eps 0.010 | 159 steps/s
+Episode  142 | step  221575 | reward   -12 | length  3576 | mean20 -14.10 | eps 0.010 | 159 steps/s
+Episode  143 | step  224780 | reward   -13 | length  3205 | mean20 -14.05 | eps 0.010 | 159 steps/s
+Episode  144 | step  229019 | reward    -4 | length  4239 | mean20 -13.45 | eps 0.010 | 159 steps/s
+Episode  145 | step  232821 | reward    -7 | length  3802 | mean20 -12.80 | eps 0.010 | 159 steps/s
+Episode  146 | step  237910 | reward   -10 | length  5089 | mean20 -12.45 | eps 0.010 | 159 steps/s
+Episode  147 | step  243790 | reward    -3 | length  5880 | mean20 -11.60 | eps 0.010 | 158 steps/s
+Episode  148 | step  247852 | reward    +6 | length  4062 | mean20 -10.50 | eps 0.010 | 158 steps/s
+Episode  149 | step  253094 | reward    +3 | length  5242 | mean20  -9.70 | eps 0.010 | 158 steps/s
+Episode  150 | step  256567 | reward    -7 | length  3473 | mean20  -9.55 | eps 0.010 | 158 steps/s
+Episode  151 | step  260851 | reward    -4 | length  4284 | mean20  -9.00 | eps 0.010 | 158 steps/s
+Episode  152 | step  265884 | reward    +4 | length  5033 | mean20  -8.15 | eps 0.010 | 158 steps/s
+Episode  153 | step  270560 | reward    +2 | length  4676 | mean20  -7.55 | eps 0.010 | 158 steps/s
+Episode  154 | step  274263 | reward    -2 | length  3703 | mean20  -6.80 | eps 0.010 | 158 steps/s
+Episode  155 | step  279171 | reward    +5 | length  4908 | mean20  -5.75 | eps 0.010 | 158 steps/s
+Episode  156 | step  283759 | reward    +9 | length  4588 | mean20  -4.50 | eps 0.010 | 158 steps/s
+Episode  157 | step  288672 | reward    -5 | length  4913 | mean20  -4.20 | eps 0.010 | 157 steps/s
+Episode  158 | step  293692 | reward    +1 | length  5020 | mean20  -3.45 | eps 0.010 | 157 steps/s
+Episode  159 | step  297691 | reward    +7 | length  3999 | mean20  -2.50 | eps 0.010 | 157 steps/s
+Done. Best mean20 reward: -2.50. Model saved to experiments/Kevin/exp09/dqn_model.pth
+
+All experiments finished.

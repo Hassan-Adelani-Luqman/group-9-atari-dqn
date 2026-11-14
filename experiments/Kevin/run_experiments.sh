@@ -20,6 +20,6 @@ uv run train.py --member Kevin --exp 7 --seed 3 --eps-end 0.05
 uv run train.py --member Kevin --exp 8 --seed 3 --eps-end 0.001     # almost no random actions
 uv run train.py --member Kevin --exp 9 --seed 3 --eps-start 0.5     # start half random
 
-# exp10 = best epsilon decay + best final epsilon, chosen at the Thursday sync.
-# Fill in the values, remove the "# " in front, push, then: bash kaggle/launch.sh Kevin 10 main
-# uv run train.py --member Kevin --exp 10 --seed 3 --eps-decay BEST_DECAY --eps-end BEST_END
+# exp10 = best epsilon decay + best final epsilon from exp01-exp09:
+# decay 250k (exp05, highest final mean-20 +17.15) and end 0.05 (exp07, fastest learner +16.45).
+uv run train.py --member Kevin --exp 10 --seed 3 --eps-decay 250000 --eps-end 0.05
