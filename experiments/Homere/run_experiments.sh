@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Homere's 10 experiments: the discount factor gamma (Plan.md, Reference D).
+# Homere's 10 experiments: the discount factor gamma.
 #
 # Each line sets only the values being tested. Everything else is the group baseline
 # from train.py: lr 1e-4, gamma 0.99, batch 32, epsilon 1.0 -> 0.01 over 100k steps, 300k steps.

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Group 9 final model (Plan.md, Phase 4): the best settings from all 30 experiments, trained 5x longer.
+# Group 9 final model: the best settings from all 30 experiments, trained 5x longer.
 #
 #   learning rate 2.5e-4, batch 64   Hassan: best learning rate (exp04, +19.4) and batch size (exp08, +19.5);
 #                                    together in his exp10 they started improving earliest (~50k steps).

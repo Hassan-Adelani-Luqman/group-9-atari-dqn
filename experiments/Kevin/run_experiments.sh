@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Kevin's 10 experiments: epsilon-greedy exploration (Plan.md, Reference D).
+# Kevin's 10 experiments: epsilon-greedy exploration.
 #
 # Each line sets only the values being tested. Everything else is the group baseline
 # from train.py: lr 1e-4, gamma 0.99, batch 32, epsilon 1.0 -> 0.01 over 100k steps, 300k steps.
