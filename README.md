@@ -1,6 +1,6 @@
 # Group 9: Deep Q-Network on Atari Pong
 
-We built a Deep Q-Network (DQN) from scratch with PyTorch and trained it to play Atari Pong. No reinforcement-learning libraries (Stable-Baselines3, RLlib, CleanRL, TorchRL) are used: the Q-network, replay buffer, ε-greedy exploration, Bellman target and training loop are all in [`train.py`](train.py). Gymnasium only provides the game.
+We built a Deep Q-Network (DQN) from scratch with PyTorch and trained it to play Atari Pong. No reinforcement-learning libraries are used: the Q-network, replay buffer, ε-greedy exploration, Bellman target and training loop are all in [`train.py`](train.py). Gymnasium only provides the game.
 
 Our final model won every game we tested 21–0 against Pong's built-in opponent.
 
@@ -226,7 +226,6 @@ group-9-atari-dqn/
 ├── kaggle/                        # launch.sh, fetch.sh, job.py, train.ipynb, logs/ of every Kaggle job
 ├── KAGGLE_SETUP.md                # how to run experiments on Kaggle GPUs
 ├── videos/                        # gameplay.mp4, gameplay.gif
-├── Plan.md                        # project plan
 └── pyproject.toml, uv.lock, .python-version
 ```
 

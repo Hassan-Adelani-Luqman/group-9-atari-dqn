@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Hassan's 10 experiments: learning rate and batch size (Plan.md, Reference D).
+# Hassan's 10 experiments: learning rate and batch size.
 #
 # Each line sets only the values being tested. Everything else is the group baseline
 # from train.py: lr 1e-4, gamma 0.99, batch 32, epsilon 1.0 -> 0.01 over 100k steps, 300k steps.
