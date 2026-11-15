@@ -1,0 +1,1048 @@
+[{"stream_name":"stdout","time":0.931715343,"data":"\n"}
+,{"stream_name":"stdout","time":0.93176874,"data":"$ nvidia-smi\n"}
+,{"stream_name":"stdout","time":0.97254447,"data":"Sat Nov 14 22:11:38 2026       \n"}
+,{"stream_name":"stdout","time":0.972567215,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":0.972572272,"data":"| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n"}
+,{"stream_name":"stdout","time":0.972576125,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":0.972579551,"data":"| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n"}
+,{"stream_name":"stdout","time":0.972583311,"data":"| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n"}
+,{"stream_name":"stdout","time":0.972588447,"data":"|                                         |                        |               MIG M. |\n"}
+,{"stream_name":"stdout","time":0.972595447,"data":"|=========================================+========================+======================|\n"}
+,{"stream_name":"stdout","time":1.027082468,"data":"|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":1.027102838,"data":"| N/A   54C    P8             10W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":1.0271077,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":1.027111732,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":1.027115549,"data":"|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":1.027119868,"data":"| N/A   54C    P8             10W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":1.027123208,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":1.027127133,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":1.027958752,"data":"\n"}
+,{"stream_name":"stdout","time":1.027971479,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":1.027976513,"data":"| Processes:                                                                              |\n"}
+,{"stream_name":"stdout","time":1.02798057,"data":"|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n"}
+,{"stream_name":"stdout","time":1.027984703,"data":"|        ID   ID                                                               Usage      |\n"}
+,{"stream_name":"stdout","time":1.027988817,"data":"|=========================================================================================|\n"}
+,{"stream_name":"stdout","time":1.029686856,"data":"|  No running processes found                                                             |\n"}
+,{"stream_name":"stdout","time":1.029699297,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":1.362138477,"data":"\n"}
+,{"stream_name":"stdout","time":1.362169633,"data":"$ curl -LsSf https://astral.sh/uv/install.sh | sh\n"}
+,{"stream_name":"stderr","time":1.751767541,"data":"downloading uv 0.13.8 x86_64-unknown-linux-gnu\n"}
+,{"stream_name":"stdout","time":2.387701377,"data":"installing to /usr/local/bin\n"}
+,{"stream_name":"stdout","time":2.400305983,"data":"  uv\n"}
+,{"stream_name":"stdout","time":2.402632143,"data":"  uvx\n"}
+,{"stream_name":"stdout","time":2.409450672,"data":"everything's installed!\n"}
+,{"stream_name":"stdout","time":2.416620024,"data":"\n"}
+,{"stream_name":"stdout","time":2.416637311,"data":"$ git clone --depth 1 --branch final-model https://github.com/Hassan-Adelani-Luqman/group-9-atari-dqn.git /tmp/repo\n"}
+,{"stream_name":"stderr","time":2.451600425,"data":"Cloning into '/tmp/repo'...\n"}
+,{"stream_name":"stdout","time":7.434134567,"data":"\n"}
+,{"stream_name":"stdout","time":7.434171563,"data":"$ uv sync --frozen\n"}
+,{"stream_name":"stderr","time":7.764449539,"data":"Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\n"}
+,{"stream_name":"stderr","time":7.764554997,"data":"Creating virtual environment at: .venv\n"}
+,{"stream_name":"stderr","time":7.8587069419999995,"data":"Downloading matplotlib (9.4MiB)\n"}
+,{"stream_name":"stderr","time":7.85901891,"data":"Downloading networkx (2.0MiB)\n"}
+,{"stream_name":"stderr","time":7.859207068,"data":"Downloading kiwisolver (1.4MiB)\n"}
+,{"stream_name":"stderr","time":7.887304396,"data":"Downloading nvidia-cublas-cu12 (374.9MiB)\n"}
+,{"stream_name":"stderr","time":7.887537506,"data":"Downloading nvidia-cusolver-cu12 (150.9MiB)\n"}
+,{"stream_name":"stderr","time":7.887722601,"data":"Downloading triton (236.5MiB)\n"}
+,{"stream_name":"stderr","time":7.88799837,"data":"Downloading nvidia-cufile-cu12 (1.1MiB)\n"}
+,{"stream_name":"stderr","time":7.8882502,"data":"Downloading numpy (16.0MiB)\n"}
+,{"stream_name":"stderr","time":7.888489557,"data":"Downloading nvidia-cudnn-cu12 (674.0MiB)\n"}
+,{"stream_name":"stderr","time":7.888760486,"data":"Downloading ale-py (3.0MiB)\n"}
+,{"stream_name":"stderr","time":7.889019359,"data":"Downloading nvidia-nvjitlink-cu12 (37.9MiB)\n"}
+,{"stream_name":"stderr","time":7.88952884,"data":"Downloading nvidia-cusparselt-cu12 (273.9MiB)\n"}
+,{"stream_name":"stderr","time":7.889808754,"data":"Downloading sympy (6.0MiB)\n"}
+,{"stream_name":"stderr","time":7.890075278,"data":"Downloading fonttools (5.2MiB)\n"}
+,{"stream_name":"stderr","time":7.890791281,"data":"Downloading nvidia-nvshmem-cu12 (132.7MiB)\n"}
+,{"stream_name":"stderr","time":7.891112391,"data":"Downloading nvidia-curand-cu12 (53.7MiB)\n"}
+,{"stream_name":"stderr","time":7.891411249,"data":"Downloading nvidia-cusparse-cu12 (206.5MiB)\n"}
+,{"stream_name":"stderr","time":7.891712454,"data":"Downloading cuda-bindings (7.3MiB)\n"}
+,{"stream_name":"stderr","time":7.8922677629999995,"data":"Downloading pillow (6.3MiB)\n"}
+,{"stream_name":"stderr","time":7.8925736440000005,"data":"Downloading imageio-ffmpeg (64.8MiB)\n"}
+,{"stream_name":"stderr","time":7.893107226,"data":"Downloading nvidia-cuda-cupti-cu12 (8.5MiB)\n"}
+,{"stream_name":"stderr","time":7.893582767,"data":"Downloading nvidia-cufft-cu12 (190.9MiB)\n"}
+,{"stream_name":"stderr","time":7.894100804,"data":"Downloading opencv-python-headless (58.4MiB)\n"}
+,{"stream_name":"stderr","time":7.899722554,"data":"Downloading nvidia-cuda-nvrtc-cu12 (22.6MiB)\n"}
+,{"stream_name":"stderr","time":7.900452264,"data":"Downloading nvidia-nccl-cu12 (276.3MiB)\n"}
+,{"stream_name":"stderr","time":8.160384795,"data":"Downloading torch (828.9MiB)\n"}
+,{"stream_name":"stderr","time":8.410434916,"data":" Downloaded nvidia-cufile-cu12\n"}
+,{"stream_name":"stderr","time":8.497511202,"data":" Downloaded kiwisolver\n"}
+,{"stream_name":"stderr","time":8.67246733,"data":" Downloaded networkx\n"}
+,{"stream_name":"stderr","time":8.886619949,"data":" Downloaded ale-py\n"}
+,{"stream_name":"stderr","time":9.515215565,"data":" Downloaded fonttools\n"}
+,{"stream_name":"stderr","time":9.731072727,"data":" Downloaded sympy\n"}
+,{"stream_name":"stderr","time":9.789327122,"data":" Downloaded pillow\n"}
+,{"stream_name":"stderr","time":10.02323679,"data":" Downloaded cuda-bindings\n"}
+,{"stream_name":"stderr","time":10.278149211,"data":" Downloaded nvidia-cuda-cupti-cu12\n"}
+,{"stream_name":"stderr","time":10.509207632,"data":" Downloaded matplotlib\n"}
+,{"stream_name":"stderr","time":11.826442456,"data":" Downloaded numpy\n"}
+,{"stream_name":"stderr","time":13.105378494,"data":" Downloaded nvidia-cuda-nvrtc-cu12\n"}
+,{"stream_name":"stderr","time":15.916594587,"data":" Downloaded nvidia-nvjitlink-cu12\n"}
+,{"stream_name":"stderr","time":18.655485262,"data":" Downloaded nvidia-curand-cu12\n"}
+,{"stream_name":"stderr","time":19.590529296,"data":" Downloaded opencv-python-headless\n"}
+,{"stream_name":"stderr","time":20.628586172,"data":" Downloaded imageio-ffmpeg\n"}
+,{"stream_name":"stderr","time":33.450054666,"data":" Downloaded nvidia-nvshmem-cu12\n"}
+,{"stream_name":"stderr","time":35.529528329,"data":" Downloaded nvidia-cusolver-cu12\n"}
+,{"stream_name":"stderr","time":40.849854942,"data":" Downloaded nvidia-cufft-cu12\n"}
+,{"stream_name":"stderr","time":41.795851943,"data":" Downloaded nvidia-cusparse-cu12\n"}
+,{"stream_name":"stderr","time":45.617593758,"data":" Downloaded torch\n"}
+,{"stream_name":"stderr","time":46.767621329,"data":" Downloaded triton\n"}
+,{"stream_name":"stderr","time":50.458062475,"data":" Downloaded nvidia-cublas-cu12\n"}
+,{"stream_name":"stderr","time":51.361567344,"data":" Downloaded nvidia-cusparselt-cu12\n"}
+,{"stream_name":"stderr","time":51.941148768,"data":" Downloaded nvidia-nccl-cu12\n"}
+,{"stream_name":"stderr","time":54.750249775,"data":" Downloaded nvidia-cudnn-cu12\n"}
+,{"stream_name":"stderr","time":54.750615411,"data":"Prepared 52 packages in 46.98s\n"}
+,{"stream_name":"stderr","time":55.078700928,"data":"Installed 52 packages in 327ms\n"}
+,{"stream_name":"stderr","time":55.079021814,"data":" + ale-py==0.12.1\n"}
+,{"stream_name":"stderr","time":55.079143739,"data":" + cloudpickle==3.1.2\n"}
+,{"stream_name":"stderr","time":55.079156064,"data":" + contourpy==1.4.0\n"}
+,{"stream_name":"stderr","time":55.079161719,"data":" + cuda-bindings==12.9.10\n"}
+,{"stream_name":"stderr","time":55.079281045,"data":" + cuda-pathfinder==1.8.6\n"}
+,{"stream_name":"stderr","time":55.07930482,"data":" + cuda-toolkit==12.6.3\n"}
+,{"stream_name":"stderr","time":55.079392045,"data":" + cycler==0.12.1\n"}
+,{"stream_name":"stderr","time":55.079401249,"data":" + decorator==5.3.1\n"}
+,{"stream_name":"stderr","time":55.0795219,"data":" + farama-notifications==0.0.6\n"}
+,{"stream_name":"stderr","time":55.079643484,"data":" + filelock==4.2.10\n"}
+,{"stream_name":"stderr","time":55.079656883,"data":" + fonttools==4.68.0\n"}
+,{"stream_name":"stderr","time":55.079718803,"data":" + fsspec==2026.9.0\n"}
+,{"stream_name":"stderr","time":55.07980446,"data":" + gymnasium==1.4.0\n"}
+,{"stream_name":"stderr","time":55.079910807,"data":" + imageio==2.38.1\n"}
+,{"stream_name":"stderr","time":55.079983767,"data":" + imageio-ffmpeg==0.8.1\n"}
+,{"stream_name":"stderr","time":55.080114365,"data":" + jinja2==3.1.6\n"}
+,{"stream_name":"stderr","time":55.080171449,"data":" + kiwisolver==1.5.1\n"}
+,{"stream_name":"stderr","time":55.080251929,"data":" + markupsafe==3.0.4\n"}
+,{"stream_name":"stderr","time":55.08034562,"data":" + matplotlib==3.11.2\n"}
+,{"stream_name":"stderr","time":55.080446001,"data":" + moviepy==2.2.1\n"}
+,{"stream_name":"stderr","time":55.080525074,"data":" + mpmath==1.3.0\n"}
+,{"stream_name":"stderr","time":55.080611205,"data":" + networkx==3.7\n"}
+,{"stream_name":"stderr","time":55.080691913,"data":" + numpy==2.5.4\n"}
+,{"stream_name":"stderr","time":55.080789361,"data":" + nvidia-cublas-cu12==12.6.4.1\n"}
+,{"stream_name":"stderr","time":55.080866919,"data":" + nvidia-cuda-cupti-cu12==12.6.80\n"}
+,{"stream_name":"stderr","time":55.080973105,"data":" + nvidia-cuda-nvrtc-cu12==12.6.85\n"}
+,{"stream_name":"stderr","time":55.081042993,"data":" + nvidia-cuda-runtime-cu12==12.6.77\n"}
+,{"stream_name":"stderr","time":55.081151911,"data":" + nvidia-cudnn-cu12==9.10.2.21\n"}
+,{"stream_name":"stderr","time":55.081266294,"data":" + nvidia-cufft-cu12==11.3.0.4\n"}
+,{"stream_name":"stderr","time":55.081328586,"data":" + nvidia-cufile-cu12==1.11.1.6\n"}
+,{"stream_name":"stderr","time":55.081465166,"data":" + nvidia-curand-cu12==10.3.7.77\n"}
+,{"stream_name":"stderr","time":55.081536457,"data":" + nvidia-cusolver-cu12==11.7.1.2\n"}
+,{"stream_name":"stderr","time":55.081637945,"data":" + nvidia-cusparse-cu12==12.5.4.2\n"}
+,{"stream_name":"stderr","time":55.081746909,"data":" + nvidia-cusparselt-cu12==0.7.1\n"}
+,{"stream_name":"stderr","time":55.081815437,"data":" + nvidia-nccl-cu12==2.29.3\n"}
+,{"stream_name":"stderr","time":55.081916175,"data":" + nvidia-nvjitlink-cu12==12.9.86\n"}
+,{"stream_name":"stderr","time":55.081991572,"data":" + nvidia-nvshmem-cu12==3.4.5\n"}
+,{"stream_name":"stderr","time":55.082080729,"data":" + nvidia-nvtx-cu12==12.6.77\n"}
+,{"stream_name":"stderr","time":55.082192505,"data":" + opencv-python-headless==5.0.0.93\n"}
+,{"stream_name":"stderr","time":55.082258732,"data":" + packaging==26.3\n"}
+,{"stream_name":"stderr","time":55.082343372,"data":" + pillow==11.3.0\n"}
+,{"stream_name":"stderr","time":55.08243089,"data":" + proglog==0.1.12\n"}
+,{"stream_name":"stderr","time":55.08249819,"data":" + pyparsing==3.3.3\n"}
+,{"stream_name":"stderr","time":55.082580315,"data":" + python-dateutil==4.0.0\n"}
+,{"stream_name":"stderr","time":55.082640905,"data":" + python-dotenv==1.2.4\n"}
+,{"stream_name":"stderr","time":55.082723604,"data":" + setuptools==84.2.1\n"}
+,{"stream_name":"stderr","time":55.082805113,"data":" + sympy==1.14.0\n"}
+,{"stream_name":"stderr","time":55.082929267,"data":" + torch==2.14.1+cu126\n"}
+,{"stream_name":"stderr","time":55.082991599,"data":" + tqdm==4.70.1\n"}
+,{"stream_name":"stderr","time":55.083087185,"data":" + triton==3.8.0\n"}
+,{"stream_name":"stderr","time":55.083124929,"data":" + typing-extensions==4.16.0\n"}
+,{"stream_name":"stderr","time":55.083217104,"data":" + tzdata==2026.6\n"}
+,{"stream_name":"stdout","time":55.090531284,"data":"\n"}
+,{"stream_name":"stdout","time":55.090547619,"data":"$ uv run python -c \"import torch; assert torch.cuda.is_available(), 'No GPU'; print('GPU:', torch.cuda.get_device_name(0))\"\n"}
+,{"stream_name":"stdout","time":60.792271911,"data":"GPU: Tesla T4\n"}
+,{"stream_name":"stdout","time":61.235735925,"data":"\n"}
+,{"stream_name":"stdout","time":61.23576911,"data":"Running 1 experiment(s) for final: [1]\n"}
+,{"stream_name":"stdout","time":61.235775416,"data":"\n"}
+,{"stream_name":"stdout","time":61.235779795,"data":"$ uv run train.py --member final --exp 1 --seed 1 --lr 2.5e-4 --batch-size 64 --eps-decay 250000 --total-steps 1500000\n"}
+,{"stream_name":"stdout","time":65.743445846,"data":"Training on cuda, saving to experiments/final/exp01\n"}
+,{"stream_name":"stderr","time":65.743643229,"data":"A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)\n"}
+,{"stream_name":"stderr","time":65.743652838,"data":"[Powered by Stella]\n"}
+,{"stream_name":"stdout","time":72.744407554,"data":"Episode    1 | step     960 | reward   -20 | length   960 | mean20 -20.00 | eps 0.996 | 815 steps/s\n"}
+,{"stream_name":"stdout","time":73.609924993,"data":"Episode    2 | step    1808 | reward   -21 | length   848 | mean20 -20.50 | eps 0.993 | 885 steps/s\n"}
+,{"stream_name":"stdout","time":74.425109179,"data":"Episode    3 | step    2643 | reward   -20 | length   835 | mean20 -20.33 | eps 0.990 | 924 steps/s\n"}
+,{"stream_name":"stdout","time":75.290837915,"data":"Episode    4 | step    3541 | reward   -21 | length   898 | mean20 -20.50 | eps 0.986 | 951 steps/s\n"}
+,{"stream_name":"stdout","time":76.144981642,"data":"Episode    5 | step    4441 | reward   -21 | length   900 | mean20 -20.60 | eps 0.982 | 970 steps/s\n"}
+,{"stream_name":"stdout","time":77.237710185,"data":"Episode    6 | step    5582 | reward   -21 | length  1141 | mean20 -20.67 | eps 0.978 | 984 steps/s\n"}
+,{"stream_name":"stdout","time":78.051689828,"data":"Episode    7 | step    6421 | reward   -20 | length   839 | mean20 -20.57 | eps 0.975 | 990 steps/s\n"}
+,{"stream_name":"stdout","time":78.820065715,"data":"Episode    8 | step    7183 | reward   -21 | length   762 | mean20 -20.62 | eps 0.972 | 990 steps/s\n"}
+,{"stream_name":"stdout","time":79.88914231,"data":"Episode    9 | step    8286 | reward   -19 | length  1103 | mean20 -20.44 | eps 0.967 | 996 steps/s\n"}
+,{"stream_name":"stdout","time":80.820067154,"data":"Episode   10 | step    9214 | reward   -20 | length   928 | mean20 -20.40 | eps 0.964 | 996 steps/s\n"}
+,{"stream_name":"stdout","time":84.367803019,"data":"Episode   11 | step   10201 | reward   -19 | length   987 | mean20 -20.27 | eps 0.960 | 797 steps/s\n"}
+,{"stream_name":"stdout","time":91.495441148,"data":"Episode   12 | step   11281 | reward   -21 | length  1080 | mean20 -20.33 | eps 0.955 | 566 steps/s\n"}
+,{"stream_name":"stdout","time":97.056213166,"data":"Episode   13 | step   12130 | reward   -21 | length   849 | mean20 -20.38 | eps 0.952 | 476 steps/s\n"}
+,{"stream_name":"stdout","time":102.871479193,"data":"Episode   14 | step   13014 | reward   -20 | length   884 | mean20 -20.36 | eps 0.948 | 416 steps/s\n"}
+,{"stream_name":"stdout","time":108.900275504,"data":"Episode   15 | step   13945 | reward   -21 | length   931 | mean20 -20.40 | eps 0.945 | 374 steps/s\n"}
+,{"stream_name":"stdout","time":114.308372284,"data":"Episode   16 | step   14759 | reward   -21 | length   814 | mean20 -20.44 | eps 0.942 | 345 steps/s\n"}
+,{"stream_name":"stdout","time":119.758986515,"data":"Episode   17 | step   15595 | reward   -20 | length   836 | mean20 -20.41 | eps 0.938 | 324 steps/s\n"}
+,{"stream_name":"stdout","time":125.838709564,"data":"Episode   18 | step   16511 | reward   -20 | length   916 | mean20 -20.39 | eps 0.935 | 304 steps/s\n"}
+,{"stream_name":"stdout","time":131.812516976,"data":"Episode   19 | step   17418 | reward   -20 | length   907 | mean20 -20.37 | eps 0.931 | 289 steps/s\n"}
+,{"stream_name":"stdout","time":137.065063272,"data":"Episode   20 | step   18207 | reward   -21 | length   789 | mean20 -20.40 | eps 0.928 | 278 steps/s\n"}
+,{"stream_name":"stdout","time":142.941806805,"data":"Episode   21 | step   19077 | reward   -20 | length   870 | mean20 -20.40 | eps 0.924 | 267 steps/s\n"}
+,{"stream_name":"stdout","time":148.867747983,"data":"Episode   22 | step   19972 | reward   -20 | length   895 | mean20 -20.35 | eps 0.921 | 258 steps/s\n"}
+,{"stream_name":"stdout","time":155.130221798,"data":"Episode   23 | step   20916 | reward   -20 | length   944 | mean20 -20.35 | eps 0.917 | 250 steps/s\n"}
+,{"stream_name":"stdout","time":160.568973519,"data":"Episode   24 | step   21739 | reward   -21 | length   823 | mean20 -20.35 | eps 0.914 | 244 steps/s\n"}
+,{"stream_name":"stdout","time":166.793955922,"data":"Episode   25 | step   22678 | reward   -21 | length   939 | mean20 -20.35 | eps 0.910 | 238 steps/s\n"}
+,{"stream_name":"stdout","time":173.218194163,"data":"Episode   26 | step   23650 | reward   -20 | length   972 | mean20 -20.30 | eps 0.906 | 233 steps/s\n"}
+,{"stream_name":"stdout","time":180.255170339,"data":"Episode   27 | step   24732 | reward   -20 | length  1082 | mean20 -20.30 | eps 0.902 | 228 steps/s\n"}
+,{"stream_name":"stdout","time":186.207603963,"data":"Episode   28 | step   25644 | reward   -20 | length   912 | mean20 -20.25 | eps 0.898 | 224 steps/s\n"}
+,{"stream_name":"stdout","time":191.306323096,"data":"Episode   29 | step   26429 | reward   -21 | length   785 | mean20 -20.35 | eps 0.895 | 221 steps/s\n"}
+,{"stream_name":"stdout","time":197.701540784,"data":"Episode   30 | step   27402 | reward   -19 | length   973 | mean20 -20.30 | eps 0.891 | 217 steps/s\n"}
+,{"stream_name":"stdout","time":203.22923457,"data":"Episode   31 | step   28238 | reward   -21 | length   836 | mean20 -20.40 | eps 0.888 | 214 steps/s\n"}
+,{"stream_name":"stdout","time":210.02458936,"data":"Episode   32 | step   29271 | reward   -19 | length  1033 | mean20 -20.30 | eps 0.884 | 211 steps/s\n"}
+,{"stream_name":"stdout","time":216.04499477,"data":"Episode   33 | step   30175 | reward   -21 | length   904 | mean20 -20.30 | eps 0.881 | 209 steps/s\n"}
+,{"stream_name":"stdout","time":221.587480829,"data":"Episode   34 | step   31012 | reward   -21 | length   837 | mean20 -20.35 | eps 0.877 | 207 steps/s\n"}
+,{"stream_name":"stdout","time":227.148705356,"data":"Episode   35 | step   31852 | reward   -21 | length   840 | mean20 -20.35 | eps 0.874 | 205 steps/s\n"}
+,{"stream_name":"stdout","time":235.229444762,"data":"Episode   36 | step   33080 | reward   -18 | length  1228 | mean20 -20.20 | eps 0.869 | 202 steps/s\n"}
+,{"stream_name":"stdout","time":241.447381851,"data":"Episode   37 | step   34025 | reward   -20 | length   945 | mean20 -20.20 | eps 0.865 | 200 steps/s\n"}
+,{"stream_name":"stdout","time":246.768372558,"data":"Episode   38 | step   34827 | reward   -21 | length   802 | mean20 -20.25 | eps 0.862 | 199 steps/s\n"}
+,{"stream_name":"stdout","time":253.564661752,"data":"Episode   39 | step   35846 | reward   -19 | length  1019 | mean20 -20.20 | eps 0.858 | 197 steps/s\n"}
+,{"stream_name":"stdout","time":259.729715234,"data":"Episode   40 | step   36786 | reward   -21 | length   940 | mean20 -20.20 | eps 0.854 | 196 steps/s\n"}
+,{"stream_name":"stdout","time":265.376023731,"data":"Episode   41 | step   37636 | reward   -21 | length   850 | mean20 -20.25 | eps 0.851 | 194 steps/s\n"}
+,{"stream_name":"stdout","time":271.589271487,"data":"Episode   42 | step   38573 | reward   -21 | length   937 | mean20 -20.30 | eps 0.847 | 193 steps/s\n"}
+,{"stream_name":"stdout","time":278.064144762,"data":"Episode   43 | step   39540 | reward   -20 | length   967 | mean20 -20.30 | eps 0.843 | 191 steps/s\n"}
+,{"stream_name":"stdout","time":284.639759618,"data":"Episode   44 | step   40524 | reward   -20 | length   984 | mean20 -20.25 | eps 0.840 | 190 steps/s\n"}
+,{"stream_name":"stdout","time":291.822875133,"data":"Episode   45 | step   41616 | reward   -20 | length  1092 | mean20 -20.20 | eps 0.835 | 189 steps/s\n"}
+,{"stream_name":"stdout","time":298.954333822,"data":"Episode   46 | step   42692 | reward   -20 | length  1076 | mean20 -20.20 | eps 0.831 | 188 steps/s\n"}
+,{"stream_name":"stdout","time":305.564001588,"data":"Episode   47 | step   43680 | reward   -20 | length   988 | mean20 -20.20 | eps 0.827 | 187 steps/s\n"}
+,{"stream_name":"stdout","time":312.191135883,"data":"Episode   48 | step   44671 | reward   -21 | length   991 | mean20 -20.25 | eps 0.823 | 186 steps/s\n"}
+,{"stream_name":"stdout","time":322.233606666,"data":"Episode   49 | step   46165 | reward   -15 | length  1494 | mean20 -19.95 | eps 0.817 | 184 steps/s\n"}
+,{"stream_name":"stdout","time":328.510832162,"data":"Episode   50 | step   47101 | reward   -20 | length   936 | mean20 -20.00 | eps 0.813 | 183 steps/s\n"}
+,{"stream_name":"stdout","time":334.764748028,"data":"Episode   51 | step   48043 | reward   -19 | length   942 | mean20 -19.90 | eps 0.810 | 183 steps/s\n"}
+,{"stream_name":"stdout","time":342.432780936,"data":"Episode   52 | step   49179 | reward   -20 | length  1136 | mean20 -19.95 | eps 0.805 | 182 steps/s\n"}
+,{"stream_name":"stdout","time":349.93411215,"data":"Episode   53 | step   50290 | reward   -19 | length  1111 | mean20 -19.85 | eps 0.801 | 181 steps/s\n"}
+,{"stream_name":"stdout","time":356.856739133,"data":"Episode   54 | step   51324 | reward   -20 | length  1034 | mean20 -19.80 | eps 0.797 | 180 steps/s\n"}
+,{"stream_name":"stdout","time":364.967969176,"data":"Episode   55 | step   52538 | reward   -18 | length  1214 | mean20 -19.65 | eps 0.792 | 179 steps/s\n"}
+,{"stream_name":"stdout","time":372.555510296,"data":"Episode   56 | step   53683 | reward   -20 | length  1145 | mean20 -19.75 | eps 0.787 | 178 steps/s\n"}
+,{"stream_name":"stdout","time":381.730872674,"data":"Episode   57 | step   55051 | reward   -19 | length  1368 | mean20 -19.70 | eps 0.782 | 177 steps/s\n"}
+,{"stream_name":"stdout","time":389.021695391,"data":"Episode   58 | step   56137 | reward   -21 | length  1086 | mean20 -19.70 | eps 0.778 | 177 steps/s\n"}
+,{"stream_name":"stdout","time":396.661414109,"data":"Episode   59 | step   57270 | reward   -19 | length  1133 | mean20 -19.70 | eps 0.773 | 176 steps/s\n"}
+,{"stream_name":"stdout","time":403.946086253,"data":"Episode   60 | step   58359 | reward   -19 | length  1089 | mean20 -19.60 | eps 0.769 | 176 steps/s\n"}
+,{"stream_name":"stdout","time":412.346158305,"data":"Episode   61 | step   59611 | reward   -18 | length  1252 | mean20 -19.45 | eps 0.764 | 175 steps/s\n"}
+,{"stream_name":"stdout","time":420.71887327,"data":"Episode   62 | step   60852 | reward   -18 | length  1241 | mean20 -19.30 | eps 0.759 | 174 steps/s\n"}
+,{"stream_name":"stdout","time":428.683280829,"data":"Episode   63 | step   62049 | reward   -20 | length  1197 | mean20 -19.30 | eps 0.754 | 174 steps/s\n"}
+,{"stream_name":"stdout","time":436.284213529,"data":"Episode   64 | step   63189 | reward   -18 | length  1140 | mean20 -19.20 | eps 0.750 | 173 steps/s\n"}
+,{"stream_name":"stdout","time":445.322818962,"data":"Episode   65 | step   64528 | reward   -19 | length  1339 | mean20 -19.15 | eps 0.744 | 173 steps/s\n"}
+,{"stream_name":"stdout","time":453.207270636,"data":"Episode   66 | step   65694 | reward   -19 | length  1166 | mean20 -19.10 | eps 0.740 | 172 steps/s\n"}
+,{"stream_name":"stdout","time":458.800112267,"data":"Episode   67 | step   66526 | reward   -21 | length   832 | mean20 -19.15 | eps 0.737 | 172 steps/s\n"}
+,{"stream_name":"stdout","time":467.494719647,"data":"Episode   68 | step   67834 | reward   -17 | length  1308 | mean20 -18.95 | eps 0.731 | 171 steps/s\n"}
+,{"stream_name":"stdout","time":476.673862281,"data":"Episode   69 | step   69206 | reward   -19 | length  1372 | mean20 -19.15 | eps 0.726 | 171 steps/s\n"}
+,{"stream_name":"stdout","time":484.029716318,"data":"Episode   70 | step   70300 | reward   -19 | length  1094 | mean20 -19.10 | eps 0.722 | 170 steps/s\n"}
+,{"stream_name":"stdout","time":492.038271546,"data":"Episode   71 | step   71506 | reward   -19 | length  1206 | mean20 -19.10 | eps 0.717 | 170 steps/s\n"}
+,{"stream_name":"stdout","time":501.423564169,"data":"Episode   72 | step   72898 | reward   -19 | length  1392 | mean20 -19.05 | eps 0.711 | 170 steps/s\n"}
+,{"stream_name":"stdout","time":510.857969474,"data":"Episode   73 | step   74302 | reward   -17 | length  1404 | mean20 -18.95 | eps 0.706 | 169 steps/s\n"}
+,{"stream_name":"stdout","time":517.381157609,"data":"Episode   74 | step   75270 | reward   -19 | length   968 | mean20 -18.90 | eps 0.702 | 169 steps/s\n"}
+,{"stream_name":"stdout","time":526.999341533,"data":"Episode   75 | step   76691 | reward   -17 | length  1421 | mean20 -18.85 | eps 0.696 | 168 steps/s\n"}
+,{"stream_name":"stdout","time":533.243161741,"data":"Episode   76 | step   77614 | reward   -21 | length   923 | mean20 -18.90 | eps 0.693 | 168 steps/s\n"}
+,{"stream_name":"stdout","time":541.241250468,"data":"Episode   77 | step   78796 | reward   -19 | length  1182 | mean20 -18.90 | eps 0.688 | 168 steps/s\n"}
+,{"stream_name":"stdout","time":549.549479814,"data":"Episode   78 | step   80037 | reward   -20 | length  1241 | mean20 -18.85 | eps 0.683 | 167 steps/s\n"}
+,{"stream_name":"stdout","time":557.195089174,"data":"Episode   79 | step   81175 | reward   -20 | length  1138 | mean20 -18.90 | eps 0.679 | 167 steps/s\n"}
+,{"stream_name":"stdout","time":567.745402434,"data":"Episode   80 | step   82747 | reward   -16 | length  1572 | mean20 -18.75 | eps 0.672 | 167 steps/s\n"}
+,{"stream_name":"stdout","time":576.117844429,"data":"Episode   81 | step   83987 | reward   -19 | length  1240 | mean20 -18.80 | eps 0.667 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":584.246817703,"data":"Episode   82 | step   85199 | reward   -19 | length  1212 | mean20 -18.85 | eps 0.663 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":594.442637382,"data":"Episode   83 | step   86707 | reward   -19 | length  1508 | mean20 -18.80 | eps 0.657 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":604.041176448,"data":"Episode   84 | step   88127 | reward   -16 | length  1420 | mean20 -18.70 | eps 0.651 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":612.053159813,"data":"Episode   85 | step   89312 | reward   -18 | length  1185 | mean20 -18.65 | eps 0.646 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":622.666749087,"data":"Episode   86 | step   90873 | reward   -18 | length  1561 | mean20 -18.60 | eps 0.640 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":633.194464807,"data":"Episode   87 | step   92420 | reward   -18 | length  1547 | mean20 -18.45 | eps 0.634 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":641.477980014,"data":"Episode   88 | step   93641 | reward   -19 | length  1221 | mean20 -18.55 | eps 0.629 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":651.460082925,"data":"Episode   89 | step   95102 | reward   -16 | length  1461 | mean20 -18.40 | eps 0.623 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":662.989568938,"data":"Episode   90 | step   96803 | reward   -17 | length  1701 | mean20 -18.30 | eps 0.617 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":673.509483398,"data":"Episode   91 | step   98360 | reward   -20 | length  1557 | mean20 -18.35 | eps 0.610 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":682.239579025,"data":"Episode   92 | step   99654 | reward   -20 | length  1294 | mean20 -18.40 | eps 0.605 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":689.536126549,"data":"Episode   93 | step  100742 | reward   -20 | length  1088 | mean20 -18.55 | eps 0.601 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":698.121187437,"data":"Episode   94 | step  102006 | reward   -19 | length  1264 | mean20 -18.55 | eps 0.596 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":706.977845464,"data":"Episode   95 | step  103322 | reward   -16 | length  1316 | mean20 -18.50 | eps 0.591 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":716.46294,"data":"Episode   96 | step  104720 | reward   -18 | length  1398 | mean20 -18.35 | eps 0.585 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":724.613953393,"data":"Episode   97 | step  105923 | reward   -19 | length  1203 | mean20 -18.35 | eps 0.581 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":731.970422985,"data":"Episode   98 | step  107013 | reward   -20 | length  1090 | mean20 -18.35 | eps 0.576 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":741.147745483,"data":"Episode   99 | step  108374 | reward   -18 | length  1361 | mean20 -18.25 | eps 0.571 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":749.62660175,"data":"Episode  100 | step  109639 | reward   -20 | length  1265 | mean20 -18.45 | eps 0.566 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":758.270110217,"data":"Episode  101 | step  110906 | reward   -18 | length  1267 | mean20 -18.40 | eps 0.561 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":768.340232857,"data":"Episode  102 | step  112393 | reward   -17 | length  1487 | mean20 -18.30 | eps 0.555 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":778.482416623,"data":"Episode  103 | step  113888 | reward   -17 | length  1495 | mean20 -18.20 | eps 0.549 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":786.69651348,"data":"Episode  104 | step  115100 | reward   -20 | length  1212 | mean20 -18.40 | eps 0.544 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":795.598344575,"data":"Episode  105 | step  116417 | reward   -19 | length  1317 | mean20 -18.45 | eps 0.539 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":805.229490096,"data":"Episode  106 | step  117835 | reward   -18 | length  1418 | mean20 -18.45 | eps 0.533 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":813.253473065,"data":"Episode  107 | step  119021 | reward   -19 | length  1186 | mean20 -18.50 | eps 0.529 | 160 steps/s\n"}
+,{"stream_name":"stdout","time":822.517255703,"data":"Episode  108 | step  120375 | reward   -17 | length  1354 | mean20 -18.40 | eps 0.523 | 160 steps/s\n"}
+,{"stream_name":"stdout","time":832.027347263,"data":"Episode  109 | step  121779 | reward   -18 | length  1404 | mean20 -18.50 | eps 0.518 | 160 steps/s\n"}
+,{"stream_name":"stdout","time":840.000812125,"data":"Episode  110 | step  122949 | reward   -20 | length  1170 | mean20 -18.65 | eps 0.513 | 160 steps/s\n"}
+,{"stream_name":"stdout","time":850.962191494,"data":"Episode  111 | step  124563 | reward   -18 | length  1614 | mean20 -18.55 | eps 0.507 | 160 steps/s\n"}
+,{"stream_name":"stdout","time":861.347202962,"data":"Episode  112 | step  126080 | reward   -18 | length  1517 | mean20 -18.45 | eps 0.501 | 160 steps/s\n"}
+,{"stream_name":"stdout","time":869.875988445,"data":"Episode  113 | step  127344 | reward   -19 | length  1264 | mean20 -18.40 | eps 0.496 | 160 steps/s\n"}
+,{"stream_name":"stdout","time":879.677113513,"data":"Episode  114 | step  128782 | reward   -18 | length  1438 | mean20 -18.35 | eps 0.490 | 159 steps/s\n"}
+,{"stream_name":"stdout","time":892.266356784,"data":"Episode  115 | step  130629 | reward   -16 | length  1847 | mean20 -18.35 | eps 0.483 | 159 steps/s\n"}
+,{"stream_name":"stdout","time":902.180965467,"data":"Episode  116 | step  132087 | reward   -18 | length  1458 | mean20 -18.35 | eps 0.477 | 159 steps/s\n"}
+,{"stream_name":"stdout","time":915.675561225,"data":"Episode  117 | step  134041 | reward   -13 | length  1954 | mean20 -18.05 | eps 0.469 | 159 steps/s\n"}
+,{"stream_name":"stdout","time":924.122158522,"data":"Episode  118 | step  135274 | reward   -20 | length  1233 | mean20 -18.05 | eps 0.464 | 159 steps/s\n"}
+,{"stream_name":"stdout","time":933.688302642,"data":"Episode  119 | step  136670 | reward   -16 | length  1396 | mean20 -17.95 | eps 0.459 | 159 steps/s\n"}
+,{"stream_name":"stdout","time":944.891398769,"data":"Episode  120 | step  138296 | reward   -18 | length  1626 | mean20 -17.85 | eps 0.452 | 158 steps/s\n"}
+,{"stream_name":"stdout","time":958.295971328,"data":"Episode  121 | step  140256 | reward   -14 | length  1960 | mean20 -17.65 | eps 0.445 | 158 steps/s\n"}
+,{"stream_name":"stdout","time":969.068909114,"data":"Episode  122 | step  141826 | reward   -18 | length  1570 | mean20 -17.70 | eps 0.438 | 158 steps/s\n"}
+,{"stream_name":"stdout","time":977.332576244,"data":"Episode  123 | step  143019 | reward   -19 | length  1193 | mean20 -17.80 | eps 0.434 | 158 steps/s\n"}
+,{"stream_name":"stdout","time":989.579704666,"data":"Episode  124 | step  144796 | reward   -15 | length  1777 | mean20 -17.55 | eps 0.427 | 158 steps/s\n"}
+,{"stream_name":"stdout","time":1001.037230941,"data":"Episode  125 | step  146462 | reward   -16 | length  1666 | mean20 -17.40 | eps 0.420 | 158 steps/s\n"}
+,{"stream_name":"stdout","time":1015.502050829,"data":"Episode  126 | step  148555 | reward   -15 | length  2093 | mean20 -17.25 | eps 0.412 | 157 steps/s\n"}
+,{"stream_name":"stdout","time":1028.830299921,"data":"Episode  127 | step  150510 | reward   -14 | length  1955 | mean20 -17.00 | eps 0.404 | 157 steps/s\n"}
+,{"stream_name":"stdout","time":1042.087637767,"data":"Episode  128 | step  152427 | reward   -14 | length  1917 | mean20 -16.85 | eps 0.396 | 157 steps/s\n"}
+,{"stream_name":"stdout","time":1053.907275858,"data":"Episode  129 | step  154125 | reward   -16 | length  1698 | mean20 -16.75 | eps 0.390 | 157 steps/s\n"}
+,{"stream_name":"stdout","time":1068.761503195,"data":"Episode  130 | step  156247 | reward   -12 | length  2122 | mean20 -16.35 | eps 0.381 | 157 steps/s\n"}
+,{"stream_name":"stdout","time":1079.056437574,"data":"Episode  131 | step  157737 | reward   -18 | length  1490 | mean20 -16.35 | eps 0.375 | 157 steps/s\n"}
+,{"stream_name":"stdout","time":1096.821635739,"data":"Episode  132 | step  160309 | reward   -13 | length  2572 | mean20 -16.10 | eps 0.365 | 156 steps/s\n"}
+,{"stream_name":"stdout","time":1112.535919847,"data":"Episode  133 | step  162584 | reward   -12 | length  2275 | mean20 -15.75 | eps 0.356 | 156 steps/s\n"}
+,{"stream_name":"stdout","time":1121.066128284,"data":"Episode  134 | step  163811 | reward   -18 | length  1227 | mean20 -15.75 | eps 0.351 | 156 steps/s\n"}
+,{"stream_name":"stdout","time":1134.582567065,"data":"Episode  135 | step  165735 | reward   -15 | length  1924 | mean20 -15.70 | eps 0.344 | 156 steps/s\n"}
+,{"stream_name":"stdout","time":1150.115162075,"data":"Episode  136 | step  167947 | reward   -12 | length  2212 | mean20 -15.40 | eps 0.335 | 156 steps/s\n"}
+,{"stream_name":"stdout","time":1167.626289994,"data":"Episode  137 | step  170446 | reward    -9 | length  2499 | mean20 -15.20 | eps 0.325 | 156 steps/s\n"}
+,{"stream_name":"stdout","time":1178.760712071,"data":"Episode  138 | step  172041 | reward   -18 | length  1595 | mean20 -15.10 | eps 0.319 | 155 steps/s\n"}
+,{"stream_name":"stdout","time":1192.892213257,"data":"Episode  139 | step  174060 | reward   -11 | length  2019 | mean20 -14.85 | eps 0.311 | 155 steps/s\n"}
+,{"stream_name":"stdout","time":1206.367440424,"data":"Episode  140 | step  175989 | reward   -11 | length  1929 | mean20 -14.50 | eps 0.303 | 155 steps/s\n"}
+,{"stream_name":"stdout","time":1223.056800185,"data":"Episode  141 | step  178380 | reward   -11 | length  2391 | mean20 -14.35 | eps 0.294 | 155 steps/s\n"}
+,{"stream_name":"stdout","time":1239.234803319,"data":"Episode  142 | step  180700 | reward   -10 | length  2320 | mean20 -13.95 | eps 0.284 | 155 steps/s\n"}
+,{"stream_name":"stdout","time":1250.944571478,"data":"Episode  143 | step  182393 | reward   -17 | length  1693 | mean20 -13.85 | eps 0.278 | 155 steps/s\n"}
+,{"stream_name":"stdout","time":1265.930109162,"data":"Episode  144 | step  184527 | reward   -11 | length  2134 | mean20 -13.65 | eps 0.269 | 154 steps/s\n"}
+,{"stream_name":"stdout","time":1286.416923786,"data":"Episode  145 | step  187458 | reward    -7 | length  2931 | mean20 -13.20 | eps 0.258 | 154 steps/s\n"}
+,{"stream_name":"stdout","time":1299.567845168,"data":"Episode  146 | step  189337 | reward   -15 | length  1879 | mean20 -13.20 | eps 0.250 | 154 steps/s\n"}
+,{"stream_name":"stdout","time":1311.563245312,"data":"Episode  147 | step  191068 | reward   -15 | length  1731 | mean20 -13.25 | eps 0.243 | 154 steps/s\n"}
+,{"stream_name":"stdout","time":1332.507481892,"data":"Episode  148 | step  194088 | reward    -6 | length  3020 | mean20 -12.85 | eps 0.231 | 154 steps/s\n"}
+,{"stream_name":"stdout","time":1350.953058502,"data":"Episode  149 | step  196724 | reward    -9 | length  2636 | mean20 -12.50 | eps 0.221 | 154 steps/s\n"}
+,{"stream_name":"stdout","time":1370.867986167,"data":"Episode  150 | step  199558 | reward    -4 | length  2834 | mean20 -12.10 | eps 0.210 | 154 steps/s\n"}
+,{"stream_name":"stdout","time":1383.867129363,"data":"Episode  151 | step  201411 | reward   -15 | length  1853 | mean20 -11.95 | eps 0.202 | 153 steps/s\n"}
+,{"stream_name":"stdout","time":1400.370149097,"data":"Episode  152 | step  203780 | reward   -11 | length  2369 | mean20 -11.85 | eps 0.193 | 153 steps/s\n"}
+,{"stream_name":"stdout","time":1423.125273033,"data":"Episode  153 | step  207025 | reward   -10 | length  3245 | mean20 -11.75 | eps 0.180 | 153 steps/s\n"}
+,{"stream_name":"stdout","time":1446.287804016,"data":"Episode  154 | step  210360 | reward    -6 | length  3335 | mean20 -11.15 | eps 0.167 | 153 steps/s\n"}
+,{"stream_name":"stdout","time":1468.785935508,"data":"Episode  155 | step  213614 | reward    +5 | length  3254 | mean20 -10.15 | eps 0.154 | 153 steps/s\n"}
+,{"stream_name":"stdout","time":1489.321449992,"data":"Episode  156 | step  216558 | reward   -10 | length  2944 | mean20 -10.05 | eps 0.142 | 153 steps/s\n"}
+,{"stream_name":"stdout","time":1514.463958803,"data":"Episode  157 | step  220178 | reward    -1 | length  3620 | mean20  -9.65 | eps 0.128 | 153 steps/s\n"}
+,{"stream_name":"stdout","time":1535.961738292,"data":"Episode  158 | step  223264 | reward    +5 | length  3086 | mean20  -8.50 | eps 0.116 | 152 steps/s\n"}
+,{"stream_name":"stdout","time":1557.165470217,"data":"Episode  159 | step  226298 | reward    +3 | length  3034 | mean20  -7.80 | eps 0.104 | 152 steps/s\n"}
+,{"stream_name":"stdout","time":1580.941130781,"data":"Episode  160 | step  229691 | reward    +2 | length  3393 | mean20  -7.15 | eps 0.090 | 152 steps/s\n"}
+,{"stream_name":"stdout","time":1603.405060486,"data":"Episode  161 | step  232858 | reward    -3 | length  3167 | mean20  -6.75 | eps 0.078 | 152 steps/s\n"}
+,{"stream_name":"stdout","time":1620.339637309,"data":"Episode  162 | step  235251 | reward   +14 | length  2393 | mean20  -5.55 | eps 0.068 | 152 steps/s\n"}
+,{"stream_name":"stdout","time":1641.276647993,"data":"Episode  163 | step  238181 | reward    +7 | length  2930 | mean20  -4.35 | eps 0.057 | 152 steps/s\n"}
+,{"stream_name":"stdout","time":1659.769718616,"data":"Episode  164 | step  240791 | reward   +12 | length  2610 | mean20  -3.20 | eps 0.046 | 152 steps/s\n"}
+,{"stream_name":"stdout","time":1677.689304113,"data":"Episode  165 | step  243309 | reward   +12 | length  2518 | mean20  -2.25 | eps 0.036 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1695.7292673,"data":"Episode  166 | step  245816 | reward   +10 | length  2507 | mean20  -1.00 | eps 0.027 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1718.787820596,"data":"Episode  167 | step  249076 | reward    +4 | length  3260 | mean20  -0.05 | eps 0.014 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1736.281414225,"data":"Episode  168 | step  251543 | reward   +12 | length  2467 | mean20  +0.85 | eps 0.010 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1750.16468314,"data":"Episode  169 | step  253513 | reward   +18 | length  1970 | mean20  +2.20 | eps 0.010 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1766.588354517,"data":"Episode  170 | step  255809 | reward   +12 | length  2296 | mean20  +3.00 | eps 0.010 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1785.031075378,"data":"Episode  171 | step  258399 | reward   +15 | length  2590 | mean20  +4.50 | eps 0.010 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1797.960018735,"data":"Episode  172 | step  260223 | reward   +18 | length  1824 | mean20  +5.95 | eps 0.010 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1812.410429739,"data":"Episode  173 | step  262250 | reward   +16 | length  2027 | mean20  +7.25 | eps 0.010 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1825.338207681,"data":"Episode  174 | step  264060 | reward   +19 | length  1810 | mean20  +8.50 | eps 0.010 | 151 steps/s\n"}
+,{"stream_name":"stdout","time":1841.150742913,"data":"Episode  175 | step  266283 | reward   +17 | length  2223 | mean20  +9.10 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1855.878144049,"data":"Episode  176 | step  268355 | reward   +16 | length  2072 | mean20 +10.40 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1870.184724846,"data":"Episode  177 | step  270379 | reward   +17 | length  2024 | mean20 +11.30 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1884.194372218,"data":"Episode  178 | step  272352 | reward   +17 | length  1973 | mean20 +11.90 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1898.636255076,"data":"Episode  179 | step  274384 | reward   +15 | length  2032 | mean20 +12.50 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1913.518939083,"data":"Episode  180 | step  276478 | reward   +15 | length  2094 | mean20 +13.15 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1926.577386581,"data":"Episode  181 | step  278324 | reward   +19 | length  1846 | mean20 +14.25 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1941.245505335,"data":"Episode  182 | step  280404 | reward   +16 | length  2080 | mean20 +14.35 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1954.307320837,"data":"Episode  183 | step  282243 | reward   +18 | length  1839 | mean20 +14.90 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1967.614821557,"data":"Episode  184 | step  284117 | reward   +18 | length  1874 | mean20 +15.20 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1985.121778398,"data":"Episode  185 | step  286574 | reward   +12 | length  2457 | mean20 +15.20 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":1997.232499445,"data":"Episode  186 | step  288275 | reward   +20 | length  1701 | mean20 +15.70 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":2010.564708896,"data":"Episode  187 | step  290153 | reward   +18 | length  1878 | mean20 +16.40 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":2024.93582532,"data":"Episode  188 | step  292177 | reward   +16 | length  2024 | mean20 +16.60 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":2038.107027708,"data":"Episode  189 | step  294042 | reward   +19 | length  1865 | mean20 +16.65 | eps 0.010 | 150 steps/s\n"}
+,{"stream_name":"stdout","time":2053.988908559,"data":"Episode  190 | step  296269 | reward   +16 | length  2227 | mean20 +16.85 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2068.426535191,"data":"Episode  191 | step  298283 | reward   +18 | length  2014 | mean20 +17.00 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2082.535018706,"data":"Episode  192 | step  300258 | reward   +17 | length  1975 | mean20 +16.95 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2098.096029841,"data":"Episode  193 | step  302421 | reward   +16 | length  2163 | mean20 +16.95 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2113.240949151,"data":"Episode  194 | step  304554 | reward   +16 | length  2133 | mean20 +16.80 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2127.725715939,"data":"Episode  195 | step  306599 | reward   +17 | length  2045 | mean20 +16.80 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2142.040496583,"data":"Episode  196 | step  308630 | reward   +16 | length  2031 | mean20 +16.80 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2155.538657396,"data":"Episode  197 | step  310527 | reward   +19 | length  1897 | mean20 +16.90 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2169.300295245,"data":"Episode  198 | step  312460 | reward   +18 | length  1933 | mean20 +16.95 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2182.460660794,"data":"Episode  199 | step  314315 | reward   +18 | length  1855 | mean20 +17.10 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2195.918057882,"data":"Episode  200 | step  316203 | reward   +18 | length  1888 | mean20 +17.25 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2209.124938183,"data":"Episode  201 | step  318070 | reward   +19 | length  1867 | mean20 +17.25 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2226.62778451,"data":"Episode  202 | step  320523 | reward   +15 | length  2453 | mean20 +17.20 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2245.62343575,"data":"Episode  203 | step  323187 | reward   +12 | length  2664 | mean20 +16.90 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2258.478978633,"data":"Episode  204 | step  324990 | reward   +19 | length  1803 | mean20 +16.95 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2272.13001201,"data":"Episode  205 | step  326906 | reward   +17 | length  1916 | mean20 +17.20 | eps 0.010 | 149 steps/s\n"}
+,{"stream_name":"stdout","time":2289.368965828,"data":"Episode  206 | step  329331 | reward   +13 | length  2425 | mean20 +16.85 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2303.948127391,"data":"Episode  207 | step  331376 | reward   +16 | length  2045 | mean20 +16.75 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2320.532136248,"data":"Episode  208 | step  333698 | reward   +16 | length  2322 | mean20 +16.75 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2334.879476678,"data":"Episode  209 | step  335724 | reward   +18 | length  2026 | mean20 +16.70 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2348.964920148,"data":"Episode  210 | step  337718 | reward   +17 | length  1994 | mean20 +16.75 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2362.670422346,"data":"Episode  211 | step  339669 | reward   +18 | length  1951 | mean20 +16.75 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2378.694708885,"data":"Episode  212 | step  341946 | reward   +16 | length  2277 | mean20 +16.70 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2393.324257128,"data":"Episode  213 | step  344024 | reward   +18 | length  2078 | mean20 +16.80 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2406.630707292,"data":"Episode  214 | step  345900 | reward   +19 | length  1876 | mean20 +16.95 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2424.366060246,"data":"Episode  215 | step  348404 | reward   +12 | length  2504 | mean20 +16.70 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2438.466229776,"data":"Episode  216 | step  350394 | reward   +16 | length  1990 | mean20 +16.70 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2451.706906542,"data":"Episode  217 | step  352263 | reward   +19 | length  1869 | mean20 +16.70 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2465.333031591,"data":"Episode  218 | step  354194 | reward   +18 | length  1931 | mean20 +16.70 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2479.38975951,"data":"Episode  219 | step  356183 | reward   +17 | length  1989 | mean20 +16.65 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2496.112058304,"data":"Episode  220 | step  358523 | reward   +17 | length  2340 | mean20 +16.60 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2509.34806599,"data":"Episode  221 | step  360383 | reward   +20 | length  1860 | mean20 +16.65 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2522.800940537,"data":"Episode  222 | step  362278 | reward   +20 | length  1895 | mean20 +16.90 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2535.721122384,"data":"Episode  223 | step  364092 | reward   +19 | length  1814 | mean20 +17.25 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2550.170759195,"data":"Episode  224 | step  366136 | reward   +18 | length  2044 | mean20 +17.20 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2564.454395667,"data":"Episode  225 | step  368158 | reward   +17 | length  2022 | mean20 +17.20 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2576.451411514,"data":"Episode  226 | step  369869 | reward   +20 | length  1711 | mean20 +17.55 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2590.798179186,"data":"Episode  227 | step  371901 | reward   +17 | length  2032 | mean20 +17.60 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2605.986649658,"data":"Episode  228 | step  374036 | reward   +17 | length  2135 | mean20 +17.65 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2619.027373092,"data":"Episode  229 | step  375856 | reward   +21 | length  1820 | mean20 +17.80 | eps 0.010 | 148 steps/s\n"}
+,{"stream_name":"stdout","time":2634.865925179,"data":"Episode  230 | step  378065 | reward   +16 | length  2209 | mean20 +17.75 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2649.179251809,"data":"Episode  231 | step  380089 | reward   +17 | length  2024 | mean20 +17.70 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2663.252241485,"data":"Episode  232 | step  382050 | reward   +20 | length  1961 | mean20 +17.90 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2676.9115877,"data":"Episode  233 | step  383982 | reward   +18 | length  1932 | mean20 +17.90 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2690.889345132,"data":"Episode  234 | step  385948 | reward   +19 | length  1966 | mean20 +17.90 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2704.288087512,"data":"Episode  235 | step  387835 | reward   +19 | length  1887 | mean20 +18.25 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2717.457583896,"data":"Episode  236 | step  389701 | reward   +18 | length  1866 | mean20 +18.35 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2729.152945471,"data":"Episode  237 | step  391360 | reward   +20 | length  1659 | mean20 +18.40 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2745.159348456,"data":"Episode  238 | step  393621 | reward   +17 | length  2261 | mean20 +18.35 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2759.058585919,"data":"Episode  239 | step  395576 | reward   +18 | length  1955 | mean20 +18.40 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2772.118285315,"data":"Episode  240 | step  397426 | reward   +20 | length  1850 | mean20 +18.55 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2785.094406157,"data":"Episode  241 | step  399268 | reward   +20 | length  1842 | mean20 +18.55 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2797.429627867,"data":"Episode  242 | step  401017 | reward   +20 | length  1749 | mean20 +18.55 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2809.451771632,"data":"Episode  243 | step  402715 | reward   +20 | length  1698 | mean20 +18.60 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2822.897288349,"data":"Episode  244 | step  404599 | reward   +18 | length  1884 | mean20 +18.60 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2836.212849014,"data":"Episode  245 | step  406475 | reward   +18 | length  1876 | mean20 +18.65 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2851.725907634,"data":"Episode  246 | step  408660 | reward   +17 | length  2185 | mean20 +18.50 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2865.639623965,"data":"Episode  247 | step  410606 | reward   +18 | length  1946 | mean20 +18.55 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2878.318868772,"data":"Episode  248 | step  412385 | reward   +19 | length  1779 | mean20 +18.65 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2890.792446717,"data":"Episode  249 | step  414132 | reward   +20 | length  1747 | mean20 +18.60 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2905.247158478,"data":"Episode  250 | step  416162 | reward   +18 | length  2030 | mean20 +18.70 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2918.538621225,"data":"Episode  251 | step  418028 | reward   +20 | length  1866 | mean20 +18.85 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2931.35823767,"data":"Episode  252 | step  419829 | reward   +20 | length  1801 | mean20 +18.85 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2944.183716009,"data":"Episode  253 | step  421636 | reward   +19 | length  1807 | mean20 +18.90 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2957.348842133,"data":"Episode  254 | step  423499 | reward   +20 | length  1863 | mean20 +18.95 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2969.579011953,"data":"Episode  255 | step  425244 | reward   +20 | length  1745 | mean20 +19.00 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2981.748520079,"data":"Episode  256 | step  426986 | reward   +20 | length  1742 | mean20 +19.10 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":2994.583702962,"data":"Episode  257 | step  428807 | reward   +19 | length  1821 | mean20 +19.05 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3008.177283987,"data":"Episode  258 | step  430744 | reward   +17 | length  1937 | mean20 +19.05 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3023.276749369,"data":"Episode  259 | step  432885 | reward   +16 | length  2141 | mean20 +18.95 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3037.143135094,"data":"Episode  260 | step  434845 | reward   +19 | length  1960 | mean20 +18.90 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3051.110420876,"data":"Episode  261 | step  436818 | reward   +16 | length  1973 | mean20 +18.70 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3063.160528211,"data":"Episode  262 | step  438510 | reward   +21 | length  1692 | mean20 +18.75 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3076.274695324,"data":"Episode  263 | step  440359 | reward   +20 | length  1849 | mean20 +18.75 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3089.103858346,"data":"Episode  264 | step  442162 | reward   +19 | length  1803 | mean20 +18.80 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3102.387017354,"data":"Episode  265 | step  444030 | reward   +19 | length  1868 | mean20 +18.85 | eps 0.010 | 147 steps/s\n"}
+,{"stream_name":"stdout","time":3114.569693161,"data":"Episode  266 | step  445748 | reward   +20 | length  1718 | mean20 +19.00 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3127.349153017,"data":"Episode  267 | step  447533 | reward   +20 | length  1785 | mean20 +19.10 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3140.027925897,"data":"Episode  268 | step  449275 | reward   +20 | length  1742 | mean20 +19.15 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3153.378225797,"data":"Episode  269 | step  451074 | reward   +19 | length  1799 | mean20 +19.10 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3165.485457504,"data":"Episode  270 | step  452707 | reward   +21 | length  1633 | mean20 +19.25 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3178.354557122,"data":"Episode  271 | step  454360 | reward   +21 | length  1653 | mean20 +19.30 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3192.519609171,"data":"Episode  272 | step  456129 | reward   +19 | length  1769 | mean20 +19.25 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3205.26113933,"data":"Episode  273 | step  457761 | reward   +21 | length  1632 | mean20 +19.35 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3218.850105334,"data":"Episode  274 | step  459526 | reward   +20 | length  1765 | mean20 +19.35 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3231.574394121,"data":"Episode  275 | step  461153 | reward   +21 | length  1627 | mean20 +19.40 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3244.504434573,"data":"Episode  276 | step  462779 | reward   +21 | length  1626 | mean20 +19.45 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3257.389691801,"data":"Episode  277 | step  464560 | reward   +20 | length  1781 | mean20 +19.50 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3269.331838546,"data":"Episode  278 | step  466252 | reward   +21 | length  1692 | mean20 +19.70 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3280.941533873,"data":"Episode  279 | step  467880 | reward   +21 | length  1628 | mean20 +19.95 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3292.591634602,"data":"Episode  280 | step  469511 | reward   +21 | length  1631 | mean20 +20.05 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3304.918874975,"data":"Episode  281 | step  471226 | reward   +20 | length  1715 | mean20 +20.25 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3317.954217804,"data":"Episode  282 | step  473052 | reward   +20 | length  1826 | mean20 +20.20 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3330.776693402,"data":"Episode  283 | step  474860 | reward   +19 | length  1808 | mean20 +20.15 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3346.604020782,"data":"Episode  284 | step  477056 | reward   +13 | length  2196 | mean20 +19.85 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3359.201975719,"data":"Episode  285 | step  478806 | reward   +21 | length  1750 | mean20 +19.95 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3371.659807805,"data":"Episode  286 | step  480535 | reward   +20 | length  1729 | mean20 +19.95 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3384.504066953,"data":"Episode  287 | step  482295 | reward   +20 | length  1760 | mean20 +19.95 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3396.299055686,"data":"Episode  288 | step  483929 | reward   +21 | length  1634 | mean20 +20.00 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3409.897798544,"data":"Episode  289 | step  485832 | reward   +19 | length  1903 | mean20 +20.00 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3422.661447421,"data":"Episode  290 | step  487607 | reward   +19 | length  1775 | mean20 +19.90 | eps 0.010 | 146 steps/s\n"}
+,{"stream_name":"stdout","time":3434.493712393,"data":"Episode  291 | step  489241 | reward   +21 | length  1634 | mean20 +19.90 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3447.857356778,"data":"Episode  292 | step  491096 | reward   +19 | length  1855 | mean20 +19.90 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3461.528139228,"data":"Episode  293 | step  492993 | reward   +19 | length  1897 | mean20 +19.80 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3474.755053186,"data":"Episode  294 | step  494828 | reward   +19 | length  1835 | mean20 +19.75 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3489.436852064,"data":"Episode  295 | step  496859 | reward   +20 | length  2031 | mean20 +19.70 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3501.309376559,"data":"Episode  296 | step  498493 | reward   +21 | length  1634 | mean20 +19.70 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3513.892990927,"data":"Episode  297 | step  500205 | reward   +20 | length  1712 | mean20 +19.70 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3525.800609656,"data":"Episode  298 | step  501833 | reward   +21 | length  1628 | mean20 +19.70 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3537.647477049,"data":"Episode  299 | step  503468 | reward   +21 | length  1635 | mean20 +19.70 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3550.060264246,"data":"Episode  300 | step  505190 | reward   +19 | length  1722 | mean20 +19.60 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3561.90017189,"data":"Episode  301 | step  506826 | reward   +21 | length  1636 | mean20 +19.65 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3574.739587954,"data":"Episode  302 | step  508592 | reward   +20 | length  1766 | mean20 +19.65 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3586.667344476,"data":"Episode  303 | step  510251 | reward   +20 | length  1659 | mean20 +19.70 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3598.592537849,"data":"Episode  304 | step  511916 | reward   +20 | length  1665 | mean20 +20.05 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3610.407392438,"data":"Episode  305 | step  513549 | reward   +21 | length  1633 | mean20 +20.05 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3625.633621108,"data":"Episode  306 | step  515668 | reward   +14 | length  2119 | mean20 +19.75 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3638.619906428,"data":"Episode  307 | step  517491 | reward   +18 | length  1823 | mean20 +19.65 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3650.326772631,"data":"Episode  308 | step  519125 | reward   +21 | length  1634 | mean20 +19.65 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3662.220503325,"data":"Episode  309 | step  520788 | reward   +20 | length  1663 | mean20 +19.70 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3674.545616281,"data":"Episode  310 | step  522518 | reward   +20 | length  1730 | mean20 +19.75 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3686.838653224,"data":"Episode  311 | step  524150 | reward   +21 | length  1632 | mean20 +19.75 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3701.657076316,"data":"Episode  312 | step  525860 | reward   +20 | length  1710 | mean20 +19.80 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3715.733251243,"data":"Episode  313 | step  527492 | reward   +21 | length  1632 | mean20 +19.90 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3728.149309432,"data":"Episode  314 | step  529185 | reward   +21 | length  1693 | mean20 +20.00 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3740.445730913,"data":"Episode  315 | step  530833 | reward   +21 | length  1648 | mean20 +20.05 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3752.647892417,"data":"Episode  316 | step  532466 | reward   +21 | length  1633 | mean20 +20.05 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3765.090642153,"data":"Episode  317 | step  534101 | reward   +21 | length  1635 | mean20 +20.10 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3777.666944568,"data":"Episode  318 | step  535792 | reward   +21 | length  1691 | mean20 +20.10 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3793.018109908,"data":"Episode  319 | step  537854 | reward   +16 | length  2062 | mean20 +19.85 | eps 0.010 | 145 steps/s\n"}
+,{"stream_name":"stdout","time":3805.682629024,"data":"Episode  320 | step  539542 | reward   +21 | length  1688 | mean20 +19.95 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3818.878663678,"data":"Episode  321 | step  541295 | reward   +21 | length  1753 | mean20 +19.95 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3832.11310313,"data":"Episode  322 | step  543052 | reward   +20 | length  1757 | mean20 +19.95 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3845.889334367,"data":"Episode  323 | step  544893 | reward   +20 | length  1841 | mean20 +19.95 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3857.497545908,"data":"Episode  324 | step  546527 | reward   +21 | length  1634 | mean20 +20.00 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3869.264480589,"data":"Episode  325 | step  548162 | reward   +21 | length  1635 | mean20 +20.00 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3880.991597946,"data":"Episode  326 | step  549794 | reward   +21 | length  1632 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3892.600535714,"data":"Episode  327 | step  551424 | reward   +21 | length  1630 | mean20 +20.50 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3904.310360336,"data":"Episode  328 | step  553053 | reward   +21 | length  1629 | mean20 +20.50 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3916.717294496,"data":"Episode  329 | step  554783 | reward   +20 | length  1730 | mean20 +20.50 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3928.318903158,"data":"Episode  330 | step  556412 | reward   +21 | length  1629 | mean20 +20.55 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3941.289736579,"data":"Episode  331 | step  558216 | reward   +20 | length  1804 | mean20 +20.50 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3953.180432751,"data":"Episode  332 | step  559871 | reward   +21 | length  1655 | mean20 +20.55 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3966.492162785,"data":"Episode  333 | step  561742 | reward   +19 | length  1871 | mean20 +20.45 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3979.328439842,"data":"Episode  334 | step  563535 | reward   +19 | length  1793 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":3990.927263057,"data":"Episode  335 | step  565163 | reward   +21 | length  1628 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4002.636455282,"data":"Episode  336 | step  566793 | reward   +21 | length  1630 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4014.468983273,"data":"Episode  337 | step  568442 | reward   +21 | length  1649 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4026.135287929,"data":"Episode  338 | step  570076 | reward   +21 | length  1634 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4038.550546411,"data":"Episode  339 | step  571813 | reward   +19 | length  1737 | mean20 +20.50 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4050.708075377,"data":"Episode  340 | step  573507 | reward   +20 | length  1694 | mean20 +20.45 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4062.484258889,"data":"Episode  341 | step  575138 | reward   +21 | length  1631 | mean20 +20.45 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4074.158716819,"data":"Episode  342 | step  576767 | reward   +21 | length  1629 | mean20 +20.50 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4087.300419631,"data":"Episode  343 | step  578597 | reward   +19 | length  1830 | mean20 +20.45 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4098.941638622,"data":"Episode  344 | step  580224 | reward   +21 | length  1627 | mean20 +20.45 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4110.792875446,"data":"Episode  345 | step  581886 | reward   +21 | length  1662 | mean20 +20.45 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4122.364701496,"data":"Episode  346 | step  583516 | reward   +21 | length  1630 | mean20 +20.45 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4134.757441317,"data":"Episode  347 | step  585251 | reward   +19 | length  1735 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4147.28129339,"data":"Episode  348 | step  587001 | reward   +20 | length  1750 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4159.679903964,"data":"Episode  349 | step  588726 | reward   +20 | length  1725 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4171.460996395,"data":"Episode  350 | step  590357 | reward   +21 | length  1631 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4185.093751106,"data":"Episode  351 | step  592244 | reward   +18 | length  1887 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4196.995580333,"data":"Episode  352 | step  593930 | reward   +20 | length  1686 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4208.62299073,"data":"Episode  353 | step  595589 | reward   +21 | length  1659 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4223.195906327,"data":"Episode  354 | step  597631 | reward   +19 | length  2042 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4234.708428916,"data":"Episode  355 | step  599260 | reward   +21 | length  1629 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4246.923932831,"data":"Episode  356 | step  600994 | reward   +19 | length  1734 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4258.392426664,"data":"Episode  357 | step  602619 | reward   +21 | length  1625 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4269.784535136,"data":"Episode  358 | step  604249 | reward   +21 | length  1630 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4282.16034722,"data":"Episode  359 | step  605996 | reward   +20 | length  1747 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4293.692601892,"data":"Episode  360 | step  607627 | reward   +21 | length  1631 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4305.842435674,"data":"Episode  361 | step  609340 | reward   +20 | length  1713 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4317.431362185,"data":"Episode  362 | step  610987 | reward   +21 | length  1647 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4328.954241525,"data":"Episode  363 | step  612616 | reward   +21 | length  1629 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4341.958858591,"data":"Episode  364 | step  614429 | reward   +19 | length  1813 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4353.506829649,"data":"Episode  365 | step  616056 | reward   +21 | length  1627 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4365.041907439,"data":"Episode  366 | step  617689 | reward   +21 | length  1633 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4377.332914332,"data":"Episode  367 | step  619415 | reward   +20 | length  1726 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4392.035757626,"data":"Episode  368 | step  621517 | reward   +18 | length  2102 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4404.202593978,"data":"Episode  369 | step  623239 | reward   +20 | length  1722 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4415.77058772,"data":"Episode  370 | step  624872 | reward   +21 | length  1633 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4429.153934848,"data":"Episode  371 | step  626769 | reward   +19 | length  1897 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4440.753783793,"data":"Episode  372 | step  628400 | reward   +21 | length  1631 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4452.254039317,"data":"Episode  373 | step  630029 | reward   +21 | length  1629 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4464.514519644,"data":"Episode  374 | step  631753 | reward   +21 | length  1724 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4477.052641737,"data":"Episode  375 | step  633518 | reward   +19 | length  1765 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4489.222227612,"data":"Episode  376 | step  635226 | reward   +20 | length  1708 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4500.763164,"data":"Episode  377 | step  636869 | reward   +21 | length  1643 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4512.234486621,"data":"Episode  378 | step  638495 | reward   +21 | length  1626 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4525.329355624,"data":"Episode  379 | step  640347 | reward   +20 | length  1852 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4538.137204884,"data":"Episode  380 | step  642152 | reward   +19 | length  1805 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4551.538830664,"data":"Episode  381 | step  644050 | reward   +19 | length  1898 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4563.209723437,"data":"Episode  382 | step  645683 | reward   +21 | length  1633 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4574.961616486,"data":"Episode  383 | step  647333 | reward   +21 | length  1650 | mean20 +20.15 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4587.659824957,"data":"Episode  384 | step  649136 | reward   +20 | length  1803 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4599.280989296,"data":"Episode  385 | step  650766 | reward   +21 | length  1630 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4610.982623487,"data":"Episode  386 | step  652401 | reward   +21 | length  1635 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4623.326659841,"data":"Episode  387 | step  654134 | reward   +20 | length  1733 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4635.587966387,"data":"Episode  388 | step  655861 | reward   +20 | length  1727 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4647.857000863,"data":"Episode  389 | step  657586 | reward   +20 | length  1725 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4660.075478715,"data":"Episode  390 | step  659292 | reward   +20 | length  1706 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4672.119300477,"data":"Episode  391 | step  660977 | reward   +20 | length  1685 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4684.167603495,"data":"Episode  392 | step  662671 | reward   +21 | length  1694 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4695.84690867,"data":"Episode  393 | step  664300 | reward   +21 | length  1629 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4708.496481792,"data":"Episode  394 | step  666072 | reward   +21 | length  1772 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4720.408114986,"data":"Episode  395 | step  667728 | reward   +21 | length  1656 | mean20 +20.40 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4732.881634136,"data":"Episode  396 | step  669476 | reward   +20 | length  1748 | mean20 +20.40 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4744.982358417,"data":"Episode  397 | step  671159 | reward   +20 | length  1683 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4758.612545664,"data":"Episode  398 | step  673044 | reward   +18 | length  1885 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4770.355990693,"data":"Episode  399 | step  674674 | reward   +21 | length  1630 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4783.551135178,"data":"Episode  400 | step  676500 | reward   +19 | length  1826 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4795.235592744,"data":"Episode  401 | step  678130 | reward   +21 | length  1630 | mean20 +20.35 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4808.656584375,"data":"Episode  402 | step  679965 | reward   +20 | length  1835 | mean20 +20.30 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4821.695555185,"data":"Episode  403 | step  681786 | reward   +20 | length  1821 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4833.91123782,"data":"Episode  404 | step  683469 | reward   +20 | length  1683 | mean20 +20.25 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4845.95325188,"data":"Episode  405 | step  685150 | reward   +20 | length  1681 | mean20 +20.20 | eps 0.010 | 144 steps/s\n"}
+,{"stream_name":"stdout","time":4859.18994615,"data":"Episode  406 | step  686988 | reward   +19 | length  1838 | mean20 +20.10 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4870.953130908,"data":"Episode  407 | step  688617 | reward   +21 | length  1629 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4883.242780295,"data":"Episode  408 | step  690331 | reward   +20 | length  1714 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4894.855030095,"data":"Episode  409 | step  691963 | reward   +21 | length  1632 | mean20 +20.20 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4907.960815364,"data":"Episode  410 | step  693790 | reward   +21 | length  1827 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4919.654498304,"data":"Episode  411 | step  695422 | reward   +21 | length  1632 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4931.330570862,"data":"Episode  412 | step  697055 | reward   +21 | length  1633 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4944.196544928,"data":"Episode  413 | step  698857 | reward   +20 | length  1802 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4955.696596021,"data":"Episode  414 | step  700487 | reward   +21 | length  1630 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4967.945717261,"data":"Episode  415 | step  702199 | reward   +20 | length  1712 | mean20 +20.20 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4979.604699792,"data":"Episode  416 | step  703831 | reward   +21 | length  1632 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":4991.277655633,"data":"Episode  417 | step  705462 | reward   +21 | length  1631 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5002.988941402,"data":"Episode  418 | step  707096 | reward   +21 | length  1634 | mean20 +20.45 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5016.065926086,"data":"Episode  419 | step  708934 | reward   +19 | length  1838 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5028.389063268,"data":"Episode  420 | step  710668 | reward   +19 | length  1734 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5041.528659882,"data":"Episode  421 | step  712507 | reward   +20 | length  1839 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5053.124349061,"data":"Episode  422 | step  714134 | reward   +21 | length  1627 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5066.342184804,"data":"Episode  423 | step  716004 | reward   +19 | length  1870 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5078.481937415,"data":"Episode  424 | step  717716 | reward   +21 | length  1712 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5095.170062323,"data":"Episode  425 | step  720052 | reward   +16 | length  2336 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5107.731308659,"data":"Episode  426 | step  721783 | reward   +20 | length  1731 | mean20 +20.20 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5119.852949177,"data":"Episode  427 | step  723479 | reward   +20 | length  1696 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5131.948410042,"data":"Episode  428 | step  725171 | reward   +20 | length  1692 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5144.23094384,"data":"Episode  429 | step  726885 | reward   +20 | length  1714 | mean20 +20.10 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5157.732649264,"data":"Episode  430 | step  728776 | reward   +18 | length  1891 | mean20 +19.95 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5169.949439987,"data":"Episode  431 | step  730464 | reward   +20 | length  1688 | mean20 +19.90 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5181.650686372,"data":"Episode  432 | step  732098 | reward   +21 | length  1634 | mean20 +19.90 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5193.329552697,"data":"Episode  433 | step  733724 | reward   +21 | length  1626 | mean20 +19.95 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5206.586979795,"data":"Episode  434 | step  735557 | reward   +20 | length  1833 | mean20 +19.90 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5220.303213309,"data":"Episode  435 | step  737484 | reward   +18 | length  1927 | mean20 +19.80 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5232.206520711,"data":"Episode  436 | step  739151 | reward   +20 | length  1667 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5243.884440254,"data":"Episode  437 | step  740784 | reward   +21 | length  1633 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5255.637238423,"data":"Episode  438 | step  742416 | reward   +21 | length  1632 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5267.882773586,"data":"Episode  439 | step  744141 | reward   +20 | length  1725 | mean20 +19.80 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5281.766320896,"data":"Episode  440 | step  746076 | reward   +18 | length  1935 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5294.341079853,"data":"Episode  441 | step  747830 | reward   +20 | length  1754 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5306.592928465,"data":"Episode  442 | step  749552 | reward   +20 | length  1722 | mean20 +19.70 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5319.115684434,"data":"Episode  443 | step  751308 | reward   +20 | length  1756 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5330.723751423,"data":"Episode  444 | step  752940 | reward   +21 | length  1632 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5342.34579436,"data":"Episode  445 | step  754573 | reward   +21 | length  1633 | mean20 +20.00 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5353.836288985,"data":"Episode  446 | step  756201 | reward   +21 | length  1628 | mean20 +20.05 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5365.415576345,"data":"Episode  447 | step  757829 | reward   +21 | length  1628 | mean20 +20.10 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5377.11754928,"data":"Episode  448 | step  759460 | reward   +21 | length  1631 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5391.007800592,"data":"Episode  449 | step  761411 | reward   +17 | length  1951 | mean20 +20.00 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5402.646461119,"data":"Episode  450 | step  763041 | reward   +21 | length  1630 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5414.799060558,"data":"Episode  451 | step  764732 | reward   +20 | length  1691 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5426.940224878,"data":"Episode  452 | step  766426 | reward   +20 | length  1694 | mean20 +20.10 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5438.641680211,"data":"Episode  453 | step  768059 | reward   +21 | length  1633 | mean20 +20.10 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5450.309556489,"data":"Episode  454 | step  769693 | reward   +21 | length  1634 | mean20 +20.15 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5461.915043575,"data":"Episode  455 | step  771320 | reward   +21 | length  1627 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5473.642236289,"data":"Episode  456 | step  772952 | reward   +21 | length  1632 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5485.174701285,"data":"Episode  457 | step  774580 | reward   +21 | length  1628 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5496.72443253,"data":"Episode  458 | step  776207 | reward   +21 | length  1627 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5509.176384725,"data":"Episode  459 | step  777955 | reward   +20 | length  1748 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5520.691809975,"data":"Episode  460 | step  779588 | reward   +21 | length  1633 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5532.311001543,"data":"Episode  461 | step  781220 | reward   +21 | length  1632 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5544.499076417,"data":"Episode  462 | step  782920 | reward   +20 | length  1700 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5556.156577213,"data":"Episode  463 | step  784554 | reward   +21 | length  1634 | mean20 +20.60 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5568.583173586,"data":"Episode  464 | step  786277 | reward   +20 | length  1723 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5580.303076935,"data":"Episode  465 | step  787905 | reward   +21 | length  1628 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5591.849517609,"data":"Episode  466 | step  789532 | reward   +21 | length  1627 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5603.447430177,"data":"Episode  467 | step  791162 | reward   +21 | length  1630 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5615.606935955,"data":"Episode  468 | step  792862 | reward   +20 | length  1700 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5627.328437231,"data":"Episode  469 | step  794494 | reward   +21 | length  1632 | mean20 +20.70 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5639.481088096,"data":"Episode  470 | step  796179 | reward   +20 | length  1685 | mean20 +20.65 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5651.150416775,"data":"Episode  471 | step  797804 | reward   +21 | length  1625 | mean20 +20.70 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5663.294997119,"data":"Episode  472 | step  799499 | reward   +21 | length  1695 | mean20 +20.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5676.45350122,"data":"Episode  473 | step  801333 | reward   +19 | length  1834 | mean20 +20.65 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5688.672245123,"data":"Episode  474 | step  803031 | reward   +20 | length  1698 | mean20 +20.60 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5701.781276243,"data":"Episode  475 | step  804869 | reward   +19 | length  1838 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5713.388959461,"data":"Episode  476 | step  806499 | reward   +21 | length  1630 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5725.082468333,"data":"Episode  477 | step  808128 | reward   +21 | length  1629 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5736.788603589,"data":"Episode  478 | step  809756 | reward   +21 | length  1628 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5751.075105413,"data":"Episode  479 | step  811755 | reward   +18 | length  1999 | mean20 +20.40 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5763.960786765,"data":"Episode  480 | step  813550 | reward   +19 | length  1795 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5776.488246054,"data":"Episode  481 | step  815314 | reward   +20 | length  1764 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5788.095661155,"data":"Episode  482 | step  816943 | reward   +21 | length  1629 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5800.252748691,"data":"Episode  483 | step  818637 | reward   +20 | length  1694 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5812.042005399,"data":"Episode  484 | step  820285 | reward   +21 | length  1648 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5825.477292211,"data":"Episode  485 | step  822156 | reward   +20 | length  1871 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5837.064123539,"data":"Episode  486 | step  823788 | reward   +21 | length  1632 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5849.94804233,"data":"Episode  487 | step  825608 | reward   +20 | length  1820 | mean20 +20.20 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5861.623379807,"data":"Episode  488 | step  827239 | reward   +21 | length  1631 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5873.297248537,"data":"Episode  489 | step  828871 | reward   +21 | length  1632 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5884.896358032,"data":"Episode  490 | step  830499 | reward   +21 | length  1628 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5896.539849099,"data":"Episode  491 | step  832128 | reward   +21 | length  1629 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5909.368402668,"data":"Episode  492 | step  833921 | reward   +19 | length  1793 | mean20 +20.20 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5921.156817748,"data":"Episode  493 | step  835552 | reward   +21 | length  1631 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5934.650859455,"data":"Episode  494 | step  837415 | reward   +20 | length  1863 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5946.326953807,"data":"Episode  495 | step  839042 | reward   +21 | length  1627 | mean20 +20.40 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5958.705093757,"data":"Episode  496 | step  840779 | reward   +20 | length  1737 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5970.433690165,"data":"Episode  497 | step  842407 | reward   +21 | length  1628 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5982.101253066,"data":"Episode  498 | step  844035 | reward   +21 | length  1628 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":5993.800595469,"data":"Episode  499 | step  845664 | reward   +21 | length  1629 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6006.062718184,"data":"Episode  500 | step  847372 | reward   +20 | length  1708 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6017.751678379,"data":"Episode  501 | step  849005 | reward   +21 | length  1633 | mean20 +20.60 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6029.507107722,"data":"Episode  502 | step  850632 | reward   +21 | length  1627 | mean20 +20.60 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6041.309955296,"data":"Episode  503 | step  852261 | reward   +21 | length  1629 | mean20 +20.65 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6052.995201893,"data":"Episode  504 | step  853893 | reward   +21 | length  1632 | mean20 +20.65 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6065.655455985,"data":"Episode  505 | step  855671 | reward   +19 | length  1778 | mean20 +20.60 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6077.230878394,"data":"Episode  506 | step  857298 | reward   +21 | length  1627 | mean20 +20.60 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6089.268562633,"data":"Episode  507 | step  858982 | reward   +20 | length  1684 | mean20 +20.60 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6102.060915499,"data":"Episode  508 | step  860774 | reward   +19 | length  1792 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6113.751148828,"data":"Episode  509 | step  862405 | reward   +21 | length  1631 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6126.232728823,"data":"Episode  510 | step  864149 | reward   +19 | length  1744 | mean20 +20.40 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6137.83034273,"data":"Episode  511 | step  865777 | reward   +21 | length  1628 | mean20 +20.40 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6149.554179282,"data":"Episode  512 | step  867426 | reward   +21 | length  1649 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6161.305570565,"data":"Episode  513 | step  869056 | reward   +21 | length  1630 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6173.086374372,"data":"Episode  514 | step  870685 | reward   +21 | length  1629 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6184.943666884,"data":"Episode  515 | step  872317 | reward   +21 | length  1632 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6197.168208971,"data":"Episode  516 | step  874022 | reward   +20 | length  1705 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6208.883557196,"data":"Episode  517 | step  875654 | reward   +21 | length  1632 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6220.78643597,"data":"Episode  518 | step  877316 | reward   +20 | length  1662 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6232.446878148,"data":"Episode  519 | step  878943 | reward   +21 | length  1627 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6244.280413937,"data":"Episode  520 | step  880575 | reward   +21 | length  1632 | mean20 +20.55 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6256.711377688,"data":"Episode  521 | step  882321 | reward   +20 | length  1746 | mean20 +20.50 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6269.033129647,"data":"Episode  522 | step  884042 | reward   +20 | length  1721 | mean20 +20.45 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6280.707856196,"data":"Episode  523 | step  885675 | reward   +21 | length  1633 | mean20 +20.45 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6292.403447719,"data":"Episode  524 | step  887300 | reward   +21 | length  1625 | mean20 +20.45 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6307.650835351,"data":"Episode  525 | step  889411 | reward   +18 | length  2111 | mean20 +20.40 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6320.815923712,"data":"Episode  526 | step  891232 | reward   +20 | length  1821 | mean20 +20.35 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6333.121598679,"data":"Episode  527 | step  892942 | reward   +21 | length  1710 | mean20 +20.40 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6345.654046139,"data":"Episode  528 | step  894691 | reward   +19 | length  1749 | mean20 +20.40 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6357.570149332,"data":"Episode  529 | step  896337 | reward   +21 | length  1646 | mean20 +20.40 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6372.311374853,"data":"Episode  530 | step  898384 | reward   +17 | length  2047 | mean20 +20.30 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6385.329476738,"data":"Episode  531 | step  900184 | reward   +20 | length  1800 | mean20 +20.25 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6399.462382057,"data":"Episode  532 | step  902161 | reward   +18 | length  1977 | mean20 +20.10 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6411.79316901,"data":"Episode  533 | step  903862 | reward   +20 | length  1701 | mean20 +20.05 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6424.19194542,"data":"Episode  534 | step  905586 | reward   +20 | length  1724 | mean20 +20.00 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6436.077691306,"data":"Episode  535 | step  907236 | reward   +21 | length  1650 | mean20 +20.00 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6447.634062375,"data":"Episode  536 | step  908869 | reward   +21 | length  1633 | mean20 +20.05 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6459.564240051,"data":"Episode  537 | step  910562 | reward   +20 | length  1693 | mean20 +20.00 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6472.120874574,"data":"Episode  538 | step  912335 | reward   +20 | length  1773 | mean20 +20.00 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6484.254021877,"data":"Episode  539 | step  914047 | reward   +20 | length  1712 | mean20 +19.95 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6497.702646892,"data":"Episode  540 | step  915946 | reward   +17 | length  1899 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6509.877869537,"data":"Episode  541 | step  917650 | reward   +21 | length  1704 | mean20 +19.80 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6521.683697394,"data":"Episode  542 | step  919318 | reward   +20 | length  1668 | mean20 +19.80 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6533.61383839,"data":"Episode  543 | step  920980 | reward   +20 | length  1662 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6545.527717364,"data":"Episode  544 | step  922640 | reward   +21 | length  1660 | mean20 +19.75 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6558.514702248,"data":"Episode  545 | step  924451 | reward   +19 | length  1811 | mean20 +19.80 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6570.632164688,"data":"Episode  546 | step  926153 | reward   +20 | length  1702 | mean20 +19.80 | eps 0.010 | 143 steps/s\n"}
+,{"stream_name":"stdout","time":6584.133436214,"data":"Episode  547 | step  928037 | reward   +17 | length  1884 | mean20 +19.60 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6596.244225114,"data":"Episode  548 | step  929732 | reward   +21 | length  1695 | mean20 +19.70 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6607.785856846,"data":"Episode  549 | step  931365 | reward   +21 | length  1633 | mean20 +19.70 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6619.178391565,"data":"Episode  550 | step  932993 | reward   +21 | length  1628 | mean20 +19.90 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6632.212054086,"data":"Episode  551 | step  934837 | reward   +19 | length  1844 | mean20 +19.85 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6643.801731994,"data":"Episode  552 | step  936473 | reward   +21 | length  1636 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6655.686042555,"data":"Episode  553 | step  938122 | reward   +21 | length  1649 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6667.656958889,"data":"Episode  554 | step  939780 | reward   +20 | length  1658 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6679.901076046,"data":"Episode  555 | step  941497 | reward   +19 | length  1717 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6691.470919944,"data":"Episode  556 | step  943124 | reward   +21 | length  1627 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6703.794850413,"data":"Episode  557 | step  944839 | reward   +20 | length  1715 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6715.425491212,"data":"Episode  558 | step  946472 | reward   +21 | length  1633 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6727.001614318,"data":"Episode  559 | step  948104 | reward   +21 | length  1632 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6738.914909155,"data":"Episode  560 | step  949771 | reward   +20 | length  1667 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6750.5166592,"data":"Episode  561 | step  951404 | reward   +21 | length  1633 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6762.872996192,"data":"Episode  562 | step  953113 | reward   +20 | length  1709 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6775.288215877,"data":"Episode  563 | step  954857 | reward   +19 | length  1744 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6788.6178378,"data":"Episode  564 | step  956732 | reward   +19 | length  1875 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6802.155823532,"data":"Episode  565 | step  958634 | reward   +20 | length  1902 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6813.721095749,"data":"Episode  566 | step  960266 | reward   +21 | length  1632 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6826.213783892,"data":"Episode  567 | step  962013 | reward   +20 | length  1747 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6837.922306493,"data":"Episode  568 | step  963644 | reward   +21 | length  1631 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6849.600050718,"data":"Episode  569 | step  965271 | reward   +21 | length  1627 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6863.716235988,"data":"Episode  570 | step  967178 | reward   +18 | length  1907 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6877.620055189,"data":"Episode  571 | step  969079 | reward   +18 | length  1901 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6889.902101767,"data":"Episode  572 | step  970706 | reward   +21 | length  1627 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6902.058778692,"data":"Episode  573 | step  972336 | reward   +21 | length  1630 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6913.927692879,"data":"Episode  574 | step  973964 | reward   +21 | length  1628 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6926.081695273,"data":"Episode  575 | step  975595 | reward   +21 | length  1631 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6938.194124856,"data":"Episode  576 | step  977287 | reward   +21 | length  1692 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6950.528873366,"data":"Episode  577 | step  979019 | reward   +20 | length  1732 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6963.898612205,"data":"Episode  578 | step  980904 | reward   +19 | length  1885 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6976.237270305,"data":"Episode  579 | step  982630 | reward   +20 | length  1726 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6987.793045352,"data":"Episode  580 | step  984262 | reward   +21 | length  1632 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":6999.995077491,"data":"Episode  581 | step  986008 | reward   +20 | length  1746 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7011.972170778,"data":"Episode  582 | step  987700 | reward   +20 | length  1692 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7023.583751924,"data":"Episode  583 | step  989330 | reward   +21 | length  1630 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7035.319912221,"data":"Episode  584 | step  991009 | reward   +20 | length  1679 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7046.806620125,"data":"Episode  585 | step  992639 | reward   +21 | length  1630 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7059.409141065,"data":"Episode  586 | step  994424 | reward   +20 | length  1785 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7070.930355251,"data":"Episode  587 | step  996056 | reward   +21 | length  1632 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7084.427819338,"data":"Episode  588 | step  997953 | reward   +18 | length  1897 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7095.904166219,"data":"Episode  589 | step  999583 | reward   +21 | length  1630 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7108.241001505,"data":"Episode  590 | step 1001341 | reward   +20 | length  1758 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7119.712610955,"data":"Episode  591 | step 1002975 | reward   +21 | length  1634 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7132.103862088,"data":"Episode  592 | step 1004764 | reward   +20 | length  1789 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7144.530686093,"data":"Episode  593 | step 1006539 | reward   +19 | length  1775 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7155.875791083,"data":"Episode  594 | step 1008166 | reward   +21 | length  1627 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7167.187137027,"data":"Episode  595 | step 1009797 | reward   +21 | length  1631 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7178.517733556,"data":"Episode  596 | step 1011427 | reward   +21 | length  1630 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7190.297986418,"data":"Episode  597 | step 1013112 | reward   +20 | length  1685 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7202.399674941,"data":"Episode  598 | step 1014828 | reward   +20 | length  1716 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7215.095391877,"data":"Episode  599 | step 1016628 | reward   +20 | length  1800 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7226.851119168,"data":"Episode  600 | step 1018315 | reward   +20 | length  1687 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7238.68806238,"data":"Episode  601 | step 1020008 | reward   +20 | length  1693 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7250.101954468,"data":"Episode  602 | step 1021634 | reward   +21 | length  1626 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7261.50539558,"data":"Episode  603 | step 1023264 | reward   +21 | length  1630 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7272.920136681,"data":"Episode  604 | step 1024896 | reward   +21 | length  1632 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7284.936368109,"data":"Episode  605 | step 1026607 | reward   +20 | length  1711 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7296.926036667,"data":"Episode  606 | step 1028322 | reward   +21 | length  1715 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7308.305170126,"data":"Episode  607 | step 1029950 | reward   +21 | length  1628 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7319.724169198,"data":"Episode  608 | step 1031579 | reward   +21 | length  1629 | mean20 +20.50 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7331.015635859,"data":"Episode  609 | step 1033208 | reward   +21 | length  1629 | mean20 +20.50 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7342.38237641,"data":"Episode  610 | step 1034841 | reward   +21 | length  1633 | mean20 +20.55 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7354.555988009,"data":"Episode  611 | step 1036580 | reward   +20 | length  1739 | mean20 +20.50 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7366.746765159,"data":"Episode  612 | step 1038328 | reward   +20 | length  1748 | mean20 +20.50 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7379.115152971,"data":"Episode  613 | step 1040113 | reward   +20 | length  1785 | mean20 +20.55 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7392.514758771,"data":"Episode  614 | step 1042037 | reward   +18 | length  1924 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7403.927433703,"data":"Episode  615 | step 1043670 | reward   +21 | length  1633 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7415.389809127,"data":"Episode  616 | step 1045301 | reward   +21 | length  1631 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7431.020360074,"data":"Episode  617 | step 1047514 | reward   +16 | length  2213 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7443.078102597,"data":"Episode  618 | step 1049217 | reward   +20 | length  1703 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7454.445002721,"data":"Episode  619 | step 1050847 | reward   +21 | length  1630 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7465.940114573,"data":"Episode  620 | step 1052479 | reward   +21 | length  1632 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7477.414870839,"data":"Episode  621 | step 1054110 | reward   +21 | length  1631 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7488.725815862,"data":"Episode  622 | step 1055740 | reward   +21 | length  1630 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7500.045516337,"data":"Episode  623 | step 1057376 | reward   +21 | length  1636 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7511.439540865,"data":"Episode  624 | step 1059011 | reward   +21 | length  1635 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7522.783363725,"data":"Episode  625 | step 1060643 | reward   +21 | length  1632 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7534.170911486,"data":"Episode  626 | step 1062276 | reward   +21 | length  1633 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7545.724969414,"data":"Episode  627 | step 1063908 | reward   +21 | length  1632 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7557.355507071,"data":"Episode  628 | step 1065543 | reward   +21 | length  1635 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7569.532332996,"data":"Episode  629 | step 1067267 | reward   +20 | length  1724 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7581.096032138,"data":"Episode  630 | step 1068911 | reward   +21 | length  1644 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7592.656609896,"data":"Episode  631 | step 1070546 | reward   +21 | length  1635 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7604.473142267,"data":"Episode  632 | step 1072231 | reward   +20 | length  1685 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7617.309439123,"data":"Episode  633 | step 1074068 | reward   +20 | length  1837 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7629.318379817,"data":"Episode  634 | step 1075799 | reward   +19 | length  1731 | mean20 +20.45 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7641.212581212,"data":"Episode  635 | step 1077508 | reward   +20 | length  1709 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7652.555858799,"data":"Episode  636 | step 1079136 | reward   +21 | length  1628 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7665.767836647,"data":"Episode  637 | step 1081003 | reward   +20 | length  1867 | mean20 +20.60 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7678.049588287,"data":"Episode  638 | step 1082747 | reward   +20 | length  1744 | mean20 +20.60 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7689.580240996,"data":"Episode  639 | step 1084391 | reward   +21 | length  1644 | mean20 +20.60 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7701.065661125,"data":"Episode  640 | step 1086026 | reward   +21 | length  1635 | mean20 +20.60 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7712.520982748,"data":"Episode  641 | step 1087662 | reward   +21 | length  1636 | mean20 +20.60 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7725.175669027,"data":"Episode  642 | step 1089471 | reward   +20 | length  1809 | mean20 +20.55 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7740.121410608,"data":"Episode  643 | step 1091611 | reward   +17 | length  2140 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7755.320178561,"data":"Episode  644 | step 1093673 | reward   +16 | length  2062 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7766.945538585,"data":"Episode  645 | step 1095298 | reward   +21 | length  1625 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7779.938292481,"data":"Episode  646 | step 1097047 | reward   +20 | length  1749 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7791.93550867,"data":"Episode  647 | step 1098679 | reward   +21 | length  1632 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7804.166512832,"data":"Episode  648 | step 1100307 | reward   +21 | length  1628 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7815.882858012,"data":"Episode  649 | step 1101940 | reward   +21 | length  1633 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7827.87210691,"data":"Episode  650 | step 1103625 | reward   +20 | length  1685 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7840.404613385,"data":"Episode  651 | step 1105387 | reward   +20 | length  1762 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7852.984827413,"data":"Episode  652 | step 1107136 | reward   +19 | length  1749 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7865.469828719,"data":"Episode  653 | step 1108883 | reward   +19 | length  1747 | mean20 +19.90 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7876.979851565,"data":"Episode  654 | step 1110502 | reward   +21 | length  1619 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7888.871654788,"data":"Episode  655 | step 1112193 | reward   +21 | length  1691 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7901.49001778,"data":"Episode  656 | step 1113957 | reward   +19 | length  1764 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7914.385380229,"data":"Episode  657 | step 1115760 | reward   +20 | length  1803 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7926.320756195,"data":"Episode  658 | step 1117441 | reward   +20 | length  1681 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7938.524051998,"data":"Episode  659 | step 1119159 | reward   +20 | length  1718 | mean20 +19.90 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7951.344194768,"data":"Episode  660 | step 1120984 | reward   +19 | length  1825 | mean20 +19.80 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7963.572392212,"data":"Episode  661 | step 1122705 | reward   +20 | length  1721 | mean20 +19.75 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7975.777227047,"data":"Episode  662 | step 1124445 | reward   +19 | length  1740 | mean20 +19.70 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":7987.902464167,"data":"Episode  663 | step 1126177 | reward   +20 | length  1732 | mean20 +19.85 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8001.108394696,"data":"Episode  664 | step 1128050 | reward   +20 | length  1873 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8013.510637321,"data":"Episode  665 | step 1129802 | reward   +20 | length  1752 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8026.667345435,"data":"Episode  666 | step 1131690 | reward   +19 | length  1888 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8038.105787849,"data":"Episode  667 | step 1133322 | reward   +21 | length  1632 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8049.557046138,"data":"Episode  668 | step 1134946 | reward   +21 | length  1624 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8061.908635664,"data":"Episode  669 | step 1136693 | reward   +19 | length  1747 | mean20 +19.85 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8074.822972123,"data":"Episode  670 | step 1138509 | reward   +19 | length  1816 | mean20 +19.80 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8086.385190184,"data":"Episode  671 | step 1140144 | reward   +21 | length  1635 | mean20 +19.85 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8098.500466246,"data":"Episode  672 | step 1141853 | reward   +20 | length  1709 | mean20 +19.90 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8110.163787589,"data":"Episode  673 | step 1143501 | reward   +21 | length  1648 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8121.524324879,"data":"Episode  674 | step 1145112 | reward   +21 | length  1611 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8133.085597971,"data":"Episode  675 | step 1146739 | reward   +21 | length  1627 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8144.648494749,"data":"Episode  676 | step 1148369 | reward   +21 | length  1630 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8156.914484431,"data":"Episode  677 | step 1150097 | reward   +19 | length  1728 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8169.031642252,"data":"Episode  678 | step 1151803 | reward   +20 | length  1706 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8180.578340748,"data":"Episode  679 | step 1153427 | reward   +21 | length  1624 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8194.298324992,"data":"Episode  680 | step 1155360 | reward   +17 | length  1933 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8206.956606798,"data":"Episode  681 | step 1157131 | reward   +19 | length  1771 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8218.902294638,"data":"Episode  682 | step 1158786 | reward   +20 | length  1655 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8231.149518406,"data":"Episode  683 | step 1160509 | reward   +19 | length  1723 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8243.196844069,"data":"Episode  684 | step 1162192 | reward   +20 | length  1683 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8254.755822326,"data":"Episode  685 | step 1163816 | reward   +21 | length  1624 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8267.221807069,"data":"Episode  686 | step 1165579 | reward   +20 | length  1763 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8279.470276495,"data":"Episode  687 | step 1167303 | reward   +20 | length  1724 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8290.952153035,"data":"Episode  688 | step 1168918 | reward   +21 | length  1615 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8302.987562382,"data":"Episode  689 | step 1170608 | reward   +20 | length  1690 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8315.264684365,"data":"Episode  690 | step 1172344 | reward   +20 | length  1736 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8328.465701366,"data":"Episode  691 | step 1174192 | reward   +20 | length  1848 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8340.105518078,"data":"Episode  692 | step 1175827 | reward   +21 | length  1635 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8351.684422967,"data":"Episode  693 | step 1177460 | reward   +21 | length  1633 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8363.738467952,"data":"Episode  694 | step 1179090 | reward   +21 | length  1630 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8376.287817737,"data":"Episode  695 | step 1180833 | reward   +21 | length  1743 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8389.570067552,"data":"Episode  696 | step 1182587 | reward   +20 | length  1754 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8403.264724262,"data":"Episode  697 | step 1184445 | reward   +19 | length  1858 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8415.542010857,"data":"Episode  698 | step 1186068 | reward   +21 | length  1623 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8429.692664515,"data":"Episode  699 | step 1188014 | reward   +17 | length  1946 | mean20 +19.90 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8441.44625299,"data":"Episode  700 | step 1189649 | reward   +21 | length  1635 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8454.618594029,"data":"Episode  701 | step 1191497 | reward   +20 | length  1848 | mean20 +20.15 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8466.295966686,"data":"Episode  702 | step 1193131 | reward   +21 | length  1634 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8477.902049097,"data":"Episode  703 | step 1194760 | reward   +21 | length  1629 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8490.626930376,"data":"Episode  704 | step 1196548 | reward   +19 | length  1788 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8502.202269302,"data":"Episode  705 | step 1198157 | reward   +21 | length  1609 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8515.289773717,"data":"Episode  706 | step 1199980 | reward   +20 | length  1823 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8527.881811816,"data":"Episode  707 | step 1201723 | reward   +20 | length  1743 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8540.521540183,"data":"Episode  708 | step 1203497 | reward   +20 | length  1774 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8554.800987513,"data":"Episode  709 | step 1205491 | reward   +17 | length  1994 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8566.696619591,"data":"Episode  710 | step 1207156 | reward   +20 | length  1665 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8578.419946999,"data":"Episode  711 | step 1208788 | reward   +21 | length  1632 | mean20 +20.10 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8591.216317277,"data":"Episode  712 | step 1210571 | reward   +19 | length  1783 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8603.83914817,"data":"Episode  713 | step 1212325 | reward   +21 | length  1754 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8615.950572072,"data":"Episode  714 | step 1214006 | reward   +20 | length  1681 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8628.394601562,"data":"Episode  715 | step 1215751 | reward   +19 | length  1745 | mean20 +19.85 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8640.427916322,"data":"Episode  716 | step 1217431 | reward   +20 | length  1680 | mean20 +19.85 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8652.423749383,"data":"Episode  717 | step 1219098 | reward   +20 | length  1667 | mean20 +19.90 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8664.751926203,"data":"Episode  718 | step 1220765 | reward   +20 | length  1667 | mean20 +19.85 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8678.464479317,"data":"Episode  719 | step 1222444 | reward   +20 | length  1679 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8691.767712837,"data":"Episode  720 | step 1224223 | reward   +20 | length  1779 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8704.206083173,"data":"Episode  721 | step 1225836 | reward   +21 | length  1613 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8716.726412275,"data":"Episode  722 | step 1227466 | reward   +21 | length  1630 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8729.591928962,"data":"Episode  723 | step 1229121 | reward   +20 | length  1655 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8743.035575854,"data":"Episode  724 | step 1230924 | reward   +20 | length  1803 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8754.712709291,"data":"Episode  725 | step 1232553 | reward   +21 | length  1629 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8767.291906202,"data":"Episode  726 | step 1234274 | reward   +19 | length  1721 | mean20 +19.95 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8779.008262304,"data":"Episode  727 | step 1235891 | reward   +21 | length  1617 | mean20 +20.00 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8790.784144508,"data":"Episode  728 | step 1237507 | reward   +21 | length  1616 | mean20 +20.05 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8802.495695339,"data":"Episode  729 | step 1239122 | reward   +21 | length  1615 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8814.205650695,"data":"Episode  730 | step 1240732 | reward   +21 | length  1610 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8826.94664683,"data":"Episode  731 | step 1242501 | reward   +19 | length  1769 | mean20 +20.20 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8838.671094634,"data":"Episode  732 | step 1244134 | reward   +21 | length  1633 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8851.328376682,"data":"Episode  733 | step 1245802 | reward   +20 | length  1668 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8864.56864163,"data":"Episode  734 | step 1247489 | reward   +20 | length  1687 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8876.73564306,"data":"Episode  735 | step 1249122 | reward   +21 | length  1633 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8889.009858243,"data":"Episode  736 | step 1250768 | reward   +21 | length  1646 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8903.010162376,"data":"Episode  737 | step 1252598 | reward   +20 | length  1830 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8915.821134495,"data":"Episode  738 | step 1254228 | reward   +21 | length  1630 | mean20 +20.45 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8929.255691808,"data":"Episode  739 | step 1256005 | reward   +19 | length  1777 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8942.076677979,"data":"Episode  740 | step 1257781 | reward   +19 | length  1776 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8954.075411427,"data":"Episode  741 | step 1259409 | reward   +21 | length  1628 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8966.294694725,"data":"Episode  742 | step 1261052 | reward   +21 | length  1643 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8980.323040411,"data":"Episode  743 | step 1262925 | reward   +19 | length  1873 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":8993.306929747,"data":"Episode  744 | step 1264595 | reward   +20 | length  1670 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9006.423446373,"data":"Episode  745 | step 1266312 | reward   +20 | length  1717 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9019.447584107,"data":"Episode  746 | step 1268014 | reward   +20 | length  1702 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9031.945741195,"data":"Episode  747 | step 1269644 | reward   +21 | length  1630 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9045.326850165,"data":"Episode  748 | step 1271393 | reward   +20 | length  1749 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9057.845596058,"data":"Episode  749 | step 1273027 | reward   +21 | length  1634 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9070.276214182,"data":"Episode  750 | step 1274658 | reward   +21 | length  1631 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9082.770565794,"data":"Episode  751 | step 1276287 | reward   +21 | length  1629 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9095.312376914,"data":"Episode  752 | step 1277920 | reward   +21 | length  1633 | mean20 +20.35 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9107.630167921,"data":"Episode  753 | step 1279531 | reward   +21 | length  1611 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9120.106822386,"data":"Episode  754 | step 1281162 | reward   +21 | length  1631 | mean20 +20.45 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9133.187203112,"data":"Episode  755 | step 1282874 | reward   +20 | length  1712 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9145.542838175,"data":"Episode  756 | step 1284480 | reward   +21 | length  1606 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9159.230181207,"data":"Episode  757 | step 1286249 | reward   +20 | length  1769 | mean20 +20.40 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9173.805317465,"data":"Episode  758 | step 1288147 | reward   +18 | length  1898 | mean20 +20.25 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9186.670711075,"data":"Episode  759 | step 1289845 | reward   +20 | length  1698 | mean20 +20.30 | eps 0.010 | 142 steps/s\n"}
+,{"stream_name":"stdout","time":9200.407641996,"data":"Episode  760 | step 1291639 | reward   +19 | length  1794 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9213.757668785,"data":"Episode  761 | step 1293291 | reward   +20 | length  1652 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9226.829299234,"data":"Episode  762 | step 1294986 | reward   +20 | length  1695 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9241.676420649,"data":"Episode  763 | step 1296896 | reward   +19 | length  1910 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9254.935315616,"data":"Episode  764 | step 1298601 | reward   +20 | length  1705 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9267.542022182,"data":"Episode  765 | step 1300233 | reward   +21 | length  1632 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9280.406629103,"data":"Episode  766 | step 1301920 | reward   +20 | length  1687 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9292.612658804,"data":"Episode  767 | step 1303525 | reward   +21 | length  1605 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9305.428465464,"data":"Episode  768 | step 1305210 | reward   +20 | length  1685 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9317.829963438,"data":"Episode  769 | step 1306840 | reward   +21 | length  1630 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9331.183881812,"data":"Episode  770 | step 1308597 | reward   +20 | length  1757 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9343.49321483,"data":"Episode  771 | step 1310203 | reward   +21 | length  1606 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9356.792501333,"data":"Episode  772 | step 1311964 | reward   +20 | length  1761 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9370.475068212,"data":"Episode  773 | step 1313767 | reward   +20 | length  1803 | mean20 +20.10 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9385.614038816,"data":"Episode  774 | step 1315762 | reward   +19 | length  1995 | mean20 +20.00 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9397.95243801,"data":"Episode  775 | step 1317377 | reward   +21 | length  1615 | mean20 +20.05 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9411.025418799,"data":"Episode  776 | step 1319109 | reward   +19 | length  1732 | mean20 +19.95 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9423.360449699,"data":"Episode  777 | step 1320738 | reward   +21 | length  1629 | mean20 +20.00 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9435.730255347,"data":"Episode  778 | step 1322368 | reward   +21 | length  1630 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9447.895851451,"data":"Episode  779 | step 1323972 | reward   +21 | length  1604 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9464.223029184,"data":"Episode  780 | step 1326106 | reward   +17 | length  2134 | mean20 +20.10 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9476.806276438,"data":"Episode  781 | step 1327754 | reward   +21 | length  1648 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9490.097584513,"data":"Episode  782 | step 1329513 | reward   +20 | length  1759 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9503.640368387,"data":"Episode  783 | step 1331233 | reward   +20 | length  1720 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9515.370145119,"data":"Episode  784 | step 1332838 | reward   +21 | length  1605 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9527.228629833,"data":"Episode  785 | step 1334514 | reward   +20 | length  1676 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9538.508555142,"data":"Episode  786 | step 1336118 | reward   +21 | length  1604 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9549.844905095,"data":"Episode  787 | step 1337714 | reward   +21 | length  1596 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9561.568844075,"data":"Episode  788 | step 1339318 | reward   +21 | length  1604 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9572.971489514,"data":"Episode  789 | step 1340915 | reward   +21 | length  1597 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9585.064387717,"data":"Episode  790 | step 1342547 | reward   +21 | length  1632 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9597.794584536,"data":"Episode  791 | step 1344300 | reward   +19 | length  1753 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9610.094299152,"data":"Episode  792 | step 1345929 | reward   +21 | length  1629 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9622.454937706,"data":"Episode  793 | step 1347627 | reward   +20 | length  1698 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9634.521572662,"data":"Episode  794 | step 1349314 | reward   +20 | length  1687 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9646.97540475,"data":"Episode  795 | step 1351093 | reward   +20 | length  1779 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9661.077397332,"data":"Episode  796 | step 1352842 | reward   +20 | length  1749 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9672.574322951,"data":"Episode  797 | step 1354449 | reward   +21 | length  1607 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9685.397109901,"data":"Episode  798 | step 1356072 | reward   +21 | length  1623 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9698.000381038,"data":"Episode  799 | step 1357763 | reward   +20 | length  1691 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9710.477521157,"data":"Episode  800 | step 1359393 | reward   +21 | length  1630 | mean20 +20.50 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9723.654797627,"data":"Episode  801 | step 1361133 | reward   +20 | length  1740 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9735.971653776,"data":"Episode  802 | step 1362734 | reward   +21 | length  1601 | mean20 +20.50 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9748.187300452,"data":"Episode  803 | step 1364345 | reward   +21 | length  1611 | mean20 +20.55 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9761.049838154,"data":"Episode  804 | step 1366135 | reward   +21 | length  1790 | mean20 +20.55 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9772.916752501,"data":"Episode  805 | step 1367770 | reward   +21 | length  1635 | mean20 +20.60 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9785.232094373,"data":"Episode  806 | step 1369515 | reward   +20 | length  1745 | mean20 +20.55 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9797.937947335,"data":"Episode  807 | step 1371308 | reward   +19 | length  1793 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9809.407120786,"data":"Episode  808 | step 1372940 | reward   +21 | length  1632 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9821.09284168,"data":"Episode  809 | step 1374576 | reward   +21 | length  1636 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9832.372618908,"data":"Episode  810 | step 1376183 | reward   +21 | length  1607 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9846.061105973,"data":"Episode  811 | step 1378119 | reward   +19 | length  1936 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9858.082114454,"data":"Episode  812 | step 1379809 | reward   +19 | length  1690 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9869.476644898,"data":"Episode  813 | step 1381409 | reward   +21 | length  1600 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9881.952852313,"data":"Episode  814 | step 1383157 | reward   +19 | length  1748 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9893.810853171,"data":"Episode  815 | step 1384827 | reward   +20 | length  1670 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9905.0759424,"data":"Episode  816 | step 1386431 | reward   +21 | length  1604 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9917.171513138,"data":"Episode  817 | step 1388151 | reward   +20 | length  1720 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9929.357682163,"data":"Episode  818 | step 1389760 | reward   +21 | length  1609 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9942.218946107,"data":"Episode  819 | step 1391506 | reward   +20 | length  1746 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9955.386135582,"data":"Episode  820 | step 1393241 | reward   +20 | length  1735 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9969.2319598,"data":"Episode  821 | step 1395071 | reward   +19 | length  1830 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9982.586018593,"data":"Episode  822 | step 1396876 | reward   +20 | length  1805 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":9994.075732373,"data":"Episode  823 | step 1398478 | reward   +21 | length  1602 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10006.422838415,"data":"Episode  824 | step 1400209 | reward   +20 | length  1731 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10018.02985299,"data":"Episode  825 | step 1401844 | reward   +21 | length  1635 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10030.485020597,"data":"Episode  826 | step 1403584 | reward   +20 | length  1740 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10042.087765667,"data":"Episode  827 | step 1405212 | reward   +21 | length  1628 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10054.486725275,"data":"Episode  828 | step 1406958 | reward   +20 | length  1746 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10066.118938149,"data":"Episode  829 | step 1408566 | reward   +21 | length  1608 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10078.685247452,"data":"Episode  830 | step 1410304 | reward   +20 | length  1738 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10091.089299949,"data":"Episode  831 | step 1412026 | reward   +21 | length  1722 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10103.16279728,"data":"Episode  832 | step 1413658 | reward   +21 | length  1632 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10115.18592129,"data":"Episode  833 | step 1415312 | reward   +20 | length  1654 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10128.07423571,"data":"Episode  834 | step 1417111 | reward   +19 | length  1799 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10139.897333685,"data":"Episode  835 | step 1418738 | reward   +21 | length  1627 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10153.300137958,"data":"Episode  836 | step 1420381 | reward   +21 | length  1643 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10168.519054379,"data":"Episode  837 | step 1422379 | reward   +20 | length  1998 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10181.474145782,"data":"Episode  838 | step 1424072 | reward   +20 | length  1693 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10193.66822358,"data":"Episode  839 | step 1425705 | reward   +21 | length  1633 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10205.654581358,"data":"Episode  840 | step 1427308 | reward   +21 | length  1603 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10217.529946,"data":"Episode  841 | step 1428914 | reward   +21 | length  1606 | mean20 +20.50 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10230.147105461,"data":"Episode  842 | step 1430614 | reward   +19 | length  1700 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10242.503029368,"data":"Episode  843 | step 1432308 | reward   +20 | length  1694 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10254.470102941,"data":"Episode  844 | step 1433980 | reward   +20 | length  1672 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10265.9983826,"data":"Episode  845 | step 1435609 | reward   +21 | length  1629 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10278.106878133,"data":"Episode  846 | step 1437309 | reward   +20 | length  1700 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10289.545643302,"data":"Episode  847 | step 1438919 | reward   +21 | length  1610 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10301.463435947,"data":"Episode  848 | step 1440590 | reward   +20 | length  1671 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10314.895429281,"data":"Episode  849 | step 1442486 | reward   +19 | length  1896 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10326.66563671,"data":"Episode  850 | step 1444135 | reward   +21 | length  1649 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10338.084064813,"data":"Episode  851 | step 1445739 | reward   +21 | length  1604 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10350.049730788,"data":"Episode  852 | step 1447428 | reward   +20 | length  1689 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10361.620399483,"data":"Episode  853 | step 1449057 | reward   +21 | length  1629 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10373.250971429,"data":"Episode  854 | step 1450686 | reward   +21 | length  1629 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10384.551732303,"data":"Episode  855 | step 1452287 | reward   +21 | length  1601 | mean20 +20.45 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10397.004075729,"data":"Episode  856 | step 1454022 | reward   +20 | length  1735 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10410.481628777,"data":"Episode  857 | step 1455926 | reward   +17 | length  1904 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10421.991438201,"data":"Episode  858 | step 1457531 | reward   +21 | length  1605 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10433.642199795,"data":"Episode  859 | step 1459161 | reward   +21 | length  1630 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10445.002478082,"data":"Episode  860 | step 1460762 | reward   +21 | length  1601 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10456.569800733,"data":"Episode  861 | step 1462389 | reward   +21 | length  1627 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10468.41107337,"data":"Episode  862 | step 1464071 | reward   +20 | length  1682 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10480.024605173,"data":"Episode  863 | step 1465705 | reward   +21 | length  1634 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10492.430790257,"data":"Episode  864 | step 1467446 | reward   +20 | length  1741 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10504.34828886,"data":"Episode  865 | step 1469113 | reward   +20 | length  1667 | mean20 +20.35 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10515.899051848,"data":"Episode  866 | step 1470744 | reward   +21 | length  1631 | mean20 +20.40 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10529.522586492,"data":"Episode  867 | step 1472689 | reward   +19 | length  1945 | mean20 +20.30 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10543.446503384,"data":"Episode  868 | step 1474623 | reward   +16 | length  1934 | mean20 +20.10 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10556.839954808,"data":"Episode  869 | step 1476255 | reward   +21 | length  1632 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10568.825396244,"data":"Episode  870 | step 1477885 | reward   +21 | length  1630 | mean20 +20.20 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10581.995569196,"data":"Episode  871 | step 1479648 | reward   +19 | length  1763 | mean20 +20.10 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10594.311914497,"data":"Episode  872 | step 1481287 | reward   +21 | length  1639 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10606.887012426,"data":"Episode  873 | step 1482917 | reward   +21 | length  1630 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10619.413572802,"data":"Episode  874 | step 1484583 | reward   +20 | length  1666 | mean20 +20.10 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10632.051369298,"data":"Episode  875 | step 1486385 | reward   +20 | length  1802 | mean20 +20.05 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10644.730226643,"data":"Episode  876 | step 1488149 | reward   +20 | length  1764 | mean20 +20.05 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10656.049858984,"data":"Episode  877 | step 1489749 | reward   +21 | length  1600 | mean20 +20.25 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10668.889489172,"data":"Episode  878 | step 1491571 | reward   +19 | length  1822 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10680.239102837,"data":"Episode  879 | step 1493174 | reward   +21 | length  1603 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10692.705124555,"data":"Episode  880 | step 1494934 | reward   +20 | length  1760 | mean20 +20.10 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10704.327762936,"data":"Episode  881 | step 1496563 | reward   +21 | length  1629 | mean20 +20.10 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10715.682216134,"data":"Episode  882 | step 1498169 | reward   +21 | length  1606 | mean20 +20.15 | eps 0.010 | 141 steps/s\n"}
+,{"stream_name":"stdout","time":10728.981341325,"data":"Done. Best mean20 reward: +20.75. Model saved to experiments/final/exp01/dqn_model.pth\n"}
+,{"stream_name":"stdout","time":10730.068401247,"data":"\n"}
+,{"stream_name":"stdout","time":10730.068427926,"data":"All experiments finished.\n"}
+,{"stream_name":"stderr","time":10732.741602602,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":10732.741633066,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":10733.172411294,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":10733.172438989,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":10735.46087886,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":10736.539001068,"data":"[NbConvertApp] Writing 288888 bytes to __results__.html\n"}
+]
