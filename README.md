@@ -141,6 +141,22 @@ Summary (scores are the final mean-20 reward at 300,000 steps):
 
 **Run-to-run variation:** the three baselines (exp 1) used identical settings and differed only in seed. They ended at +18.5 (Hassan, seed 1), +16.25 (Homere, seed 2) and −11.3 (Kevin, seed 3). Single runs of 300,000 steps vary a lot, so only large gaps (learning versus not learning, collapse versus no collapse) are meaningful, not differences of a few points.
 
+### Comparison plots
+
+Each figure has one panel per experiment. The panel's run is in blue, the member's baseline (exp01) is dashed, and the other nine runs are in light gray for context. The y-axis is the mean-20 reward, from −21 (losing every point) to +21 (winning every point). Made with `uv run plot_experiments.py <Name>`.
+
+**Hassan: learning rate and batch size**
+
+![Hassan's 10 experiments](experiments/Hassan/comparison.png)
+
+**Homere: discount factor γ**
+
+![Homere's 10 experiments](experiments/Homere/comparison.png)
+
+**Kevin: ε-greedy exploration**
+
+![Kevin's 10 experiments](experiments/Kevin/comparison.png)
+
 ## Final model: training performance
 
 We combined the best settings from all three members and trained for 1.5 million steps, 5 times the experiment budget ([`experiments/final/run_experiments.sh`](experiments/final/run_experiments.sh)):
@@ -207,19 +223,27 @@ Results go to `experiments/<member>/exp<NN>/`: `dqn_model.pth`, `config.json`, `
 | `--eps-decay` | 100000 | steps over which ε decreases linearly |
 | `--total-steps` | 300000 | length of the run |
 
+**Compare a member's experiments:**
+
+```bash
+uv run plot_experiments.py Hassan    # saves experiments/Hassan/comparison.png
+```
+
 ## Repository structure
 
 ```
 group-9-atari-dqn/
 ├── train.py                       # DQN from scratch: preprocessing, Q-network, replay buffer, training loop
 ├── play.py                        # loads a model and plays greedily (window or --record)
+├── plot_experiments.py            # one figure comparing a member's 10 experiments
 ├── dqn_model.pth                  # final model (copy of experiments/final/exp01/dqn_model.pth)
 ├── experiments/
 │   ├── Hassan/   exp01 … exp10/   # each: dqn_model.pth, config.json, training_log.csv, training_plots.png
 │   ├── Homere/   exp01 … exp10/
 │   ├── Kevin/    exp01 … exp10/
 │   └── final/    exp01/           # the 1.5M-step final run
-│   (each member folder also has run_experiments.sh, the exact commands for its 10 runs)
+│   (each member folder also has run_experiments.sh, the exact commands for its 10 runs,
+│    and comparison.png, all 10 runs in one figure)
 ├── HassanHyperparameter_experiment_results.md
 ├── HomereHyperparameter_experiment_results.md
 ├── KevinHyperparameter_experiment_results.md
@@ -233,7 +257,7 @@ group-9-atari-dqn/
 
 | Member | Code | Experiments | Documentation |
 |---|---|---|---|
-| **Hassan Adelani** | Project and uv setup; the DQN core of `train.py` (`QNetwork`, `ReplayBuffer`, ε-greedy, `train_step`, training loop, checkpointing); the Adam ε fix; the Kaggle runner (`kaggle/`); `play.py` | 10 learning-rate and batch-size runs; the 1.5M-step final model | Hassan's results file; `KAGGLE_SETUP.md`; README; gameplay video and GIF |
+| **Hassan Adelani** | Project and uv setup; the DQN core of `train.py` (`QNetwork`, `ReplayBuffer`, ε-greedy, `train_step`, training loop, checkpointing); the Adam ε fix; the Kaggle runner (`kaggle/`); `play.py`; `plot_experiments.py` | 10 learning-rate and batch-size runs; the 1.5M-step final model | Hassan's results file; `KAGGLE_SETUP.md`; README; gameplay video and GIF |
 | **Homere Singizwa** | `make_env` (Atari preprocessing), the CSV training log and the training plots in `train.py` | 10 discount-factor runs | Homere's results file |
 | **Kevin Kaneza Mbonimpaye** | `run_experiments.sh` for all three members | 10 exploration runs | Kevin's results file |
 
