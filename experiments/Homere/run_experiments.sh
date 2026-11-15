@@ -20,6 +20,8 @@ uv run train.py --member Homere --exp 7 --seed 2 --gamma 0.999      # looks abou
 uv run train.py --member Homere --exp 8 --seed 2 --gamma 0.95 --lr 2.5e-4
 uv run train.py --member Homere --exp 9 --seed 2 --gamma 0.999 --lr 5e-5
 
-# exp10 = best gamma + Hassan's best learning rate, chosen at the Thursday sync.
-# Fill in the values, remove the "# " in front, push, then: bash kaggle/launch.sh Homere 10 main
-# uv run train.py --member Homere --exp 10 --seed 2 --gamma BEST_GAMMA --lr HASSANS_BEST_LR
+# exp10 = best gamma I changed + Hassan's best learning rate:
+# gamma 0.995 (exp06, +11.7, best non-baseline gamma) and lr 2.5e-4 (Hassan's exp04, +19.4).
+# gamma 0.95 + lr 2.5e-4 is already exp08, and gamma 0.99 + lr 2.5e-4 is Hassan's exp04.
+# Run with: bash kaggle/launch.sh Homere 10 homere-experiments
+uv run train.py --member Homere --exp 10 --seed 2 --gamma 0.995 --lr 2.5e-4

@@ -1,0 +1,17 @@
+{
+  "member": "Homere",
+  "exp": 2,
+  "seed": 2,
+  "lr": 0.0001,
+  "gamma": 0.8,
+  "batch_size": 32,
+  "eps_start": 1.0,
+  "eps_end": 0.01,
+  "eps_decay": 100000,
+  "total_steps": 300000,
+  "env_id": "ALE/Pong-v5",
+  "replay_capacity": 50000,
+  "learning_starts": 10000,
+  "target_update_every": 1000,
+  "adam_eps": 0.00015
+}

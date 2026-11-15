@@ -1,0 +1,326 @@
+[{"stream_name":"stdout","time":1.113223494,"data":"\n"}
+,{"stream_name":"stdout","time":1.113555391,"data":"$ nvidia-smi\n"}
+,{"stream_name":"stdout","time":1.1770737470000001,"data":"Sat Nov 14 22:56:38 2026       \n"}
+,{"stream_name":"stdout","time":1.177121552,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":1.177126713,"data":"| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n"}
+,{"stream_name":"stdout","time":1.177130909,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":1.1771347,"data":"| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n"}
+,{"stream_name":"stdout","time":1.1771386640000001,"data":"| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n"}
+,{"stream_name":"stdout","time":1.177142689,"data":"|                                         |                        |               MIG M. |\n"}
+,{"stream_name":"stdout","time":1.177146584,"data":"|=========================================+========================+======================|\n"}
+,{"stream_name":"stdout","time":1.247598518,"data":"|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":1.247622446,"data":"| N/A   43C    P8             11W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":1.247628315,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":1.247633633,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":1.247639002,"data":"|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":1.247644368,"data":"| N/A   43C    P8             10W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":1.247649748,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":1.247655132,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":1.248215786,"data":"\n"}
+,{"stream_name":"stdout","time":1.248359533,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":1.24838001,"data":"| Processes:                                                                              |\n"}
+,{"stream_name":"stdout","time":1.248389717,"data":"|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n"}
+,{"stream_name":"stdout","time":1.248393465,"data":"|        ID   ID                                                               Usage      |\n"}
+,{"stream_name":"stdout","time":1.248397062,"data":"|=========================================================================================|\n"}
+,{"stream_name":"stdout","time":1.2500549429999999,"data":"|  No running processes found                                                             |\n"}
+,{"stream_name":"stdout","time":1.250072106,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":1.572630893,"data":"\n"}
+,{"stream_name":"stdout","time":1.5726567569999998,"data":"$ curl -LsSf https://astral.sh/uv/install.sh | sh\n"}
+,{"stream_name":"stderr","time":1.9717861220000001,"data":"downloading uv 0.13.8 x86_64-unknown-linux-gnu\n"}
+,{"stream_name":"stdout","time":2.623080141,"data":"installing to /usr/local/bin\n"}
+,{"stream_name":"stdout","time":2.638660647,"data":"  uv\n"}
+,{"stream_name":"stdout","time":2.642075606,"data":"  uvx\n"}
+,{"stream_name":"stdout","time":2.649335815,"data":"everything's installed!\n"}
+,{"stream_name":"stdout","time":2.656893265,"data":"\n"}
+,{"stream_name":"stdout","time":2.656909667,"data":"$ git clone --depth 1 --branch homere-experiments https://github.com/Hassan-Adelani-Luqman/group-9-atari-dqn.git /tmp/repo\n"}
+,{"stream_name":"stderr","time":2.682545128,"data":"Cloning into '/tmp/repo'...\n"}
+,{"stream_name":"stdout","time":5.036742707,"data":"\n"}
+,{"stream_name":"stdout","time":5.036774396,"data":"$ uv sync --frozen\n"}
+,{"stream_name":"stderr","time":5.377323642,"data":"Using CPython 3.12.3 interpreter at: /usr/bin/python3.12\n"}
+,{"stream_name":"stderr","time":5.377362666,"data":"Creating virtual environment at: .venv\n"}
+,{"stream_name":"stderr","time":5.474265479,"data":"Downloading sympy (6.0MiB)\n"}
+,{"stream_name":"stderr","time":5.475711346,"data":"Downloading matplotlib (9.4MiB)\n"}
+,{"stream_name":"stderr","time":5.48383779,"data":"Downloading torch (828.9MiB)\n"}
+,{"stream_name":"stderr","time":5.487713687,"data":"Downloading triton (236.5MiB)\n"}
+,{"stream_name":"stderr","time":5.488151039,"data":"Downloading cuda-bindings (7.3MiB)\n"}
+,{"stream_name":"stderr","time":5.488682602,"data":"Downloading opencv-python-headless (58.4MiB)\n"}
+,{"stream_name":"stderr","time":5.488781788,"data":"Downloading networkx (2.0MiB)\n"}
+,{"stream_name":"stderr","time":5.489886555,"data":"Downloading nvidia-cudnn-cu12 (674.0MiB)\n"}
+,{"stream_name":"stderr","time":5.512042136,"data":"Downloading ale-py (3.0MiB)\n"}
+,{"stream_name":"stderr","time":5.5128291130000004,"data":"Downloading nvidia-cufile-cu12 (1.1MiB)\n"}
+,{"stream_name":"stderr","time":5.513714536,"data":"Downloading nvidia-nvjitlink-cu12 (37.9MiB)\n"}
+,{"stream_name":"stderr","time":5.513954766,"data":"Downloading pillow (6.3MiB)\n"}
+,{"stream_name":"stderr","time":5.516167951,"data":"Downloading nvidia-cublas-cu12 (374.9MiB)\n"}
+,{"stream_name":"stderr","time":5.516411612,"data":"Downloading nvidia-cusparse-cu12 (206.5MiB)\n"}
+,{"stream_name":"stderr","time":5.517436183,"data":"Downloading nvidia-curand-cu12 (53.7MiB)\n"}
+,{"stream_name":"stderr","time":5.518591612,"data":"Downloading nvidia-cusparselt-cu12 (273.9MiB)\n"}
+,{"stream_name":"stderr","time":5.519045263,"data":"Downloading nvidia-cusolver-cu12 (150.9MiB)\n"}
+,{"stream_name":"stderr","time":5.519619978,"data":"Downloading nvidia-nccl-cu12 (276.3MiB)\n"}
+,{"stream_name":"stderr","time":5.519884597,"data":"Downloading kiwisolver (1.4MiB)\n"}
+,{"stream_name":"stderr","time":5.5201332910000005,"data":"Downloading fonttools (5.2MiB)\n"}
+,{"stream_name":"stderr","time":5.520424718,"data":"Downloading numpy (16.0MiB)\n"}
+,{"stream_name":"stderr","time":5.520699628,"data":"Downloading imageio-ffmpeg (64.8MiB)\n"}
+,{"stream_name":"stderr","time":5.521022579,"data":"Downloading nvidia-nvshmem-cu12 (132.7MiB)\n"}
+,{"stream_name":"stderr","time":5.521308745,"data":"Downloading nvidia-cuda-cupti-cu12 (8.5MiB)\n"}
+,{"stream_name":"stderr","time":5.522102358,"data":"Downloading nvidia-cuda-nvrtc-cu12 (22.6MiB)\n"}
+,{"stream_name":"stderr","time":5.522476921,"data":"Downloading nvidia-cufft-cu12 (190.9MiB)\n"}
+,{"stream_name":"stderr","time":6.169294334,"data":" Downloaded nvidia-cufile-cu12\n"}
+,{"stream_name":"stderr","time":6.226223209,"data":" Downloaded kiwisolver\n"}
+,{"stream_name":"stderr","time":6.356529247,"data":" Downloaded networkx\n"}
+,{"stream_name":"stderr","time":6.650928643,"data":" Downloaded ale-py\n"}
+,{"stream_name":"stderr","time":7.257412829,"data":" Downloaded fonttools\n"}
+,{"stream_name":"stderr","time":7.456127589,"data":" Downloaded sympy\n"}
+,{"stream_name":"stderr","time":7.511439113,"data":" Downloaded pillow\n"}
+,{"stream_name":"stderr","time":7.696325746,"data":" Downloaded cuda-bindings\n"}
+,{"stream_name":"stderr","time":7.98900215,"data":" Downloaded nvidia-cuda-cupti-cu12\n"}
+,{"stream_name":"stderr","time":8.282653655,"data":" Downloaded matplotlib\n"}
+,{"stream_name":"stderr","time":9.486115161,"data":" Downloaded numpy\n"}
+,{"stream_name":"stderr","time":10.644537491,"data":" Downloaded nvidia-cuda-nvrtc-cu12\n"}
+,{"stream_name":"stderr","time":13.407131721,"data":" Downloaded nvidia-nvjitlink-cu12\n"}
+,{"stream_name":"stderr","time":16.007910447,"data":" Downloaded nvidia-curand-cu12\n"}
+,{"stream_name":"stderr","time":16.714040802,"data":" Downloaded opencv-python-headless\n"}
+,{"stream_name":"stderr","time":17.548766409,"data":" Downloaded imageio-ffmpeg\n"}
+,{"stream_name":"stderr","time":31.969011253,"data":" Downloaded nvidia-nvshmem-cu12\n"}
+,{"stream_name":"stderr","time":33.704117146,"data":" Downloaded nvidia-cusolver-cu12\n"}
+,{"stream_name":"stderr","time":37.139285078,"data":" Downloaded nvidia-cufft-cu12\n"}
+,{"stream_name":"stderr","time":38.253285583,"data":" Downloaded nvidia-cusparse-cu12\n"}
+,{"stream_name":"stderr","time":40.899057036,"data":" Downloaded triton\n"}
+,{"stream_name":"stderr","time":41.823441928,"data":" Downloaded nvidia-nccl-cu12\n"}
+,{"stream_name":"stderr","time":42.625207923,"data":" Downloaded nvidia-cusparselt-cu12\n"}
+,{"stream_name":"stderr","time":46.659094019,"data":" Downloaded nvidia-cublas-cu12\n"}
+,{"stream_name":"stderr","time":47.525212587,"data":" Downloaded torch\n"}
+,{"stream_name":"stderr","time":50.153425234,"data":" Downloaded nvidia-cudnn-cu12\n"}
+,{"stream_name":"stderr","time":50.153906768,"data":"Prepared 52 packages in 44.77s\n"}
+,{"stream_name":"stderr","time":50.507203799,"data":"Installed 52 packages in 353ms\n"}
+,{"stream_name":"stderr","time":50.507308888,"data":" + ale-py==0.12.1\n"}
+,{"stream_name":"stderr","time":50.507423718,"data":" + cloudpickle==3.1.2\n"}
+,{"stream_name":"stderr","time":50.507469080999996,"data":" + contourpy==1.4.0\n"}
+,{"stream_name":"stderr","time":50.507504029,"data":" + cuda-bindings==12.9.10\n"}
+,{"stream_name":"stderr","time":50.507572012,"data":" + cuda-pathfinder==1.8.6\n"}
+,{"stream_name":"stderr","time":50.507643228,"data":" + cuda-toolkit==12.6.3\n"}
+,{"stream_name":"stderr","time":50.507718741,"data":" + cycler==0.12.1\n"}
+,{"stream_name":"stderr","time":50.507812203,"data":" + decorator==5.3.1\n"}
+,{"stream_name":"stderr","time":50.507873486,"data":" + farama-notifications==0.0.6\n"}
+,{"stream_name":"stderr","time":50.507934608,"data":" + filelock==4.2.10\n"}
+,{"stream_name":"stderr","time":50.508122166,"data":" + fonttools==4.68.0\n"}
+,{"stream_name":"stderr","time":50.50814518,"data":" + fsspec==2026.9.0\n"}
+,{"stream_name":"stderr","time":50.508162022,"data":" + gymnasium==1.4.0\n"}
+,{"stream_name":"stderr","time":50.508309035,"data":" + imageio==2.38.1\n"}
+,{"stream_name":"stderr","time":50.508408405,"data":" + imageio-ffmpeg==0.8.1\n"}
+,{"stream_name":"stderr","time":50.508437167,"data":" + jinja2==3.1.6\n"}
+,{"stream_name":"stderr","time":50.508511115,"data":" + kiwisolver==1.5.1\n"}
+,{"stream_name":"stderr","time":50.508615888,"data":" + markupsafe==3.0.4\n"}
+,{"stream_name":"stderr","time":50.508671884,"data":" + matplotlib==3.11.2\n"}
+,{"stream_name":"stderr","time":50.508748759,"data":" + moviepy==2.2.1\n"}
+,{"stream_name":"stderr","time":50.508829953,"data":" + mpmath==1.3.0\n"}
+,{"stream_name":"stderr","time":50.508889208,"data":" + networkx==3.7\n"}
+,{"stream_name":"stderr","time":50.508955488,"data":" + numpy==2.5.4\n"}
+,{"stream_name":"stderr","time":50.509049388,"data":" + nvidia-cublas-cu12==12.6.4.1\n"}
+,{"stream_name":"stderr","time":50.509120902,"data":" + nvidia-cuda-cupti-cu12==12.6.80\n"}
+,{"stream_name":"stderr","time":50.509295003,"data":" + nvidia-cuda-nvrtc-cu12==12.6.85\n"}
+,{"stream_name":"stderr","time":50.509308763,"data":" + nvidia-cuda-runtime-cu12==12.6.77\n"}
+,{"stream_name":"stderr","time":50.509402601,"data":" + nvidia-cudnn-cu12==9.10.2.21\n"}
+,{"stream_name":"stderr","time":50.50941673,"data":" + nvidia-cufft-cu12==11.3.0.4\n"}
+,{"stream_name":"stderr","time":50.509519125,"data":" + nvidia-cufile-cu12==1.11.1.6\n"}
+,{"stream_name":"stderr","time":50.509589851,"data":" + nvidia-curand-cu12==10.3.7.77\n"}
+,{"stream_name":"stderr","time":50.509685003,"data":" + nvidia-cusolver-cu12==11.7.1.2\n"}
+,{"stream_name":"stderr","time":50.509766833,"data":" + nvidia-cusparse-cu12==12.5.4.2\n"}
+,{"stream_name":"stderr","time":50.509844778,"data":" + nvidia-cusparselt-cu12==0.7.1\n"}
+,{"stream_name":"stderr","time":50.509918126,"data":" + nvidia-nccl-cu12==2.29.3\n"}
+,{"stream_name":"stderr","time":50.509980846,"data":" + nvidia-nvjitlink-cu12==12.9.86\n"}
+,{"stream_name":"stderr","time":50.510082478,"data":" + nvidia-nvshmem-cu12==3.4.5\n"}
+,{"stream_name":"stderr","time":50.510162693,"data":" + nvidia-nvtx-cu12==12.6.77\n"}
+,{"stream_name":"stderr","time":50.510266426,"data":" + opencv-python-headless==5.0.0.93\n"}
+,{"stream_name":"stderr","time":50.510316235,"data":" + packaging==26.3\n"}
+,{"stream_name":"stderr","time":50.510407682,"data":" + pillow==11.3.0\n"}
+,{"stream_name":"stderr","time":50.510448951,"data":" + proglog==0.1.12\n"}
+,{"stream_name":"stderr","time":50.510569711,"data":" + pyparsing==3.3.3\n"}
+,{"stream_name":"stderr","time":50.510591234,"data":" + python-dateutil==4.0.0\n"}
+,{"stream_name":"stderr","time":50.510677044,"data":" + python-dotenv==1.2.4\n"}
+,{"stream_name":"stderr","time":50.510762486,"data":" + setuptools==84.2.1\n"}
+,{"stream_name":"stderr","time":50.510837213,"data":" + sympy==1.14.0\n"}
+,{"stream_name":"stderr","time":50.510921448,"data":" + torch==2.14.1+cu126\n"}
+,{"stream_name":"stderr","time":50.511012907,"data":" + tqdm==4.70.1\n"}
+,{"stream_name":"stderr","time":50.511075171,"data":" + triton==3.8.0\n"}
+,{"stream_name":"stderr","time":50.511159548,"data":" + typing-extensions==4.16.0\n"}
+,{"stream_name":"stderr","time":50.51117766,"data":" + tzdata==2026.6\n"}
+,{"stream_name":"stdout","time":50.518199776,"data":"\n"}
+,{"stream_name":"stdout","time":50.518214509,"data":"$ uv run python -c \"import torch; assert torch.cuda.is_available(), 'No GPU'; print('GPU:', torch.cuda.get_device_name(0))\"\n"}
+,{"stream_name":"stdout","time":57.385945188,"data":"GPU: Tesla T4\n"}
+,{"stream_name":"stdout","time":57.879257933,"data":"\n"}
+,{"stream_name":"stdout","time":57.879294916,"data":"Running 1 experiment(s) for Homere: [10]\n"}
+,{"stream_name":"stdout","time":57.879299351,"data":"\n"}
+,{"stream_name":"stdout","time":57.879302126,"data":"$ uv run train.py --member Homere --exp 10 --seed 2 --gamma 0.995 --lr 2.5e-4\n"}
+,{"stream_name":"stdout","time":63.378192415,"data":"Training on cuda, saving to experiments/Homere/exp10\n"}
+,{"stream_name":"stderr","time":63.378363063,"data":"A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)\n"}
+,{"stream_name":"stderr","time":63.378373129,"data":"[Powered by Stella]\n"}
+,{"stream_name":"stdout","time":70.342410527,"data":"Episode    1 | step     866 | reward   -21 | length   866 | mean20 -21.00 | eps 0.991 | 839 steps/s\n"}
+,{"stream_name":"stdout","time":71.077527171,"data":"Episode    2 | step    1675 | reward   -21 | length   809 | mean20 -21.00 | eps 0.983 | 948 steps/s\n"}
+,{"stream_name":"stdout","time":71.930910973,"data":"Episode    3 | step    2576 | reward   -21 | length   901 | mean20 -21.00 | eps 0.974 | 983 steps/s\n"}
+,{"stream_name":"stdout","time":72.724224806,"data":"Episode    4 | step    3442 | reward   -20 | length   866 | mean20 -20.75 | eps 0.966 | 1008 steps/s\n"}
+,{"stream_name":"stdout","time":73.596717674,"data":"Episode    5 | step    4379 | reward   -21 | length   937 | mean20 -20.80 | eps 0.957 | 1022 steps/s\n"}
+,{"stream_name":"stdout","time":74.330312723,"data":"Episode    6 | step    5160 | reward   -21 | length   781 | mean20 -20.83 | eps 0.949 | 1028 steps/s\n"}
+,{"stream_name":"stdout","time":75.438034019,"data":"Episode    7 | step    6331 | reward   -19 | length  1171 | mean20 -20.57 | eps 0.937 | 1033 steps/s\n"}
+,{"stream_name":"stdout","time":76.600404648,"data":"Episode    8 | step    7547 | reward   -18 | length  1216 | mean20 -20.25 | eps 0.925 | 1035 steps/s\n"}
+,{"stream_name":"stdout","time":77.410475919,"data":"Episode    9 | step    8386 | reward   -20 | length   839 | mean20 -20.22 | eps 0.917 | 1035 steps/s\n"}
+,{"stream_name":"stdout","time":78.183632986,"data":"Episode   10 | step    9192 | reward   -21 | length   806 | mean20 -20.30 | eps 0.909 | 1036 steps/s\n"}
+,{"stream_name":"stdout","time":80.496958425,"data":"Episode   11 | step   10212 | reward   -19 | length  1020 | mean20 -20.18 | eps 0.899 | 913 steps/s\n"}
+,{"stream_name":"stdout","time":85.368068114,"data":"Episode   12 | step   11031 | reward   -21 | length   819 | mean20 -20.25 | eps 0.891 | 687 steps/s\n"}
+,{"stream_name":"stdout","time":92.553421252,"data":"Episode   13 | step   12127 | reward   -20 | length  1096 | mean20 -20.23 | eps 0.880 | 522 steps/s\n"}
+,{"stream_name":"stdout","time":97.725203372,"data":"Episode   14 | step   13021 | reward   -20 | length   894 | mean20 -20.21 | eps 0.871 | 458 steps/s\n"}
+,{"stream_name":"stdout","time":102.714779717,"data":"Episode   15 | step   13856 | reward   -20 | length   835 | mean20 -20.20 | eps 0.863 | 415 steps/s\n"}
+,{"stream_name":"stdout","time":107.803900715,"data":"Episode   16 | step   14707 | reward   -21 | length   851 | mean20 -20.25 | eps 0.854 | 382 steps/s\n"}
+,{"stream_name":"stdout","time":113.248007692,"data":"Episode   17 | step   15625 | reward   -20 | length   918 | mean20 -20.24 | eps 0.845 | 356 steps/s\n"}
+,{"stream_name":"stdout","time":118.378467958,"data":"Episode   18 | step   16495 | reward   -20 | length   870 | mean20 -20.22 | eps 0.837 | 336 steps/s\n"}
+,{"stream_name":"stdout","time":124.272025564,"data":"Episode   19 | step   17483 | reward   -20 | length   988 | mean20 -20.21 | eps 0.827 | 318 steps/s\n"}
+,{"stream_name":"stdout","time":130.346528289,"data":"Episode   20 | step   18507 | reward   -20 | length  1024 | mean20 -20.20 | eps 0.817 | 303 steps/s\n"}
+,{"stream_name":"stdout","time":135.566417164,"data":"Episode   21 | step   19371 | reward   -21 | length   864 | mean20 -20.20 | eps 0.808 | 292 steps/s\n"}
+,{"stream_name":"stdout","time":141.785277175,"data":"Episode   22 | step   20388 | reward   -20 | length  1017 | mean20 -20.15 | eps 0.798 | 281 steps/s\n"}
+,{"stream_name":"stdout","time":147.100894455,"data":"Episode   23 | step   21286 | reward   -21 | length   898 | mean20 -20.15 | eps 0.789 | 274 steps/s\n"}
+,{"stream_name":"stdout","time":152.830119249,"data":"Episode   24 | step   22233 | reward   -19 | length   947 | mean20 -20.10 | eps 0.780 | 266 steps/s\n"}
+,{"stream_name":"stdout","time":157.932487761,"data":"Episode   25 | step   23084 | reward   -21 | length   851 | mean20 -20.10 | eps 0.771 | 260 steps/s\n"}
+,{"stream_name":"stdout","time":163.832025585,"data":"Episode   26 | step   24084 | reward   -21 | length  1000 | mean20 -20.10 | eps 0.762 | 255 steps/s\n"}
+,{"stream_name":"stdout","time":169.039350583,"data":"Episode   27 | step   24962 | reward   -21 | length   878 | mean20 -20.20 | eps 0.753 | 250 steps/s\n"}
+,{"stream_name":"stdout","time":174.285718725,"data":"Episode   28 | step   25843 | reward   -21 | length   881 | mean20 -20.35 | eps 0.744 | 246 steps/s\n"}
+,{"stream_name":"stdout","time":179.667143596,"data":"Episode   29 | step   26758 | reward   -20 | length   915 | mean20 -20.35 | eps 0.735 | 242 steps/s\n"}
+,{"stream_name":"stdout","time":185.690881489,"data":"Episode   30 | step   27785 | reward   -20 | length  1027 | mean20 -20.30 | eps 0.725 | 239 steps/s\n"}
+,{"stream_name":"stdout","time":190.824977715,"data":"Episode   31 | step   28670 | reward   -21 | length   885 | mean20 -20.40 | eps 0.716 | 236 steps/s\n"}
+,{"stream_name":"stdout","time":196.861230165,"data":"Episode   32 | step   29701 | reward   -18 | length  1031 | mean20 -20.25 | eps 0.706 | 233 steps/s\n"}
+,{"stream_name":"stdout","time":202.288456231,"data":"Episode   33 | step   30612 | reward   -21 | length   911 | mean20 -20.30 | eps 0.697 | 230 steps/s\n"}
+,{"stream_name":"stdout","time":207.579534236,"data":"Episode   34 | step   31497 | reward   -20 | length   885 | mean20 -20.30 | eps 0.688 | 228 steps/s\n"}
+,{"stream_name":"stdout","time":213.103936745,"data":"Episode   35 | step   32409 | reward   -20 | length   912 | mean20 -20.30 | eps 0.679 | 225 steps/s\n"}
+,{"stream_name":"stdout","time":219.454433915,"data":"Episode   36 | step   33450 | reward   -21 | length  1041 | mean20 -20.30 | eps 0.669 | 223 steps/s\n"}
+,{"stream_name":"stdout","time":225.018447884,"data":"Episode   37 | step   34361 | reward   -21 | length   911 | mean20 -20.35 | eps 0.660 | 221 steps/s\n"}
+,{"stream_name":"stdout","time":231.183890978,"data":"Episode   38 | step   35388 | reward   -21 | length  1027 | mean20 -20.40 | eps 0.650 | 219 steps/s\n"}
+,{"stream_name":"stdout","time":236.567340528,"data":"Episode   39 | step   36273 | reward   -21 | length   885 | mean20 -20.45 | eps 0.641 | 217 steps/s\n"}
+,{"stream_name":"stdout","time":241.728162736,"data":"Episode   40 | step   37115 | reward   -21 | length   842 | mean20 -20.50 | eps 0.633 | 215 steps/s\n"}
+,{"stream_name":"stdout","time":248.404734953,"data":"Episode   41 | step   38204 | reward   -21 | length  1089 | mean20 -20.50 | eps 0.622 | 213 steps/s\n"}
+,{"stream_name":"stdout","time":253.947429701,"data":"Episode   42 | step   39112 | reward   -21 | length   908 | mean20 -20.55 | eps 0.613 | 212 steps/s\n"}
+,{"stream_name":"stdout","time":261.248867807,"data":"Episode   43 | step   40337 | reward   -18 | length  1225 | mean20 -20.40 | eps 0.601 | 210 steps/s\n"}
+,{"stream_name":"stdout","time":267.810112087,"data":"Episode   44 | step   41411 | reward   -19 | length  1074 | mean20 -20.40 | eps 0.590 | 209 steps/s\n"}
+,{"stream_name":"stdout","time":273.859886435,"data":"Episode   45 | step   42395 | reward   -20 | length   984 | mean20 -20.35 | eps 0.580 | 207 steps/s\n"}
+,{"stream_name":"stdout","time":279.516603173,"data":"Episode   46 | step   43339 | reward   -20 | length   944 | mean20 -20.30 | eps 0.571 | 206 steps/s\n"}
+,{"stream_name":"stdout","time":285.076492328,"data":"Episode   47 | step   44247 | reward   -21 | length   908 | mean20 -20.30 | eps 0.562 | 205 steps/s\n"}
+,{"stream_name":"stdout","time":292.218164408,"data":"Episode   48 | step   45423 | reward   -18 | length  1176 | mean20 -20.15 | eps 0.550 | 204 steps/s\n"}
+,{"stream_name":"stdout","time":297.869375829,"data":"Episode   49 | step   46358 | reward   -21 | length   935 | mean20 -20.20 | eps 0.541 | 203 steps/s\n"}
+,{"stream_name":"stdout","time":303.75011258,"data":"Episode   50 | step   47329 | reward   -21 | length   971 | mean20 -20.25 | eps 0.531 | 202 steps/s\n"}
+,{"stream_name":"stdout","time":310.090038502,"data":"Episode   51 | step   48356 | reward   -20 | length  1027 | mean20 -20.20 | eps 0.521 | 201 steps/s\n"}
+,{"stream_name":"stdout","time":315.465411018,"data":"Episode   52 | step   49240 | reward   -21 | length   884 | mean20 -20.35 | eps 0.513 | 200 steps/s\n"}
+,{"stream_name":"stdout","time":322.981172829,"data":"Episode   53 | step   50485 | reward   -19 | length  1245 | mean20 -20.25 | eps 0.500 | 199 steps/s\n"}
+,{"stream_name":"stdout","time":328.956071816,"data":"Episode   54 | step   51482 | reward   -21 | length   997 | mean20 -20.30 | eps 0.490 | 198 steps/s\n"}
+,{"stream_name":"stdout","time":336.736567527,"data":"Episode   55 | step   52750 | reward   -20 | length  1268 | mean20 -20.30 | eps 0.478 | 197 steps/s\n"}
+,{"stream_name":"stdout","time":345.522356016,"data":"Episode   56 | step   54189 | reward   -18 | length  1439 | mean20 -20.15 | eps 0.464 | 196 steps/s\n"}
+,{"stream_name":"stdout","time":353.853699933,"data":"Episode   57 | step   55557 | reward   -18 | length  1368 | mean20 -20.00 | eps 0.450 | 195 steps/s\n"}
+,{"stream_name":"stdout","time":361.852323382,"data":"Episode   58 | step   56875 | reward   -17 | length  1318 | mean20 -19.80 | eps 0.437 | 194 steps/s\n"}
+,{"stream_name":"stdout","time":372.624916643,"data":"Episode   59 | step   58626 | reward   -17 | length  1751 | mean20 -19.60 | eps 0.420 | 193 steps/s\n"}
+,{"stream_name":"stdout","time":382.165115145,"data":"Episode   60 | step   60169 | reward   -18 | length  1543 | mean20 -19.45 | eps 0.404 | 192 steps/s\n"}
+,{"stream_name":"stdout","time":391.879763972,"data":"Episode   61 | step   61741 | reward   -19 | length  1572 | mean20 -19.35 | eps 0.389 | 191 steps/s\n"}
+,{"stream_name":"stdout","time":399.933790582,"data":"Episode   62 | step   63045 | reward   -18 | length  1304 | mean20 -19.20 | eps 0.376 | 191 steps/s\n"}
+,{"stream_name":"stdout","time":408.208461104,"data":"Episode   63 | step   64347 | reward   -19 | length  1302 | mean20 -19.25 | eps 0.363 | 190 steps/s\n"}
+,{"stream_name":"stdout","time":418.697318834,"data":"Episode   64 | step   66012 | reward   -16 | length  1665 | mean20 -19.10 | eps 0.346 | 189 steps/s\n"}
+,{"stream_name":"stdout","time":427.886387023,"data":"Episode   65 | step   67441 | reward   -20 | length  1429 | mean20 -19.10 | eps 0.332 | 188 steps/s\n"}
+,{"stream_name":"stdout","time":438.049901839,"data":"Episode   66 | step   69036 | reward   -19 | length  1595 | mean20 -19.05 | eps 0.317 | 187 steps/s\n"}
+,{"stream_name":"stdout","time":450.140331464,"data":"Episode   67 | step   70949 | reward   -17 | length  1913 | mean20 -18.85 | eps 0.298 | 186 steps/s\n"}
+,{"stream_name":"stdout","time":464.422394244,"data":"Episode   68 | step   73215 | reward   -13 | length  2266 | mean20 -18.60 | eps 0.275 | 185 steps/s\n"}
+,{"stream_name":"stdout","time":478.891723875,"data":"Episode   69 | step   75509 | reward   -17 | length  2294 | mean20 -18.40 | eps 0.252 | 184 steps/s\n"}
+,{"stream_name":"stdout","time":489.768511468,"data":"Episode   70 | step   77211 | reward   -16 | length  1702 | mean20 -18.15 | eps 0.236 | 184 steps/s\n"}
+,{"stream_name":"stdout","time":499.997278002,"data":"Episode   71 | step   78812 | reward   -20 | length  1601 | mean20 -18.15 | eps 0.220 | 183 steps/s\n"}
+,{"stream_name":"stdout","time":515.059776876,"data":"Episode   72 | step   81190 | reward   -17 | length  2378 | mean20 -17.95 | eps 0.196 | 182 steps/s\n"}
+,{"stream_name":"stdout","time":527.56728909,"data":"Episode   73 | step   83181 | reward   -20 | length  1991 | mean20 -18.00 | eps 0.177 | 182 steps/s\n"}
+,{"stream_name":"stdout","time":544.255120607,"data":"Episode   74 | step   85815 | reward   -12 | length  2634 | mean20 -17.55 | eps 0.150 | 181 steps/s\n"}
+,{"stream_name":"stdout","time":558.725635349,"data":"Episode   75 | step   88064 | reward   -14 | length  2249 | mean20 -17.25 | eps 0.128 | 180 steps/s\n"}
+,{"stream_name":"stdout","time":576.657355179,"data":"Episode   76 | step   90865 | reward   -15 | length  2801 | mean20 -17.10 | eps 0.100 | 179 steps/s\n"}
+,{"stream_name":"stdout","time":598.53766542,"data":"Episode   77 | step   94278 | reward   -12 | length  3413 | mean20 -16.80 | eps 0.067 | 178 steps/s\n"}
+,{"stream_name":"stdout","time":615.58211465,"data":"Episode   78 | step   96946 | reward   -14 | length  2668 | mean20 -16.65 | eps 0.040 | 177 steps/s\n"}
+,{"stream_name":"stdout","time":632.304381624,"data":"Episode   79 | step   99571 | reward   -15 | length  2625 | mean20 -16.55 | eps 0.014 | 177 steps/s\n"}
+,{"stream_name":"stdout","time":654.179009163,"data":"Episode   80 | step  102978 | reward   -11 | length  3407 | mean20 -16.20 | eps 0.010 | 176 steps/s\n"}
+,{"stream_name":"stdout","time":672.488817596,"data":"Episode   81 | step  105814 | reward   -17 | length  2836 | mean20 -16.10 | eps 0.010 | 175 steps/s\n"}
+,{"stream_name":"stdout","time":700.506177384,"data":"Episode   82 | step  110229 | reward    -1 | length  4415 | mean20 -15.25 | eps 0.010 | 175 steps/s\n"}
+,{"stream_name":"stdout","time":726.995558213,"data":"Episode   83 | step  114420 | reward    +5 | length  4191 | mean20 -14.05 | eps 0.010 | 174 steps/s\n"}
+,{"stream_name":"stdout","time":751.530797537,"data":"Episode   84 | step  118265 | reward    -9 | length  3845 | mean20 -13.70 | eps 0.010 | 173 steps/s\n"}
+,{"stream_name":"stdout","time":769.479679755,"data":"Episode   85 | step  121112 | reward   -17 | length  2847 | mean20 -13.55 | eps 0.010 | 173 steps/s\n"}
+,{"stream_name":"stdout","time":792.545269823,"data":"Episode   86 | step  124750 | reward   -10 | length  3638 | mean20 -13.10 | eps 0.010 | 172 steps/s\n"}
+,{"stream_name":"stdout","time":816.687913542,"data":"Episode   87 | step  128572 | reward    -3 | length  3822 | mean20 -12.40 | eps 0.010 | 172 steps/s\n"}
+,{"stream_name":"stdout","time":842.574077763,"data":"Episode   88 | step  132645 | reward    -6 | length  4073 | mean20 -12.05 | eps 0.010 | 172 steps/s\n"}
+,{"stream_name":"stdout","time":867.834334334,"data":"Episode   89 | step  136611 | reward    -9 | length  3966 | mean20 -11.65 | eps 0.010 | 171 steps/s\n"}
+,{"stream_name":"stdout","time":887.616544233,"data":"Episode   90 | step  139694 | reward   -17 | length  3083 | mean20 -11.70 | eps 0.010 | 171 steps/s\n"}
+,{"stream_name":"stdout","time":908.274522756,"data":"Episode   91 | step  142910 | reward    -6 | length  3216 | mean20 -11.00 | eps 0.010 | 170 steps/s\n"}
+,{"stream_name":"stdout","time":927.034746084,"data":"Episode   92 | step  145840 | reward    +9 | length  2930 | mean20  -9.70 | eps 0.010 | 170 steps/s\n"}
+,{"stream_name":"stdout","time":951.749457165,"data":"Episode   93 | step  149712 | reward    -3 | length  3872 | mean20  -8.85 | eps 0.010 | 170 steps/s\n"}
+,{"stream_name":"stdout","time":969.83967053,"data":"Episode   94 | step  152446 | reward   +10 | length  2734 | mean20  -7.75 | eps 0.010 | 169 steps/s\n"}
+,{"stream_name":"stdout","time":988.09548937,"data":"Episode   95 | step  155201 | reward   +13 | length  2755 | mean20  -6.40 | eps 0.010 | 169 steps/s\n"}
+,{"stream_name":"stdout","time":1000.610585753,"data":"Episode   96 | step  157097 | reward   +19 | length  1896 | mean20  -4.70 | eps 0.010 | 169 steps/s\n"}
+,{"stream_name":"stdout","time":1018.331148727,"data":"Episode   97 | step  159787 | reward   +12 | length  2690 | mean20  -3.50 | eps 0.010 | 168 steps/s\n"}
+,{"stream_name":"stdout","time":1047.282683329,"data":"Episode   98 | step  164224 | reward    -6 | length  4437 | mean20  -3.10 | eps 0.010 | 168 steps/s\n"}
+,{"stream_name":"stdout","time":1073.566299022,"data":"Episode   99 | step  168209 | reward    -3 | length  3985 | mean20  -2.50 | eps 0.010 | 167 steps/s\n"}
+,{"stream_name":"stdout","time":1095.567437423,"data":"Episode  100 | step  171563 | reward    -1 | length  3354 | mean20  -2.00 | eps 0.010 | 167 steps/s\n"}
+,{"stream_name":"stdout","time":1110.380411778,"data":"Episode  101 | step  173840 | reward   +15 | length  2277 | mean20  -0.40 | eps 0.010 | 167 steps/s\n"}
+,{"stream_name":"stdout","time":1123.432826789,"data":"Episode  102 | step  175844 | reward   +19 | length  2004 | mean20  +0.60 | eps 0.010 | 167 steps/s\n"}
+,{"stream_name":"stdout","time":1138.353478618,"data":"Episode  103 | step  178141 | reward   +20 | length  2297 | mean20  +1.35 | eps 0.010 | 167 steps/s\n"}
+,{"stream_name":"stdout","time":1156.15928656,"data":"Episode  104 | step  180873 | reward    +9 | length  2732 | mean20  +2.25 | eps 0.010 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":1175.375705626,"data":"Episode  105 | step  183818 | reward   +13 | length  2945 | mean20  +3.75 | eps 0.010 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":1193.896308675,"data":"Episode  106 | step  186658 | reward   +12 | length  2840 | mean20  +4.85 | eps 0.010 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":1209.112459175,"data":"Episode  107 | step  188978 | reward   +14 | length  2320 | mean20  +5.70 | eps 0.010 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":1225.186150336,"data":"Episode  108 | step  191450 | reward   +16 | length  2472 | mean20  +6.80 | eps 0.010 | 166 steps/s\n"}
+,{"stream_name":"stdout","time":1240.498778186,"data":"Episode  109 | step  193817 | reward   +17 | length  2367 | mean20  +8.10 | eps 0.010 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":1255.721902041,"data":"Episode  110 | step  196174 | reward   +13 | length  2357 | mean20  +9.60 | eps 0.010 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":1270.822279703,"data":"Episode  111 | step  198474 | reward   +16 | length  2300 | mean20 +10.70 | eps 0.010 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":1284.685770505,"data":"Episode  112 | step  200613 | reward   +17 | length  2139 | mean20 +11.10 | eps 0.010 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":1297.415203128,"data":"Episode  113 | step  202586 | reward   +16 | length  1973 | mean20 +12.05 | eps 0.010 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":1308.163266917,"data":"Episode  114 | step  204259 | reward   +20 | length  1673 | mean20 +12.55 | eps 0.010 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":1326.062356509,"data":"Episode  115 | step  207024 | reward   +14 | length  2765 | mean20 +12.60 | eps 0.010 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":1344.277491804,"data":"Episode  116 | step  209857 | reward   +12 | length  2833 | mean20 +12.25 | eps 0.010 | 165 steps/s\n"}
+,{"stream_name":"stdout","time":1359.092045338,"data":"Episode  117 | step  212162 | reward   +17 | length  2305 | mean20 +12.50 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1372.487793259,"data":"Episode  118 | step  214229 | reward   +15 | length  2067 | mean20 +13.55 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1387.229277196,"data":"Episode  119 | step  216516 | reward   +18 | length  2287 | mean20 +14.60 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1397.337315193,"data":"Episode  120 | step  218080 | reward   +20 | length  1564 | mean20 +15.65 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1412.506481384,"data":"Episode  121 | step  220391 | reward   +17 | length  2311 | mean20 +15.75 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1423.217569915,"data":"Episode  122 | step  222015 | reward   +19 | length  1624 | mean20 +15.75 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1438.967470013,"data":"Episode  123 | step  224454 | reward   +18 | length  2439 | mean20 +15.65 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1449.633355754,"data":"Episode  124 | step  226093 | reward   +20 | length  1639 | mean20 +16.20 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1461.764835096,"data":"Episode  125 | step  227951 | reward   +16 | length  1858 | mean20 +16.35 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1477.257182125,"data":"Episode  126 | step  230336 | reward   +17 | length  2385 | mean20 +16.60 | eps 0.010 | 164 steps/s\n"}
+,{"stream_name":"stdout","time":1492.492870971,"data":"Episode  127 | step  232654 | reward   +17 | length  2318 | mean20 +16.75 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1504.276511104,"data":"Episode  128 | step  234460 | reward   +19 | length  1806 | mean20 +16.90 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1520.886385986,"data":"Episode  129 | step  237003 | reward   +16 | length  2543 | mean20 +16.85 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1534.667898722,"data":"Episode  130 | step  239116 | reward   +19 | length  2113 | mean20 +17.15 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1546.772431348,"data":"Episode  131 | step  240983 | reward   +16 | length  1867 | mean20 +17.15 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1557.445409667,"data":"Episode  132 | step  242623 | reward   +19 | length  1640 | mean20 +17.25 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1568.106806475,"data":"Episode  133 | step  244248 | reward   +20 | length  1625 | mean20 +17.45 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1582.442614564,"data":"Episode  134 | step  246461 | reward   +18 | length  2213 | mean20 +17.35 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1593.359763215,"data":"Episode  135 | step  248124 | reward   +19 | length  1663 | mean20 +17.60 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1607.979143549,"data":"Episode  136 | step  250388 | reward   +18 | length  2264 | mean20 +17.90 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1622.534190422,"data":"Episode  137 | step  252621 | reward   +16 | length  2233 | mean20 +17.85 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1633.525887553,"data":"Episode  138 | step  254300 | reward   +20 | length  1679 | mean20 +18.10 | eps 0.010 | 163 steps/s\n"}
+,{"stream_name":"stdout","time":1650.765088682,"data":"Episode  139 | step  256967 | reward   +14 | length  2667 | mean20 +17.90 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1664.138682629,"data":"Episode  140 | step  259034 | reward   +20 | length  2067 | mean20 +17.90 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1677.647936005,"data":"Episode  141 | step  261154 | reward   +19 | length  2120 | mean20 +18.00 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1693.221785273,"data":"Episode  142 | step  263538 | reward   +13 | length  2384 | mean20 +17.70 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1703.368775111,"data":"Episode  143 | step  265101 | reward   +20 | length  1563 | mean20 +17.80 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1718.26129891,"data":"Episode  144 | step  267408 | reward   +16 | length  2307 | mean20 +17.60 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1734.026427034,"data":"Episode  145 | step  269841 | reward   +15 | length  2433 | mean20 +17.55 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1744.924788824,"data":"Episode  146 | step  271531 | reward   +19 | length  1690 | mean20 +17.65 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1755.471813505,"data":"Episode  147 | step  273142 | reward   +20 | length  1611 | mean20 +17.80 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1769.22113412,"data":"Episode  148 | step  275275 | reward   +18 | length  2133 | mean20 +17.75 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1782.645031362,"data":"Episode  149 | step  277366 | reward   +20 | length  2091 | mean20 +17.95 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1794.191407893,"data":"Episode  150 | step  279132 | reward   +17 | length  1766 | mean20 +17.85 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1808.369567663,"data":"Episode  151 | step  281306 | reward   +12 | length  2174 | mean20 +17.65 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1822.861277605,"data":"Episode  152 | step  283544 | reward   +16 | length  2238 | mean20 +17.50 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1833.344075083,"data":"Episode  153 | step  285165 | reward   +20 | length  1621 | mean20 +17.50 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1847.566251595,"data":"Episode  154 | step  287340 | reward   +19 | length  2175 | mean20 +17.55 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1862.871831033,"data":"Episode  155 | step  289684 | reward   +15 | length  2344 | mean20 +17.35 | eps 0.010 | 162 steps/s\n"}
+,{"stream_name":"stdout","time":1874.75761865,"data":"Episode  156 | step  291521 | reward   +18 | length  1837 | mean20 +17.35 | eps 0.010 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":1888.82390664,"data":"Episode  157 | step  293691 | reward   +13 | length  2170 | mean20 +17.20 | eps 0.010 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":1902.724677949,"data":"Episode  158 | step  295837 | reward   +14 | length  2146 | mean20 +16.90 | eps 0.010 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":1913.747159234,"data":"Episode  159 | step  297527 | reward   +19 | length  1690 | mean20 +17.15 | eps 0.010 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":1926.678917993,"data":"Episode  160 | step  299516 | reward   +21 | length  1989 | mean20 +17.20 | eps 0.010 | 161 steps/s\n"}
+,{"stream_name":"stdout","time":1930.170217233,"data":"Done. Best mean20 reward: +18.10. Model saved to experiments/Homere/exp10/dqn_model.pth\n"}
+,{"stream_name":"stdout","time":1931.349289609,"data":"\n"}
+,{"stream_name":"stdout","time":1931.349315128,"data":"All experiments finished.\n"}
+,{"stream_name":"stderr","time":1933.903899273,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1933.903931819,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1934.276455385,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1934.27648317,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1936.311178445,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1937.384197078,"data":"[NbConvertApp] Writing 288897 bytes to __results__.html\n"}
+]
