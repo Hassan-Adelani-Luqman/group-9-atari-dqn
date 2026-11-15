@@ -54,37 +54,13 @@ Each state is a `(4, 84, 84)` array of `uint8` pixels. Pixels stay as integers i
 
 The network takes a state and outputs one Q-value per action: the expected total discounted reward of taking that action and then playing well. It is the CNN from the DQN Nature paper, with 1.69 million parameters.
 
-```mermaid
-flowchart LR
-    A["State<br/>4 × 84 × 84<br/>(pixels ÷ 255)"] --> B["Conv 8×8, stride 4<br/>32 filters, ReLU<br/>→ 32 × 20 × 20"]
-    B --> C["Conv 4×4, stride 2<br/>64 filters, ReLU<br/>→ 64 × 9 × 9"]
-    C --> D["Conv 3×3, stride 1<br/>64 filters, ReLU<br/>→ 64 × 7 × 7"]
-    D --> E["Flatten<br/>→ 3136"]
-    E --> F["Fully connected<br/>512, ReLU"]
-    F --> G["Fully connected<br/>→ 6 Q-values"]
-```
+![Q-network: 4 × 84 × 84 state → three conv layers → fully connected 512 → 6 Q-values](diagrams/q_network.png)
 
 ### 3. Training loop
 
-```mermaid
-flowchart TD
-    A["Current state s<br/>(last 4 frames)"] --> B{"ε-greedy"}
-    B -->|"probability ε"| C["Random action<br/>(explore)"]
-    B -->|"probability 1 − ε"| D["Action with the highest Q-value<br/>from the online network (exploit)"]
-    C --> E["Play the action:<br/>get reward r, next state s′, done"]
-    D --> E
-    E --> F["Store (s, a, r, s′, done)<br/>in the replay buffer"]
-    F --> G{"More than 10,000<br/>steps collected?"}
-    G -->|yes| H["Sample a random batch<br/>Target y = r + γ · (1 − done) · max Q_target(s′)<br/>Huber loss, one Adam step on the online network"]
-    G -->|no| I{"Every 1,000 steps"}
-    H --> I
-    I -->|yes| J["Copy online network<br/>into the target network"]
-    I -->|no| K{"Game over?"}
-    J --> K
-    K -->|yes| L["Log the game; save the model<br/>if the mean-20 reward is a new best;<br/>reset the game"]
-    K -->|no| A
-    L --> A
-```
+<p align="center"><img src="diagrams/training_loop.png" width="578" alt="Training loop: ε-greedy action, store the transition in the replay buffer, learn from a random batch, sync the target network every 1,000 steps"></p>
+
+Both diagrams are drawn with Mermaid; their sources are in [`diagrams/`](diagrams/).
 
 The key ideas, and where they are in [`train.py`](train.py):
 
@@ -250,6 +226,7 @@ group-9-atari-dqn/
 ├── kaggle/                        # launch.sh, fetch.sh, job.py, train.ipynb, logs/ of every Kaggle job
 ├── KAGGLE_SETUP.md                # how to run experiments on Kaggle GPUs
 ├── videos/                        # gameplay.mp4, gameplay.gif
+├── diagrams/                      # the README's architecture diagrams (Mermaid source .mmd and rendered .png)
 └── pyproject.toml, uv.lock, .python-version
 ```
 

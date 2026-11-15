@@ -1,0 +1,13 @@
+flowchart TD
+    A["Current state s<br/>(last 4 frames)"] --> B{"ε-greedy"}
+    B -->|"probability ε"| C["Random action<br/>(explore)"]
+    B -->|"probability 1 − ε"| D["Action with the<br/>highest Q-value<br/>(exploit)"]
+    C --> E["Play the action:<br/>reward r, next state s′, done"]
+    D --> E
+    E --> F["Store (s, a, r, s′, done)<br/>in the replay buffer"]
+    F --> G["Once 10,000 steps are stored:<br/>sample a random batch,<br/>target y = r + γ · (1 − done) · max Q_target(s′),<br/>Huber loss, one Adam step"]
+    G --> H["Every 1,000 steps:<br/>copy the online network<br/>into the target network"]
+    H --> I{"Game<br/>over?"}
+    I -->|no| A
+    I -->|yes| J["Log the game, save the model<br/>if the mean-20 reward is a new best,<br/>reset the game"]
+    J --> A
